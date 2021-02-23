@@ -1,0 +1,42 @@
+<map borderColor="FFFFFF" connectorColor="000000" fillAlpha="70" hoverColor="FFFFFF" showBevel="1" showBevel="0" includeValueInLabels="0" labelSepChar=": " numberSuffix="%"
+    baseFontSize="9" fillAlpha="70" hoverColor="639ACE" borderColor="FFFFFF"legendPosition="bottom">
+
+	<colorRange>
+	
+<color minValue='0' maxValue='2.' displayValue='0-2' color='069F06' />
+<color minValue='2' maxValue='4.' displayValue='2-4' color='ABF456' />
+<color minValue='3' maxValue='6.' displayValue='4-6' color='FFD33A' />
+<color minValue='6' maxValue='10.' displayValue='>6' color='CC0001' />"
+
+	</colorRange>
+
+<data>
+<entity id = "KG.BA" value = "3" />\n\
+<entity id = "KG.GB" value = "2" />\n\
+<entity id = "KG.CU" value = "4" />\n\
+<entity id = "KG.YK" value = "9" />\n\
+<entity id = "KG.DA" value = "5" />\n\
+<entity id = "KG.NA" value = "3" />\n\
+<entity id = "KG.OS" value = "2" />\n\
+<entity id = "KG.TL" value = "9" />\n\
+</data>
+
+	<styles>
+
+		<definition>
+
+			<style type="animation" name="animX" param="_xscale" start="0" duration="1" />
+
+			<style type="animation" name="animY" param="_yscale" start="0" duration="1" />
+
+		</definition>	
+
+		<application>
+
+			<apply toObject="PLOT" styles="animX,animY" />
+
+		</application>
+
+	</styles>
+
+</map>

@@ -1,0 +1,30 @@
+[RP:POSTSIM]
+1=
+
+[RP:THAIDATA]
+1=
+
+[RP:THAIMODEL]
+1=
+
+[RP:THAICOMP]
+1=
+
+[OPENWINDOW_1]
+MAXIM=0
+TOP=0
+LEFT=0
+HEIGHT=395
+WIDTH=520
+
+[RP:SIMPLECGE]
+1=
+
+[MRUFILES]
+1=C:\Users\dwrh\Documents\Research\Countries\Thailand\CMU\CGE_Course\Model Tools\CGE\Simple_CGE\SimpleCGE.lst
+2=C:\Users\dwrh\Documents\Research\Countries\Thailand\CMU\CGE_Course\Model Tools\CGE\Simple_CGE\SimpleCGE.gms
+3=C:\Research\FAO\HPAI\Training\CGE\Simple_CGE\ThaiComp.lst
+4=C:\Research\FAO\HPAI\Training\CGE\Proto_CGE\ThaiData.gms
+5=C:\Research\FAO\HPAI\Training\CGE\Simple_CGE\SimpleCGE.gms
+6=C:\Research\FAO\HPAI\Training\CGE\Simple_CGE\SimpleCGE.lst
+7=C:\Research\WorldBank\China\DRC\Training\CGE\comp.gms

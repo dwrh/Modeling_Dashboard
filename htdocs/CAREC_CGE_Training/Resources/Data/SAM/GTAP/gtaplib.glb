@@ -1,0 +1,117 @@
+Version = 5
+LibraryName = Global SAMs and the GTAP Database
+Columns = 3
+1 = Name
+2 = Model Type
+3 = Action
+InitialSort = 1
+*$*$*$
+Files = gtpsam53.gms,data_gtp_53.xls,gtp_sets_v53.xls,gtapsam.pdf,gpl.txt
+1 = gtpsam53
+2 = GTAP SAM Version 5.3
+3 = Data Transformation
+Transforming the GTAP Database v 5.3 into a Global SAM
+
+These files provide a method for transforming the GTAP database (v 5.3) into a global SAM that is saved as a GDX file.
+The programme uses the HAR2GDX and GDX2HAR utilities to transform the GTAP data.
+The programme also uses the GDX utilities in GAMS 250
+This version of the programme was last tested using GAMS 250 21.4 - it has not been tested with earlier versions although it is thought to work with all version of GAMS 250 since 21.0..
+Documentation for the programme is provided at the start of the file gtpsam53.gms.
+A copy of a paper that describes the process is also provided.
+
+References:
+McDonald, S., and Thierfelder, K., (2004). 'Deriving a Global Social Accounting Matrix from GTAP Data', mimeo.
+*$*$*$
+Files = gtpsam54.gms,data_gtp_54.xls,gtp_sets_v54.xls,gtapsam.pdf,gpl.txt
+1 = gtpsam54
+2 = GTAP SAM Version 5.4
+3 = Data Transformation
+Transforming the GTAP Database v 5.4 into a Global SAM
+
+These files provide a method for transforming the GTAP database (v 5.4) into a global SAM that is saved as a GDX file.
+The programme uses the HAR2GDX and GDX2HAR utilities to transform the GTAP data.
+The programme also uses the GDX utilities in GAMS 250
+This version of the programme was last tested using GAMS 250 21.4 - it has not been tested with earlier versions although it is thought to work with all version of GAMS 250 since 21.0..
+Documentation for the programme is provided at the start of the file gtpsam54.gms.
+A copy of a paper that describes the process is also provided.
+
+References:
+McDonald, S., and Thierfelder, K., (2004). 'Deriving a Global Social Accounting Matrix from GTAP Data', mimeo.
+*$*$*$
+Files = gtpsam60_p5.gms,data_gtp_60_p5.xls,gtp_sets_v60_p5.xls,gtapsam.pdf,gpl.txt,clean_gtp.bat
+1 = gtpsam60_p5
+2 = GTAP SAM Version 6.0_p5
+3 = Data Transformation
+Transforming the GTAP Database v 6.0_p5 into a Global SAM
+
+These files provide a method for transforming the GTAP database (v 6.0 pre release 5) into a global SAM that is saved as a GDX file.
+The programme uses the HAR2GDX and GDX2HAR utilities to transform the GTAP data.
+The programme also uses the GDX utilities in GAMS 250
+This version of the programme was last tested using GAMS 250 21.4 - it has not been tested with earlier versions although it is thought to work with all version of GAMS 250 since 21.0..
+Documentation for the programme is provided at the start of the file gtpsam60_p5.gms.
+A copy of a paper that describes the process is also provided.
+
+References:
+McDonald, S., and Thierfelder, K., (2004). 'Deriving a Global Social Accounting Matrix from GTAP Data', mimeo.
+*$*$*$
+Files = gtpsam60.gms,data_gtp_60.xls,gtp_sets_v60.xls,gtapsam.pdf,gpl.txt,readme.txt,clean_gtp.bat
+1 = gtpsam60
+2 = GTAP SAM Version 6.0
+3 = Data Transformation
+Transforming the GTAP Database v 6.0 into a Global SAM
+
+These files provide a method for transforming the GTAP database (v 6.0) into a global SAM that is saved as a GDX file.
+The programme uses the HAR2GDX and GDX2HAR utilities to transform the GTAP data.
+The programme also uses the GDX utilities in GAMS 250
+This version of the programme was last tested using GAMS 250 21.4 - it has not been tested with earlier versions although it is thought to work with all version of GAMS 250 since 21.0..
+Documentation for the programme is provided at the start of the file gtpsam60.gms.
+A copy of a paper that describes the process is also provided.
+
+References:
+McDonald, S., and Thierfelder, K., (2004). 'Deriving a Global Social Accounting Matrix from GTAP Data', mimeo.
+*$*$*$
+Files = gtpsam60_all.gms,data_gtp_60.xls,gtp_sets_v60.xls,gtapsam.pdf,gpl.txt,readme.txt,clean_gtp.bat
+1 = gtpsam60_all
+2 = GTAP SAM Version 6.0
+3 = Data Transformation
+Transforming the GTAP Database v 6.0 into a Global SAM
+
+These files provide a method for transforming the GTAP database (v 6.0) into a global SAM plus the GTAP elasticities, the time series trade data and the energy volume data; the data are stored as a GDX file.
+The programme uses the HAR2GDX and GDX2HAR utilities to transform the GTAP data.
+The programme also uses the GDX utilities in GAMS 250
+This version of the programme was last tested using GAMS 250 21.6 - it has not been tested with earlier versions although it is thought to work with all version of GAMS 250 since 21.0..
+Documentation for the programme is provided as a readme.txt file and at the start of the file gtpsam60_all.gms.
+A copy of a paper that describes the process is also provided.
+
+References:
+McDonald, S., and Thierfelder, K., (2004). 'Deriving a Global Social Accounting Matrix from GTAP Data', mimeo.
+*$*$*$
+Files = gtpsam70rc4_all.gms,data_gtp_70rc4.xls,gtp_sets_v70rc4.xls,gtapsam.pdf,gpl.txt,readme.txt,clean_gtp.bat
+1 = gtpsam70_all
+2 = GTAP SAM Version 7.0 rc4
+3 = Data Transformation
+Transforming the GTAP Database v 7.0 into a Global SAM
+
+These files provide a method for transforming the GTAP database (v 7.0) into a global SAM plus the GTAP elasticities, the time series trade data and the energy volume data; the data are stored as a GDX file.
+The programme uses the HAR2GDX and GDX2HAR utilities to transform the GTAP data.
+The programme also uses the GDX utilities in GAMS 250
+This version of the programme was last tested using GAMS 250 22.6 - it has not been tested with earlier versions although it is thought to work with all version of GAMS 250 since 21.0..
+Documentation for the programme is provided as a readme.txt file and at the start of the file gtpsam70_all.gms.
+A copy of a paper that describes the process is also provided.
+
+References:
+McDonald, S., and Thierfelder, K., (2004). 'Deriving a Global Social Accounting Matrix from GTAP Data', mimeo.
+*$*$*$
+Files = globaggr.gms
+1 = gtpagg
+2 = GTAP SAM aggregation programme
+3 = Data Aggregation
+Aggregation the GTAP Database as a Global SAM
+
+This file provides a sample of the code required to aggregate version 5.4 of the GTAP database when it is presented as a global SAM.
+The code is an adaptation of earlier code developed by Lofgren and Robinson for use with single region SAMs.
+The data input and ouptut are in the GDX format.
+Users will need to defining the sets for the aggregtaed SAM and defining the mappings between the accounts in the base SAM and the aggregated SAM.
+The code is unsupported.
+
+*$*$*$

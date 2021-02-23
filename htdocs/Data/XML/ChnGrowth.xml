@@ -1,0 +1,45 @@
+<map borderColor="FFFFFF" connectorColor="000000" fillAlpha="70" hoverColor="FFFFFF" showBevel="1" showBevel="0" includeValueInLabels="0" labelSepChar=": " numberSuffix="%"
+    baseFontSize="9" fillAlpha="70" hoverColor="639ACE" borderColor="FFFFFF"legendPosition="bottom">
+
+	<colorRange>
+	
+<color minValue='0' maxValue='2.' displayValue='0-2' color='069F06' />
+<color minValue='2' maxValue='4.' displayValue='2-4' color='ABF456' />
+<color minValue='3' maxValue='6.' displayValue='4-6' color='FFD33A' />
+<color minValue='6' maxValue='10.' displayValue='>6' color='CC0001' />"
+
+	</colorRange>
+
+<data>
+<entity id = "01" value = "2" />\n\
+<entity id = "07" value = "6" />\n\
+<entity id = "15" value = "3" />\n\
+<entity id = "30" value = "10" />\n\
+<entity id = "18" value = "9" />\n\
+<entity id = "31" value = "2" />\n\
+<entity id = "10" value = "6" />\n\
+<entity id = "08" value = "6" />\n\
+<entity id = "09" value = "3" />\n\
+<entity id = "12" value = "3" />\n\
+<entity id = "11" value = "7" />\n\
+<entity id = "04" value = "5" />\n\
+<entity id = "03" value = "7" />\n\
+<entity id = "05" value = "9" />\n\
+<entity id = "19" value = "8" />\n\
+<entity id = "06" value = "9" />\n\
+<entity id = "26" value = "4" />\n\
+<entity id = "25" value = "2" />\n\
+<entity id = "24" value = "1" />\n\
+<entity id = "32" value = "2" />\n\
+<entity id = "29" value = "8" />\n\
+<entity id = "02" value = "10" />\n\
+<entity id = "36" value = "2" />\n\
+<entity id = "20" value = "0" />\n\
+<entity id = "13" value = "4" />\n\
+<entity id = "16" value = "0" />\n\
+<entity id = "21" value = "10" />\n\
+</data>
+
+
+
+</map>';

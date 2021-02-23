@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+Stacked Bar 2D Chart
+ 
+
+ 
+2D Stacked Bar chart showing cumulative sales for multiple products, as well as cancelled and deleted orders.
+
+View XML
+View JSON
+Close
+<chart xaxisname='Year'  yaxisname='Energy Source'  caption='Global Electric Power Portfolio' subcaption=' (change from 2010)'  animation='1'  numDivLines='2' numberPrefix='' showValues='0' yAxisMinValue="-2000">
+        <categories>
+                <category label='2018' showLabel='1' />
+                <category label='2019' showLabel='1' />
+                <category label='2020' showLabel='1' />
+                <category label='2021' showLabel='1' />
+                <category label='2022' showLabel='1' />
+                <category label='2023' showLabel='1' />
+                <category label='2024' showLabel='1' />
+                <category label='2025' showLabel='1' />
+                <category label='2026' showLabel='1' />
+                <category label='2027' showLabel='1' />
+                <category label='2028' showLabel='1' />
+                <category label='2029' showLabel='1' />
+                <category label='2030' showLabel='1' />
+        </categories>
+        <dataset seriesName='Gas' color='0080C0'>
+                <set value='810' />
+                <set value='930' />
+                <set value='1110' />
+                <set value='1300' />
+                <set value='1890' />
+                <set value='2350' />
+                <set value='2740' />
+                <set value='3050' />
+                <set value='3570' />
+                <set value='4390' />
+                <set value='5610' />
+                <set value='7160' />
+                <set value='7750' />
+        </dataset>
+        <dataset seriesName='Renewables' color='008040'>
+                <set value='380' />
+                <set value='390' />
+                <set value='420' />
+                <set value='490' />
+                <set value='900' />
+                <set value='1160' />
+                <set value='1350' />
+                <set value='1510' />
+                <set value='1790' />
+                <set value='2140' />
+                <set value='2660' />
+                <set value='3850' />
+                <set value='4070' />
+        </dataset>
+        <dataset seriesName='Nuclear' color='FFFF00'>
+                <set value='220' />
+                <set value='240' />
+                <set value='280' />
+                <set value='350' />
+                <set value='580' />
+                <set value='630' />
+                <set value='670' />
+                <set value='740' />
+                <set value='790' />
+                <set value='920' />
+                <set value='1050' />
+                <set value='1290' />
+                <set value='1320' />
+        </dataset>
+        <dataset seriesName='Biomass' color='800080'>
+                <set value='0' />
+                <set value='0' />
+                <set value='0' />
+                <set value='20' />
+                <set value='50' />
+                <set value='50' />
+                <set value='60' />
+                <set value='60' />
+                <set value='60' />
+                <set value='80' />
+                <set value='130' />
+                <set value='170' />
+                <set value='170' />
+        </dataset>
+        <dataset seriesName='Biofuel' color='EB59CB'>
+                <set value='0' />
+                <set value='0' />
+                <set value='0' />
+                <set value='0' />
+                <set value='0' />
+                <set value='0' />
+                <set value='10' />
+                <set value='10' />
+                <set value='10' />
+                <set value='10' />
+                <set value='20' />
+                <set value='20' />
+                <set value='20' />
+        </dataset>
+        <dataset seriesName='Oil' color='FFCC00'>
+                <set value='-50' />
+                <set value='-50' />
+                <set value='-70' />
+                <set value='-90' />
+                <set value='-100' />
+                <set value='-110' />
+                <set value='-150' />
+                <set value='-260' />
+                <set value='-320' />
+                <set value='-350' />
+                <set value='-500' />
+                <set value='-630' />
+                <set value='-650' />
+        </dataset>
+        <dataset seriesName='Coal' color='FF0000'>
+                <set value='-180' />
+                <set value='-210' />
+                <set value='-260' />
+                <set value='-320' />
+                <set value='-580' />
+                <set value='-680' />
+                <set value='-780' />
+                <set value='-900' />
+                <set value='-1060' />
+                <set value='-1320' />
+                <set value='-1520' />
+                <set value='-1650' />
+                <set value='-1660' />
+        </dataset>
+</chart>

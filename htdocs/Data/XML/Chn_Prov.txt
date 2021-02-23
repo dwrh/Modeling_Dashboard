@@ -1,0 +1,34 @@
+/Applications/MAMP/htdocs/html/China2.html:50:      <td height="17" class="text">CN.AH </td>
+/Applications/MAMP/htdocs/html/China2.html:55:      <td height="17" class="text">CN.BJ </td>
+/Applications/MAMP/htdocs/html/China2.html:60:      <td height="17" class="text">CN.CQ </td>
+/Applications/MAMP/htdocs/html/China2.html:65:      <td height="17" class="text">CN.FJ </td>
+/Applications/MAMP/htdocs/html/China2.html:70:      <td height="17" class="text">CN.GS </td>
+/Applications/MAMP/htdocs/html/China2.html:75:      <td height="17" class="text">CN.GD </td>
+/Applications/MAMP/htdocs/html/China2.html:80:      <td height="17" class="text">CN.GX </td>
+/Applications/MAMP/htdocs/html/China2.html:85:      <td height="17" class="text">CN.GZ </td>
+/Applications/MAMP/htdocs/html/China2.html:90:      <td height="17" class="text">CN.HA </td>
+/Applications/MAMP/htdocs/html/China2.html:95:      <td height="17" class="text">CN.HB </td>
+/Applications/MAMP/htdocs/html/China2.html:100:     <td height="17" class="text">CN.HE</td>
+/Applications/MAMP/htdocs/html/China2.html:105:     <td height="17" class="text">CN.HU</td>
+/Applications/MAMP/htdocs/html/China2.html:110:     <td height="17" class="text">CN.HL</td>
+/Applications/MAMP/htdocs/html/China2.html:115:     <td height="17" class="text">CN.HN</td>
+/Applications/MAMP/htdocs/html/China2.html:120:     <td height="17" class="text">CN.JS</td>
+/Applications/MAMP/htdocs/html/China2.html:125:     <td height="17" class="text">CN.JX</td>
+/Applications/MAMP/htdocs/html/China2.html:130:     <td height="17" class="text">CN.JL</td>
+/Applications/MAMP/htdocs/html/China2.html:135:     <td height="17" class="text">CN.LN</td>
+/Applications/MAMP/htdocs/html/China2.html:140:     <td height="17" class="text">CN.NM</td>
+/Applications/MAMP/htdocs/html/China2.html:145:     <td height="17" class="text">CN.NX</td>
+/Applications/MAMP/htdocs/html/China2.html:150:     <td height="17" class="text">CN.QH</td>
+/Applications/MAMP/htdocs/html/China2.html:155:     <td height="17" class="text">CN.SA</td>
+/Applications/MAMP/htdocs/html/China2.html:160:     <td height="17" class="text">CN.SD</td>
+/Applications/MAMP/htdocs/html/China2.html:165:     <td height="17" class="text">CN.SH</td>
+/Applications/MAMP/htdocs/html/China2.html:170:     <td height="17" class="text">CN.SX</td>
+/Applications/MAMP/htdocs/html/China2.html:175:     <td height="17" class="text">CN.SC</td>
+/Applications/MAMP/htdocs/html/China2.html:180:     <td height="17" class="text">CN.TJ</td>
+/Applications/MAMP/htdocs/html/China2.html:185:     <td height="17" class="text">CN.XJ</td>
+/Applications/MAMP/htdocs/html/China2.html:190:     <td height="17" class="text">CN.XZ</td>
+/Applications/MAMP/htdocs/html/China2.html:195:     <td height="17" class="text">CN.YN</td>
+/Applications/MAMP/htdocs/html/China2.html:200:     <td height="17" class="text">CN.ZJ</td>
+/Applications/MAMP/htdocs/html/China2.html:205:     <td height="17" class="text">CN.MA</td>
+/Applications/MAMP/htdocs/html/China2.html:210:     <td height="17" class="text">CN.HK</td>
+/Applications/MAMP/htdocs/html/China2.html:215:     <td height="18" class="text">CN.TA</td>

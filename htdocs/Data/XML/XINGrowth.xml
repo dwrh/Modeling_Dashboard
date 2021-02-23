@@ -1,0 +1,54 @@
+<map caption="Annual Growth of Gross Provincial Product" borderColor="FFFFFF" connectorColor="000000" fillAlpha="70" hoverColor="FFFFFF" showBevel="1" showBevel="0" 
+includeValueInLabels="0" labelSepChar=": " numberSuffix="%" showBorder='0'
+baseFontSize="9" fillAlpha="70" hoverColor="639ACE" borderColor="FFFFFF" legendPosition="bottom">
+
+	<colorRange>
+	
+<color minValue='0' maxValue='2.' displayValue='0-2' color='069F06' />
+<color minValue='2' maxValue='4.' displayValue='2-4' color='ABF456' />
+<color minValue='3' maxValue='6.' displayValue='4-6' color='FFD33A' />
+<color minValue='6' maxValue='10.' displayValue='>6' color='CC0001' />"
+
+	</colorRange>
+
+<data>
+
+<entity id = "1" value = "9" />\n\		
+<entity id = "2" value = "6" />\n\		
+<entity id = "3" value = "1" />\n\		
+<entity id = "4" value = "6" />\n\		
+<entity id = "5" value = "3" />\n\		
+<entity id = "6" value = "8" />\n\		
+<entity id = "7" value = "0" />\n\		
+<entity id = "8" value = "5" />\n\		
+<entity id = "9" value = "4" />\n\		
+<entity id = "10" value = "5" />\n\		
+<entity id = "11" value = "1" />\n\		
+<entity id = "12" value = "9" />\n\		
+<entity id = "13" value = "4" />\n\		
+<entity id = "14" value = "1" />\n\		
+<entity id = "15" value = "8" />\n\		
+<entity id = "16" value = "8" />\n\		
+<entity id = "17" value = "2" />\n\		
+<entity id = "18" value = "3" />\n\		
+</data>
+
+	<styles>
+
+		<definition>
+
+			<style type="animation" name="animX" param="_xscale" start="0" duration="1" />
+
+			<style type="animation" name="animY" param="_yscale" start="0" duration="1" />
+
+		</definition>	
+
+		<application>
+
+			<apply toObject="PLOT" styles="animX,animY" />
+
+		</application>
+
+	</styles>
+
+</map>

@@ -1,0 +1,18 @@
+<html>
+  <head>        
+    <title>My First chart using FusionCharts</title>    
+    <script type="text/javascript" src="FusionCharts.js">
+    </script>
+  </head>   
+  <body>     
+    <div id="chartContainer">FusionCharts will load here!</div>          
+    <script type="text/javascript"><!--         
+
+      var myChart = new FusionCharts( "StackedBar2D.swf", "myChartId", "800", "600", "0", "1" );
+      myChart.setXMLUrl("StackSales.xml");
+      myChart.render("chartContainer");
+      
+    // -->     
+    </script>      
+  </body> 
+</html>

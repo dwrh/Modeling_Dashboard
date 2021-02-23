@@ -1,0 +1,38 @@
+GAMS Rev 233  WEX-WEI 23.3.3 x86_64/MS Windows                                                     04/03/11 21:53:00 Page 1
+PHPTester
+C o m p i l a t i o n
+
+
+   2  display "This is for the listing file." ;
+   3  file screen / 'con' / ;
+   4  put screen ;
+   5              put //, "This is for the console"// ;
+   6              putclose ;
+   7   
+
+
+COMPILATION TIME     =        0.016 SECONDS      2 Mb  WEX233-233 Dec 15, 2009
+GAMS Rev 233  WEX-WEI 23.3.3 x86_64/MS Windows                                                     04/03/11 21:53:00 Page 2
+PHPTester
+E x e c u t i o n
+
+
+----      2 This is for the listing file.
+
+**** REPORT FILE SUMMARY
+
+screen C:\inetpub\vhosts\bearllc.net\httpdocs\TIGGER\Output\con
+
+
+EXECUTION TIME       =        0.031 SECONDS      3 Mb  WEX233-233 Dec 15, 2009
+
+
+USER: David Roland-Holst                             G090609:1717AP-WIN
+      University of California, Agricultural and Resource EconomiDC7723
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\inetpub\vhosts\bearllc.net\httpdocs\TIGGER\Model\PHPTest.gms
+Output     C:\inetpub\vhosts\bearllc.net\httpdocs\TIGGER\Output\PHPTest.lst

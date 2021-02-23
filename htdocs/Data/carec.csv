@@ -1,0 +1,1484 @@
+"Baseline","PRC","gdp","2008","","",3.6084454651E+6,"USD 2010 Millions"
+"Baseline","MNG","gdp","2008","","",5977.178109043,"USD 2010 Millions"
+"Baseline","IND","gdp","2008","","",1.2435798544E+6,"USD 2010 Millions"
+"Baseline","PAK","gdp","2008","","",1.4767838788E+5,"USD 2010 Millions"
+"Baseline","RUS","gdp","2008","","",1.2401699843E+6,"USD 2010 Millions"
+"Baseline","KAZ","gdp","2008","","",99614.796089501,"USD 2010 Millions"
+"Baseline","KGZ","gdp","2008","","",3710.971958289,"USD 2010 Millions"
+"Baseline","AZE","gdp","2008","","",32160.943481987,"USD 2010 Millions"
+"Baseline","AFG","gdp","2008","","",8983.713827012,"USD 2010 Millions"
+"Baseline","UZB","gdp","2008","","",16406.008322102,"USD 2010 Millions"
+"Baseline","TKM","gdp","2008","","",17760.025852561,"USD 2010 Millions"
+"Baseline","TJK","gdp","2008","","",2586.736183965,"USD 2010 Millions"
+"Baseline","HYA","gdp","2008","","",5.7167371542E+6,"USD 2010 Millions"
+"Baseline","ROA","gdp","2008","","",2.3654164068E+6,"USD 2010 Millions"
+"Baseline","PRC","emp_gr","2008","","",8.5629812217E+5,"Thousands"
+"Baseline","MNG","emp_gr","2008","","",1300.449616655,"Thousands"
+"Baseline","IND","emp_gr","2008","","",5.3817145130E+5,"Thousands"
+"Baseline","PAK","emp_gr","2008","","",57056.425212726,"Thousands"
+"Baseline","RUS","emp_gr","2008","","",74863.374789452,"Thousands"
+"Baseline","KAZ","emp_gr","2008","","",8183.391787820,"Thousands"
+"Baseline","KGZ","emp_gr","2008","","",2307.822956812,"Thousands"
+"Baseline","AZE","emp_gr","2008","","",4824.041188904,"Thousands"
+"Baseline","AFG","emp_gr","2008","","",7014.385955950,"Thousands"
+"Baseline","UZB","emp_gr","2008","","",8700.274029788,"Thousands"
+"Baseline","TKM","emp_gr","2008","","",647.107401147,"Thousands"
+"Baseline","TJK","emp_gr","2008","","",2255.211283335,"Thousands"
+"Baseline","HYA","emp_gr","2008","","",1.0240633376E+5,"Thousands"
+"Baseline","ROA","emp_gr","2008","","",4.0282650028E+5,"Thousands"
+"Baseline","PRC","pop","2008","","",2670.403736000,"Millions"
+"Baseline","MNG","pop","2008","","",5.334948000,"Millions"
+"Baseline","IND","pop","2008","","",2381.727401000,"Millions"
+"Baseline","PAK","pop","2008","","",334.884520000,"Millions"
+"Baseline","RUS","pop","2008","","",286.326201000,"Millions"
+"Baseline","KAZ","pop","2008","","",31.310690000,"Millions"
+"Baseline","KGZ","pop","2008","","",10.408208000,"Millions"
+"Baseline","AZE","pop","2008","","",17.887200000,"Millions"
+"Baseline","AFG","pop","2008","","",61.258055000,"Millions"
+"Baseline","UZB","pop","2008","","",53.623948000,"Millions"
+"Baseline","TKM","pop","2008","","",9.836792000,"Millions"
+"Baseline","TJK","pop","2008","","",13.382832000,"Millions"
+"Baseline","HYA","pop","2008","","",394.696490000,"Millions"
+"Baseline","ROA","pop","2008","","",1685.458191000,"Millions"
+"Baseline","PRC","gdp_gr","2008","","",7.488434783,"Percent"
+"Baseline","MNG","gdp_gr","2008","","",8.381173913,"Percent"
+"Baseline","IND","gdp_gr","2008","","",7.267260870,"Percent"
+"Baseline","PAK","gdp_gr","2008","","",5.022478261,"Percent"
+"Baseline","RUS","gdp_gr","2008","","",3.146434783,"Percent"
+"Baseline","KAZ","gdp_gr","2008","","",5.409869565,"Percent"
+"Baseline","KGZ","gdp_gr","2008","","",4.908260870,"Percent"
+"Baseline","AZE","gdp_gr","2008","","",2.233913043,"Percent"
+"Baseline","AFG","gdp_gr","2008","","",8.859652174,"Percent"
+"Baseline","UZB","gdp_gr","2008","","",6.158043478,"Percent"
+"Baseline","TKM","gdp_gr","2008","","",6.509739130,"Percent"
+"Baseline","TJK","gdp_gr","2008","","",6.187304348,"Percent"
+"Baseline","HYA","gdp_gr","2008","","",1.690869565,"Percent"
+"Baseline","ROA","gdp_gr","2008","","",4.228913043,"Percent"
+"Baseline","PRC","gdp_pc_gr","2008","","",7.271217391,"Percent"
+"Baseline","MNG","gdp_pc_gr","2008","","",6.935304348,"Percent"
+"Baseline","IND","gdp_pc_gr","2008","","",6.110782609,"Percent"
+"Baseline","PAK","gdp_pc_gr","2008","","",3.155304348,"Percent"
+"Baseline","RUS","gdp_pc_gr","2008","","",3.428956522,"Percent"
+"Baseline","KAZ","gdp_pc_gr","2008","","",4.438434783,"Percent"
+"Baseline","KGZ","gdp_pc_gr","2008","","",3.684652174,"Percent"
+"Baseline","AZE","gdp_pc_gr","2008","","",1.525173913,"Percent"
+"Baseline","AFG","gdp_pc_gr","2008","","",6.238478261,"Percent"
+"Baseline","UZB","gdp_pc_gr","2008","","",4.749652174,"Percent"
+"Baseline","TKM","gdp_pc_gr","2008","","",5.248826087,"Percent"
+"Baseline","TJK","gdp_pc_gr","2008","","",4.632521739,"Percent"
+"Baseline","HYA","gdp_pc_gr","2008","","",1.829130435,"Percent"
+"Baseline","ROA","gdp_pc_gr","2008","","",3.187347826,"Percent"
+"Baseline","PRC","pop_gr","2008","","",0.199739928,"Percent"
+"Baseline","MNG","pop_gr","2008","","",1.347475858,"Percent"
+"Baseline","IND","pop_gr","2008","","",1.089344202,"Percent"
+"Baseline","PAK","pop_gr","2008","","",1.813348549,"Percent"
+"Baseline","RUS","pop_gr","2008","","",-0.272610370,"Percent"
+"Baseline","KAZ","pop_gr","2008","","",0.930096047,"Percent"
+"Baseline","KGZ","pop_gr","2008","","",1.180614431,"Percent"
+"Baseline","AZE","pop_gr","2008","","",0.690725714,"Percent"
+"Baseline","AFG","pop_gr","2008","","",2.469406578,"Percent"
+"Baseline","UZB","pop_gr","2008","","",1.344906966,"Percent"
+"Baseline","TKM","pop_gr","2008","","",1.196831098,"Percent"
+"Baseline","TJK","pop_gr","2008","","",1.486748781,"Percent"
+"Baseline","HYA","pop_gr","2008","","",-0.135038812,"Percent"
+"Baseline","ROA","pop_gr","2008","","",1.009383811,"Percent"
+"Baseline","PRC","agfd_exp","2008","","",13931.981890617,"USD 2010 Millions"
+"Baseline","MNG","agfd_exp","2008","","",18.157697687,"USD 2010 Millions"
+"Baseline","IND","agfd_exp","2008","","",8680.295054769,"USD 2010 Millions"
+"Baseline","PAK","agfd_exp","2008","","",609.654417143,"USD 2010 Millions"
+"Baseline","RUS","agfd_exp","2008","","",6379.175819267,"USD 2010 Millions"
+"Baseline","KAZ","agfd_exp","2008","","",2418.329771179,"USD 2010 Millions"
+"Baseline","KGZ","agfd_exp","2008","","",213.856991377,"USD 2010 Millions"
+"Baseline","AZE","agfd_exp","2008","","",260.007452082,"USD 2010 Millions"
+"Baseline","AFG","agfd_exp","2008","","",173.419264804,"USD 2010 Millions"
+"Baseline","UZB","agfd_exp","2008","","",598.413367886,"USD 2010 Millions"
+"Baseline","TKM","agfd_exp","2008","","",0.237376632,"USD 2010 Millions"
+"Baseline","TJK","agfd_exp","2008","","",108.897831146,"USD 2010 Millions"
+"Baseline","HYA","agfd_exp","2008","","",2093.531772841,"USD 2010 Millions"
+"Baseline","ROA","agfd_exp","2008","","",20601.057232033,"USD 2010 Millions"
+"Baseline","PRC","mfg_exp","2008","","",1.0150263496E+6,"USD 2010 Millions"
+"Baseline","MNG","mfg_exp","2008","","",126.406132276,"USD 2010 Millions"
+"Baseline","IND","mfg_exp","2008","","",1.3061982613E+5,"USD 2010 Millions"
+"Baseline","PAK","mfg_exp","2008","","",15958.931908352,"USD 2010 Millions"
+"Baseline","RUS","mfg_exp","2008","","",3.0926230802E+5,"USD 2010 Millions"
+"Baseline","KAZ","mfg_exp","2008","","",34296.368626380,"USD 2010 Millions"
+"Baseline","KGZ","mfg_exp","2008","","",869.859740192,"USD 2010 Millions"
+"Baseline","AZE","mfg_exp","2008","","",21929.192689261,"USD 2010 Millions"
+"Baseline","AFG","mfg_exp","2008","","",808.494777409,"USD 2010 Millions"
+"Baseline","UZB","mfg_exp","2008","","",8808.410081193,"USD 2010 Millions"
+"Baseline","TKM","mfg_exp","2008","","",11495.750784357,"USD 2010 Millions"
+"Baseline","TJK","mfg_exp","2008","","",1344.472952935,"USD 2010 Millions"
+"Baseline","HYA","mfg_exp","2008","","",1.1522866291E+6,"USD 2010 Millions"
+"Baseline","ROA","mfg_exp","2008","","",7.2689766059E+5,"USD 2010 Millions"
+"Baseline","PRC","serv_exp","2008","","",1.3661513127E+5,"USD 2010 Millions"
+"Baseline","MNG","serv_exp","2008","","",98.014389158,"USD 2010 Millions"
+"Baseline","IND","serv_exp","2008","","",52945.481988841,"USD 2010 Millions"
+"Baseline","PAK","serv_exp","2008","","",2733.949668912,"USD 2010 Millions"
+"Baseline","RUS","serv_exp","2008","","",48405.506440658,"USD 2010 Millions"
+"Baseline","KAZ","serv_exp","2008","","",3005.563207288,"USD 2010 Millions"
+"Baseline","KGZ","serv_exp","2008","","",591.063558085,"USD 2010 Millions"
+"Baseline","AZE","serv_exp","2008","","",796.919501986,"USD 2010 Millions"
+"Baseline","AFG","serv_exp","2008","","",956.586395924,"USD 2010 Millions"
+"Baseline","UZB","serv_exp","2008","","",2625.069039396,"USD 2010 Millions"
+"Baseline","TKM","serv_exp","2008","","",3815.000426552,"USD 2010 Millions"
+"Baseline","TJK","serv_exp","2008","","",397.999053892,"USD 2010 Millions"
+"Baseline","HYA","serv_exp","2008","","",1.2699880427E+5,"USD 2010 Millions"
+"Baseline","ROA","serv_exp","2008","","",1.8437803388E+5,"USD 2010 Millions"
+"Baseline","PRC","agfd_exp","2008","","",13931.981890617,"USD 2010 Millions"
+"Baseline","MNG","agfd_exp","2008","","",18.157697687,"USD 2010 Millions"
+"Baseline","IND","agfd_exp","2008","","",8680.295054769,"USD 2010 Millions"
+"Baseline","PAK","agfd_exp","2008","","",609.654417143,"USD 2010 Millions"
+"Baseline","RUS","agfd_exp","2008","","",6379.175819267,"USD 2010 Millions"
+"Baseline","KAZ","agfd_exp","2008","","",2418.329771179,"USD 2010 Millions"
+"Baseline","KGZ","agfd_exp","2008","","",213.856991377,"USD 2010 Millions"
+"Baseline","AZE","agfd_exp","2008","","",260.007452082,"USD 2010 Millions"
+"Baseline","AFG","agfd_exp","2008","","",173.419264804,"USD 2010 Millions"
+"Baseline","UZB","agfd_exp","2008","","",598.413367886,"USD 2010 Millions"
+"Baseline","TKM","agfd_exp","2008","","",0.237376632,"USD 2010 Millions"
+"Baseline","TJK","agfd_exp","2008","","",108.897831146,"USD 2010 Millions"
+"Baseline","HYA","agfd_exp","2008","","",2093.531772841,"USD 2010 Millions"
+"Baseline","ROA","agfd_exp","2008","","",20601.057232033,"USD 2010 Millions"
+"Baseline","PRC","mfg_exp","2008","","",1.0150263496E+6,"USD 2010 Millions"
+"Baseline","MNG","mfg_exp","2008","","",126.406132276,"USD 2010 Millions"
+"Baseline","IND","mfg_exp","2008","","",1.3061982613E+5,"USD 2010 Millions"
+"Baseline","PAK","mfg_exp","2008","","",15958.931908352,"USD 2010 Millions"
+"Baseline","RUS","mfg_exp","2008","","",3.0926230802E+5,"USD 2010 Millions"
+"Baseline","KAZ","mfg_exp","2008","","",34296.368626380,"USD 2010 Millions"
+"Baseline","KGZ","mfg_exp","2008","","",869.859740192,"USD 2010 Millions"
+"Baseline","AZE","mfg_exp","2008","","",21929.192689261,"USD 2010 Millions"
+"Baseline","AFG","mfg_exp","2008","","",808.494777409,"USD 2010 Millions"
+"Baseline","UZB","mfg_exp","2008","","",8808.410081193,"USD 2010 Millions"
+"Baseline","TKM","mfg_exp","2008","","",11495.750784357,"USD 2010 Millions"
+"Baseline","TJK","mfg_exp","2008","","",1344.472952935,"USD 2010 Millions"
+"Baseline","HYA","mfg_exp","2008","","",1.1522866291E+6,"USD 2010 Millions"
+"Baseline","ROA","mfg_exp","2008","","",7.2689766059E+5,"USD 2010 Millions"
+"Baseline","PRC","agfd_imp","2008","","",-2.356308624E+4,"USD 2010 Millions"
+"Baseline","MNG","agfd_imp","2008","","",-52.540867916,"USD 2010 Millions"
+"Baseline","IND","agfd_imp","2008","","",-2716.879035139,"USD 2010 Millions"
+"Baseline","PAK","agfd_imp","2008","","",-2501.704833194,"USD 2010 Millions"
+"Baseline","RUS","agfd_imp","2008","","",-8243.911430702,"USD 2010 Millions"
+"Baseline","KAZ","agfd_imp","2008","","",-344.085855561,"USD 2010 Millions"
+"Baseline","KGZ","agfd_imp","2008","","",-82.663343625,"USD 2010 Millions"
+"Baseline","AZE","agfd_imp","2008","","",-361.492341811,"USD 2010 Millions"
+"Baseline","AFG","agfd_imp","2008","","",-146.535034194,"USD 2010 Millions"
+"Baseline","UZB","agfd_imp","2008","","",-97.816007281,"USD 2010 Millions"
+"Baseline","TKM","agfd_imp","2008","","",-1544.684644613,"USD 2010 Millions"
+"Baseline","TJK","agfd_imp","2008","","",-13.462565515,"USD 2010 Millions"
+"Baseline","HYA","agfd_imp","2008","","",-2.815845983E+4,"USD 2010 Millions"
+"Baseline","ROA","agfd_imp","2008","","",-1.995020072E+4,"USD 2010 Millions"
+"Baseline","PRC","mfg_imp","2008","","",-6.868366411E+5,"USD 2010 Millions"
+"Baseline","MNG","mfg_imp","2008","","",-2280.596809161,"USD 2010 Millions"
+"Baseline","IND","mfg_imp","2008","","",-1.943657031E+5,"USD 2010 Millions"
+"Baseline","PAK","mfg_imp","2008","","",-3.057135360E+4,"USD 2010 Millions"
+"Baseline","RUS","mfg_imp","2008","","",-1.963379592E+5,"USD 2010 Millions"
+"Baseline","KAZ","mfg_imp","2008","","",-2.736604807E+4,"USD 2010 Millions"
+"Baseline","KGZ","mfg_imp","2008","","",-2153.199721243,"USD 2010 Millions"
+"Baseline","AZE","mfg_imp","2008","","",-6687.364784809,"USD 2010 Millions"
+"Baseline","AFG","mfg_imp","2008","","",-3659.732767986,"USD 2010 Millions"
+"Baseline","UZB","mfg_imp","2008","","",-4681.702441148,"USD 2010 Millions"
+"Baseline","TKM","mfg_imp","2008","","",-5570.122698691,"USD 2010 Millions"
+"Baseline","TJK","mfg_imp","2008","","",-706.082183976,"USD 2010 Millions"
+"Baseline","HYA","mfg_imp","2008","","",-9.246879423E+5,"USD 2010 Millions"
+"Baseline","ROA","mfg_imp","2008","","",-6.698955135E+5,"USD 2010 Millions"
+"Baseline","PRC","serv_imp","2008","","",-9.241622965E+4,"USD 2010 Millions"
+"Baseline","MNG","serv_imp","2008","","",-690.795755710,"USD 2010 Millions"
+"Baseline","IND","serv_imp","2008","","",-5.074700522E+4,"USD 2010 Millions"
+"Baseline","PAK","serv_imp","2008","","",-6580.862633213,"USD 2010 Millions"
+"Baseline","RUS","serv_imp","2008","","",-4.480753655E+4,"USD 2010 Millions"
+"Baseline","KAZ","serv_imp","2008","","",-9275.421520857,"USD 2010 Millions"
+"Baseline","KGZ","serv_imp","2008","","",-495.411990218,"USD 2010 Millions"
+"Baseline","AZE","serv_imp","2008","","",-2992.949402221,"USD 2010 Millions"
+"Baseline","AFG","serv_imp","2008","","",-502.604708083,"USD 2010 Millions"
+"Baseline","UZB","serv_imp","2008","","",-1308.231249313,"USD 2010 Millions"
+"Baseline","TKM","serv_imp","2008","","",-1096.200983546,"USD 2010 Millions"
+"Baseline","TJK","serv_imp","2008","","",-209.038350470,"USD 2010 Millions"
+"Baseline","HYA","serv_imp","2008","","",-1.847556792E+5,"USD 2010 Millions"
+"Baseline","ROA","serv_imp","2008","","",-1.494655563E+5,"USD 2010 Millions"
+"Baseline","PRC","en_exp","2008","",13510.840313391,"USD 2010 Millions"
+"Baseline","MNG","en_exp","2008","",23.633830187,"USD 2010 Millions"
+"Baseline","IND","en_exp","2008","",20642.033509855,"USD 2010 Millions"
+"Baseline","PAK","en_exp","2008","",166.057647177,"USD 2010 Millions"
+"Baseline","RUS","en_exp","2008","",2.0901990447E+5,"USD 2010 Millions"
+"Baseline","KAZ","en_exp","2008","",25272.245990913,"USD 2010 Millions"
+"Baseline","KGZ","en_exp","2008","",8.355038514,"USD 2010 Millions"
+"Baseline","AZE","en_exp","2008","",21368.401501310,"USD 2010 Millions"
+"Baseline","AFG","en_exp","2008","",384.060915183,"USD 2010 Millions"
+"Baseline","UZB","en_exp","2008","",6387.051194237,"USD 2010 Millions"
+"Baseline","TKM","en_exp","2008","",7598.624882056,"USD 2010 Millions"
+"Baseline","TJK","en_exp","2008","",981.793332873,"USD 2010 Millions"
+"Baseline","HYA","en_exp","2008","",26278.601211082,"USD 2010 Millions"
+"Baseline","ROA","en_exp","2008","",89017.037845326,"USD 2010 Millions"
+"Baseline","PRC","en_imp","2008","",-1.146518153E+5,"USD 2010 Millions"
+"Baseline","MNG","en_imp","2008","",-495.135342317,"USD 2010 Millions"
+"Baseline","IND","en_imp","2008","",-7.756597196E+4,"USD 2010 Millions"
+"Baseline","PAK","en_imp","2008","",-9915.979139480,"USD 2010 Millions"
+"Baseline","RUS","en_imp","2008","",-4461.128449461,"USD 2010 Millions"
+"Baseline","KAZ","en_imp","2008","",-2040.572747278,"USD 2010 Millions"
+"Baseline","KGZ","en_imp","2008","",-639.533893007,"USD 2010 Millions"
+"Baseline","AZE","en_imp","2008","",-81.091204096,"USD 2010 Millions"
+"Baseline","AFG","en_imp","2008","",-165.899080246,"USD 2010 Millions"
+"Baseline","UZB","en_imp","2008","",-99.333790555,"USD 2010 Millions"
+"Baseline","TKM","en_imp","2008","",-82.846590347,"USD 2010 Millions"
+"Baseline","TJK","en_imp","2008","",-14.096206411,"USD 2010 Millions"
+"Baseline","HYA","en_imp","2008","",-2.856360776E+5,"USD 2010 Millions"
+"Baseline","ROA","en_imp","2008","",-1.098558834E+5,"USD 2010 Millions"
+"Baseline","PRC","en_pc","2008","COA","",339.965001354,"USD 2010 Millions"
+"Baseline","PRC","en_pc","2008","OIL","",1630.191511685,"USD 2010 Millions"
+"Baseline","PRC","en_pc","2008","GAS","",15.903750307,"USD 2010 Millions"
+"Baseline","MNG","en_pc","2008","COA","",342.919570419,"USD 2010 Millions"
+"Baseline","MNG","en_pc","2008","OIL","",128.121532144,"USD 2010 Millions"
+"Baseline","MNG","en_pc","2008","GAS","",0.000000000,"USD 2010 Millions"
+"Baseline","IND","en_pc","2008","COA","",41.943545319,"USD 2010 Millions"
+"Baseline","IND","en_pc","2008","OIL","",687.068936450,"USD 2010 Millions"
+"Baseline","IND","en_pc","2008","GAS","",9.213485194,"USD 2010 Millions"
+"Baseline","PAK","en_pc","2008","COA","",6.473542731,"USD 2010 Millions"
+"Baseline","PAK","en_pc","2008","OIL","",317.108846988,"USD 2010 Millions"
+"Baseline","PAK","en_pc","2008","GAS","",19.071059046,"USD 2010 Millions"
+"Baseline","RUS","en_pc","2008","COA","",464.157180823,"USD 2010 Millions"
+"Baseline","RUS","en_pc","2008","OIL","",13979.270895275,"USD 2010 Millions"
+"Baseline","RUS","en_pc","2008","GAS","",1665.137837916,"USD 2010 Millions"
+"Baseline","KAZ","en_pc","2008","COA","",937.076904025,"USD 2010 Millions"
+"Baseline","KAZ","en_pc","2008","OIL","",12231.460216981,"USD 2010 Millions"
+"Baseline","KAZ","en_pc","2008","GAS","",1889.096574110,"USD 2010 Millions"
+"Baseline","KGZ","en_pc","2008","COA","",18.275290886,"USD 2010 Millions"
+"Baseline","KGZ","en_pc","2008","OIL","",106.299297179,"USD 2010 Millions"
+"Baseline","KGZ","en_pc","2008","GAS","",4.311710975,"USD 2010 Millions"
+"Baseline","AZE","en_pc","2008","COA","",0.000000000,"USD 2010 Millions"
+"Baseline","AZE","en_pc","2008","OIL","",18420.826774565,"USD 2010 Millions"
+"Baseline","AZE","en_pc","2008","GAS","",587.180542290,"USD 2010 Millions"
+"Baseline","AFG","en_pc","2008","COA","",0.431594742,"USD 2010 Millions"
+"Baseline","AFG","en_pc","2008","OIL","",128.508262144,"USD 2010 Millions"
+"Baseline","AFG","en_pc","2008","GAS","",34.875078905,"USD 2010 Millions"
+"Baseline","UZB","en_pc","2008","COA","",6.116128103,"USD 2010 Millions"
+"Baseline","UZB","en_pc","2008","OIL","",1166.339650474,"USD 2010 Millions"
+"Baseline","UZB","en_pc","2008","GAS","",2065.673137099,"USD 2010 Millions"
+"Baseline","TKM","en_pc","2008","COA","",36.648374068,"USD 2010 Millions"
+"Baseline","TKM","en_pc","2008","OIL","",6399.174705722,"USD 2010 Millions"
+"Baseline","TKM","en_pc","2008","GAS","",11984.410498877,"USD 2010 Millions"
+"Baseline","TJK","en_pc","2008","COA","",3.252700985,"USD 2010 Millions"
+"Baseline","TJK","en_pc","2008","OIL","",738.699766902,"USD 2010 Millions"
+"Baseline","TJK","en_pc","2008","GAS","",1302.364585571,"USD 2010 Millions"
+"Baseline","HYA","en_pc","2008","COA","",9.906302787,"USD 2010 Millions"
+"Baseline","HYA","en_pc","2008","OIL","",12773.743849585,"USD 2010 Millions"
+"Baseline","HYA","en_pc","2008","GAS","",1.988253024,"USD 2010 Millions"
+"Baseline","ROA","en_pc","2008","COA","",319.412085645,"USD 2010 Millions"
+"Baseline","ROA","en_pc","2008","OIL","",1514.477077457,"USD 2010 Millions"
+"Baseline","ROA","en_pc","2008","GAS","",226.003636443,"USD 2010 Millions"
+"Baseline","PRC","en_int","2008","COA","",76363.673843195,"USD 2010 Millions"
+"Baseline","PRC","en_int","2008","OIL","",4.2926091052E+5,"USD 2010 Millions"
+"Baseline","PRC","en_int","2008","GAS","",4262.012323076,"USD 2010 Millions"
+"Baseline","MNG","en_int","2008","COA","",125.649519350,"USD 2010 Millions"
+"Baseline","MNG","en_int","2008","OIL","",409.095740312,"USD 2010 Millions"
+"Baseline","MNG","en_int","2008","GAS","",0.000000000,"USD 2010 Millions"
+"Baseline","IND","en_int","2008","COA","",13105.645352638,"USD 2010 Millions"
+"Baseline","IND","en_int","2008","OIL","",1.7099648917E+5,"USD 2010 Millions"
+"Baseline","IND","en_int","2008","GAS","",4871.310233730,"USD 2010 Millions"
+"Baseline","PAK","en_int","2008","COA","",713.269221693,"USD 2010 Millions"
+"Baseline","PAK","en_int","2008","OIL","",16831.371917196,"USD 2010 Millions"
+"Baseline","PAK","en_int","2008","GAS","",529.334211537,"USD 2010 Millions"
+"Baseline","RUS","en_int","2008","COA","",6983.031479062,"USD 2010 Millions"
+"Baseline","RUS","en_int","2008","OIL","",1.7844095605E+5,"USD 2010 Millions"
+"Baseline","RUS","en_int","2008","GAS","",36799.492796758,"USD 2010 Millions"
+"Baseline","KAZ","en_int","2008","COA","",1319.370272272,"USD 2010 Millions"
+"Baseline","KAZ","en_int","2008","OIL","",10748.163416029,"USD 2010 Millions"
+"Baseline","KAZ","en_int","2008","GAS","",3080.443654075,"USD 2010 Millions"
+"Baseline","KGZ","en_int","2008","COA","",64.383986638,"USD 2010 Millions"
+"Baseline","KGZ","en_int","2008","OIL","",354.794699791,"USD 2010 Millions"
+"Baseline","KGZ","en_int","2008","GAS","",185.129437747,"USD 2010 Millions"
+"Baseline","AZE","en_int","2008","COA","",0.000000000,"USD 2010 Millions"
+"Baseline","AZE","en_int","2008","OIL","",5849.107279777,"USD 2010 Millions"
+"Baseline","AZE","en_int","2008","GAS","",792.954893458,"USD 2010 Millions"
+"Baseline","AFG","en_int","2008","COA","",5.617485820,"USD 2010 Millions"
+"Baseline","AFG","en_int","2008","OIL","",406.454008592,"USD 2010 Millions"
+"Baseline","AFG","en_int","2008","GAS","",178.031625141,"USD 2010 Millions"
+"Baseline","UZB","en_int","2008","COA","",29.385639294,"USD 2010 Millions"
+"Baseline","UZB","en_int","2008","OIL","",3939.292275028,"USD 2010 Millions"
+"Baseline","UZB","en_int","2008","GAS","",3845.228870765,"USD 2010 Millions"
+"Baseline","TKM","en_int","2008","COA","",31.517639903,"USD 2010 Millions"
+"Baseline","TKM","en_int","2008","OIL","",3959.030879658,"USD 2010 Millions"
+"Baseline","TKM","en_int","2008","GAS","",4034.914951810,"USD 2010 Millions"
+"Baseline","TJK","en_int","2008","COA","",3.627529236,"USD 2010 Millions"
+"Baseline","TJK","en_int","2008","OIL","",619.447694657,"USD 2010 Millions"
+"Baseline","TJK","en_int","2008","GAS","",608.913368912,"USD 2010 Millions"
+"Baseline","HYA","en_int","2008","COA","",21685.897833815,"USD 2010 Millions"
+"Baseline","HYA","en_int","2008","OIL","",5.6461683977E+5,"USD 2010 Millions"
+"Baseline","HYA","en_int","2008","GAS","",31531.827819866,"USD 2010 Millions"
+"Baseline","ROA","en_int","2008","COA","",13470.467477325,"USD 2010 Millions"
+"Baseline","ROA","en_int","2008","OIL","",2.4449802122E+5,"USD 2010 Millions"
+"Baseline","ROA","en_int","2008","GAS","",17266.322556435,"USD 2010 Millions"
+"Baseline","PRC","va_sect","2008","COA","",1.140244119,"Percent"
+"Baseline","PRC","va_sect","2008","OIL","",1.823486756,"Percent"
+"Baseline","PRC","va_sect","2008","GAS","",0.021129074,"Percent"
+"Baseline","PRC","va_sect","2008","OMN","",2.121042840,"Percent"
+"Baseline","PRC","va_sect","2008","CRP","",6.957732176,"Percent"
+"Baseline","PRC","va_sect","2008","LVS","",4.526372426,"Percent"
+"Baseline","PRC","va_sect","2008","PFD","",2.689847893,"Percent"
+"Baseline","PRC","va_sect","2008","TXA","",3.427765740,"Percent"
+"Baseline","PRC","va_sect","2008","LMF","",9.340812236,"Percent"
+"Baseline","PRC","va_sect","2008","HMF","",16.891323916,"Percent"
+"Baseline","PRC","va_sect","2008","UTL","",3.512083294,"Percent"
+"Baseline","PRC","va_sect","2008","SRV","",47.548159531,"Percent"
+"Baseline","MNG","va_sect","2008","COA","",2.470235662,"Percent"
+"Baseline","MNG","va_sect","2008","OIL","",0.646392284,"Percent"
+"Baseline","MNG","va_sect","2008","GAS","",0.000000000,"Percent"
+"Baseline","MNG","va_sect","2008","OMN","",33.899772337,"Percent"
+"Baseline","MNG","va_sect","2008","CRP","",0.619865080,"Percent"
+"Baseline","MNG","va_sect","2008","LVS","",12.587874659,"Percent"
+"Baseline","MNG","va_sect","2008","PFD","",0.488038464,"Percent"
+"Baseline","MNG","va_sect","2008","TXA","",0.541267456,"Percent"
+"Baseline","MNG","va_sect","2008","LMF","",0.040636629,"Percent"
+"Baseline","MNG","va_sect","2008","HMF","",1.071894322,"Percent"
+"Baseline","MNG","va_sect","2008","UTL","",12.497356339,"Percent"
+"Baseline","MNG","va_sect","2008","SRV","",35.136666770,"Percent"
+"Baseline","IND","va_sect","2008","COA","",0.565615039,"Percent"
+"Baseline","IND","va_sect","2008","OIL","",1.556917025,"Percent"
+"Baseline","IND","va_sect","2008","GAS","",0.133778093,"Percent"
+"Baseline","IND","va_sect","2008","OMN","",1.577892196,"Percent"
+"Baseline","IND","va_sect","2008","CRP","",11.386959101,"Percent"
+"Baseline","IND","va_sect","2008","LVS","",5.184444679,"Percent"
+"Baseline","IND","va_sect","2008","PFD","",2.578149635,"Percent"
+"Baseline","IND","va_sect","2008","TXA","",1.771917201,"Percent"
+"Baseline","IND","va_sect","2008","LMF","",4.308037827,"Percent"
+"Baseline","IND","va_sect","2008","HMF","",7.487731918,"Percent"
+"Baseline","IND","va_sect","2008","UTL","",3.315910778,"Percent"
+"Baseline","IND","va_sect","2008","SRV","",60.132646507,"Percent"
+"Baseline","PAK","va_sect","2008","COA","",0.092829317,"Percent"
+"Baseline","PAK","va_sect","2008","OIL","",1.172350086,"Percent"
+"Baseline","PAK","va_sect","2008","GAS","",0.307243689,"Percent"
+"Baseline","PAK","va_sect","2008","OMN","",0.374847271,"Percent"
+"Baseline","PAK","va_sect","2008","CRP","",10.266418562,"Percent"
+"Baseline","PAK","va_sect","2008","LVS","",10.526400923,"Percent"
+"Baseline","PAK","va_sect","2008","PFD","",4.832034702,"Percent"
+"Baseline","PAK","va_sect","2008","TXA","",5.181245939,"Percent"
+"Baseline","PAK","va_sect","2008","LMF","",0.892162896,"Percent"
+"Baseline","PAK","va_sect","2008","HMF","",4.097550251,"Percent"
+"Baseline","PAK","va_sect","2008","UTL","",8.771696790,"Percent"
+"Baseline","PAK","va_sect","2008","SRV","",53.485219576,"Percent"
+"Baseline","RUS","va_sect","2008","COA","",0.419040195,"Percent"
+"Baseline","RUS","va_sect","2008","OIL","",12.731904665,"Percent"
+"Baseline","RUS","va_sect","2008","GAS","",1.389888907,"Percent"
+"Baseline","RUS","va_sect","2008","OMN","",1.125222891,"Percent"
+"Baseline","RUS","va_sect","2008","CRP","",4.471260402,"Percent"
+"Baseline","RUS","va_sect","2008","LVS","",1.656108808,"Percent"
+"Baseline","RUS","va_sect","2008","PFD","",2.684098079,"Percent"
+"Baseline","RUS","va_sect","2008","TXA","",0.428648070,"Percent"
+"Baseline","RUS","va_sect","2008","LMF","",2.363156764,"Percent"
+"Baseline","RUS","va_sect","2008","HMF","",6.986243056,"Percent"
+"Baseline","RUS","va_sect","2008","UTL","",4.852035287,"Percent"
+"Baseline","RUS","va_sect","2008","SRV","",60.892392874,"Percent"
+"Baseline","KAZ","va_sect","2008","COA","",1.054187599,"Percent"
+"Baseline","KAZ","va_sect","2008","OIL","",11.995047895,"Percent"
+"Baseline","KAZ","va_sect","2008","GAS","",2.429225444,"Percent"
+"Baseline","KAZ","va_sect","2008","OMN","",3.305825101,"Percent"
+"Baseline","KAZ","va_sect","2008","CRP","",2.643354261,"Percent"
+"Baseline","KAZ","va_sect","2008","LVS","",3.175004583,"Percent"
+"Baseline","KAZ","va_sect","2008","PFD","",3.518275567,"Percent"
+"Baseline","KAZ","va_sect","2008","TXA","",0.455811641,"Percent"
+"Baseline","KAZ","va_sect","2008","LMF","",1.810011313,"Percent"
+"Baseline","KAZ","va_sect","2008","HMF","",8.232548942,"Percent"
+"Baseline","KAZ","va_sect","2008","UTL","",4.275905657,"Percent"
+"Baseline","KAZ","va_sect","2008","SRV","",57.104801997,"Percent"
+"Baseline","KGZ","va_sect","2008","COA","",0.112644874,"Percent"
+"Baseline","KGZ","va_sect","2008","OIL","",0.217057801,"Percent"
+"Baseline","KGZ","va_sect","2008","GAS","",0.000000000,"Percent"
+"Baseline","KGZ","va_sect","2008","OMN","",0.022894274,"Percent"
+"Baseline","KGZ","va_sect","2008","CRP","",11.259418566,"Percent"
+"Baseline","KGZ","va_sect","2008","LVS","",8.488481050,"Percent"
+"Baseline","KGZ","va_sect","2008","PFD","",1.050120035,"Percent"
+"Baseline","KGZ","va_sect","2008","TXA","",0.727971133,"Percent"
+"Baseline","KGZ","va_sect","2008","LMF","",0.000000000,"Percent"
+"Baseline","KGZ","va_sect","2008","HMF","",8.880996830,"Percent"
+"Baseline","KGZ","va_sect","2008","UTL","",40.094847892,"Percent"
+"Baseline","KGZ","va_sect","2008","SRV","",29.145567544,"Percent"
+"Baseline","AZE","va_sect","2008","COA","",0.000000000,"Percent"
+"Baseline","AZE","va_sect","2008","OIL","",61.090684639,"Percent"
+"Baseline","AZE","va_sect","2008","GAS","",2.487361132,"Percent"
+"Baseline","AZE","va_sect","2008","OMN","",0.004444450,"Percent"
+"Baseline","AZE","va_sect","2008","CRP","",4.945716196,"Percent"
+"Baseline","AZE","va_sect","2008","LVS","",1.042415127,"Percent"
+"Baseline","AZE","va_sect","2008","PFD","",1.234403101,"Percent"
+"Baseline","AZE","va_sect","2008","TXA","",0.012927733,"Percent"
+"Baseline","AZE","va_sect","2008","LMF","",0.153985922,"Percent"
+"Baseline","AZE","va_sect","2008","HMF","",0.509777747,"Percent"
+"Baseline","AZE","va_sect","2008","UTL","",4.023424782,"Percent"
+"Baseline","AZE","va_sect","2008","SRV","",24.494859172,"Percent"
+"Baseline","AFG","va_sect","2008","COA","",0.015447698,"Percent"
+"Baseline","AFG","va_sect","2008","OIL","",3.374245919,"Percent"
+"Baseline","AFG","va_sect","2008","GAS","",2.008982934,"Percent"
+"Baseline","AFG","va_sect","2008","OMN","",2.093333163,"Percent"
+"Baseline","AFG","va_sect","2008","CRP","",17.492469030,"Percent"
+"Baseline","AFG","va_sect","2008","LVS","",5.450524850,"Percent"
+"Baseline","AFG","va_sect","2008","PFD","",2.310382017,"Percent"
+"Baseline","AFG","va_sect","2008","TXA","",0.746027043,"Percent"
+"Baseline","AFG","va_sect","2008","LMF","",0.630046692,"Percent"
+"Baseline","AFG","va_sect","2008","HMF","",3.703112751,"Percent"
+"Baseline","AFG","va_sect","2008","UTL","",0.698814331,"Percent"
+"Baseline","AFG","va_sect","2008","SRV","",61.476613573,"Percent"
+"Baseline","UZB","va_sect","2008","COA","",0.078967115,"Percent"
+"Baseline","UZB","va_sect","2008","OIL","",6.907872932,"Percent"
+"Baseline","UZB","va_sect","2008","GAS","",27.816712401,"Percent"
+"Baseline","UZB","va_sect","2008","OMN","",0.471852688,"Percent"
+"Baseline","UZB","va_sect","2008","CRP","",7.302406086,"Percent"
+"Baseline","UZB","va_sect","2008","LVS","",3.740865512,"Percent"
+"Baseline","UZB","va_sect","2008","PFD","",0.822839907,"Percent"
+"Baseline","UZB","va_sect","2008","TXA","",0.438437033,"Percent"
+"Baseline","UZB","va_sect","2008","LMF","",0.047845055,"Percent"
+"Baseline","UZB","va_sect","2008","HMF","",6.065196226,"Percent"
+"Baseline","UZB","va_sect","2008","UTL","",13.118461704,"Percent"
+"Baseline","UZB","va_sect","2008","SRV","",33.188543340,"Percent"
+"Baseline","TKM","va_sect","2008","COA","",0.080378646,"Percent"
+"Baseline","TKM","va_sect","2008","OIL","",6.343526760,"Percent"
+"Baseline","TKM","va_sect","2008","GAS","",27.015128902,"Percent"
+"Baseline","TKM","va_sect","2008","OMN","",0.895464270,"Percent"
+"Baseline","TKM","va_sect","2008","CRP","",1.337337097,"Percent"
+"Baseline","TKM","va_sect","2008","LVS","",2.923018598,"Percent"
+"Baseline","TKM","va_sect","2008","PFD","",0.213845059,"Percent"
+"Baseline","TKM","va_sect","2008","TXA","",0.035746251,"Percent"
+"Baseline","TKM","va_sect","2008","LMF","",0.087580522,"Percent"
+"Baseline","TKM","va_sect","2008","HMF","",12.468345243,"Percent"
+"Baseline","TKM","va_sect","2008","UTL","",12.077156688,"Percent"
+"Baseline","TKM","va_sect","2008","SRV","",36.522471964,"Percent"
+"Baseline","TJK","va_sect","2008","COA","",0.049738646,"Percent"
+"Baseline","TJK","va_sect","2008","OIL","",6.964599639,"Percent"
+"Baseline","TJK","va_sect","2008","GAS","",27.951571827,"Percent"
+"Baseline","TJK","va_sect","2008","OMN","",0.414033225,"Percent"
+"Baseline","TJK","va_sect","2008","CRP","",7.792384867,"Percent"
+"Baseline","TJK","va_sect","2008","LVS","",3.883377838,"Percent"
+"Baseline","TJK","va_sect","2008","PFD","",0.889925889,"Percent"
+"Baseline","TJK","va_sect","2008","TXA","",0.445238469,"Percent"
+"Baseline","TJK","va_sect","2008","LMF","",0.000000000,"Percent"
+"Baseline","TJK","va_sect","2008","HMF","",5.590633208,"Percent"
+"Baseline","TJK","va_sect","2008","UTL","",13.467893129,"Percent"
+"Baseline","TJK","va_sect","2008","SRV","",32.550603263,"Percent"
+"Baseline","HYA","va_sect","2008","COA","",0.005780494,"Percent"
+"Baseline","HYA","va_sect","2008","OIL","",0.227298589,"Percent"
+"Baseline","HYA","va_sect","2008","GAS","",0.000351080,"Percent"
+"Baseline","HYA","va_sect","2008","OMN","",0.243838676,"Percent"
+"Baseline","HYA","va_sect","2008","CRP","",1.188685514,"Percent"
+"Baseline","HYA","va_sect","2008","LVS","",0.349572495,"Percent"
+"Baseline","HYA","va_sect","2008","PFD","",2.192743452,"Percent"
+"Baseline","HYA","va_sect","2008","TXA","",0.735122972,"Percent"
+"Baseline","HYA","va_sect","2008","LMF","",4.827714695,"Percent"
+"Baseline","HYA","va_sect","2008","HMF","",13.344237103,"Percent"
+"Baseline","HYA","va_sect","2008","UTL","",1.907680036,"Percent"
+"Baseline","HYA","va_sect","2008","SRV","",74.976974894,"Percent"
+"Baseline","ROA","va_sect","2008","COA","",1.260276118,"Percent"
+"Baseline","ROA","va_sect","2008","OIL","",2.661723314,"Percent"
+"Baseline","ROA","va_sect","2008","GAS","",1.186549337,"Percent"
+"Baseline","ROA","va_sect","2008","OMN","",3.460890481,"Percent"
+"Baseline","ROA","va_sect","2008","CRP","",4.601999010,"Percent"
+"Baseline","ROA","va_sect","2008","LVS","",2.617451148,"Percent"
+"Baseline","ROA","va_sect","2008","PFD","",3.529641162,"Percent"
+"Baseline","ROA","va_sect","2008","TXA","",2.313500512,"Percent"
+"Baseline","ROA","va_sect","2008","LMF","",6.036069164,"Percent"
+"Baseline","ROA","va_sect","2008","HMF","",8.956786665,"Percent"
+"Baseline","ROA","va_sect","2008","UTL","",2.530149465,"Percent"
+"Baseline","ROA","va_sect","2008","SRV","",60.844963625,"Percent"
+"Baseline","PRC","emp_sect","2008","COA","",0.887053661,"Percent"
+"Baseline","PRC","emp_sect","2008","OIL","",1.046193538,"Percent"
+"Baseline","PRC","emp_sect","2008","GAS","",0.005470633,"Percent"
+"Baseline","PRC","emp_sect","2008","OMN","",2.547384550,"Percent"
+"Baseline","PRC","emp_sect","2008","CRP","",6.965727507,"Percent"
+"Baseline","PRC","emp_sect","2008","LVS","",4.603811363,"Percent"
+"Baseline","PRC","emp_sect","2008","PFD","",2.789813663,"Percent"
+"Baseline","PRC","emp_sect","2008","TXA","",4.297184143,"Percent"
+"Baseline","PRC","emp_sect","2008","LMF","",7.563677115,"Percent"
+"Baseline","PRC","emp_sect","2008","HMF","",17.295496919,"Percent"
+"Baseline","PRC","emp_sect","2008","UTL","",2.492104140,"Percent"
+"Baseline","PRC","emp_sect","2008","SRV","",49.506082769,"Percent"
+"Baseline","MNG","emp_sect","2008","COA","",1.091227023,"Percent"
+"Baseline","MNG","emp_sect","2008","OIL","",0.063817908,"Percent"
+"Baseline","MNG","emp_sect","2008","GAS","",0.000000000,"Percent"
+"Baseline","MNG","emp_sect","2008","OMN","",10.671909106,"Percent"
+"Baseline","MNG","emp_sect","2008","CRP","",0.866874204,"Percent"
+"Baseline","MNG","emp_sect","2008","LVS","",17.758434327,"Percent"
+"Baseline","MNG","emp_sect","2008","PFD","",0.287475227,"Percent"
+"Baseline","MNG","emp_sect","2008","TXA","",0.494515870,"Percent"
+"Baseline","MNG","emp_sect","2008","LMF","",0.026219967,"Percent"
+"Baseline","MNG","emp_sect","2008","HMF","",0.503335572,"Percent"
+"Baseline","MNG","emp_sect","2008","UTL","",23.055669004,"Percent"
+"Baseline","MNG","emp_sect","2008","SRV","",45.180521792,"Percent"
+"Baseline","IND","emp_sect","2008","COA","",0.248636067,"Percent"
+"Baseline","IND","emp_sect","2008","OIL","",0.489893999,"Percent"
+"Baseline","IND","emp_sect","2008","GAS","",0.060321587,"Percent"
+"Baseline","IND","emp_sect","2008","OMN","",1.302744718,"Percent"
+"Baseline","IND","emp_sect","2008","CRP","",7.497846068,"Percent"
+"Baseline","IND","emp_sect","2008","LVS","",3.209179442,"Percent"
+"Baseline","IND","emp_sect","2008","PFD","",3.489665229,"Percent"
+"Baseline","IND","emp_sect","2008","TXA","",2.132115197,"Percent"
+"Baseline","IND","emp_sect","2008","LMF","",3.907222797,"Percent"
+"Baseline","IND","emp_sect","2008","HMF","",6.302204326,"Percent"
+"Baseline","IND","emp_sect","2008","UTL","",2.188777242,"Percent"
+"Baseline","IND","emp_sect","2008","SRV","",69.171393329,"Percent"
+"Baseline","PAK","emp_sect","2008","COA","",0.089643630,"Percent"
+"Baseline","PAK","emp_sect","2008","OIL","",0.434748924,"Percent"
+"Baseline","PAK","emp_sect","2008","GAS","",0.082329245,"Percent"
+"Baseline","PAK","emp_sect","2008","OMN","",0.197393974,"Percent"
+"Baseline","PAK","emp_sect","2008","CRP","",6.993178379,"Percent"
+"Baseline","PAK","emp_sect","2008","LVS","",6.997431669,"Percent"
+"Baseline","PAK","emp_sect","2008","PFD","",2.042387036,"Percent"
+"Baseline","PAK","emp_sect","2008","TXA","",2.940864439,"Percent"
+"Baseline","PAK","emp_sect","2008","LMF","",0.525508884,"Percent"
+"Baseline","PAK","emp_sect","2008","HMF","",1.619433026,"Percent"
+"Baseline","PAK","emp_sect","2008","UTL","",10.805690768,"Percent"
+"Baseline","PAK","emp_sect","2008","SRV","",67.271390026,"Percent"
+"Baseline","RUS","emp_sect","2008","COA","",0.440320550,"Percent"
+"Baseline","RUS","emp_sect","2008","OIL","",3.082069485,"Percent"
+"Baseline","RUS","emp_sect","2008","GAS","",0.468312318,"Percent"
+"Baseline","RUS","emp_sect","2008","OMN","",1.174818936,"Percent"
+"Baseline","RUS","emp_sect","2008","CRP","",5.865186224,"Percent"
+"Baseline","RUS","emp_sect","2008","LVS","",2.078322603,"Percent"
+"Baseline","RUS","emp_sect","2008","PFD","",2.497819710,"Percent"
+"Baseline","RUS","emp_sect","2008","TXA","",0.717636222,"Percent"
+"Baseline","RUS","emp_sect","2008","LMF","",3.709704881,"Percent"
+"Baseline","RUS","emp_sect","2008","HMF","",10.291747187,"Percent"
+"Baseline","RUS","emp_sect","2008","UTL","",6.533030753,"Percent"
+"Baseline","RUS","emp_sect","2008","SRV","",63.141031132,"Percent"
+"Baseline","KAZ","emp_sect","2008","COA","",0.837136113,"Percent"
+"Baseline","KAZ","emp_sect","2008","OIL","",3.515762175,"Percent"
+"Baseline","KAZ","emp_sect","2008","GAS","",0.740103455,"Percent"
+"Baseline","KAZ","emp_sect","2008","OMN","",3.252296624,"Percent"
+"Baseline","KAZ","emp_sect","2008","CRP","",2.663966396,"Percent"
+"Baseline","KAZ","emp_sect","2008","LVS","",2.971872561,"Percent"
+"Baseline","KAZ","emp_sect","2008","PFD","",2.577429406,"Percent"
+"Baseline","KAZ","emp_sect","2008","TXA","",0.422072883,"Percent"
+"Baseline","KAZ","emp_sect","2008","LMF","",1.925759794,"Percent"
+"Baseline","KAZ","emp_sect","2008","HMF","",9.825645896,"Percent"
+"Baseline","KAZ","emp_sect","2008","UTL","",5.068481534,"Percent"
+"Baseline","KAZ","emp_sect","2008","SRV","",66.199473165,"Percent"
+"Baseline","KGZ","emp_sect","2008","COA","",0.050011087,"Percent"
+"Baseline","KGZ","emp_sect","2008","OIL","",0.108632097,"Percent"
+"Baseline","KGZ","emp_sect","2008","GAS","",0.000000000,"Percent"
+"Baseline","KGZ","emp_sect","2008","OMN","",0.000000000,"Percent"
+"Baseline","KGZ","emp_sect","2008","CRP","",15.868454550,"Percent"
+"Baseline","KGZ","emp_sect","2008","LVS","",11.951680439,"Percent"
+"Baseline","KGZ","emp_sect","2008","PFD","",1.089546626,"Percent"
+"Baseline","KGZ","emp_sect","2008","TXA","",1.110442679,"Percent"
+"Baseline","KGZ","emp_sect","2008","LMF","",0.000000000,"Percent"
+"Baseline","KGZ","emp_sect","2008","HMF","",7.727022235,"Percent"
+"Baseline","KGZ","emp_sect","2008","UTL","",31.807594490,"Percent"
+"Baseline","KGZ","emp_sect","2008","SRV","",30.286615796,"Percent"
+"Baseline","AZE","emp_sect","2008","COA","",0.000000000,"Percent"
+"Baseline","AZE","emp_sect","2008","OIL","",22.696726526,"Percent"
+"Baseline","AZE","emp_sect","2008","GAS","",0.951563250,"Percent"
+"Baseline","AZE","emp_sect","2008","OMN","",0.000000000,"Percent"
+"Baseline","AZE","emp_sect","2008","CRP","",11.693609999,"Percent"
+"Baseline","AZE","emp_sect","2008","LVS","",2.447860143,"Percent"
+"Baseline","AZE","emp_sect","2008","PFD","",1.902641286,"Percent"
+"Baseline","AZE","emp_sect","2008","TXA","",0.022222529,"Percent"
+"Baseline","AZE","emp_sect","2008","LMF","",0.290552270,"Percent"
+"Baseline","AZE","emp_sect","2008","HMF","",1.164267798,"Percent"
+"Baseline","AZE","emp_sect","2008","UTL","",15.439878542,"Percent"
+"Baseline","AZE","emp_sect","2008","SRV","",43.390677658,"Percent"
+"Baseline","AFG","emp_sect","2008","COA","",0.000000000,"Percent"
+"Baseline","AFG","emp_sect","2008","OIL","",0.255290097,"Percent"
+"Baseline","AFG","emp_sect","2008","GAS","",0.087913111,"Percent"
+"Baseline","AFG","emp_sect","2008","OMN","",1.052898879,"Percent"
+"Baseline","AFG","emp_sect","2008","CRP","",19.424373229,"Percent"
+"Baseline","AFG","emp_sect","2008","LVS","",5.852310190,"Percent"
+"Baseline","AFG","emp_sect","2008","PFD","",1.035044333,"Percent"
+"Baseline","AFG","emp_sect","2008","TXA","",0.672969412,"Percent"
+"Baseline","AFG","emp_sect","2008","LMF","",0.426912838,"Percent"
+"Baseline","AFG","emp_sect","2008","HMF","",1.115687578,"Percent"
+"Baseline","AFG","emp_sect","2008","UTL","",0.375467709,"Percent"
+"Baseline","AFG","emp_sect","2008","SRV","",69.701132625,"Percent"
+"Baseline","UZB","emp_sect","2008","COA","",0.061331499,"Percent"
+"Baseline","UZB","emp_sect","2008","OIL","",2.401264122,"Percent"
+"Baseline","UZB","emp_sect","2008","GAS","",9.772458720,"Percent"
+"Baseline","UZB","emp_sect","2008","OMN","",0.521408750,"Percent"
+"Baseline","UZB","emp_sect","2008","CRP","",13.871732706,"Percent"
+"Baseline","UZB","emp_sect","2008","LVS","",7.159289714,"Percent"
+"Baseline","UZB","emp_sect","2008","PFD","",0.752454294,"Percent"
+"Baseline","UZB","emp_sect","2008","TXA","",0.630715893,"Percent"
+"Baseline","UZB","emp_sect","2008","LMF","",0.068493407,"Percent"
+"Baseline","UZB","emp_sect","2008","HMF","",7.389229406,"Percent"
+"Baseline","UZB","emp_sect","2008","UTL","",16.269748555,"Percent"
+"Baseline","UZB","emp_sect","2008","SRV","",41.101872935,"Percent"
+"Baseline","TKM","emp_sect","2008","COA","",0.056396464,"Percent"
+"Baseline","TKM","emp_sect","2008","OIL","",1.869692310,"Percent"
+"Baseline","TKM","emp_sect","2008","GAS","",8.799623902,"Percent"
+"Baseline","TKM","emp_sect","2008","OMN","",1.070504239,"Percent"
+"Baseline","TKM","emp_sect","2008","CRP","",5.993254159,"Percent"
+"Baseline","TKM","emp_sect","2008","LVS","",14.274678711,"Percent"
+"Baseline","TKM","emp_sect","2008","PFD","",0.149502247,"Percent"
+"Baseline","TKM","emp_sect","2008","TXA","",0.039409571,"Percent"
+"Baseline","TKM","emp_sect","2008","LMF","",0.120835545,"Percent"
+"Baseline","TKM","emp_sect","2008","HMF","",15.865988694,"Percent"
+"Baseline","TKM","emp_sect","2008","UTL","",12.072148686,"Percent"
+"Baseline","TKM","emp_sect","2008","SRV","",39.687965473,"Percent"
+"Baseline","TJK","emp_sect","2008","COA","",0.000000000,"Percent"
+"Baseline","TJK","emp_sect","2008","OIL","",2.470711657,"Percent"
+"Baseline","TJK","emp_sect","2008","GAS","",9.990007718,"Percent"
+"Baseline","TJK","emp_sect","2008","OMN","",0.427468134,"Percent"
+"Baseline","TJK","emp_sect","2008","CRP","",13.664341324,"Percent"
+"Baseline","TJK","emp_sect","2008","LVS","",6.838558772,"Percent"
+"Baseline","TJK","emp_sect","2008","PFD","",0.837018978,"Percent"
+"Baseline","TJK","emp_sect","2008","TXA","",0.653606263,"Percent"
+"Baseline","TJK","emp_sect","2008","LMF","",0.000000000,"Percent"
+"Baseline","TJK","emp_sect","2008","HMF","",6.882663155,"Percent"
+"Baseline","TJK","emp_sect","2008","UTL","",17.083953075,"Percent"
+"Baseline","TJK","emp_sect","2008","SRV","",41.151670924,"Percent"
+"Baseline","HYA","emp_sect","2008","COA","",0.003673284,"Percent"
+"Baseline","HYA","emp_sect","2008","OIL","",0.137096047,"Percent"
+"Baseline","HYA","emp_sect","2008","GAS","",0.000092099,"Percent"
+"Baseline","HYA","emp_sect","2008","OMN","",0.142779832,"Percent"
+"Baseline","HYA","emp_sect","2008","CRP","",0.877764844,"Percent"
+"Baseline","HYA","emp_sect","2008","LVS","",0.183820431,"Percent"
+"Baseline","HYA","emp_sect","2008","PFD","",1.658274996,"Percent"
+"Baseline","HYA","emp_sect","2008","TXA","",0.895213489,"Percent"
+"Baseline","HYA","emp_sect","2008","LMF","",4.775560846,"Percent"
+"Baseline","HYA","emp_sect","2008","HMF","",13.748133200,"Percent"
+"Baseline","HYA","emp_sect","2008","UTL","",0.764540944,"Percent"
+"Baseline","HYA","emp_sect","2008","SRV","",76.813049989,"Percent"
+"Baseline","ROA","emp_sect","2008","COA","",0.314105088,"Percent"
+"Baseline","ROA","emp_sect","2008","OIL","",0.766278254,"Percent"
+"Baseline","ROA","emp_sect","2008","GAS","",0.381865571,"Percent"
+"Baseline","ROA","emp_sect","2008","OMN","",1.971111983,"Percent"
+"Baseline","ROA","emp_sect","2008","CRP","",3.972649072,"Percent"
+"Baseline","ROA","emp_sect","2008","LVS","",2.057501742,"Percent"
+"Baseline","ROA","emp_sect","2008","PFD","",3.282332746,"Percent"
+"Baseline","ROA","emp_sect","2008","TXA","",2.235375839,"Percent"
+"Baseline","ROA","emp_sect","2008","LMF","",5.651937907,"Percent"
+"Baseline","ROA","emp_sect","2008","HMF","",8.090145521,"Percent"
+"Baseline","ROA","emp_sect","2008","UTL","",1.425331041,"Percent"
+"Baseline","ROA","emp_sect","2008","SRV","",69.851365237,"Percent"
+"Baseline","PRC","Exp_Cty","","PRC","","2008",0.000000000
+"Baseline","PRC","Exp_Cty","","MNG","","2008",698.878733214
+"Baseline","PRC","Exp_Cty","","IND","","2008",14777.279383491
+"Baseline","PRC","Exp_Cty","","PAK","","2008",3327.949672376
+"Baseline","PRC","Exp_Cty","","USA","","2008",3.5486587269E+5
+"Baseline","PRC","Exp_Cty","","RUS","","2008",18825.095163963
+"Baseline","PRC","Exp_Cty","","KAZ","","2008",3678.966980807
+"Baseline","PRC","Exp_Cty","","KGZ","","2008",253.129186207
+"Baseline","PRC","Exp_Cty","","AZE","","2008",382.539725400
+"Baseline","PRC","Exp_Cty","","AFG","","2008",107.842933871
+"Baseline","PRC","Exp_Cty","","UZB","","2008",541.363899061
+"Baseline","PRC","Exp_Cty","","TKM","","2008",745.737483122
+"Baseline","PRC","Exp_Cty","","TJK","","2008",82.034083017
+"Baseline","PRC","Exp_Cty","","EUR","","2008",3.7873060874E+5
+"Baseline","PRC","Exp_Cty","","HYA","","2008",82688.516217494
+"Baseline","PRC","Exp_Cty","","AMS","","2008",1.0031307249E+5
+"Baseline","PRC","Exp_Cty","","ROA","","2008",82332.661123877
+"Baseline","PRC","Exp_Cty","","ROW","","2008",1.2490504835E+5
+"Baseline","MNG","Exp_Cty","","PRC","","2008",1886.177113615
+"Baseline","MNG","Exp_Cty","","MNG","","2008",0.000000000
+"Baseline","MNG","Exp_Cty","","IND","","2008",0.925746440
+"Baseline","MNG","Exp_Cty","","PAK","","2008",0.129054537
+"Baseline","MNG","Exp_Cty","","USA","","2008",46.119780468
+"Baseline","MNG","Exp_Cty","","RUS","","2008",5.596657015
+"Baseline","MNG","Exp_Cty","","KAZ","","2008",0.104316502
+"Baseline","MNG","Exp_Cty","","KGZ","","2008",0.118075637
+"Baseline","MNG","Exp_Cty","","AZE","","2008",0.000000000
+"Baseline","MNG","Exp_Cty","","AFG","","2008",0.000000000
+"Baseline","MNG","Exp_Cty","","UZB","","2008",0.000000000
+"Baseline","MNG","Exp_Cty","","TKM","","2008",0.000000000
+"Baseline","MNG","Exp_Cty","","TJK","","2008",0.000000000
+"Baseline","MNG","Exp_Cty","","EUR","","2008",83.695429710
+"Baseline","MNG","Exp_Cty","","HYA","","2008",4.253721032
+"Baseline","MNG","Exp_Cty","","AMS","","2008",58.861203917
+"Baseline","MNG","Exp_Cty","","ROA","","2008",3.824553916
+"Baseline","MNG","Exp_Cty","","ROW","","2008",11.041055607
+"Baseline","IND","Exp_Cty","","PRC","","2008",13161.584564739
+"Baseline","IND","Exp_Cty","","MNG","","2008",9.700590162
+"Baseline","IND","Exp_Cty","","IND","","2008",0.000000000
+"Baseline","IND","Exp_Cty","","PAK","","2008",1256.260562410
+"Baseline","IND","Exp_Cty","","USA","","2008",39305.245433458
+"Baseline","IND","Exp_Cty","","RUS","","2008",747.503192691
+"Baseline","IND","Exp_Cty","","KAZ","","2008",144.809802974
+"Baseline","IND","Exp_Cty","","KGZ","","2008",6.677300269
+"Baseline","IND","Exp_Cty","","AZE","","2008",35.366839455
+"Baseline","IND","Exp_Cty","","AFG","","2008",226.350600606
+"Baseline","IND","Exp_Cty","","UZB","","2008",29.865291783
+"Baseline","IND","Exp_Cty","","TKM","","2008",31.268511259
+"Baseline","IND","Exp_Cty","","TJK","","2008",4.568030268
+"Baseline","IND","Exp_Cty","","EUR","","2008",66778.947886073
+"Baseline","IND","Exp_Cty","","HYA","","2008",4131.689014658
+"Baseline","IND","Exp_Cty","","AMS","","2008",12792.868058837
+"Baseline","IND","Exp_Cty","","ROA","","2008",14054.679345646
+"Baseline","IND","Exp_Cty","","ROW","","2008",49688.138574821
+"Baseline","PAK","Exp_Cty","","PRC","","2008",946.148760576
+"Baseline","PAK","Exp_Cty","","MNG","","2008",0.000000000
+"Baseline","PAK","Exp_Cty","","IND","","2008",189.261970108
+"Baseline","PAK","Exp_Cty","","PAK","","2008",0.000000000
+"Baseline","PAK","Exp_Cty","","USA","","2008",4784.159836850
+"Baseline","PAK","Exp_Cty","","RUS","","2008",133.624734236
+"Baseline","PAK","Exp_Cty","","KAZ","","2008",8.785406986
+"Baseline","PAK","Exp_Cty","","KGZ","","2008",3.081346483
+"Baseline","PAK","Exp_Cty","","AZE","","2008",6.282575922
+"Baseline","PAK","Exp_Cty","","AFG","","2008",751.828725193
+"Baseline","PAK","Exp_Cty","","UZB","","2008",1.282899121
+"Baseline","PAK","Exp_Cty","","TKM","","2008",1.251070336
+"Baseline","PAK","Exp_Cty","","TJK","","2008",0.000000000
+"Baseline","PAK","Exp_Cty","","EUR","","2008",6147.571868125
+"Baseline","PAK","Exp_Cty","","HYA","","2008",347.567508723
+"Baseline","PAK","Exp_Cty","","AMS","","2008",896.723400921
+"Baseline","PAK","Exp_Cty","","ROA","","2008",1003.225787435
+"Baseline","PAK","Exp_Cty","","ROW","","2008",4239.611752149
+"Baseline","RUS","Exp_Cty","","PRC","","2008",13123.093194384
+"Baseline","RUS","Exp_Cty","","MNG","","2008",647.364579433
+"Baseline","RUS","Exp_Cty","","IND","","2008",1866.234124414
+"Baseline","RUS","Exp_Cty","","PAK","","2008",258.573696782
+"Baseline","RUS","Exp_Cty","","USA","","2008",29185.828796417
+"Baseline","RUS","Exp_Cty","","RUS","","2008",0.000000000
+"Baseline","RUS","Exp_Cty","","KAZ","","2008",6872.305657438
+"Baseline","RUS","Exp_Cty","","KGZ","","2008",616.102836098
+"Baseline","RUS","Exp_Cty","","AZE","","2008",981.553040506
+"Baseline","RUS","Exp_Cty","","AFG","","2008",90.521483663
+"Baseline","RUS","Exp_Cty","","UZB","","2008",941.707820998
+"Baseline","RUS","Exp_Cty","","TKM","","2008",1170.956875114
+"Baseline","RUS","Exp_Cty","","TJK","","2008",142.669868012
+"Baseline","RUS","Exp_Cty","","EUR","","2008",2.0899806181E+5
+"Baseline","RUS","Exp_Cty","","HYA","","2008",7110.480160194
+"Baseline","RUS","Exp_Cty","","AMS","","2008",9372.985703800
+"Baseline","RUS","Exp_Cty","","ROA","","2008",3778.598749158
+"Baseline","RUS","Exp_Cty","","ROW","","2008",87102.714872497
+"Baseline","KAZ","Exp_Cty","","PRC","","2008",5095.358791328
+"Baseline","KAZ","Exp_Cty","","MNG","","2008",36.158884698
+"Baseline","KAZ","Exp_Cty","","IND","","2008",61.814503525
+"Baseline","KAZ","Exp_Cty","","PAK","","2008",12.331003378
+"Baseline","KAZ","Exp_Cty","","USA","","2008",1712.987284570
+"Baseline","KAZ","Exp_Cty","","RUS","","2008",4351.619485012
+"Baseline","KAZ","Exp_Cty","","KAZ","","2008",0.000000000
+"Baseline","KAZ","Exp_Cty","","KGZ","","2008",245.438868465
+"Baseline","KAZ","Exp_Cty","","AZE","","2008",182.880814593
+"Baseline","KAZ","Exp_Cty","","AFG","","2008",118.055706747
+"Baseline","KAZ","Exp_Cty","","UZB","","2008",390.953538452
+"Baseline","KAZ","Exp_Cty","","TKM","","2008",980.421598546
+"Baseline","KAZ","Exp_Cty","","TJK","","2008",62.308251991
+"Baseline","KAZ","Exp_Cty","","EUR","","2008",19262.333202653
+"Baseline","KAZ","Exp_Cty","","HYA","","2008",300.065587792
+"Baseline","KAZ","Exp_Cty","","AMS","","2008",660.322740661
+"Baseline","KAZ","Exp_Cty","","ROA","","2008",386.087897483
+"Baseline","KAZ","Exp_Cty","","ROW","","2008",9295.490347344
+"Baseline","KGZ","Exp_Cty","","PRC","","2008",74.472144482
+"Baseline","KGZ","Exp_Cty","","MNG","","2008",1.112342995
+"Baseline","KGZ","Exp_Cty","","IND","","2008",3.682300480
+"Baseline","KGZ","Exp_Cty","","PAK","","2008",0.590405773
+"Baseline","KGZ","Exp_Cty","","USA","","2008",74.186856328
+"Baseline","KGZ","Exp_Cty","","RUS","","2008",193.473807212
+"Baseline","KGZ","Exp_Cty","","KAZ","","2008",355.744029691
+"Baseline","KGZ","Exp_Cty","","KGZ","","2008",0.000000000
+"Baseline","KGZ","Exp_Cty","","AZE","","2008",1.313174595
+"Baseline","KGZ","Exp_Cty","","AFG","","2008",3.081804726
+"Baseline","KGZ","Exp_Cty","","UZB","","2008",71.788612193
+"Baseline","KGZ","Exp_Cty","","TKM","","2008",78.405938991
+"Baseline","KGZ","Exp_Cty","","TJK","","2008",10.514810157
+"Baseline","KGZ","Exp_Cty","","EUR","","2008",603.561308612
+"Baseline","KGZ","Exp_Cty","","HYA","","2008",19.042072844
+"Baseline","KGZ","Exp_Cty","","AMS","","2008",44.807591409
+"Baseline","KGZ","Exp_Cty","","ROA","","2008",23.712862620
+"Baseline","KGZ","Exp_Cty","","ROW","","2008",130.918625367
+"Baseline","AZE","Exp_Cty","","PRC","","2008",18.187267817
+"Baseline","AZE","Exp_Cty","","MNG","","2008",0.000000000
+"Baseline","AZE","Exp_Cty","","IND","","2008",71.360672239
+"Baseline","AZE","Exp_Cty","","PAK","","2008",1.776929566
+"Baseline","AZE","Exp_Cty","","USA","","2008",4059.767584012
+"Baseline","AZE","Exp_Cty","","RUS","","2008",302.630832222
+"Baseline","AZE","Exp_Cty","","KAZ","","2008",41.596506274
+"Baseline","AZE","Exp_Cty","","KGZ","","2008",0.646106780
+"Baseline","AZE","Exp_Cty","","AZE","","2008",0.000000000
+"Baseline","AZE","Exp_Cty","","AFG","","2008",14.742352800
+"Baseline","AZE","Exp_Cty","","UZB","","2008",12.027546628
+"Baseline","AZE","Exp_Cty","","TKM","","2008",14.702611172
+"Baseline","AZE","Exp_Cty","","TJK","","2008",1.663022554
+"Baseline","AZE","Exp_Cty","","EUR","","2008",14811.061613156
+"Baseline","AZE","Exp_Cty","","HYA","","2008",207.600683832
+"Baseline","AZE","Exp_Cty","","AMS","","2008",708.599359942
+"Baseline","AZE","Exp_Cty","","ROA","","2008",373.941309812
+"Baseline","AZE","Exp_Cty","","ROW","","2008",2352.583959656
+"Baseline","AFG","Exp_Cty","","PRC","","2008",42.523862255
+"Baseline","AFG","Exp_Cty","","MNG","","2008",0.000000000
+"Baseline","AFG","Exp_Cty","","IND","","2008",272.530833191
+"Baseline","AFG","Exp_Cty","","PAK","","2008",85.891422518
+"Baseline","AFG","Exp_Cty","","USA","","2008",314.578015086
+"Baseline","AFG","Exp_Cty","","RUS","","2008",15.717573699
+"Baseline","AFG","Exp_Cty","","KAZ","","2008",10.443840827
+"Baseline","AFG","Exp_Cty","","KGZ","","2008",0.000000000
+"Baseline","AFG","Exp_Cty","","AZE","","2008",0.000000000
+"Baseline","AFG","Exp_Cty","","AFG","","2008",0.000000000
+"Baseline","AFG","Exp_Cty","","UZB","","2008",0.000000000
+"Baseline","AFG","Exp_Cty","","TKM","","2008",0.000000000
+"Baseline","AFG","Exp_Cty","","TJK","","2008",0.000000000
+"Baseline","AFG","Exp_Cty","","EUR","","2008",722.632981399
+"Baseline","AFG","Exp_Cty","","HYA","","2008",47.716356102
+"Baseline","AFG","Exp_Cty","","AMS","","2008",129.646653933
+"Baseline","AFG","Exp_Cty","","ROA","","2008",104.157305806
+"Baseline","AFG","Exp_Cty","","ROW","","2008",257.332293986
+"Baseline","UZB","Exp_Cty","","PRC","","2008",154.923550674
+"Baseline","UZB","Exp_Cty","","MNG","","2008",0.000000000
+"Baseline","UZB","Exp_Cty","","IND","","2008",34.411009244
+"Baseline","UZB","Exp_Cty","","PAK","","2008",8.428362267
+"Baseline","UZB","Exp_Cty","","USA","","2008",746.817093339
+"Baseline","UZB","Exp_Cty","","RUS","","2008",598.138317181
+"Baseline","UZB","Exp_Cty","","KAZ","","2008",468.495182923
+"Baseline","UZB","Exp_Cty","","KGZ","","2008",129.240551397
+"Baseline","UZB","Exp_Cty","","AZE","","2008",21.745672575
+"Baseline","UZB","Exp_Cty","","AFG","","2008",0.000000000
+"Baseline","UZB","Exp_Cty","","UZB","","2008",7.392795595
+"Baseline","UZB","Exp_Cty","","TKM","","2008",5.212874979
+"Baseline","UZB","Exp_Cty","","TJK","","2008",1.082116414
+"Baseline","UZB","Exp_Cty","","EUR","","2008",3603.519207537
+"Baseline","UZB","Exp_Cty","","HYA","","2008",133.898260559
+"Baseline","UZB","Exp_Cty","","AMS","","2008",264.177471296
+"Baseline","UZB","Exp_Cty","","ROA","","2008",217.181376226
+"Baseline","UZB","Exp_Cty","","ROW","","2008",5642.683636772
+"Baseline","TKM","Exp_Cty","","PRC","","2008",120.791892656
+"Baseline","TKM","Exp_Cty","","MNG","","2008",0.000000000
+"Baseline","TKM","Exp_Cty","","IND","","2008",49.770605915
+"Baseline","TKM","Exp_Cty","","PAK","","2008",3.740988019
+"Baseline","TKM","Exp_Cty","","USA","","2008",1009.804522784
+"Baseline","TKM","Exp_Cty","","RUS","","2008",467.438754078
+"Baseline","TKM","Exp_Cty","","KAZ","","2008",723.942729044
+"Baseline","TKM","Exp_Cty","","KGZ","","2008",184.362010301
+"Baseline","TKM","Exp_Cty","","AZE","","2008",32.727386853
+"Baseline","TKM","Exp_Cty","","AFG","","2008",0.000000000
+"Baseline","TKM","Exp_Cty","","UZB","","2008",10.402954279
+"Baseline","TKM","Exp_Cty","","TKM","","2008",7.293861093
+"Baseline","TKM","Exp_Cty","","TJK","","2008",1.558484851
+"Baseline","TKM","Exp_Cty","","EUR","","2008",5045.022576952
+"Baseline","TKM","Exp_Cty","","HYA","","2008",196.952142504
+"Baseline","TKM","Exp_Cty","","AMS","","2008",373.125500321
+"Baseline","TKM","Exp_Cty","","ROA","","2008",176.523161110
+"Baseline","TKM","Exp_Cty","","ROW","","2008",6916.676783933
+"Baseline","TJK","Exp_Cty","","PRC","","2008",24.621850909
+"Baseline","TJK","Exp_Cty","","MNG","","2008",0.000000000
+"Baseline","TJK","Exp_Cty","","IND","","2008",4.983119514
+"Baseline","TJK","Exp_Cty","","PAK","","2008",1.124326993
+"Baseline","TJK","Exp_Cty","","USA","","2008",112.692381340
+"Baseline","TJK","Exp_Cty","","RUS","","2008",100.074312901
+"Baseline","TJK","Exp_Cty","","KAZ","","2008",70.464868650
+"Baseline","TJK","Exp_Cty","","KGZ","","2008",19.428452789
+"Baseline","TJK","Exp_Cty","","AZE","","2008",3.135699543
+"Baseline","TJK","Exp_Cty","","AFG","","2008",0.000000000
+"Baseline","TJK","Exp_Cty","","UZB","","2008",0.988244287
+"Baseline","TJK","Exp_Cty","","TKM","","2008",0.673528193
+"Baseline","TJK","Exp_Cty","","TJK","","2008",0.000000000
+"Baseline","TJK","Exp_Cty","","EUR","","2008",550.675988110
+"Baseline","TJK","Exp_Cty","","HYA","","2008",20.271115127
+"Baseline","TJK","Exp_Cty","","AMS","","2008",38.885308769
+"Baseline","TJK","Exp_Cty","","ROA","","2008",35.220375022
+"Baseline","TJK","Exp_Cty","","ROW","","2008",868.633245059
+"Baseline","HYA","Exp_Cty","","PRC","","2008",1.9973581412E+5
+"Baseline","HYA","Exp_Cty","","MNG","","2008",268.386565741
+"Baseline","HYA","Exp_Cty","","IND","","2008",9088.574419347
+"Baseline","HYA","Exp_Cty","","PAK","","2008",1644.316352804
+"Baseline","HYA","Exp_Cty","","USA","","2008",2.6907415882E+5
+"Baseline","HYA","Exp_Cty","","RUS","","2008",11246.466328421
+"Baseline","HYA","Exp_Cty","","KAZ","","2008",1202.142877078
+"Baseline","HYA","Exp_Cty","","KGZ","","2008",45.274145538
+"Baseline","HYA","Exp_Cty","","AZE","","2008",389.965802787
+"Baseline","HYA","Exp_Cty","","AFG","","2008",125.872220595
+"Baseline","HYA","Exp_Cty","","UZB","","2008",343.609199263
+"Baseline","HYA","Exp_Cty","","TKM","","2008",414.973945512
+"Baseline","HYA","Exp_Cty","","TJK","","2008",51.249580865
+"Baseline","HYA","Exp_Cty","","EUR","","2008",2.6083517694E+5
+"Baseline","HYA","Exp_Cty","","HYA","","2008",2.2984834191E+5
+"Baseline","HYA","Exp_Cty","","AMS","","2008",89785.080301835
+"Baseline","HYA","Exp_Cty","","ROA","","2008",1.0061891187E+5
+"Baseline","HYA","Exp_Cty","","ROW","","2008",1.0786175843E+5
+"Baseline","ROA","Exp_Cty","","PRC","","2008",1.1554680266E+5
+"Baseline","ROA","Exp_Cty","","MNG","","2008",95.584645444
+"Baseline","ROA","Exp_Cty","","IND","","2008",36660.594164310
+"Baseline","ROA","Exp_Cty","","PAK","","2008",3767.483683850
+"Baseline","ROA","Exp_Cty","","USA","","2008",1.8363687773E+5
+"Baseline","ROA","Exp_Cty","","RUS","","2008",4110.306037396
+"Baseline","ROA","Exp_Cty","","KAZ","","2008",507.588749723
+"Baseline","ROA","Exp_Cty","","KGZ","","2008",34.683863264
+"Baseline","ROA","Exp_Cty","","AZE","","2008",273.559250792
+"Baseline","ROA","Exp_Cty","","AFG","","2008",376.304294275
+"Baseline","ROA","Exp_Cty","","UZB","","2008",58.470786542
+"Baseline","ROA","Exp_Cty","","TKM","","2008",69.741802911
+"Baseline","ROA","Exp_Cty","","TJK","","2008",8.921409481
+"Baseline","ROA","Exp_Cty","","EUR","","2008",2.6242659274E+5
+"Baseline","ROA","Exp_Cty","","HYA","","2008",1.1113739346E+5
+"Baseline","ROA","Exp_Cty","","AMS","","2008",49164.997992033
+"Baseline","ROA","Exp_Cty","","ROA","","2008",1.5323593587E+5
+"Baseline","ROA","Exp_Cty","","ROW","","2008",85347.629063793
+"Baseline","PRC","Imp_Cty","","PRC","","2008",0.000000000
+"Baseline","PRC","Imp_Cty","","MNG","","2008",3485.684682119
+"Baseline","PRC","Imp_Cty","","IND","","2008",14279.547684272
+"Baseline","PRC","Imp_Cty","","PAK","","2008",1034.383097407
+"Baseline","PRC","Imp_Cty","","USA","","2008",1.1107064430E+5
+"Baseline","PRC","Imp_Cty","","RUS","","2008",14076.223572886
+"Baseline","PRC","Imp_Cty","","KAZ","","2008",6226.069398744
+"Baseline","PRC","Imp_Cty","","KGZ","","2008",77.090437499
+"Baseline","PRC","Imp_Cty","","AZE","","2008",18.205140076
+"Baseline","PRC","Imp_Cty","","AFG","","2008",42.592990579
+"Baseline","PRC","Imp_Cty","","UZB","","2008",169.917768044
+"Baseline","PRC","Imp_Cty","","TKM","","2008",123.740938624
+"Baseline","PRC","Imp_Cty","","TJK","","2008",26.955603549
+"Baseline","PRC","Imp_Cty","","EUR","","2008",1.9896422328E+5
+"Baseline","PRC","Imp_Cty","","HYA","","2008",2.0794705517E+5
+"Baseline","PRC","Imp_Cty","","AMS","","2008",86911.913332667
+"Baseline","PRC","Imp_Cty","","ROA","","2008",1.2368199349E+5
+"Baseline","PRC","Imp_Cty","","ROW","","2008",1.2229944985E+5
+"Baseline","MNG","Imp_Cty","","PRC","","2008",761.186599693
+"Baseline","MNG","Imp_Cty","","MNG","","2008",0.000000000
+"Baseline","MNG","Imp_Cty","","IND","","2008",9.835006417
+"Baseline","MNG","Imp_Cty","","PAK","","2008",0.000000000
+"Baseline","MNG","Imp_Cty","","USA","","2008",183.859014167
+"Baseline","MNG","Imp_Cty","","RUS","","2008",693.412462848
+"Baseline","MNG","Imp_Cty","","KAZ","","2008",39.084041621
+"Baseline","MNG","Imp_Cty","","KGZ","","2008",1.174421661
+"Baseline","MNG","Imp_Cty","","AZE","","2008",0.000000000
+"Baseline","MNG","Imp_Cty","","AFG","","2008",0.000000000
+"Baseline","MNG","Imp_Cty","","UZB","","2008",0.000000000
+"Baseline","MNG","Imp_Cty","","TKM","","2008",0.000000000
+"Baseline","MNG","Imp_Cty","","TJK","","2008",0.000000000
+"Baseline","MNG","Imp_Cty","","EUR","","2008",738.517878889
+"Baseline","MNG","Imp_Cty","","HYA","","2008",283.253106594
+"Baseline","MNG","Imp_Cty","","AMS","","2008",72.036605779
+"Baseline","MNG","Imp_Cty","","ROA","","2008",99.781800854
+"Baseline","MNG","Imp_Cty","","ROW","","2008",155.750283312
+"Baseline","IND","Imp_Cty","","PRC","","2008",15460.762888940
+"Baseline","IND","Imp_Cty","","MNG","","2008",0.926736972
+"Baseline","IND","Imp_Cty","","IND","","2008",0.000000000
+"Baseline","IND","Imp_Cty","","PAK","","2008",206.522201650
+"Baseline","IND","Imp_Cty","","USA","","2008",29511.361976069
+"Baseline","IND","Imp_Cty","","RUS","","2008",1955.452223408
+"Baseline","IND","Imp_Cty","","KAZ","","2008",63.946099469
+"Baseline","IND","Imp_Cty","","KGZ","","2008",3.682300480
+"Baseline","IND","Imp_Cty","","AZE","","2008",73.817666954
+"Baseline","IND","Imp_Cty","","AFG","","2008",306.501766864
+"Baseline","IND","Imp_Cty","","UZB","","2008",34.611619877
+"Baseline","IND","Imp_Cty","","TKM","","2008",49.955358243
+"Baseline","IND","Imp_Cty","","TJK","","2008",5.009771479
+"Baseline","IND","Imp_Cty","","EUR","","2008",69517.845722670
+"Baseline","IND","Imp_Cty","","HYA","","2008",9507.648443620
+"Baseline","IND","Imp_Cty","","AMS","","2008",11349.857651122
+"Baseline","IND","Imp_Cty","","ROA","","2008",47891.409193756
+"Baseline","IND","Imp_Cty","","ROW","","2008",92391.014820969
+"Baseline","PAK","Imp_Cty","","PRC","","2008",3547.140516865
+"Baseline","PAK","Imp_Cty","","MNG","","2008",0.129054537
+"Baseline","PAK","Imp_Cty","","IND","","2008",1340.853661611
+"Baseline","PAK","Imp_Cty","","PAK","","2008",0.000000000
+"Baseline","PAK","Imp_Cty","","USA","","2008",3487.350382367
+"Baseline","PAK","Imp_Cty","","RUS","","2008",279.529686635
+"Baseline","PAK","Imp_Cty","","KAZ","","2008",13.039716030
+"Baseline","PAK","Imp_Cty","","KGZ","","2008",0.590405773
+"Baseline","PAK","Imp_Cty","","AZE","","2008",1.795764848
+"Baseline","PAK","Imp_Cty","","AFG","","2008",101.457136885
+"Baseline","PAK","Imp_Cty","","UZB","","2008",8.827121577
+"Baseline","PAK","Imp_Cty","","TKM","","2008",3.750756411
+"Baseline","PAK","Imp_Cty","","TJK","","2008",1.196786332
+"Baseline","PAK","Imp_Cty","","EUR","","2008",9845.246071444
+"Baseline","PAK","Imp_Cty","","HYA","","2008",1722.120706675
+"Baseline","PAK","Imp_Cty","","AMS","","2008",1322.971122537
+"Baseline","PAK","Imp_Cty","","ROA","","2008",4103.269938163
+"Baseline","PAK","Imp_Cty","","ROW","","2008",14084.124049490
+"Baseline","RUS","Imp_Cty","","PRC","","2008",20135.876290718
+"Baseline","RUS","Imp_Cty","","MNG","","2008",6.041045148
+"Baseline","RUS","Imp_Cty","","IND","","2008",776.421970754
+"Baseline","RUS","Imp_Cty","","PAK","","2008",159.981984122
+"Baseline","RUS","Imp_Cty","","USA","","2008",10970.646042450
+"Baseline","RUS","Imp_Cty","","RUS","","2008",0.000000000
+"Baseline","RUS","Imp_Cty","","KAZ","","2008",4999.683774655
+"Baseline","RUS","Imp_Cty","","KGZ","","2008",217.021206675
+"Baseline","RUS","Imp_Cty","","AZE","","2008",360.393925076
+"Baseline","RUS","Imp_Cty","","AFG","","2008",15.830861444
+"Baseline","RUS","Imp_Cty","","UZB","","2008",684.594746586
+"Baseline","RUS","Imp_Cty","","TKM","","2008",486.246807897
+"Baseline","RUS","Imp_Cty","","TJK","","2008",115.480979975
+"Baseline","RUS","Imp_Cty","","EUR","","2008",1.4552780253E+5
+"Baseline","RUS","Imp_Cty","","HYA","","2008",11637.052057526
+"Baseline","RUS","Imp_Cty","","AMS","","2008",9924.113809102
+"Baseline","RUS","Imp_Cty","","ROA","","2008",4257.192809841
+"Baseline","RUS","Imp_Cty","","ROW","","2008",41296.078523163
+"Baseline","KAZ","Imp_Cty","","PRC","","2008",3923.694206017
+"Baseline","KAZ","Imp_Cty","","MNG","","2008",0.104316502
+"Baseline","KAZ","Imp_Cty","","IND","","2008",148.273771522
+"Baseline","KAZ","Imp_Cty","","PAK","","2008",8.974371481
+"Baseline","KAZ","Imp_Cty","","USA","","2008",2109.472625927
+"Baseline","KAZ","Imp_Cty","","RUS","","2008",7422.510541541
+"Baseline","KAZ","Imp_Cty","","KAZ","","2008",0.000000000
+"Baseline","KAZ","Imp_Cty","","KGZ","","2008",452.949369816
+"Baseline","KAZ","Imp_Cty","","AZE","","2008",44.266564031
+"Baseline","KAZ","Imp_Cty","","AFG","","2008",14.510967495
+"Baseline","KAZ","Imp_Cty","","UZB","","2008",527.036421972
+"Baseline","KAZ","Imp_Cty","","TKM","","2008",827.020073073
+"Baseline","KAZ","Imp_Cty","","TJK","","2008",79.234097675
+"Baseline","KAZ","Imp_Cty","","EUR","","2008",14488.715548082
+"Baseline","KAZ","Imp_Cty","","HYA","","2008",1227.897100740
+"Baseline","KAZ","Imp_Cty","","AMS","","2008",773.924682961
+"Baseline","KAZ","Imp_Cty","","ROA","","2008",518.431821584
+"Baseline","KAZ","Imp_Cty","","ROW","","2008",4593.294711108
+"Baseline","KGZ","Imp_Cty","","PRC","","2008",272.591050892
+"Baseline","KGZ","Imp_Cty","","MNG","","2008",0.118723602
+"Baseline","KGZ","Imp_Cty","","IND","","2008",6.742485087
+"Baseline","KGZ","Imp_Cty","","PAK","","2008",3.938332706
+"Baseline","KGZ","Imp_Cty","","USA","","2008",203.423557926
+"Baseline","KGZ","Imp_Cty","","RUS","","2008",658.224984429
+"Baseline","KGZ","Imp_Cty","","KAZ","","2008",273.579708681
+"Baseline","KGZ","Imp_Cty","","KGZ","","2008",0.000000000
+"Baseline","KGZ","Imp_Cty","","AZE","","2008",0.703455159
+"Baseline","KGZ","Imp_Cty","","AFG","","2008",0.000000000
+"Baseline","KGZ","Imp_Cty","","UZB","","2008",149.609517223
+"Baseline","KGZ","Imp_Cty","","TKM","","2008",220.140168057
+"Baseline","KGZ","Imp_Cty","","TJK","","2008",22.463539809
+"Baseline","KGZ","Imp_Cty","","EUR","","2008",536.304764144
+"Baseline","KGZ","Imp_Cty","","HYA","","2008",47.013373297
+"Baseline","KGZ","Imp_Cty","","AMS","","2008",71.149724868
+"Baseline","KGZ","Imp_Cty","","ROA","","2008",35.222671397
+"Baseline","KGZ","Imp_Cty","","ROW","","2008",263.245733874
+"Baseline","AZE","Imp_Cty","","PRC","","2008",401.285672805
+"Baseline","AZE","Imp_Cty","","MNG","","2008",0.000000000
+"Baseline","AZE","Imp_Cty","","IND","","2008",36.073280720
+"Baseline","AZE","Imp_Cty","","PAK","","2008",6.727574516
+"Baseline","AZE","Imp_Cty","","USA","","2008",553.000209088
+"Baseline","AZE","Imp_Cty","","RUS","","2008",1064.424751845
+"Baseline","AZE","Imp_Cty","","KAZ","","2008",202.529987389
+"Baseline","AZE","Imp_Cty","","KGZ","","2008",1.457555201
+"Baseline","AZE","Imp_Cty","","AZE","","2008",0.000000000
+"Baseline","AZE","Imp_Cty","","AFG","","2008",0.000000000
+"Baseline","AZE","Imp_Cty","","UZB","","2008",23.653176076
+"Baseline","AZE","Imp_Cty","","TKM","","2008",35.603605416
+"Baseline","AZE","Imp_Cty","","TJK","","2008",3.416381441
+"Baseline","AZE","Imp_Cty","","EUR","","2008",4142.201152231
+"Baseline","AZE","Imp_Cty","","HYA","","2008",396.408083450
+"Baseline","AZE","Imp_Cty","","AMS","","2008",211.104452273
+"Baseline","AZE","Imp_Cty","","ROA","","2008",301.397911428
+"Baseline","AZE","Imp_Cty","","ROW","","2008",2688.379789162
+"Baseline","AFG","Imp_Cty","","PRC","","2008",113.524774134
+"Baseline","AFG","Imp_Cty","","MNG","","2008",0.000000000
+"Baseline","AFG","Imp_Cty","","IND","","2008",248.275264809
+"Baseline","AFG","Imp_Cty","","PAK","","2008",923.033500461
+"Baseline","AFG","Imp_Cty","","USA","","2008",573.411705805
+"Baseline","AFG","Imp_Cty","","RUS","","2008",101.293328546
+"Baseline","AFG","Imp_Cty","","KAZ","","2008",136.730335254
+"Baseline","AFG","Imp_Cty","","KGZ","","2008",3.287072859
+"Baseline","AFG","Imp_Cty","","AZE","","2008",15.508069600
+"Baseline","AFG","Imp_Cty","","AFG","","2008",0.000000000
+"Baseline","AFG","Imp_Cty","","UZB","","2008",0.000000000
+"Baseline","AFG","Imp_Cty","","TKM","","2008",0.000000000
+"Baseline","AFG","Imp_Cty","","TJK","","2008",0.000000000
+"Baseline","AFG","Imp_Cty","","EUR","","2008",770.988729001
+"Baseline","AFG","Imp_Cty","","HYA","","2008",131.494602099
+"Baseline","AFG","Imp_Cty","","AMS","","2008",81.598789250
+"Baseline","AFG","Imp_Cty","","ROA","","2008",406.824521969
+"Baseline","AFG","Imp_Cty","","ROW","","2008",833.342382160
+"Baseline","UZB","Imp_Cty","","PRC","","2008",575.600781323
+"Baseline","UZB","Imp_Cty","","MNG","","2008",0.000000000
+"Baseline","UZB","Imp_Cty","","IND","","2008",30.618386313
+"Baseline","UZB","Imp_Cty","","PAK","","2008",1.290829988
+"Baseline","UZB","Imp_Cty","","USA","","2008",414.214913273
+"Baseline","UZB","Imp_Cty","","RUS","","2008",1014.822070900
+"Baseline","UZB","Imp_Cty","","KAZ","","2008",437.555229641
+"Baseline","UZB","Imp_Cty","","KGZ","","2008",75.635861459
+"Baseline","UZB","Imp_Cty","","AZE","","2008",12.659045453
+"Baseline","UZB","Imp_Cty","","AFG","","2008",0.000000000
+"Baseline","UZB","Imp_Cty","","UZB","","2008",7.392795595
+"Baseline","UZB","Imp_Cty","","TKM","","2008",10.402954279
+"Baseline","UZB","Imp_Cty","","TJK","","2008",0.988244287
+"Baseline","UZB","Imp_Cty","","EUR","","2008",1595.393144528
+"Baseline","UZB","Imp_Cty","","HYA","","2008",356.805652385
+"Baseline","UZB","Imp_Cty","","AMS","","2008",212.763533420
+"Baseline","UZB","Imp_Cty","","ROA","","2008",59.816988921
+"Baseline","UZB","Imp_Cty","","ROW","","2008",1422.079973074
+"Baseline","TKM","Imp_Cty","","PRC","","2008",793.420978106
+"Baseline","TKM","Imp_Cty","","MNG","","2008",0.000000000
+"Baseline","TKM","Imp_Cty","","IND","","2008",32.092531023
+"Baseline","TKM","Imp_Cty","","PAK","","2008",1.259782762
+"Baseline","TKM","Imp_Cty","","USA","","2008",442.989709274
+"Baseline","TKM","Imp_Cty","","RUS","","2008",1262.217656534
+"Baseline","TKM","Imp_Cty","","KAZ","","2008",1074.073029509
+"Baseline","TKM","Imp_Cty","","KGZ","","2008",84.745935246
+"Baseline","TKM","Imp_Cty","","AZE","","2008",15.431480275
+"Baseline","TKM","Imp_Cty","","AFG","","2008",0.000000000
+"Baseline","TKM","Imp_Cty","","UZB","","2008",5.212874979
+"Baseline","TKM","Imp_Cty","","TKM","","2008",7.293861093
+"Baseline","TKM","Imp_Cty","","TJK","","2008",0.673528193
+"Baseline","TKM","Imp_Cty","","EUR","","2008",1937.200253399
+"Baseline","TKM","Imp_Cty","","HYA","","2008",431.324625957
+"Baseline","TKM","Imp_Cty","","AMS","","2008",216.317692084
+"Baseline","TKM","Imp_Cty","","ROA","","2008",72.211419020
+"Baseline","TKM","Imp_Cty","","ROW","","2008",2033.843543837
+"Baseline","TJK","Imp_Cty","","PRC","","2008",87.222412711
+"Baseline","TJK","Imp_Cty","","MNG","","2008",0.000000000
+"Baseline","TJK","Imp_Cty","","IND","","2008",4.684977869
+"Baseline","TJK","Imp_Cty","","PAK","","2008",0.000000000
+"Baseline","TJK","Imp_Cty","","USA","","2008",62.885981236
+"Baseline","TJK","Imp_Cty","","RUS","","2008",153.889071797
+"Baseline","TJK","Imp_Cty","","KAZ","","2008",69.982777360
+"Baseline","TJK","Imp_Cty","","KGZ","","2008",10.806195673
+"Baseline","TJK","Imp_Cty","","AZE","","2008",1.757084853
+"Baseline","TJK","Imp_Cty","","AFG","","2008",0.000000000
+"Baseline","TJK","Imp_Cty","","UZB","","2008",1.082116414
+"Baseline","TJK","Imp_Cty","","TKM","","2008",1.558484851
+"Baseline","TJK","Imp_Cty","","TJK","","2008",0.000000000
+"Baseline","TJK","Imp_Cty","","EUR","","2008",243.446506580
+"Baseline","TJK","Imp_Cty","","HYA","","2008",53.209966735
+"Baseline","TJK","Imp_Cty","","AMS","","2008",32.955902651
+"Baseline","TJK","Imp_Cty","","ROA","","2008",9.112381844
+"Baseline","TJK","Imp_Cty","","ROW","","2008",216.464180029
+"Baseline","HYA","Imp_Cty","","PRC","","2008",86907.093540635
+"Baseline","HYA","Imp_Cty","","MNG","","2008",4.283886306
+"Baseline","HYA","Imp_Cty","","IND","","2008",4318.479203549
+"Baseline","HYA","Imp_Cty","","PAK","","2008",363.805280677
+"Baseline","HYA","Imp_Cty","","USA","","2008",1.9654342462E+5
+"Baseline","HYA","Imp_Cty","","RUS","","2008",7421.840347665
+"Baseline","HYA","Imp_Cty","","KAZ","","2008",308.379553661
+"Baseline","HYA","Imp_Cty","","KGZ","","2008",19.087237427
+"Baseline","HYA","Imp_Cty","","AZE","","2008",214.530722120
+"Baseline","HYA","Imp_Cty","","AFG","","2008",48.698809492
+"Baseline","HYA","Imp_Cty","","UZB","","2008",134.493512010
+"Baseline","HYA","Imp_Cty","","TKM","","2008",197.215510223
+"Baseline","HYA","Imp_Cty","","TJK","","2008",20.368308339
+"Baseline","HYA","Imp_Cty","","EUR","","2008",1.9669244222E+5
+"Baseline","HYA","Imp_Cty","","HYA","","2008",2.3844102050E+5
+"Baseline","HYA","Imp_Cty","","AMS","","2008",67615.205692090
+"Baseline","HYA","Imp_Cty","","ROA","","2008",1.2671155931E+5
+"Baseline","HYA","Imp_Cty","","ROW","","2008",2.6866630355E+5
+"Baseline","ROA","Imp_Cty","","PRC","","2008",86917.643548333
+"Baseline","ROA","Imp_Cty","","MNG","","2008",3.843226565
+"Baseline","ROA","Imp_Cty","","IND","","2008",14956.152787000
+"Baseline","ROA","Imp_Cty","","PAK","","2008",1092.066654704
+"Baseline","ROA","Imp_Cty","","USA","","2008",1.1868993314E+5
+"Baseline","ROA","Imp_Cty","","RUS","","2008",3938.804857325
+"Baseline","ROA","Imp_Cty","","KAZ","","2008",406.655503547
+"Baseline","ROA","Imp_Cty","","KGZ","","2008",23.794136494
+"Baseline","ROA","Imp_Cty","","AZE","","2008",398.909271630
+"Baseline","ROA","Imp_Cty","","AFG","","2008",110.940382904
+"Baseline","ROA","Imp_Cty","","UZB","","2008",225.119232347
+"Baseline","ROA","Imp_Cty","","TKM","","2008",179.189348172
+"Baseline","ROA","Imp_Cty","","TJK","","2008",36.569333344
+"Baseline","ROA","Imp_Cty","","EUR","","2008",2.1477730759E+5
+"Baseline","ROA","Imp_Cty","","HYA","","2008",1.0494554444E+5
+"Baseline","ROA","Imp_Cty","","AMS","","2008",34010.522708881
+"Baseline","ROA","Imp_Cty","","ROA","","2008",1.6329073722E+5
+"Baseline","ROA","Imp_Cty","","ROW","","2008",1.0604807922E+5
+"Baseline","PRC","Exp_Sect","COA","","","2008",1096.417663315
+"Baseline","PRC","Exp_Sect","OIL","","","2008",12414.191648401
+"Baseline","PRC","Exp_Sect","GAS","","","2008",0.231001674
+"Baseline","PRC","Exp_Sect","OMN","","","2008",1683.134115800
+"Baseline","PRC","Exp_Sect","CRP","","","2008",10349.404159882
+"Baseline","PRC","Exp_Sect","LVS","","","2008",3582.577730734
+"Baseline","PRC","Exp_Sect","PFD","","","2008",20810.296061538
+"Baseline","PRC","Exp_Sect","TXA","","","2008",1.9100962715E+5
+"Baseline","PRC","Exp_Sect","LMF","","","2008",2.3605225927E+5
+"Baseline","PRC","Exp_Sect","HMF","","","2008",5.5364332679E+5
+"Baseline","PRC","Exp_Sect","UTL","","","2008",1073.957685873
+"Baseline","PRC","Exp_Sect","SRV","","","2008",1.3554117359E+5
+"Baseline","MNG","Exp_Sect","COA","","","2008",13.833115781
+"Baseline","MNG","Exp_Sect","OIL","","","2008",9.800714405
+"Baseline","MNG","Exp_Sect","GAS","","","2008",0.000000000
+"Baseline","MNG","Exp_Sect","OMN","","","2008",1858.268489276
+"Baseline","MNG","Exp_Sect","CRP","","","2008",0.878552800
+"Baseline","MNG","Exp_Sect","LVS","","","2008",17.279144887
+"Baseline","MNG","Exp_Sect","PFD","","","2008",2.139575349
+"Baseline","MNG","Exp_Sect","TXA","","","2008",43.617194863
+"Baseline","MNG","Exp_Sect","LMF","","","2008",1.129961208
+"Baseline","MNG","Exp_Sect","HMF","","","2008",55.885570670
+"Baseline","MNG","Exp_Sect","UTL","","","2008",0.133388452
+"Baseline","MNG","Exp_Sect","SRV","","","2008",97.881000706
+"Baseline","IND","Exp_Sect","COA","","","2008",82.816906797
+"Baseline","IND","Exp_Sect","OIL","","","2008",20559.216603057
+"Baseline","IND","Exp_Sect","GAS","","","2008",0.000000000
+"Baseline","IND","Exp_Sect","OMN","","","2008",10159.920423492
+"Baseline","IND","Exp_Sect","CRP","","","2008",8079.064544017
+"Baseline","IND","Exp_Sect","LVS","","","2008",601.230510752
+"Baseline","IND","Exp_Sect","PFD","","","2008",7631.844246392
+"Baseline","IND","Exp_Sect","TXA","","","2008",22395.239198437
+"Baseline","IND","Exp_Sect","LMF","","","2008",37308.693521412
+"Baseline","IND","Exp_Sect","HMF","","","2008",42642.015656912
+"Baseline","IND","Exp_Sect","UTL","","","2008",38.396216976
+"Baseline","IND","Exp_Sect","SRV","","","2008",52907.085771865
+"Baseline","PAK","Exp_Sect","COA","","","2008",0.000000000
+"Baseline","PAK","Exp_Sect","OIL","","","2008",166.057647177
+"Baseline","PAK","Exp_Sect","GAS","","","2008",0.000000000
+"Baseline","PAK","Exp_Sect","OMN","","","2008",157.871648755
+"Baseline","PAK","Exp_Sect","CRP","","","2008",548.900173099
+"Baseline","PAK","Exp_Sect","LVS","","","2008",60.754244044
+"Baseline","PAK","Exp_Sect","PFD","","","2008",1613.864499715
+"Baseline","PAK","Exp_Sect","TXA","","","2008",11690.826634064
+"Baseline","PAK","Exp_Sect","LMF","","","2008",675.538771467
+"Baseline","PAK","Exp_Sect","HMF","","","2008",1812.644355929
+"Baseline","PAK","Exp_Sect","UTL","","","2008",0.000000000
+"Baseline","PAK","Exp_Sect","SRV","","","2008",2733.949668912
+"Baseline","RUS","Exp_Sect","COA","","","2008",4999.819501872
+"Baseline","RUS","Exp_Sect","OIL","","","2008",1.8629196214E+5
+"Baseline","RUS","Exp_Sect","GAS","","","2008",17728.122834150
+"Baseline","RUS","Exp_Sect","OMN","","","2008",8212.762985097
+"Baseline","RUS","Exp_Sect","CRP","","","2008",6000.066168295
+"Baseline","RUS","Exp_Sect","LVS","","","2008",379.109650972
+"Baseline","RUS","Exp_Sect","PFD","","","2008",6926.812749495
+"Baseline","RUS","Exp_Sect","TXA","","","2008",863.111701510
+"Baseline","RUS","Exp_Sect","LMF","","","2008",35181.129971191
+"Baseline","RUS","Exp_Sect","HMF","","","2008",57271.349124570
+"Baseline","RUS","Exp_Sect","UTL","","","2008",14038.660281563
+"Baseline","RUS","Exp_Sect","SRV","","","2008",34366.846159095
+"Baseline","KAZ","Exp_Sect","COA","","","2008",1136.545477624
+"Baseline","KAZ","Exp_Sect","OIL","","","2008",21650.495783751
+"Baseline","KAZ","Exp_Sect","GAS","","","2008",2485.204729538
+"Baseline","KAZ","Exp_Sect","OMN","","","2008",3434.366902392
+"Baseline","KAZ","Exp_Sect","CRP","","","2008",2360.415338398
+"Baseline","KAZ","Exp_Sect","LVS","","","2008",57.914432781
+"Baseline","KAZ","Exp_Sect","PFD","","","2008",699.244078564
+"Baseline","KAZ","Exp_Sect","TXA","","","2008",187.549452304
+"Baseline","KAZ","Exp_Sect","LMF","","","2008",984.739400246
+"Baseline","KAZ","Exp_Sect","HMF","","","2008",7152.589704353
+"Baseline","KAZ","Exp_Sect","UTL","","","2008",821.151544381
+"Baseline","KAZ","Exp_Sect","SRV","","","2008",2184.411662907
+"Baseline","KGZ","Exp_Sect","COA","","","2008",0.000000000
+"Baseline","KGZ","Exp_Sect","OIL","","","2008",8.355038514
+"Baseline","KGZ","Exp_Sect","GAS","","","2008",0.000000000
+"Baseline","KGZ","Exp_Sect","OMN","","","2008",15.628398822
+"Baseline","KGZ","Exp_Sect","CRP","","","2008",163.249296234
+"Baseline","KGZ","Exp_Sect","LVS","","","2008",50.607695143
+"Baseline","KGZ","Exp_Sect","PFD","","","2008",50.146519198
+"Baseline","KGZ","Exp_Sect","TXA","","","2008",86.986677550
+"Baseline","KGZ","Exp_Sect","LMF","","","2008",27.090322781
+"Baseline","KGZ","Exp_Sect","HMF","","","2008",697.281182148
+"Baseline","KGZ","Exp_Sect","UTL","","","2008",114.035887574
+"Baseline","KGZ","Exp_Sect","SRV","","","2008",477.027670511
+"Baseline","AZE","Exp_Sect","COA","","","2008",0.000000000
+"Baseline","AZE","Exp_Sect","OIL","","","2008",21286.015739197
+"Baseline","AZE","Exp_Sect","GAS","","","2008",82.385762113
+"Baseline","AZE","Exp_Sect","OMN","","","2008",6.768715132
+"Baseline","AZE","Exp_Sect","CRP","","","2008",256.646297168
+"Baseline","AZE","Exp_Sect","LVS","","","2008",3.361154914
+"Baseline","AZE","Exp_Sect","PFD","","","2008",80.975429336
+"Baseline","AZE","Exp_Sect","TXA","","","2008",31.697422951
+"Baseline","AZE","Exp_Sect","LMF","","","2008",284.839663918
+"Baseline","AZE","Exp_Sect","HMF","","","2008",163.278671746
+"Baseline","AZE","Exp_Sect","UTL","","","2008",113.326738626
+"Baseline","AZE","Exp_Sect","SRV","","","2008",683.592763360
+"Baseline","AFG","Exp_Sect","COA","","","2008",0.000000000
+"Baseline","AFG","Exp_Sect","OIL","","","2008",384.060915183
+"Baseline","AFG","Exp_Sect","GAS","","","2008",0.000000000
+"Baseline","AFG","Exp_Sect","OMN","","","2008",64.670700665
+"Baseline","AFG","Exp_Sect","CRP","","","2008",131.297643184
+"Baseline","AFG","Exp_Sect","LVS","","","2008",42.121621620
+"Baseline","AFG","Exp_Sect","PFD","","","2008",135.228878345
+"Baseline","AFG","Exp_Sect","TXA","","","2008",33.133539504
+"Baseline","AFG","Exp_Sect","LMF","","","2008",66.099525421
+"Baseline","AFG","Exp_Sect","HMF","","","2008",189.971918955
+"Baseline","AFG","Exp_Sect","UTL","","","2008",59.489995006
+"Baseline","AFG","Exp_Sect","SRV","","","2008",897.096400918
+"Baseline","UZB","Exp_Sect","COA","","","2008",0.000000000
+"Baseline","UZB","Exp_Sect","OIL","","","2008",1268.373032520
+"Baseline","UZB","Exp_Sect","GAS","","","2008",5118.678161717
+"Baseline","UZB","Exp_Sect","OMN","","","2008",5.454990502
+"Baseline","UZB","Exp_Sect","CRP","","","2008",585.754382246
+"Baseline","UZB","Exp_Sect","LVS","","","2008",12.658985640
+"Baseline","UZB","Exp_Sect","PFD","","","2008",81.202890027
+"Baseline","UZB","Exp_Sect","TXA","","","2008",315.492552578
+"Baseline","UZB","Exp_Sect","LMF","","","2008",548.167047535
+"Baseline","UZB","Exp_Sect","HMF","","","2008",1476.496396816
+"Baseline","UZB","Exp_Sect","UTL","","","2008",1650.811297879
+"Baseline","UZB","Exp_Sect","SRV","","","2008",974.257741517
+"Baseline","TKM","Exp_Sect","COA","","","2008",0.000000000
+"Baseline","TKM","Exp_Sect","OIL","","","2008",1615.756355825
+"Baseline","TKM","Exp_Sect","GAS","","","2008",5982.868526232
+"Baseline","TKM","Exp_Sect","OMN","","","2008",9.145767153
+"Baseline","TKM","Exp_Sect","CRP","","","2008",0.225891199
+"Baseline","TKM","Exp_Sect","LVS","","","2008",0.011485433
+"Baseline","TKM","Exp_Sect","PFD","","","2008",12.147492411
+"Baseline","TKM","Exp_Sect","TXA","","","2008",21.421849525
+"Baseline","TKM","Exp_Sect","LMF","","","2008",816.927766542
+"Baseline","TKM","Exp_Sect","HMF","","","2008",3046.628793823
+"Baseline","TKM","Exp_Sect","UTL","","","2008",2377.530149479
+"Baseline","TKM","Exp_Sect","SRV","","","2008",1437.470277073
+"Baseline","TJK","Exp_Sect","COA","","","2008",0.000000000
+"Baseline","TJK","Exp_Sect","OIL","","","2008",194.074807353
+"Baseline","TJK","Exp_Sect","GAS","","","2008",787.718525519
+"Baseline","TJK","Exp_Sect","OMN","","","2008",0.502979232
+"Baseline","TJK","Exp_Sect","CRP","","","2008",107.343999185
+"Baseline","TJK","Exp_Sect","LVS","","","2008",1.553831961
+"Baseline","TJK","Exp_Sect","PFD","","","2008",11.333661582
+"Baseline","TJK","Exp_Sect","TXA","","","2008",49.474320287
+"Baseline","TJK","Exp_Sect","LMF","","","2008",83.051510763
+"Baseline","TJK","Exp_Sect","HMF","","","2008",218.820127430
+"Baseline","TJK","Exp_Sect","UTL","","","2008",250.983055426
+"Baseline","TJK","Exp_Sect","SRV","","","2008",147.015998466
+"Baseline","HYA","Exp_Sect","COA","","","2008",0.000000000
+"Baseline","HYA","Exp_Sect","OIL","","","2008",26278.601211082
+"Baseline","HYA","Exp_Sect","GAS","","","2008",0.000000000
+"Baseline","HYA","Exp_Sect","OMN","","","2008",1201.108714220
+"Baseline","HYA","Exp_Sect","CRP","","","2008",892.518257885
+"Baseline","HYA","Exp_Sect","LVS","","","2008",1201.013514956
+"Baseline","HYA","Exp_Sect","PFD","","","2008",7634.536400306
+"Baseline","HYA","Exp_Sect","TXA","","","2008",28637.767775554
+"Baseline","HYA","Exp_Sect","LMF","","","2008",1.8252962150E+5
+"Baseline","HYA","Exp_Sect","HMF","","","2008",9.0720610218E+5
+"Baseline","HYA","Exp_Sect","UTL","","","2008",62.225695469
+"Baseline","HYA","Exp_Sect","SRV","","","2008",1.2693657858E+5
+"Baseline","ROA","Exp_Sect","COA","","","2008",33370.419594620
+"Baseline","ROA","Exp_Sect","OIL","","","2008",38864.121136848
+"Baseline","ROA","Exp_Sect","GAS","","","2008",16782.497113858
+"Baseline","ROA","Exp_Sect","OMN","","","2008",74582.716497984
+"Baseline","ROA","Exp_Sect","CRP","","","2008",14733.537932927
+"Baseline","ROA","Exp_Sect","LVS","","","2008",5867.519299107
+"Baseline","ROA","Exp_Sect","PFD","","","2008",79700.154051332
+"Baseline","ROA","Exp_Sect","TXA","","","2008",81644.576077818
+"Baseline","ROA","Exp_Sect","LMF","","","2008",1.4127378073E+5
+"Baseline","ROA","Exp_Sect","HMF","","","2008",3.3526211189E+5
+"Baseline","ROA","Exp_Sect","UTL","","","2008",2557.575717002
+"Baseline","ROA","Exp_Sect","SRV","","","2008",1.8182045816E+5
+"Baseline","PRC","Imp_Sect","COA","","","2008",-3967.716642454
+"Baseline","PRC","Imp_Sect","OIL","","","2008",-1.099566374E+5
+"Baseline","PRC","Imp_Sect","GAS","","","2008",-727.461328833
+"Baseline","PRC","Imp_Sect","OMN","","","2008",-8.761973371E+4
+"Baseline","PRC","Imp_Sect","CRP","","","2008",-1.902843666E+4
+"Baseline","PRC","Imp_Sect","LVS","","","2008",-4534.649579417
+"Baseline","PRC","Imp_Sect","PFD","","","2008",-2.058023843E+4
+"Baseline","PRC","Imp_Sect","TXA","","","2008",-1.976800076E+4
+"Baseline","PRC","Imp_Sect","LMF","","","2008",-1.332345634E+5
+"Baseline","PRC","Imp_Sect","HMF","","","2008",-3.986020232E+5
+"Baseline","PRC","Imp_Sect","UTL","","","2008",-1187.591289570
+"Baseline","PRC","Imp_Sect","SRV","","","2008",-9.122863836E+4
+"Baseline","MNG","Imp_Sect","COA","","","2008",0.000000000
+"Baseline","MNG","Imp_Sect","OIL","","","2008",-495.135342317
+"Baseline","MNG","Imp_Sect","GAS","","","2008",0.000000000
+"Baseline","MNG","Imp_Sect","OMN","","","2008",-13.957789049
+"Baseline","MNG","Imp_Sect","CRP","","","2008",-43.705979520
+"Baseline","MNG","Imp_Sect","LVS","","","2008",-8.834888396
+"Baseline","MNG","Imp_Sect","PFD","","","2008",-359.272159161
+"Baseline","MNG","Imp_Sect","TXA","","","2008",-73.109440654
+"Baseline","MNG","Imp_Sect","LMF","","","2008",-274.894736026
+"Baseline","MNG","Imp_Sect","HMF","","","2008",-1078.185131004
+"Baseline","MNG","Imp_Sect","UTL","","","2008",-25.106315525
+"Baseline","MNG","Imp_Sect","SRV","","","2008",-665.689440185
+"Baseline","IND","Imp_Sect","COA","","","2008",-3811.017174038
+"Baseline","IND","Imp_Sect","OIL","","","2008",-7.098226945E+4
+"Baseline","IND","Imp_Sect","GAS","","","2008",-2772.685335052
+"Baseline","IND","Imp_Sect","OMN","","","2008",-3.050073910E+4
+"Baseline","IND","Imp_Sect","CRP","","","2008",-2467.368218093
+"Baseline","IND","Imp_Sect","LVS","","","2008",-249.510817046
+"Baseline","IND","Imp_Sect","PFD","","","2008",-5408.245166595
+"Baseline","IND","Imp_Sect","TXA","","","2008",-3494.830281758
+"Baseline","IND","Imp_Sect","LMF","","","2008",-2.954680963E+4
+"Baseline","IND","Imp_Sect","HMF","","","2008",-7.834984604E+4
+"Baseline","IND","Imp_Sect","UTL","","","2008",-474.179003129
+"Baseline","IND","Imp_Sect","SRV","","","2008",-5.027282622E+4
+"Baseline","PAK","Imp_Sect","COA","","","2008",-510.030406960
+"Baseline","PAK","Imp_Sect","OIL","","","2008",-9405.948732521
+"Baseline","PAK","Imp_Sect","GAS","","","2008",0.000000000
+"Baseline","PAK","Imp_Sect","OMN","","","2008",-209.471815656
+"Baseline","PAK","Imp_Sect","CRP","","","2008",-2439.427302136
+"Baseline","PAK","Imp_Sect","LVS","","","2008",-62.277531058
+"Baseline","PAK","Imp_Sect","PFD","","","2008",-1863.495367581
+"Baseline","PAK","Imp_Sect","TXA","","","2008",-1290.886252639
+"Baseline","PAK","Imp_Sect","LMF","","","2008",-6615.141434368
+"Baseline","PAK","Imp_Sect","HMF","","","2008",-1.088585140E+4
+"Baseline","PAK","Imp_Sect","UTL","","","2008",-9.900781040
+"Baseline","PAK","Imp_Sect","SRV","","","2008",-6570.961852172
+"Baseline","RUS","Imp_Sect","COA","","","2008",-1020.350310166
+"Baseline","RUS","Imp_Sect","OIL","","","2008",-2621.222973855
+"Baseline","RUS","Imp_Sect","GAS","","","2008",-819.555165440
+"Baseline","RUS","Imp_Sect","OMN","","","2008",-2181.052194695
+"Baseline","RUS","Imp_Sect","CRP","","","2008",-7254.235554393
+"Baseline","RUS","Imp_Sect","LVS","","","2008",-989.675876309
+"Baseline","RUS","Imp_Sect","PFD","","","2008",-1.808241298E+4
+"Baseline","RUS","Imp_Sect","TXA","","","2008",-2.152397236E+4
+"Baseline","RUS","Imp_Sect","LMF","","","2008",-3.813499181E+4
+"Baseline","RUS","Imp_Sect","HMF","","","2008",-1.141354536E+5
+"Baseline","RUS","Imp_Sect","UTL","","","2008",-523.157467269
+"Baseline","RUS","Imp_Sect","SRV","","","2008",-4.428437908E+4
+"Baseline","KAZ","Imp_Sect","COA","","","2008",-11.114845574
+"Baseline","KAZ","Imp_Sect","OIL","","","2008",-1408.968703928
+"Baseline","KAZ","Imp_Sect","GAS","","","2008",-620.489197776
+"Baseline","KAZ","Imp_Sect","OMN","","","2008",-174.755743760
+"Baseline","KAZ","Imp_Sect","CRP","","","2008",-313.290422311
+"Baseline","KAZ","Imp_Sect","LVS","","","2008",-30.795433251
+"Baseline","KAZ","Imp_Sect","PFD","","","2008",-1530.719050963
+"Baseline","KAZ","Imp_Sect","TXA","","","2008",-1893.724708690
+"Baseline","KAZ","Imp_Sect","LMF","","","2008",-5097.651076433
+"Baseline","KAZ","Imp_Sect","HMF","","","2008",-1.680338049E+4
+"Baseline","KAZ","Imp_Sect","UTL","","","2008",-143.848477601
+"Baseline","KAZ","Imp_Sect","SRV","","","2008",-9131.573043256
+"Baseline","KGZ","Imp_Sect","COA","","","2008",-48.534907398
+"Baseline","KGZ","Imp_Sect","OIL","","","2008",-409.550450051
+"Baseline","KGZ","Imp_Sect","GAS","","","2008",-181.448535558
+"Baseline","KGZ","Imp_Sect","OMN","","","2008",-33.196736065
+"Baseline","KGZ","Imp_Sect","CRP","","","2008",-81.819718420
+"Baseline","KGZ","Imp_Sect","LVS","","","2008",-0.843625205
+"Baseline","KGZ","Imp_Sect","PFD","","","2008",-271.616354555
+"Baseline","KGZ","Imp_Sect","TXA","","","2008",-42.157067632
+"Baseline","KGZ","Imp_Sect","LMF","","","2008",-474.144580188
+"Baseline","KGZ","Imp_Sect","HMF","","","2008",-725.747825861
+"Baseline","KGZ","Imp_Sect","UTL","","","2008",0.000000000
+"Baseline","KGZ","Imp_Sect","SRV","","","2008",-495.411990218
+"Baseline","AZE","Imp_Sect","COA","","","2008",0.000000000
+"Baseline","AZE","Imp_Sect","OIL","","","2008",-81.091204096
+"Baseline","AZE","Imp_Sect","GAS","","","2008",0.000000000
+"Baseline","AZE","Imp_Sect","OMN","","","2008",-25.857054199
+"Baseline","AZE","Imp_Sect","CRP","","","2008",-331.442848440
+"Baseline","AZE","Imp_Sect","LVS","","","2008",-30.049493371
+"Baseline","AZE","Imp_Sect","PFD","","","2008",-765.540111163
+"Baseline","AZE","Imp_Sect","TXA","","","2008",-467.714568301
+"Baseline","AZE","Imp_Sect","LMF","","","2008",-1410.249612737
+"Baseline","AZE","Imp_Sect","HMF","","","2008",-3962.769288513
+"Baseline","AZE","Imp_Sect","UTL","","","2008",-44.177476527
+"Baseline","AZE","Imp_Sect","SRV","","","2008",-2948.771925694
+"Baseline","AFG","Imp_Sect","COA","","","2008",-3.413987195
+"Baseline","AFG","Imp_Sect","OIL","","","2008",-162.485093052
+"Baseline","AFG","Imp_Sect","GAS","","","2008",0.000000000
+"Baseline","AFG","Imp_Sect","OMN","","","2008",-30.440565684
+"Baseline","AFG","Imp_Sect","CRP","","","2008",-131.090455975
+"Baseline","AFG","Imp_Sect","LVS","","","2008",-15.444578219
+"Baseline","AFG","Imp_Sect","PFD","","","2008",-566.904713615
+"Baseline","AFG","Imp_Sect","TXA","","","2008",-190.394748872
+"Baseline","AFG","Imp_Sect","LMF","","","2008",-645.279197392
+"Baseline","AFG","Imp_Sect","HMF","","","2008",-2091.255027861
+"Baseline","AFG","Imp_Sect","UTL","","","2008",-14.841195826
+"Baseline","AFG","Imp_Sect","SRV","","","2008",-487.763512257
+"Baseline","UZB","Imp_Sect","COA","","","2008",-2.107687035
+"Baseline","UZB","Imp_Sect","OIL","","","2008",-90.822862790
+"Baseline","UZB","Imp_Sect","GAS","","","2008",-6.403240730
+"Baseline","UZB","Imp_Sect","OMN","","","2008",-140.290707097
+"Baseline","UZB","Imp_Sect","CRP","","","2008",-89.611815458
+"Baseline","UZB","Imp_Sect","LVS","","","2008",-8.204191823
+"Baseline","UZB","Imp_Sect","PFD","","","2008",-327.838508990
+"Baseline","UZB","Imp_Sect","TXA","","","2008",-209.766495236
+"Baseline","UZB","Imp_Sect","LMF","","","2008",-943.026509054
+"Baseline","UZB","Imp_Sect","HMF","","","2008",-3101.737137313
+"Baseline","UZB","Imp_Sect","UTL","","","2008",-435.386319440
+"Baseline","UZB","Imp_Sect","SRV","","","2008",-872.844929873
+"Baseline","TKM","Imp_Sect","COA","","","2008",-1.583145235
+"Baseline","TKM","Imp_Sect","OIL","","","2008",-75.658876146
+"Baseline","TKM","Imp_Sect","GAS","","","2008",-5.604568966
+"Baseline","TKM","Imp_Sect","OMN","","","2008",-199.300574440
+"Baseline","TKM","Imp_Sect","CRP","","","2008",-1304.630194892
+"Baseline","TKM","Imp_Sect","LVS","","","2008",-240.054449721
+"Baseline","TKM","Imp_Sect","PFD","","","2008",-263.955534145
+"Baseline","TKM","Imp_Sect","TXA","","","2008",-105.140049816
+"Baseline","TKM","Imp_Sect","LMF","","","2008",-1035.958292991
+"Baseline","TKM","Imp_Sect","HMF","","","2008",-4082.222231392
+"Baseline","TKM","Imp_Sect","UTL","","","2008",-296.733272093
+"Baseline","TKM","Imp_Sect","SRV","","","2008",-799.467711453
+"Baseline","TJK","Imp_Sect","COA","","","2008",0.000000000
+"Baseline","TJK","Imp_Sect","OIL","","","2008",-14.096206411
+"Baseline","TJK","Imp_Sect","GAS","","","2008",0.000000000
+"Baseline","TJK","Imp_Sect","OMN","","","2008",-20.474940644
+"Baseline","TJK","Imp_Sect","CRP","","","2008",-12.804592811
+"Baseline","TJK","Imp_Sect","LVS","","","2008",-0.657972704
+"Baseline","TJK","Imp_Sect","PFD","","","2008",-57.808364472
+"Baseline","TJK","Imp_Sect","TXA","","","2008",-35.242006375
+"Baseline","TJK","Imp_Sect","LMF","","","2008",-145.500619965
+"Baseline","TJK","Imp_Sect","HMF","","","2008",-453.434986754
+"Baseline","TJK","Imp_Sect","UTL","","","2008",-72.271043121
+"Baseline","TJK","Imp_Sect","SRV","","","2008",-136.767307349
+"Baseline","HYA","Imp_Sect","COA","","","2008",-2.155106091E+4
+"Baseline","HYA","Imp_Sect","OIL","","","2008",-2.288478038E+5
+"Baseline","HYA","Imp_Sect","GAS","","","2008",-3.523721287E+4
+"Baseline","HYA","Imp_Sect","OMN","","","2008",-5.702615043E+4
+"Baseline","HYA","Imp_Sect","CRP","","","2008",-2.320273467E+4
+"Baseline","HYA","Imp_Sect","LVS","","","2008",-4955.725161654
+"Baseline","HYA","Imp_Sect","PFD","","","2008",-4.424843796E+4
+"Baseline","HYA","Imp_Sect","TXA","","","2008",-3.960902803E+4
+"Baseline","HYA","Imp_Sect","LMF","","","2008",-1.522684367E+5
+"Baseline","HYA","Imp_Sect","HMF","","","2008",-4.029259621E+5
+"Baseline","HYA","Imp_Sect","UTL","","","2008",-924.406552325
+"Baseline","HYA","Imp_Sect","SRV","","","2008",-1.838312727E+5
+"Baseline","ROA","Imp_Sect","COA","","","2008",-2080.137265135
+"Baseline","ROA","Imp_Sect","OIL","","","2008",-1.053082604E+5
+"Baseline","ROA","Imp_Sect","GAS","","","2008",-2467.485708633
+"Baseline","ROA","Imp_Sect","OMN","","","2008",-1.074054200E+4
+"Baseline","ROA","Imp_Sect","CRP","","","2008",-1.791672841E+4
+"Baseline","ROA","Imp_Sect","LVS","","","2008",-2033.472309086
+"Baseline","ROA","Imp_Sect","PFD","","","2008",-3.710023856E+4
+"Baseline","ROA","Imp_Sect","TXA","","","2008",-3.390332826E+4
+"Baseline","ROA","Imp_Sect","LMF","","","2008",-1.226281690E+5
+"Baseline","ROA","Imp_Sect","HMF","","","2008",-3.664078943E+5
+"Baseline","ROA","Imp_Sect","UTL","","","2008",-2440.279624829
+"Baseline","ROA","Imp_Sect","SRV","","","2008",-1.470252767E+5

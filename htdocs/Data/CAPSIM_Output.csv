@@ -1,0 +1,401 @@
+CHN,1.37E+07,gdp,USD 2010 Millions
+JPN,6.14E+06,gdp,USD 2010 Millions
+IND,3.84E+06,gdp,USD 2010 Millions
+USA,1.83E+07,gdp,USD 2010 Millions
+BRA,1.25E+06,gdp,USD 2010 Millions
+RUS,2.20E+06,gdp,USD 2010 Millions
+EUR,2.16E+07,gdp,USD 2010 Millions
+LAC,2.26E+06,gdp,USD 2010 Millions
+OPC,3.19E+06,gdp,USD 2010 Millions
+OCD,6.20E+06,gdp,USD 2010 Millions
+ODA,6.40E+06,gdp,USD 2010 Millions
+AME,2.20E+06,gdp,USD 2010 Millions
+CHN,5.96E+04,emp_gr,
+JPN,-4.05E+05,emp_gr,
+IND,7.94E+04,emp_gr,
+USA,8.47E+04,emp_gr,
+BRA,5.15E+04,emp_gr,
+RUS,-3.67E+04,emp_gr,
+EUR,-8.77E+05,emp_gr,
+LAC,9.19E+04,emp_gr,
+OPC,1.42E+05,emp_gr,
+OCD,1.56E+05,emp_gr,
+ODA,2.27E+05,emp_gr,
+AME,1.57E+05,emp_gr,
+CHN,7.46E+00,gdp_gr,
+JPN,8.35E-01,gdp_gr,
+IND,6.72E+00,gdp_gr,
+USA,1.55E+00,gdp_gr,
+BRA,2.43E+00,gdp_gr,
+RUS,5.00E+00,gdp_gr,
+EUR,1.63E+00,gdp_gr,
+LAC,4.02E+00,gdp_gr,
+OPC,3.62E+00,gdp_gr,
+OCD,2.52E+00,gdp_gr,
+ODA,4.57E+00,gdp_gr,
+AME,4.85E+00,gdp_gr,
+CHN,6.98E+00,gdp_pc_gr,
+JPN,1.24E+00,gdp_pc_gr,
+IND,5.71E+00,gdp_pc_gr,
+USA,9.64E-01,gdp_pc_gr,
+BRA,1.57E+00,gdp_pc_gr,
+RUS,5.57E+00,gdp_pc_gr,
+EUR,1.80E+00,gdp_pc_gr,
+LAC,2.93E+00,gdp_pc_gr,
+OPC,2.09E+00,gdp_pc_gr,
+OCD,1.75E+00,gdp_pc_gr,
+ODA,3.51E+00,gdp_pc_gr,
+AME,3.18E+00,gdp_pc_gr,
+CHN,4.49E-01,pop_gr,
+JPN,-4.04E-01,pop_gr,
+IND,9.48E-01,pop_gr,
+USA,5.77E-01,pop_gr,
+BRA,8.48E-01,pop_gr,
+RUS,-5.37E-01,pop_gr,
+EUR,-1.67E-01,pop_gr,
+LAC,1.06E+00,pop_gr,
+OPC,1.50E+00,pop_gr,
+OCD,7.57E-01,pop_gr,
+ODA,1.02E+00,pop_gr,
+AME,1.61E+00,pop_gr,
+CHN,-1.55E+06,agfd_imp,USD 2010 Millions
+JPN,-7.46E+04,agfd_imp,USD 2010 Millions
+IND,-6.42E+04,agfd_imp,USD 2010 Millions
+USA,-1.25E+05,agfd_imp,USD 2010 Millions
+BRA,-1.00E+04,agfd_imp,USD 2010 Millions
+RUS,-7.88E+04,agfd_imp,USD 2010 Millions
+EUR,-5.39E+05,agfd_imp,USD 2010 Millions
+LAC,-6.30E+04,agfd_imp,USD 2010 Millions
+OPC,-1.09E+05,agfd_imp,USD 2010 Millions
+OCD,-1.36E+05,agfd_imp,USD 2010 Millions
+ODA,-2.60E+05,agfd_imp,USD 2010 Millions
+AME,-9.82E+04,agfd_imp,USD 2010 Millions
+CHN,-4.66E+06,mfg_imp,USD 2010 Millions
+JPN,-9.47E+05,mfg_imp,USD 2010 Millions
+IND,-6.27E+05,mfg_imp,USD 2010 Millions
+USA,-3.04E+06,mfg_imp,USD 2010 Millions
+BRA,-2.32E+05,mfg_imp,USD 2010 Millions
+RUS,-4.40E+05,mfg_imp,USD 2010 Millions
+EUR,-6.48E+06,mfg_imp,USD 2010 Millions
+LAC,-5.62E+05,mfg_imp,USD 2010 Millions
+OPC,-1.15E+06,mfg_imp,USD 2010 Millions
+OCD,-1.93E+06,mfg_imp,USD 2010 Millions
+ODA,-3.70E+06,mfg_imp,USD 2010 Millions
+AME,-7.00E+05,mfg_imp,USD 2010 Millions
+CHN,-3.35E+05,serv_imp,USD 2010 Millions
+JPN,-1.89E+05,serv_imp,USD 2010 Millions
+IND,-9.40E+04,serv_imp,USD 2010 Millions
+USA,-4.21E+05,serv_imp,USD 2010 Millions
+BRA,-4.77E+04,serv_imp,USD 2010 Millions
+RUS,-8.84E+04,serv_imp,USD 2010 Millions
+EUR,-1.46E+06,serv_imp,USD 2010 Millions
+LAC,-9.15E+04,serv_imp,USD 2010 Millions
+OPC,-1.79E+05,serv_imp,USD 2010 Millions
+OCD,-3.20E+05,serv_imp,USD 2010 Millions
+ODA,-4.57E+05,serv_imp,USD 2010 Millions
+AME,-8.92E+04,serv_imp,USD 2010 Millions
+CHN,3.71E+03,agfd_exp,USD 2010 Millions
+JPN,3.40E+04,agfd_exp,USD 2010 Millions
+IND,7.73E+03,agfd_exp,USD 2010 Millions
+USA,6.69E+05,agfd_exp,USD 2010 Millions
+BRA,2.19E+05,agfd_exp,USD 2010 Millions
+RUS,1.78E+04,agfd_exp,USD 2010 Millions
+EUR,5.71E+05,agfd_exp,USD 2010 Millions
+LAC,1.92E+05,agfd_exp,USD 2010 Millions
+OPC,8.76E+04,agfd_exp,USD 2010 Millions
+OCD,3.26E+05,agfd_exp,USD 2010 Millions
+ODA,3.05E+05,agfd_exp,USD 2010 Millions
+AME,1.46E+05,agfd_exp,USD 2010 Millions
+CHN,5.17E+06,mfg_exp,USD 2010 Millions
+JPN,1.03E+06,mfg_exp,USD 2010 Millions
+IND,6.14E+05,mfg_exp,USD 2010 Millions
+USA,2.06E+06,mfg_exp,USD 2010 Millions
+BRA,2.51E+05,mfg_exp,USD 2010 Millions
+RUS,5.50E+05,mfg_exp,USD 2010 Millions
+EUR,5.41E+06,mfg_exp,USD 2010 Millions
+LAC,4.64E+05,mfg_exp,USD 2010 Millions
+OPC,1.31E+06,mfg_exp,USD 2010 Millions
+OCD,1.90E+06,mfg_exp,USD 2010 Millions
+ODA,3.54E+06,mfg_exp,USD 2010 Millions
+AME,5.72E+05,mfg_exp,USD 2010 Millions
+CHN,6.28E+05,serv_exp,USD 2010 Millions
+JPN,1.63E+05,serv_exp,USD 2010 Millions
+IND,7.70E+04,serv_exp,USD 2010 Millions
+USA,5.15E+05,serv_exp,USD 2010 Millions
+BRA,1.35E+04,serv_exp,USD 2010 Millions
+RUS,8.82E+04,serv_exp,USD 2010 Millions
+EUR,2.18E+06,serv_exp,USD 2010 Millions
+LAC,1.05E+05,serv_exp,USD 2010 Millions
+OPC,1.93E+05,serv_exp,USD 2010 Millions
+OCD,2.36E+05,serv_exp,USD 2010 Millions
+ODA,4.55E+05,serv_exp,USD 2010 Millions
+AME,1.79E+05,serv_exp,USD 2010 Millions
+CHN,-3.03E+05,en_imp,USD 2010 Millions
+JPN,-1.39E+05,en_imp,USD 2010 Millions
+IND,-1.65E+05,en_imp,USD 2010 Millions
+USA,-2.86E+05,en_imp,USD 2010 Millions
+BRA,-3.61E+04,en_imp,USD 2010 Millions
+RUS,-6.85E+03,en_imp,USD 2010 Millions
+EUR,-5.45E+05,en_imp,USD 2010 Millions
+LAC,-6.62E+04,en_imp,USD 2010 Millions
+OPC,-5.30E+04,en_imp,USD 2010 Millions
+OCD,-1.52E+05,en_imp,USD 2010 Millions
+ODA,-4.00E+05,en_imp,USD 2010 Millions
+AME,-7.73E+04,en_imp,USD 2010 Millions
+CHN,6.61E+04,en_exp,USD 2010 Millions
+JPN,2.46E+05,en_exp,USD 2010 Millions
+IND,3.79E+04,en_exp,USD 2010 Millions
+USA,1.24E+05,en_exp,USD 2010 Millions
+BRA,1.72E+03,en_exp,USD 2010 Millions
+RUS,1.39E+05,en_exp,USD 2010 Millions
+EUR,6.32E+05,en_exp,USD 2010 Millions
+LAC,2.48E+04,en_exp,USD 2010 Millions
+OPC,5.22E+05,en_exp,USD 2010 Millions
+OCD,1.50E+05,en_exp,USD 2010 Millions
+ODA,1.91E+05,en_exp,USD 2010 Millions
+AME,1.77E+04,en_exp,USD 2010 Millions
+CHN,1.97E+00,en_pc,Mtoe
+JPN,1.99E+00,en_pc,Mtoe
+IND,5.80E-01,en_pc,Mtoe
+USA,5.94E+00,en_pc,Mtoe
+BRA,7.74E-01,en_pc,Mtoe
+RUS,9.04E+00,en_pc,Mtoe
+EUR,2.97E+00,en_pc,Mtoe
+LAC,1.06E+00,en_pc,Mtoe
+OPC,1.92E+00,en_pc,Mtoe
+OCD,4.90E+00,en_pc,Mtoe
+ODA,9.17E-01,en_pc,Mtoe
+AME,3.74E-01,en_pc,Mtoe
+CHN,2.13E-01,en_int,Mtoe
+JPN,3.80E-02,en_int,Mtoe
+IND,2.13E-01,en_int,Mtoe
+USA,1.13E-01,en_int,Mtoe
+BRA,1.44E-01,en_int,Mtoe
+RUS,5.14E-01,en_int,Mtoe
+EUR,6.65E-02,en_int,Mtoe
+LAC,1.39E-01,en_int,Mtoe
+OPC,3.86E-01,en_int,Mtoe
+OCD,2.01E-01,en_int,Mtoe
+ODA,2.33E-01,en_int,Mtoe
+AME,1.87E-01,en_int,Mtoe
+Coal,0.3142,prim_en_shr,
+Oil,0.3242,prim_en_shr,
+Gas,0.2565,prim_en_shr,
+HNR,0.1,prim_en_shr,
+CHN,1.91E+03,CO2_hh_shr,MMTCO2e
+JPN,7.37E+02,CO2_hh_shr,MMTCO2e
+IND,7.14E+02,CO2_hh_shr,MMTCO2e
+USA,1.83E+03,CO2_hh_shr,MMTCO2e
+BRA,1.05E+02,CO2_hh_shr,MMTCO2e
+RUS,4.69E+02,CO2_hh_shr,MMTCO2e
+EUR,1.72E+03,CO2_hh_shr,MMTCO2e
+LAC,2.35E+02,CO2_hh_shr,MMTCO2e
+OPC,8.48E+02,CO2_hh_shr,MMTCO2e
+OCD,5.37E+02,CO2_hh_shr,MMTCO2e
+ODA,1.01E+03,CO2_hh_shr,MMTCO2e
+AME,2.21E+02,CO2_hh_shr,MMTCO2e
+CHN,4.60E+03,CO2_comm_shr,MMTCO2e
+JPN,1.26E+03,CO2_comm_shr,MMTCO2e
+IND,8.84E+02,CO2_comm_shr,MMTCO2e
+USA,2.21E+03,CO2_comm_shr,MMTCO2e
+BRA,9.53E+01,CO2_comm_shr,MMTCO2e
+RUS,7.89E+02,CO2_comm_shr,MMTCO2e
+EUR,2.01E+03,CO2_comm_shr,MMTCO2e
+LAC,1.98E+02,CO2_comm_shr,MMTCO2e
+OPC,5.19E+02,CO2_comm_shr,MMTCO2e
+OCD,6.18E+02,CO2_comm_shr,MMTCO2e
+ODA,1.12E+03,CO2_comm_shr,MMTCO2e
+AME,3.20E+02,CO2_comm_shr,MMTCO2e
+CHN,3.15E+03,CO2_trans_shr,MMTCO2e
+JPN,1.72E+03,CO2_trans_shr,MMTCO2e
+IND,1.08E+03,CO2_trans_shr,MMTCO2e
+USA,3.48E+03,CO2_trans_shr,MMTCO2e
+BRA,2.83E+02,CO2_trans_shr,MMTCO2e
+RUS,7.78E+02,CO2_trans_shr,MMTCO2e
+EUR,2.84E+03,CO2_trans_shr,MMTCO2e
+LAC,5.27E+02,CO2_trans_shr,MMTCO2e
+OPC,1.44E+03,CO2_trans_shr,MMTCO2e
+OCD,1.17E+03,CO2_trans_shr,MMTCO2e
+ODA,2.06E+03,CO2_trans_shr,MMTCO2e
+AME,4.83E+02,CO2_trans_shr,MMTCO2e
+CHN,2.20E+04,CO2_stat_shr,MMTCO2e
+JPN,3.34E+03,CO2_stat_shr,MMTCO2e
+IND,4.89E+03,CO2_stat_shr,MMTCO2e
+USA,5.77E+03,CO2_stat_shr,MMTCO2e
+BRA,2.22E+02,CO2_stat_shr,MMTCO2e
+RUS,3.33E+03,CO2_stat_shr,MMTCO2e
+EUR,4.91E+03,CO2_stat_shr,MMTCO2e
+LAC,5.51E+02,CO2_stat_shr,MMTCO2e
+OPC,1.99E+03,CO2_stat_shr,MMTCO2e
+OCD,2.07E+03,CO2_stat_shr,MMTCO2e
+ODA,4.87E+03,CO2_stat_shr,MMTCO2e
+AME,9.55E+02,CO2_stat_shr,MMTCO2e
+CHN,2.52E+04,CO2_em,MMTCO2e
+JPN,5.06E+03,CO2_em,MMTCO2e
+IND,5.97E+03,CO2_em,MMTCO2e
+USA,9.25E+03,CO2_em,MMTCO2e
+BRA,5.04E+02,CO2_em,MMTCO2e
+RUS,4.10E+03,CO2_em,MMTCO2e
+EUR,7.74E+03,CO2_em,MMTCO2e
+LAC,1.08E+03,CO2_em,MMTCO2e
+OPC,3.43E+03,CO2_em,MMTCO2e
+OCD,3.24E+03,CO2_em,MMTCO2e
+ODA,6.93E+03,CO2_em,MMTCO2e
+AME,1.44E+03,CO2_em,MMTCO2e
+CHN,1.48E+03,pop,Millions
+JPN,1.17E+02,pop,Millions
+IND,1.41E+03,pop,Millions
+USA,3.46E+02,pop,Millions
+BRA,2.33E+02,pop,Millions
+RUS,1.25E+02,pop,Millions
+EUR,4.84E+02,pop,Millions
+LAC,2.98E+02,pop,Millions
+OPC,6.41E+02,pop,Millions
+OCD,2.54E+02,pop,Millions
+ODA,1.62E+03,pop,Millions
+AME,1.10E+03,pop,Millions
+ppm,380,ppm,
+CHN,4.88E+02,oil,Mtoe
+JPN,1.59E+02,oil,Mtoe
+IND,2.73E+02,oil,Mtoe
+USA,8.22E+02,oil,Mtoe
+BRA,1.15E+02,oil,Mtoe
+RUS,2.49E+02,oil,Mtoe
+EUR,7.18E+02,oil,Mtoe
+LAC,1.21E+02,oil,Mtoe
+OPC,6.35E+02,oil,Mtoe
+OCD,4.64E+02,oil,Mtoe
+ODA,4.39E+02,oil,Mtoe
+AME,1.12E+02,oil,Mtoe
+CHN,8.85E+01,gas,Mtoe
+JPN,4.96E+00,gas,Mtoe
+IND,4.97E+01,gas,Mtoe
+USA,4.29E+02,gas,Mtoe
+BRA,1.44E+01,gas,Mtoe
+RUS,6.82E+02,gas,Mtoe
+EUR,3.02E+02,gas,Mtoe
+LAC,1.13E+02,gas,Mtoe
+OPC,5.51E+02,gas,Mtoe
+OCD,3.28E+02,gas,Mtoe
+ODA,5.06E+02,gas,Mtoe
+AME,6.94E+01,gas,Mtoe
+CHN,1.68E+03,Coal,Mtoe
+JPN,8.86E-03,Coal,Mtoe
+IND,3.88E+02,Coal,Mtoe
+USA,5.95E+02,Coal,Mtoe
+BRA,4.10E+00,Coal,Mtoe
+RUS,1.89E+02,Coal,Mtoe
+EUR,1.65E+02,Coal,Mtoe
+LAC,5.37E+01,Coal,Mtoe
+OPC,8.47E+00,Coal,Mtoe
+OCD,3.40E+02,Coal,Mtoe
+ODA,3.39E+02,Coal,Mtoe
+AME,1.97E+02,Coal,Mtoe
+CHN,1.55E+02,HNR,Mtoe
+JPN,5.07E+01,HNR,Mtoe
+IND,8.68E+01,HNR,Mtoe
+USA,2.62E+02,HNR,Mtoe
+BRA,3.66E+01,HNR,Mtoe
+RUS,7.92E+01,HNR,Mtoe
+EUR,2.29E+02,HNR,Mtoe
+LAC,3.85E+01,HNR,Mtoe
+OPC,2.02E+02,HNR,Mtoe
+OCD,1.48E+02,HNR,Mtoe
+ODA,1.40E+02,HNR,Mtoe
+AME,3.56E+01,HNR,Mtoe
+CHN,5.69E+04,oil_exp,USD 2010 Millions
+JPN,2.46E+05,oil_exp,USD 2010 Millions
+IND,3.78E+04,oil_exp,USD 2010 Millions
+USA,1.15E+05,oil_exp,USD 2010 Millions
+BRA,1.72E+03,oil_exp,USD 2010 Millions
+RUS,1.13E+05,oil_exp,USD 2010 Millions
+EUR,6.02E+05,oil_exp,USD 2010 Millions
+LAC,1.69E+04,oil_exp,USD 2010 Millions
+OPC,4.77E+05,oil_exp,USD 2010 Millions
+OCD,1.10E+05,oil_exp,USD 2010 Millions
+ODA,1.55E+05,oil_exp,USD 2010 Millions
+AME,9.68E+03,oil_exp,USD 2010 Millions
+CHN,5.67E+03,coal_exp,USD 2010 Millions
+JPN,0.00E+00,coal_exp,USD 2010 Millions
+IND,9.75E+01,coal_exp,USD 2010 Millions
+USA,6.79E+03,coal_exp,USD 2010 Millions
+BRA,0.00E+00,coal_exp,USD 2010 Millions
+RUS,1.82E+03,coal_exp,USD 2010 Millions
+EUR,1.52E+03,coal_exp,USD 2010 Millions
+LAC,3.97E+03,coal_exp,USD 2010 Millions
+OPC,4.58E+01,coal_exp,USD 2010 Millions
+OCD,2.06E+04,coal_exp,USD 2010 Millions
+ODA,1.58E+04,coal_exp,USD 2010 Millions
+AME,8.00E+03,coal_exp,USD 2010 Millions
+CHN,3.58E+03,gas_exp,USD 2010 Millions
+JPN,0.00E+00,gas_exp,USD 2010 Millions
+IND,0.00E+00,gas_exp,USD 2010 Millions
+USA,2.56E+03,gas_exp,USD 2010 Millions
+BRA,0.00E+00,gas_exp,USD 2010 Millions
+RUS,2.40E+04,gas_exp,USD 2010 Millions
+EUR,2.86E+04,gas_exp,USD 2010 Millions
+LAC,3.92E+03,gas_exp,USD 2010 Millions
+OPC,4.49E+04,gas_exp,USD 2010 Millions
+OCD,1.92E+04,gas_exp,USD 2010 Millions
+ODA,2.06E+04,gas_exp,USD 2010 Millions
+AME,5.37E+01,gas_exp,USD 2010 Millions
+CHN,-2.95E+05,oil_imp,USD 2010 Millions
+JPN,-1.07E+05,oil_imp,USD 2010 Millions
+IND,-1.56E+05,oil_imp,USD 2010 Millions
+USA,-2.64E+05,oil_imp,USD 2010 Millions
+BRA,-3.42E+04,oil_imp,USD 2010 Millions
+RUS,-2.61E+03,oil_imp,USD 2010 Millions
+EUR,-4.76E+05,oil_imp,USD 2010 Millions
+LAC,-6.34E+04,oil_imp,USD 2010 Millions
+OPC,-5.12E+04,oil_imp,USD 2010 Millions
+OCD,-1.37E+05,oil_imp,USD 2010 Millions
+ODA,-3.41E+05,oil_imp,USD 2010 Millions
+AME,-7.47E+04,oil_imp,USD 2010 Millions
+CHN,-7.54E+03,coal_imp,USD 2010 Millions
+JPN,-1.88E+04,coal_imp,USD 2010 Millions
+IND,-8.79E+03,coal_imp,USD 2010 Millions
+USA,-1.27E+03,coal_imp,USD 2010 Millions
+BRA,-1.11E+03,coal_imp,USD 2010 Millions
+RUS,-2.76E+03,coal_imp,USD 2010 Millions
+EUR,-1.41E+04,coal_imp,USD 2010 Millions
+LAC,-9.32E+02,coal_imp,USD 2010 Millions
+OPC,-1.50E+03,coal_imp,USD 2010 Millions
+OCD,-6.44E+03,coal_imp,USD 2010 Millions
+ODA,-1.37E+04,coal_imp,USD 2010 Millions
+AME,-1.31E+03,coal_imp,USD 2010 Millions
+CHN,-5.15E+01,gas_imp,USD 2010 Millions
+JPN,-1.36E+04,gas_imp,USD 2010 Millions
+IND,-4.71E+01,gas_imp,USD 2010 Millions
+USA,-2.05E+04,gas_imp,USD 2010 Millions
+BRA,-8.83E+02,gas_imp,USD 2010 Millions
+RUS,-1.48E+03,gas_imp,USD 2010 Millions
+EUR,-5.57E+04,gas_imp,USD 2010 Millions
+LAC,-1.86E+03,gas_imp,USD 2010 Millions
+OPC,-2.90E+02,gas_imp,USD 2010 Millions
+OCD,-9.04E+03,gas_imp,USD 2010 Millions
+ODA,-4.47E+04,gas_imp,USD 2010 Millions
+AME,-1.33E+03,gas_imp,USD 2010 Millions
+CHN,1.87E+00,CO2_em_Base,MMTCO2e
+JPN,2.51E+00,CO2_em_Base,MMTCO2e
+IND,5.13E-01,CO2_em_Base,MMTCO2e
+USA,3.15E+00,CO2_em_Base,MMTCO2e
+BRA,6.92E-01,CO2_em_Base,MMTCO2e
+RUS,2.70E+00,CO2_em_Base,MMTCO2e
+EUR,2.33E+00,CO2_em_Base,MMTCO2e
+LAC,9.46E-01,CO2_em_Base,MMTCO2e
+OPC,1.48E+00,CO2_em_Base,MMTCO2e
+OCD,2.35E+00,CO2_em_Base,MMTCO2e
+ODA,8.92E-01,CO2_em_Base,MMTCO2e
+AME,-6.52E-02,CO2_em_Base,MMTCO2e
+CHN,2.84E+00,CO2_em_2030,MMTCO2e
+JPN,3.77E+00,CO2_em_2030,MMTCO2e
+IND,1.44E+00,CO2_em_2030,MMTCO2e
+USA,3.29E+00,CO2_em_2030,MMTCO2e
+BRA,7.73E-01,CO2_em_2030,MMTCO2e
+RUS,3.49E+00,CO2_em_2030,MMTCO2e
+EUR,2.77E+00,CO2_em_2030,MMTCO2e
+LAC,1.29E+00,CO2_em_2030,MMTCO2e
+OPC,1.68E+00,CO2_em_2030,MMTCO2e
+OCD,2.54E+00,CO2_em_2030,MMTCO2e
+ODA,1.45E+00,CO2_em_2030,MMTCO2e
+AME,2.71E-01,CO2_em_2030,MMTCO2e

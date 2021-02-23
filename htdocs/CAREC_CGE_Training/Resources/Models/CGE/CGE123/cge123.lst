@@ -1,0 +1,1019 @@
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                11/25/15 12:24:39 Page 1
+CGE123 MODEL IN GAMS
+C o m p i l a t i o n
+
+
+   2   
+               This file presents a GAMS-based implementation of the 123 CGE model
+               developed at the World Bank and involving papers by Jaime de Melo,
+               Sherman Robinson, Jeff Lewis, Delfin Go, Pekka Sinko, and
+               Shanta Devarajan (in various combinations of authors).
+               The basic theory is spelled out in the paper:
+       
+                 de Melo, J. and S. Robinson, (1989).  "Product Differentiation
+                 and the Treatment of Foreign Trade in Computable General
+                 Equilibrium Models of Small Open Economies,"  Journal of
+                 International Economics 27: 47-67.
+       
+               This application is based on the description of the 123 model in
+               Applied Methods for Trade Policy Analysis:  A Handbook.
+       
+                 Devarajan, S., D.S. Go, J.D. Lewis, S. Robinson, and P.
+                 Sinko (1997), "Simple General Equilibrium Modeling,"
+                 Chapter 6 in J.F. Francois and K.A. Reinert eds.,
+                 Applied Methods for Trade Policy Analysis:  A Handbook,
+                 Cambridge University Press: Cambridge UK:  156-188.
+       
+               Last Modification: David Roland-Holst, July 2009
+       
+               The Equation numbers match those in the chapter, as do variable
+               definitions.  The core data also follow from the example provided
+               by Devarajan et al and circulated in spreadsheet form -- the
+               macro-economic accounts for Sri Lanka in 1991.  All values
+               have been scaled relative to GDP.  These data are listed below.
+       
+                                      Rs Billion      Output=1
+       
+              National Accounts
+       
+              Output (Value Added)    324.6940        1.0000
+                Wages                 163.3200        0.5030
+       
+              GDP at  market prices   375.3390        1.1560
+                Private Consumption   291.6940        0.8984
+                Public Consumption     35.5830        0.1096
+                Investment             86.3760        0.2660
+                Exports               106.3860        0.3277
+                Imports               144.7010        0.4457
+       
+              Tax Revenue
+                Sales & Excise Tax     32.0270        0.0986
+                Import Tariffs         18.6170        0.0573
+                Export Duties           1.1370        0.0035
+                Payroll Tax             0.0000        0.0000
+                Personal Income Tax     3.5390        0.0109
+                Capital Income Tax     12.8370        0.0395
+              Total                    68.1570        0.2099
+       
+              Fiscal Account
+              Revenue                  76.1790        0.2346
+                NonTax                  8.0220        0.0247
+              Current Expenditure      83.7560        0.2580
+                Goods & Services       35.5830        0.1096
+                Interest Payments      22.0730        0.0680
+                Transfers & Subsidies  26.1000        0.0804
+              Capital Expenditure      35.7710        0.1102
+              Fiscal Balance          -43.3480       -0.1335
+       
+       
+              Balance of Payments
+              Exports - Imports       -38.3150       -0.1180
+              Net Profits & Dividends  -0.7830       -0.0024
+              Interest Payments        -8.8200       -0.0272
+              Net Private Transfers    11.6000        0.0357
+              Net Official Transfers    7.9000        0.0243
+              Current Account Balance -28.4180       -0.0875
+       
+              External Debt           260.5000        0.8023
+              Debt Service Payments    20.2100        0.0622
+       
+       
+  79   
+  80  set vars /E, M, Ds, Dd, Qs, Qd, Pe
+  81             Pm, Pd, Pt, Px, Pq, T, R, Sg, Y, C, S, Z, ts/ ;
+  82   
+                 These are the definitions of our endogenous variable set
+                 E        export good quantity
+                 M        import good quantity
+                 Ds       supply of domestic good
+                 Dd       demand for domestic good
+                 Qs       supply of composite good
+                 Qd       demand for composite good
+                 Pe       domestic price of export good
+                 Pm       dometic price of import good
+                 Pd       producer price of domestic good
+                 Pt       sales price of composite good
+                 Px       price of aggregate output
+                 Pq       price of composite good
+                 T        tax revenue
+                 R        exchange rate
+                 Sg       government savings
+                 Y        total income
+                 C        aggregate consumption
+                 S        aggregate savings
+                 Z        aggregate real investment
+                 ts       a variable for endogenizing taxes
+ 106   
+ 107  set exp / benchmark, fcap, tot /;
+ 108   
+ 109  Parameters
+ 110  * Here we define a mix of policy and functional parameters
+ 111             PWm      world price of import good
+ 112             PWe      world price of export good
+ 113             tm       import tariff
+ 114             te       export subsidy rate
+ 115             ts       sales or excise of VAT tax rate
+ 116             ty       direct income tax rate
+ 117             tr       government transfers
+ 118             ft       foreign transfers to government
+ 119             re       foreign remittances to private sector
+ 120             sr       average savings rate
+ 121             X        aggregate output
+ 122             G        government demand
+ 123             B        balance of trade
+ 124             at       technical shift term for CET expression
+ 125             OMEGA    export transformation elasticity
+ 126             rt       the CET exponential term
+ 127             aq       technical shift term for CES expression
+ 128             sigma    import substitution elasticity
+ 129             rq       the CES exponential term
+ 130             bq   the CES weight term in the Armington function
+ 131             bt   the CET weight term in the national product function
+ 132             values(vars,exp) a table to hold experiment values
+ 133             pchg(vars,exp) comparative static percent changes
+ 134             ;
+ 135   
+ 136  *Initialization of parameters
+ 137   
+ 138             PWm    = 0.8860;
+ 139             PWe    = 1.0107;
+ 140             tm     = 0.1287;
+ 141             te     = 0.0107;
+ 142             ts     = 0.0839;
+ 143             ty     = 0.0350;
+ 144             tr     = 0.1237;
+ 145             ft     = 0.0243;
+ 146             re     = 0.0062;
+ 147             sr     = 0.1699;
+ 148             X      = 1.0000;
+ 149             G      = 0.1011;
+ 150             B      = 0.0840;
+ 151             OMEGA  = 0.6000;
+ 152             sigma  = 0.6000;
+ 153             at     = 2.2173;
+ 154             aq     = 1.9659;
+ 155             bq     = 0.3814;
+ 156             bt     = 0.7682;
+ 157             rt     = 1 + (1/OMEGA);
+ 158             rq     = (1/sigma) -1;
+ 159   
+ 160  Variables
+ 161  * These are our 19 endogenous variables
+ 162             endog(vars)   our endogenous variables
+ 163             GDP           our objective function
+ 164             ;
+ 165   
+ 166  *Initialization of variables
+ 167  Parameter initial(vars)  /
+ 168               E           0.3277
+ 169               M           0.5030
+ 170               Ds          0.6723
+ 171               Dd          0.6723
+ 172               Qs          1.1753
+ 173               Qd          1.1753
+ 174               Pe          1.1753
+ 175               Pm          1.0000
+ 176               Pd          1.0000
+ 177               Pt          1.0000
+ 178               Px          1.0839
+ 179               Pq          1.0000
+ 180               R           1.0000
+ 181               T           0.1990
+ 182               Sg         -0.0099
+ 183               Y           1.1298
+ 184               C           0.8288
+ 185               S           0.2660
+ 186               Z           0.2454
+ 187               ts          0.0839
+ 188                           /;
+ 189             endog.l(vars) = initial(vars);
+ 190              GDP.l = endog.l("Y");
+ 191   
+ 192           values(vars,"benchmark") = endog.l(vars);
+ 193   
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                11/25/15 12:24:39 Page 2
+CGE123 MODEL IN GAMS
+equation definitions
+
+
+ 195   
+ 196  Equations
+ 197   
+ 198  *Real flow equations with numbering following Devarajan et al
+ 199             EQ621    definition of the product transformation surface
+ 200             EQ622    definition of the Armingon aggregation function
+ 201             EQ623    expenditure definition of national income
+ 202             EQ624    supply ratios based on EQ621
+ 203             EQ625    supply ratios based on EQ622
+ 204   
+ 205  *Nominal flows
+ 206             EQ626    government tax income definition
+ 207             EQ627    value added definition of national income
+ 208             EQ628    savings definition
+ 209             EQ629    consumption definition
+ 210   
+ 211  *Price equations
+ 212             EQ630    internal import prices
+ 213             EQ631    internal export prices
+ 214             EQ632    consumer prices
+ 215             EQ633    national product price index
+ 216             EQ634    producer prices for the composite good
+ 217             EQ635    real exchange rate
+ 218   
+ 219  *Market clearing Equations
+ 220             EQ636    domestic good excess demand
+ 221             EQ637    Armington composite excess demand
+ 222             EQ638    capital and current account relationship
+ 223             EQ639    savings investment linkage
+ 224   
+ 225  *Objective function
+ 226             OBJ      This is the fake objective function for GAMS
+ 227             ;
+ 228   
+ 229  *Note that all equations are defined as implicit functions
+ 230   EQ621..  X  -
+ 231            (at * (bt*endog("E")**rt + (1-bt)*endog("Ds")**rt)**(1/rt))   =e= 0;
+ 232   EQ622..  endog("Qs")
+ 233   - (aq * (bq*endog("M")**(-rq) + (1-bq)*endog("Dd")**(-rq))**(-1/rq))   =e= 0;
+ 234   EQ623..     endog("Qd")
+ 235   - (endog("C") + endog("Z") + G)                                        =e= 0;
+ 236   EQ624..     endog("E")
+ 237   - (endog("Ds") * (((1-bt)*endog("Pe"))/(bt*endog("Pd")))**OMEGA)       =e= 0;
+ 238   EQ625..     endog("M")
+ 239   - (endog("Dd") * ((bq*endog("Pd"))/((1-bq)*endog("Pm")))**sigma)       =e= 0;
+ 240   EQ626..     endog("T")
+ 241   - (tm*endog("R")*PWm*endog("M")  + endog("ts")*endog("Pq")*endog("Qd")
+ 242   + ty*endog("Y") - te*endog("R")*PWe*endog("E"))                        =e= 0;
+ 243   EQ627..     endog("Y")
+ 244   - (endog("Px")*X + tr*endog("Pq") + re*endog("R"))                     =e= 0;
+ 245   EQ628..     endog("S")
+ 246   - (sr * endog("Y") + endog("R") * B + endog("Sg"))                     =e= 0;
+ 247   EQ629..     endog("C")
+ 248   - ((1/endog("Pt")) * (1 - sr - ty) * endog("Y"))                       =e= 0;
+ 249   EQ630..     endog("Pm")
+ 250   - ((1 + tm) * endog("R") * PWm)                                        =e= 0;
+ 251   EQ631..     endog("Pe")
+ 252   - (endog("R") * PWe / (1 + te))                                        =e= 0;
+ 253   EQ632..     endog("Pt")
+ 254   - ((1 + endog("ts")) * endog("Pq"))                                    =e= 0;
+ 255   EQ633..     endog("Px")
+ 256   - ((endog("Pe")*endog("E") + endog("Pd")*endog("Dd"))/X)               =e= 0;
+ 257   EQ634..     endog("Pq")
+ 258   - ((endog("Pm")*endog("M") + endog("Pd")*endog("Ds"))/endog("Qs"))     =e= 0;
+ 259   EQ635..     endog("R")
+ 260   - 1                                                                    =e= 0;
+ 261   EQ636..     endog("Ds")
+ 262   - endog("Dd")                                                          =e= 0;
+ 263   EQ637..     endog("Qs")
+ 264   - endog("Qd")                                                          =e= 0;
+ 265   EQ638..     B
+ 266   - (PWm*endog("M") -PWe*endog("E") - ft - re)                           =e= 0;
+ 267   EQ639..     endog("Z")
+ 268   - ((1/endog("Pt")) * endog("S"))                                       =e= 0;
+ 269   OBJ..
+ 270               GDP
+ 271   - endog("Y")                                                           =e= 0;
+ 272   
+ 273  Model model1 / EQ621, EQ622, EQ623, EQ624, EQ625, EQ626, EQ627,
+ 274                 EQ628, EQ629, EQ630, EQ631, EQ632, EQ633, EQ634,
+ 275                 EQ635, EQ636, EQ637, EQ638, EQ639, OBJ / ;
+ 276   
+ 277   
+ 278  option nlp=minos5;
+ 279  options solprint=off ;
+ 280  *model1.iterlim = 1000;
+ 281  *model1.optfile=4;
+ 282  solve model1 maximizing GDP using nlp ;
+ 283   
+ 284  values(vars,exp) = endog.l(vars);
+ 285   
+       
+           Here we implement a foreign capital inflow experiment by increasing foreign
+               remittances tenfold.
+       
+ 292   
+ 293   
+ 294  re = 10*re ;
+ 295   
+ 296  option nlp=minos5;
+ 297  *model1.iterlim = 1000;
+ 298  *model1.optfile=4;
+ 299  solve model1 maximizing GDP using nlp ;
+ 300   
+ 301  values(vars,"fcap") = endog.l(vars);
+ 302   
+ 303   
+       
+           In this next conduct an adverse terms-of-trade experiment by reducing
+               export prices 20 percent.
+       
+ 310   
+ 311             re     = 0.0062;
+ 312             pwe    = 0.80*pwe ;
+ 313   
+ 314  option nlp=minos5;
+ 315  *model1.iterlim = 1000;
+ 316  *model1.optfile=4;
+ 317  solve model1 maximizing GDP using nlp ;
+ 318   
+ 319  values(vars,"tot") = endog.l(vars);
+ 320   
+      	Next we want to report our results from the three scenarios
+ 324   
+ 325  pchg(vars,"benchmark") = 0 ;
+ 326  pchg(vars,exp)$values(vars,"benchmark") = 100*(values(vars,exp)/values(vars,"benchmark") - 1) ;
+ 327  option decimals=4;
+ 328  Display values, pchg ;
+
+
+COMPILATION TIME     =        0.001 SECONDS      3 Mb  DEX237-237 Jul 21, 2011
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                11/25/15 12:24:39 Page 3
+CGE123 MODEL IN GAMS
+Equation Listing    SOLVE model1 Using NLP From line 282
+
+
+---- EQ621  =E=  definition of the product transformation surface
+
+EQ621..  - (1.0003247784082)*endog(E) - (0.999826412024797)*endog(Ds) =E= -1 ; (LHS = -0.999989726688639, INFES = 1.02733113613862E-5 ****)
+     
+
+---- EQ622  =E=  definition of the Armingon aggregation function
+
+EQ622..  - (0.999965687900735)*endog(M) - (1.00005169010718)*endog(Dd) + endog(Qs) =E= 0 ;
+     
+      (LHS = -1.74922731268623E-5, INFES = 1.74922731268623E-5 ****)
+     
+
+---- EQ623  =E=  expenditure definition of national income
+
+EQ623..  endog(Qd) - endog(C) - endog(Z) =E= 0.1011 ; (LHS = 0.1011)
+     
+
+---- EQ624  =E=  supply ratios based on EQ621
+
+EQ624..  endog(E) - (0.536874428622457)*endog(Ds) - (0.184263087737366)*endog(Pe) + (0.216564407017727)*endog(Pd) =E= 0 ;
+     
+      (LHS = -0.0332406783628778, INFES = 0.0332406783628778 ****)
+     
+
+---- EQ625  =E=  supply ratios based on EQ622
+
+EQ625..  endog(M) - (0.748139291133793)*endog(Dd) + (0.30178442725755)*endog(Pm) - (0.30178442725755)*endog(Pd) =E= 0 ;
+     
+      (LHS = 2.59545707508302E-5, INFES = 2.59545707508302E-5 ****)
+     
+
+---- EQ626  =E=  government tax income definition
+
+EQ626..  (0.01081449)*endog(E) - (0.1140282)*endog(M) - (0.0839)*endog(Qd) - (0.09860767)*endog(Pq) + endog(T) - (0.053812276227)*endog(R)
+     
+      - 0.035*endog(Y) - (1.1753)*endog(ts) =E= 0 ; (LHS = 0.00703705377300001, INFES = 0.00703705377300001 ****)
+     
+
+---- EQ627  =E=  value added definition of national income
+
+EQ627..  - endog(Px) - 0.1237*endog(Pq) - 0.0062*endog(R) + endog(Y) =E= 0 ; (LHS = -0.0840000000000001, INFES = 0.0840000000000001 ****)
+     
+
+---- EQ628  =E=  savings definition
+
+EQ628..  - 0.084*endog(R) - endog(Sg) - 0.1699*endog(Y) + endog(S) =E= 0 ; (LHS = -5.30199999999592E-5, INFES = 5.30199999999592E-5 ****)
+     
+
+---- EQ629  =E=  consumption definition
+
+EQ629..  (0.89830398)*endog(Pt) - (0.7951)*endog(Y) + endog(C) =E= 0 ; (LHS = -0.06950398, INFES = 0.06950398 ****)
+     
+
+---- EQ630  =E=  internal import prices
+
+EQ630..  endog(Pm) - 1.0000282*endog(R) =E= 0 ; (LHS = -2.82000000000338E-5, INFES = 2.82000000000338E-5 ****)
+     
+
+---- EQ631  =E=  internal export prices
+
+EQ631..  endog(Pe) - endog(R) =E= 0 ; (LHS = 0.1753, INFES = 0.1753 ****)
+     
+
+---- EQ632  =E=  consumer prices
+
+EQ632..  endog(Pt) - (1.0839)*endog(Pq) - (1)*endog(ts) =E= 0 ; (LHS = -0.0839000000000001, INFES = 0.0839000000000001 ****)
+     
+
+---- EQ633  =E=  national product price index
+
+EQ633..  - (1.1753)*endog(E) - (1)*endog(Dd) - (0.3277)*endog(Pe) - (0.6723)*endog(Pd) + endog(Px) =E= 0 ;
+     
+      (LHS = 0.0264541900000002, INFES = 0.0264541900000002 ****)
+     
+
+---- EQ634  =E=  producer prices for the composite good
+
+EQ634..  - (0.850846592359398)*endog(M) - (0.850846592359398)*endog(Ds) + (0.850846592359398)*endog(Qs) - (0.427975835956777)*endog(Pm)
+     
+      - (0.572024164043223)*endog(Pd) + endog(Pq) =E= 0 ; (LHS = 0)
+     
+
+---- EQ635  =E=  real exchange rate
+
+EQ635..  endog(R) =E= 1 ; (LHS = 1)
+     
+
+---- EQ636  =E=  domestic good excess demand
+
+EQ636..  endog(Ds) - endog(Dd) =E= 0 ; (LHS = 0)
+     
+
+---- EQ637  =E=  Armington composite excess demand
+
+EQ637..  endog(Qs) - endog(Qd) =E= 0 ; (LHS = 0)
+     
+
+---- EQ638  =E=  capital and current account relationship
+
+EQ638..  1.0107*endog(E) - 0.886*endog(M) =E= -0.1145 ; (LHS = -0.11445161, INFES = 4.83899999999676E-5 ****)
+     
+
+---- EQ639  =E=  savings investment linkage
+
+EQ639..  (0.266)*endog(Pt) - (1)*endog(S) + endog(Z) =E= 0 ; (LHS = -0.0206, INFES = 0.0206 ****)
+     
+
+---- OBJ  =E=  This is the fake objective function for GAMS
+
+OBJ..  - endog(Y) + GDP =E= 0 ; (LHS = 0)
+     
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                11/25/15 12:24:39 Page 4
+CGE123 MODEL IN GAMS
+Column Listing      SOLVE model1 Using NLP From line 282
+
+
+---- endog  our endogenous variables
+
+endog(E)
+                (.LO, .L, .UP, .M = -INF, 0.3277, +INF, 0)
+      (-1.0003) EQ621
+        1       EQ624
+       (0.0108) EQ626
+      (-1.1753) EQ633
+        1.0107  EQ638
+
+endog(M)
+                (.LO, .L, .UP, .M = -INF, 0.503, +INF, 0)
+      (-1)      EQ622
+        1       EQ625
+      (-0.114)  EQ626
+      (-0.8508) EQ634
+       -0.886   EQ638
+
+endog(Ds)
+                (.LO, .L, .UP, .M = -INF, 0.6723, +INF, 0)
+      (-0.9998) EQ621
+      (-0.5369) EQ624
+      (-0.8508) EQ634
+        1       EQ636
+
+REMAINING 17 ENTRIES SKIPPED
+
+---- GDP  our objective function
+
+GDP
+                (.LO, .L, .UP, .M = -INF, 1.1298, +INF, 0)
+        1       OBJ
+
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                11/25/15 12:24:39 Page 5
+CGE123 MODEL IN GAMS
+Model Statistics    SOLVE model1 Using NLP From line 282
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS          20     SINGLE EQUATIONS           20
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           21
+NON ZERO ELEMENTS            65     NON LINEAR N-Z             31
+DERIVATIVE POOL               6     CONSTANT POOL              30
+CODE LENGTH                 103
+
+
+GENERATION TIME      =        0.002 SECONDS      4 Mb  DEX237-237 Jul 21, 2011
+
+
+EXECUTION TIME       =        0.002 SECONDS      4 Mb  DEX237-237 Jul 21, 2011
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                11/25/15 12:24:39 Page 6
+CGE123 MODEL IN GAMS
+Solution Report     SOLVE model1 Using NLP From line 282
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   model1              OBJECTIVE  GDP
+     TYPE    NLP                 DIRECTION  MAXIMIZE
+     SOLVER  MINOS5              FROM LINE  282
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      2 Locally Optimal           
+**** OBJECTIVE VALUE                1.1299
+
+ RESOURCE USAGE, LIMIT          0.010      1000.000
+ ITERATION COUNT, LIMIT         7    2000000000
+ EVALUATION ERRORS              0             0
+
+GAMS/MINOS       Jul 14, 2011 23.7.2 DEX 27052.27054 DEG Mac x86_64/Darwin
+M I N O S  5.51     (Jun 2004)
+
+    GAMS/MINOS 5.51, Large Scale Nonlinear Solver
+    B. A. Murtagh, University of New South Wales
+    P. E. Gill, University of California at San Diego,
+    W. Murray, M. A. Saunders, and M. H. Wright,
+    Systems Optimization Laboratory, Stanford University
+
+ Work space allocated           --    0.80 Mb
+
+ EXIT - Optimal Solution found, objective:        1.129861
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                11/25/15 12:24:39 Page 7
+CGE123 MODEL IN GAMS
+Equation Listing    SOLVE model1 Using NLP From line 299
+
+
+---- EQ621  =E=  definition of the product transformation surface
+
+EQ621..  - (1.00003441710093)*endog(E) - (0.999967924853344)*endog(Ds) =E= -1 ; (LHS = -1)
+     
+
+---- EQ622  =E=  definition of the Armingon aggregation function
+
+EQ622..  - (1.00006905279644)*endog(M) - (0.999974358969001)*endog(Dd) + endog(Qs) =E= 0 ; (LHS = 0)
+     
+
+---- EQ623  =E=  expenditure definition of national income
+
+EQ623..  endog(Qd) - endog(C) - endog(Z) =E= 0.1011 ; (LHS = 0.1011)
+     
+
+---- EQ624  =E=  supply ratios based on EQ621
+
+EQ624..  endog(E) - (0.487304928299768)*endog(Ds) - (0.196587774236571)*endog(Pe) + (0.196600846218814)*endog(Pd) =E= 0 ; (LHS = 0)
+     
+
+---- EQ625  =E=  supply ratios based on EQ622
+
+EQ625..  endog(M) - (0.748096786760077)*endog(Dd) + (0.301787497968293)*endog(Pm) - (0.301816076114322)*endog(Pd) =E= 0 ; (LHS = 0)
+     
+
+---- EQ626  =E=  government tax income definition
+
+EQ626..  (0.01081449)*endog(E) - (0.1140282)*endog(M) - (0.0818603334256037)*endog(Qd) - (0.096220506861012)*endog(Pq) + endog(T)
+     
+      - (0.0538120984727774)*endog(R) - 0.035*endog(Y) - (1.17532682539457)*endog(ts) =E= 0 ; (LHS = 0)
+     
+
+---- EQ627  =E=  value added definition of national income
+
+EQ627..  - endog(Px) - 0.1237*endog(Pq) - 0.062*endog(R) + endog(Y) =E= 0 ; (LHS = -0.0557999999999998, INFES = 0.0557999999999998 ****)
+     
+
+---- EQ628  =E=  savings definition
+
+EQ628..  - 0.084*endog(R) - endog(Sg) - 0.1699*endog(Y) + endog(S) =E= 0 ; (LHS = 0)
+     
+
+---- EQ629  =E=  consumption definition
+
+EQ629..  (0.767603583871666)*endog(Pt) - (0.73496550225218)*endog(Y) + endog(C) =E= 0 ;
+     
+      (LHS = -8.06066324798849E-12, INFES = 8.06066324798849E-12 ****)
+     
+
+---- EQ630  =E=  internal import prices
+
+EQ630..  endog(Pm) - 1.0000282*endog(R) =E= 0 ; (LHS = 0)
+     
+
+---- EQ631  =E=  internal export prices
+
+EQ631..  endog(Pe) - endog(R) =E= 0 ; (LHS = 0)
+     
+
+---- EQ632  =E=  consumer prices
+
+EQ632..  endog(Pt) - (1.08186367755484)*endog(Pq) - (0.999959150024365)*endog(ts) =E= 0 ; (LHS = 0)
+     
+
+---- EQ633  =E=  national product price index
+
+EQ633..  - (1)*endog(E) - (0.999933510040802)*endog(Dd) - (0.327646290394284)*endog(Pe) - (0.672363999144148)*endog(Pd) + endog(Px) =E= 0 ; (LHS = 0)
+     
+
+---- EQ634  =E=  producer prices for the composite good
+
+EQ634..  - (0.850816408905407)*endog(M) - (0.850735847406196)*endog(Ds) + (0.850757661709773)*endog(Qs) - (0.427942925456551)*endog(Pm)
+     
+      - (0.572042191639298)*endog(Pd) + endog(Pq) =E= 0 ; (LHS = 0)
+     
+
+---- EQ635  =E=  real exchange rate
+
+EQ635..  endog(R) =E= 1 ; (LHS = 1)
+     
+
+---- EQ636  =E=  domestic good excess demand
+
+EQ636..  endog(Ds) - endog(Dd) =E= 0 ; (LHS = 0)
+     
+
+---- EQ637  =E=  Armington composite excess demand
+
+EQ637..  endog(Qs) - endog(Qd) =E= 0 ; (LHS = 0)
+     
+
+---- EQ638  =E=  capital and current account relationship
+
+EQ638..  1.0107*endog(E) - 0.886*endog(M) =E= -0.1703 ; (LHS = -0.1145, INFES = 0.0558 ****)
+     
+
+---- EQ639  =E=  savings investment linkage
+
+EQ639..  (0.225422383791525)*endog(Pt) - (0.924368635708942)*endog(S) + endog(Z) =E= 0 ; (LHS = 4.6379344809111E-11, INFES = 4.6379344809111E-11 ****)
+     
+
+---- OBJ  =E=  This is the fake objective function for GAMS
+
+OBJ..  - endog(Y) + GDP =E= 0 ; (LHS = 0)
+     
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                11/25/15 12:24:39 Page 8
+CGE123 MODEL IN GAMS
+Column Listing      SOLVE model1 Using NLP From line 299
+
+
+---- endog  our endogenous variables
+
+endog(E)
+                (.LO, .L, .UP, .M = -INF, 0.327646290394284, +INF, 0)
+      (-1)      EQ621
+        1       EQ624
+       (0.0108) EQ626
+      (-1)      EQ633
+        1.0107  EQ638
+
+endog(M)
+                (.LO, .L, .UP, .M = -INF, 0.502993347292893, +INF, 0)
+      (-1.0001) EQ622
+        1       EQ625
+      (-0.114)  EQ626
+      (-0.8508) EQ634
+       -0.886   EQ638
+
+endog(Ds)
+                (.LO, .L, .UP, .M = -INF, 0.672363999144148, +INF, 0)
+      (-1)      EQ621
+      (-0.4873) EQ624
+      (-0.8507) EQ634
+        1       EQ636
+
+REMAINING 17 ENTRIES SKIPPED
+
+---- GDP  our objective function
+
+GDP
+                (.LO, .L, .UP, .M = -INF, 1.12986053094158, +INF, 0)
+        1       OBJ
+
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                11/25/15 12:24:39 Page 9
+CGE123 MODEL IN GAMS
+Model Statistics    SOLVE model1 Using NLP From line 299
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS          20     SINGLE EQUATIONS           20
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           21
+NON ZERO ELEMENTS            65     NON LINEAR N-Z             31
+DERIVATIVE POOL               6     CONSTANT POOL              30
+CODE LENGTH                 103
+
+
+GENERATION TIME      =        0.002 SECONDS      3 Mb  DEX237-237 Jul 21, 2011
+
+
+EXECUTION TIME       =        0.002 SECONDS      3 Mb  DEX237-237 Jul 21, 2011
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                               11/25/15 12:24:39 Page 10
+CGE123 MODEL IN GAMS
+Solution Report     SOLVE model1 Using NLP From line 299
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   model1              OBJECTIVE  GDP
+     TYPE    NLP                 DIRECTION  MAXIMIZE
+     SOLVER  MINOS5              FROM LINE  299
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      2 Locally Optimal           
+**** OBJECTIVE VALUE                1.2741
+
+ RESOURCE USAGE, LIMIT          0.009      1000.000
+ ITERATION COUNT, LIMIT         4    2000000000
+ EVALUATION ERRORS              0             0
+
+GAMS/MINOS       Jul 14, 2011 23.7.2 DEX 27052.27054 DEG Mac x86_64/Darwin
+M I N O S  5.51     (Jun 2004)
+
+    GAMS/MINOS 5.51, Large Scale Nonlinear Solver
+    B. A. Murtagh, University of New South Wales
+    P. E. Gill, University of California at San Diego,
+    W. Murray, M. A. Saunders, and M. H. Wright,
+    Systems Optimization Laboratory, Stanford University
+
+ Work space allocated           --    0.80 Mb
+
+ EXIT - Optimal Solution found, objective:        1.274145
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                               11/25/15 12:24:39 Page 11
+CGE123 MODEL IN GAMS
+Equation Listing    SOLVE model1 Using NLP From line 317
+
+
+---- EQ621  =E=  definition of the product transformation surface
+
+EQ621..  - (0.925742135195044)*endog(E) - (1.0349895898049)*endog(Ds) =E= -1 ; (LHS = -1)
+     
+
+---- EQ622  =E=  definition of the Armingon aggregation function
+
+EQ622..  - (0.937641289237515)*endog(M) - (1.04826341002431)*endog(Dd) + endog(Qs) =E= 0 ; (LHS = 0)
+     
+
+---- EQ623  =E=  expenditure definition of national income
+
+EQ623..  endog(Qd) - endog(C) - endog(Z) =E= 0.1011 ; (LHS = 0.1011)
+     
+
+---- EQ624  =E=  supply ratios based on EQ621
+
+EQ624..  endog(E) - (0.455738697730888)*endog(Ds) - (0.187690182309105)*endog(Pe) + (0.167878703165248)*endog(Pd) =E= 0 ; (LHS = 0)
+     
+
+---- EQ625  =E=  supply ratios based on EQ622
+
+EQ625..  endog(M) - (0.799912872987302)*endog(Dd) + (0.329424646184134)*endog(Pm) - (0.29466081425807)*endog(Pd) =E= 0 ; (LHS = 0)
+     
+
+---- EQ626  =E=  government tax income definition
+
+EQ626..  (0.008651592)*endog(E) - (0.1140282)*endog(M) + (0.0325382046455584)*endog(Qd) + (0.037657660628567)*endog(Pq) + endog(T)
+     
+      - (0.0599015664276565)*endog(R) - 0.035*endog(Y) - (1.31646948888054)*endog(ts) =E= 0 ;
+     
+      (LHS = -0.000676591199893342, INFES = 0.000676591199893342 ****)
+     
+
+---- EQ627  =E=  value added definition of national income
+
+EQ627..  - endog(Px) - 0.1237*endog(Pq) - 0.0062*endog(R) + endog(Y) =E= 0 ; (LHS = 0.0558000000000001, INFES = 0.0558000000000001 ****)
+     
+
+---- EQ628  =E=  savings definition
+
+EQ628..  - 0.084*endog(R) - endog(Sg) - 0.1699*endog(Y) + endog(S) =E= 0 ; (LHS = 0)
+     
+
+---- EQ629  =E=  consumption definition
+
+EQ629..  (0.947548276996843)*endog(Pt) - (0.768957144221208)*endog(Y) + endog(C) =E= 0 ;
+     
+      (LHS = -1.49442347385786E-10, INFES = 1.49442347385786E-10 ****)
+     
+
+---- EQ630  =E=  internal import prices
+
+EQ630..  endog(Pm) - 1.0000282*endog(R) =E= 0 ; (LHS = 0)
+     
+
+---- EQ631  =E=  internal export prices
+
+EQ631..  endog(Pe) - 0.8*endog(R) =E= 0 ; (LHS = 0.2, INFES = 0.2 ****)
+     
+
+---- EQ632  =E=  consumer prices
+
+EQ632..  endog(Pt) - (0.969491696180832)*endog(Pq) - (1.06653601060296)*endog(ts) =E= 0 ; (LHS = 0)
+     
+
+---- EQ633  =E=  national product price index
+
+EQ633..  - (1)*endog(E) - (1.11801067538839)*endog(Dd) - (0.312816970515175)*endog(Pe) - (0.686395454396748)*endog(Pd) + endog(Px) =E= 0 ; (LHS = 0)
+     
+
+---- EQ634  =E=  producer prices for the composite good
+
+EQ634..  - (0.810171520059621)*endog(M) - (0.905754866035071)*endog(Ds) + (0.864052734621412)*endog(Qs) - (0.444817443906838)*endog(Pm)
+     
+      - (0.556082367127875)*endog(Pd) + endog(Pq) =E= 0 ; (LHS = 0)
+     
+
+---- EQ635  =E=  real exchange rate
+
+EQ635..  endog(R) =E= 1 ; (LHS = 1)
+     
+
+---- EQ636  =E=  domestic good excess demand
+
+EQ636..  endog(Ds) - endog(Dd) =E= 0 ; (LHS = 0)
+     
+
+---- EQ637  =E=  Armington composite excess demand
+
+EQ637..  endog(Qs) - endog(Qd) =E= 0 ; (LHS = 0)
+     
+
+---- EQ638  =E=  capital and current account relationship
+
+EQ638..  0.80856*endog(E) - 0.886*endog(M) =E= -0.1145 ; (LHS = -0.233532822419938, INFES = 0.119032822419937 ****)
+     
+
+---- EQ639  =E=  savings investment linkage
+
+EQ639..  (0.148432134228928)*endog(Pt) - (0.967120040524724)*endog(S) + endog(Z) =E= 0 ;
+     
+      (LHS = -6.02895511292445E-11, INFES = 6.02895511292445E-11 ****)
+     
+
+---- OBJ  =E=  This is the fake objective function for GAMS
+
+OBJ..  - endog(Y) + GDP =E= 0 ; (LHS = 0)
+     
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                               11/25/15 12:24:39 Page 12
+CGE123 MODEL IN GAMS
+Column Listing      SOLVE model1 Using NLP From line 317
+
+
+---- endog  our endogenous variables
+
+endog(E)
+                (.LO, .L, .UP, .M = -INF, 0.312816970515175, +INF, 0)
+      (-0.9257) EQ621
+        1       EQ624
+       (0.0087) EQ626
+      (-1)      EQ633
+        0.8086  EQ638
+
+endog(M)
+                (.LO, .L, .UP, .M = -INF, 0.549056559931927, +INF, 0)
+      (-0.9376) EQ622
+        1       EQ625
+      (-0.114)  EQ626
+      (-0.8102) EQ634
+       -0.886   EQ638
+
+endog(Ds)
+                (.LO, .L, .UP, .M = -INF, 0.686395454396748, +INF, 0)
+      (-1.035)  EQ621
+      (-0.4557) EQ624
+      (-0.9058) EQ634
+        1       EQ636
+
+REMAINING 17 ENTRIES SKIPPED
+
+---- GDP  our objective function
+
+GDP
+                (.LO, .L, .UP, .M = -INF, 1.27414492058039, +INF, 0)
+        1       OBJ
+
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                               11/25/15 12:24:39 Page 13
+CGE123 MODEL IN GAMS
+Model Statistics    SOLVE model1 Using NLP From line 317
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS          20     SINGLE EQUATIONS           20
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           21
+NON ZERO ELEMENTS            65     NON LINEAR N-Z             31
+DERIVATIVE POOL               6     CONSTANT POOL              30
+CODE LENGTH                 103
+
+
+GENERATION TIME      =        0.002 SECONDS      3 Mb  DEX237-237 Jul 21, 2011
+
+
+EXECUTION TIME       =        0.002 SECONDS      3 Mb  DEX237-237 Jul 21, 2011
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                               11/25/15 12:24:39 Page 14
+CGE123 MODEL IN GAMS
+Solution Report     SOLVE model1 Using NLP From line 317
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   model1              OBJECTIVE  GDP
+     TYPE    NLP                 DIRECTION  MAXIMIZE
+     SOLVER  MINOS5              FROM LINE  317
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      2 Locally Optimal           
+**** OBJECTIVE VALUE                0.9006
+
+ RESOURCE USAGE, LIMIT          0.009      1000.000
+ ITERATION COUNT, LIMIT         4    2000000000
+ EVALUATION ERRORS              0             0
+
+GAMS/MINOS       Jul 14, 2011 23.7.2 DEX 27052.27054 DEG Mac x86_64/Darwin
+M I N O S  5.51     (Jun 2004)
+
+    GAMS/MINOS 5.51, Large Scale Nonlinear Solver
+    B. A. Murtagh, University of New South Wales
+    P. E. Gill, University of California at San Diego,
+    W. Murray, M. A. Saunders, and M. H. Wright,
+    Systems Optimization Laboratory, Stanford University
+
+ Work space allocated           --    0.80 Mb
+
+ EXIT - Optimal Solution found, objective:       0.9005681
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                               11/25/15 12:24:39 Page 15
+CGE123 MODEL IN GAMS
+E x e c u t i o n
+
+
+----    328 PARAMETER values  a table to hold experiment values
+
+     benchmark        fcap         tot
+
+E       0.3276      0.3128      0.3309
+M       0.5030      0.5491      0.4313
+Ds      0.6724      0.6864      0.6690
+Dd      0.6724      0.6864      0.6690
+Qs      1.1754      1.2343      1.0953
+Qd      1.1754      1.2343      1.0953
+Pe      1.0000      1.0000      0.8000
+Pm      1.0000      1.0000      1.0000
+Pd      0.9999      1.1180      0.7802
+Pt      1.0818      1.0340      1.0895
+Px      1.0000      1.0802      0.7867
+Pq      1.0000      1.0665      0.8703
+T       0.1896      0.0637      0.3179
+R       1.0000      1.0000      1.0000
+Sg     -0.0121     -0.1418      0.1301
+Y       1.1299      1.2741      0.9006
+C       0.8304      0.9798      0.6572
+S       0.2638      0.1587      0.3671
+Z       0.2439      0.1535      0.3370
+ts      0.0819     -0.0305      0.2519
+
+
+----    328 PARAMETER pchg  comparative static percent changes
+
+          fcap         tot
+
+E      -4.5260      1.0075
+M       9.1578    -14.2625
+Ds      2.0869     -0.4972
+Dd      2.0869     -0.4972
+Qs      5.0168     -6.8095
+Qd      5.0168     -6.8095
+Pe                -20.0000
+Pd     11.8085    -21.9764
+Pt     -4.4205      0.7059
+Px      8.0252    -21.3256
+Pq      6.6580    -12.9707
+T     -66.4211     67.7067
+Sg   1067.5004  -1171.5561
+Y      12.7701    -20.2939
+C      17.9856    -20.8526
+S     -39.8466     39.1618
+Z     -37.0645     38.1864
+ts   -137.2672    207.6795
+
+
+
+EXECUTION TIME       =        0.001 SECONDS      3 Mb  DEX237-237 Jul 21, 2011
+
+
+USER: David Roland-Holst                             G110727:0605AN-DAR
+      University of California, Agricultural and Resource EconomiDC7723
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      /Users/sam/Dropbox/training/Urumqi/Models/CGE123/cge123.gms
+Output     /Users/sam/Dropbox/training/Urumqi/Models/CGE123/cge123.lst

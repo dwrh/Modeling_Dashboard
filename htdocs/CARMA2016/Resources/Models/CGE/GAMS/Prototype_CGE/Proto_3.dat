@@ -1,0 +1,835 @@
+*##
+*## This file creates an aggregated dataset from the 2008 Mongolia SAM
+*## Also included are a variety of set declarations and initial data for the model
+*##
+
+*## Define the aggregate SAM institution sets and subsets
+
+set 
+s final sam /
+Primary
+Manufact
+Tertiary
+ 
+UnSkil
+Skill 
+Captl 
+LandR 
+natrs 
+hhsld 
+gov   
+inv   
+depry 
+trdmg 
+indtx 
+prdtx 
+imptx 
+exptx 
+dirtx 
+row   
+total
+ent 
+/
+
+i(s) /
+Primary
+Manufact
+Tertiary
+ 
+
+/
+
+v(s) Factors /
+UnSkil
+Skill 
+Captl 
+LandR 
+natrs 
+
+/
+
+l(v) /
+UnSkil
+Skill 
+/
+
+   ul(l) Unskilled labor /
+UnSkil
+   /
+
+   sl(l) Skilled labor /
+Skill 
+   /
+
+   lt(v) Land types 
+   /
+      LandR      Land remuneration
+   /
+
+   kt(v) Capital types /
+     Captl 
+   /
+   nr(v) Natural resources      /
+    natrs
+                /
+
+   e(s)  Enterprises /
+ENT
+   /
+
+   fd(s) Final demand accounts /
+hhsld 
+gov   
+inv   
+depry 
+trdmg 
+indtx 
+prdtx 
+imptx 
+exptx 
+dirtx       
+   /
+
+   h(fd) Households /
+	hhsld 
+/
+
+   f(fd) Other final demand accounts /
+gov
+inv
+indtx 
+prdtx 
+imptx 
+exptx 
+dirtx 
+   /
+
+   r(s) Regions /
+row   
+   /
+;
+
+alias (i,k), (i,ii), (k,kk) ;
+
+set mapik(i,k) /
+Primary	.	Primary
+Manufact	.	Manufact
+Tertiary	.	Tertiary
+/
+;
+
+*## Define the institution sets and subsets for the i initial SAM
+
+set 
+s0 initial sam /
+pdr      "Paddy rice"
+wht      "Wheat"
+gro      "Cereal grains, n.e.s."
+v_f      "Vegetables and fruits"
+osd      "Oil seeds"
+c_b      "Sugar cane and sugar beet"
+pfb      "Plant-based fibers"
+ocr      "Crops, n.e.s."
+ctl      "Bovine cattle, sheep and goats, horses"
+oap      "Animal products n.e.s."
+rmk      "Raw milk"
+wol      "Wool, silk-worm cocoons"
+frs      "Forestry"
+fsh      "Fishing"
+coa      "Coal"
+oil      "Oil"
+gas      "Gas"
+omn      "Minerals n.e.s."
+cmt      "Bovine cattle, sheep and goat, horse meat products"
+omt      "Meat products n.e.s."
+vol      "Vegetable oils and fats"
+mil      "Dairy products"
+pcr      "Processed rice"
+sgr      "Sugar"
+ofd      "Food products n.e.s."
+b_t      "Beverages and tobacco products"
+tex      "Textiles"
+wap      "Wearing apparel"
+lea      "Leather products"
+lum      "Wood products"
+ppp      "Paper products, publishing"
+p_c      "Petroleum, coal products"
+crp      "Chemical, rubber, plastic products"
+nmm      "Mineral products n.e.s."
+i_s      "Ferrous metals"
+nfm      "Metals n.e.s."
+fmp      "Metal products"
+mvh      "Motor vehicles and parts"
+otn      "Transport equipment n.e.s."
+ele      "Electronic equipment"
+ome      "Machinery and equipment n.e.s."
+omf      "Manufactures n.e.s."
+ely      "Electricity"
+gdt      "Gas manufacture, distribution"
+wtr      "Water"
+cns      "Construction"
+trd      "Trade"
+otp      "Transport n.e.s."
+wtp      "Sea transport"
+atp      "Air transport"
+cmn      "Communication"
+ofi      "Financial services n.e.s."
+isr      "Insurance"
+obs      "Business services n.e.s."
+ros      "Recreation and other services"
+osg      "Public administration and defense, education, health services"
+dwe      "Dwellings"
+cgds     "Investment goods"
+
+UnSkil
+Skill 
+Captl 
+LandR 
+natrs 
+hhsld 
+gov   
+inv   
+depry 
+trdmg 
+indtx 
+prdtx 
+imptx 
+exptx 
+dirtx 
+row   
+Total
+ent
+/
+
+i0(s0) /
+pdr   
+wht   
+gro   
+v_f   
+osd   
+c_b   
+pfb   
+ocr   
+ctl   
+oap   
+rmk   
+wol   
+frs   
+fsh   
+coa   
+oil   
+gas   
+omn   
+cmt   
+omt   
+vol   
+mil   
+pcr   
+sgr   
+ofd   
+b_t   
+tex   
+wap   
+lea   
+lum   
+ppp   
+p_c   
+crp   
+nmm   
+i_s   
+nfm   
+fmp   
+mvh   
+otn   
+ele   
+ome   
+omf   
+ely   
+gdt   
+wtr   
+cns   
+trd   
+otp   
+wtp   
+atp   
+cmn   
+ofi   
+isr   
+obs   
+ros   
+osg   
+dwe   
+/
+
+
+v0(s0) Factors /
+UnSkil
+Skill 
+Captl 
+LandR 
+natrs 
+
+/
+
+l0(v0) /
+UnSkil
+Skill 
+/
+
+   ul0(l0) Unskilled labor /
+UnSkil
+   /
+
+   sl0(l0) Skilled labor /
+Skill 
+   /
+
+   lt0(v0) Land types 
+   /
+      LandR     Land remuneration
+   /
+
+   kt0(v0) Capital types /
+      Captl      Capital remuneration
+   /
+   nr0(v0) Natural resources      /
+    natrs
+                /
+
+   e0(s0)  Enterprises /
+ENT
+   /
+
+   fd0(s0) Final demand accounts /
+hhsld 
+gov   
+inv   
+depry 
+trdmg 
+indtx 
+prdtx 
+imptx 
+exptx 
+dirtx 
+   /
+
+   h0(fd0) Households /
+hhsld/
+
+   f0(fd0) Other final demand accounts /
+gov   
+inv   
+*depry 
+trdmg 
+indtx 
+prdtx 
+imptx 
+exptx 
+dirtx 
+   /
+
+   r0(s0) Regions /
+row   
+   /
+
+;
+
+Alias(i0,j0), (i0,k0) ;
+
+set food0(k0) Food Commodities /
+pdr   
+wht   
+gro   
+v_f   
+osd   
+c_b   
+pfb   
+ocr   
+ctl   
+oap   
+rmk   
+wol   
+frs   
+fsh    
+/ ;
+
+set manufac0(k0) Manufactured Commodities /
+coa   
+oil   
+gas   
+omn   
+cmt   
+omt   
+vol   
+mil   
+pcr   
+sgr   
+ofd   
+b_t   
+tex   
+wap   
+lea   
+lum   
+ppp   
+p_c   
+crp   
+nmm   
+i_s   
+nfm   
+fmp   
+mvh   
+otn   
+ele   
+ome   
+omf
+/ ;
+
+set services0(k0) Service Commodities /   
+ely   
+gdt   
+wtr   
+cns   
+trd   
+otp   
+wtp   
+atp   
+cmn   
+ofi   
+isr   
+obs   
+ros   
+osg   
+dwe
+/ ;
+
+
+set hs0(fd0) Subsistence Consumption for Households /
+hhsld/ ;
+
+
+        alias (s0,ss0), (s,ss), (v0,vv0), (j0,jj0), (r0,rr0), (k0,kk0), (fd0,ffd0) ;
+
+
+
+
+*## Define the aggregation mapping sets and subsets
+
+set map(s0,s)  Aggregation mapping /
+pdr   	.	Primary
+wht   	.	Primary
+gro   	.	Primary
+v_f   	.	Primary
+osd   	.	Primary
+c_b   	.	Primary
+pfb   	.	Primary
+ocr   	.	Primary
+ctl   	.	Primary
+oap   	.	Primary
+rmk   	.	Primary
+wol   	.	Primary
+frs   	.	Primary
+fsh   	.	Primary
+coa   	.	Primary
+oil   	.	Primary
+gas   	.	Primary
+omn   	.	Primary
+cmt   	.	Primary
+omt   	.	Primary
+vol   	.	Primary
+mil   	.	Primary
+pcr   	.	Primary
+sgr   	.	Primary
+ofd   	.	Primary
+b_t   	.	Primary
+tex   	.	Manufact
+wap   	.	Manufact
+lea   	.	Manufact
+lum   	.	Manufact
+ppp   	.	Manufact
+p_c   	.	Manufact
+crp   	.	Manufact
+nmm   	.	Manufact
+i_s   	.	Manufact
+nfm   	.	Manufact
+fmp   	.	Manufact
+mvh   	.	Manufact
+otn   	.	Manufact
+ele   	.	Manufact
+ome   	.	Manufact
+omf   	.	Manufact
+ely   	.	Tertiary
+gdt   	.	Tertiary
+wtr   	.	Tertiary
+cns   	.	Tertiary
+trd   	.	Tertiary
+otp   	.	Tertiary
+wtp   	.	Tertiary
+atp   	.	Tertiary
+cmn   	.	Tertiary
+ofi   	.	Tertiary
+isr   	.	Tertiary
+obs   	.	Tertiary
+ros   	.	Tertiary
+osg   	.	Tertiary
+dwe   	.	Tertiary
+  
+UnSkil	.	UnSkil
+Skill 	.	Skill 
+Captl 	.	Captl 
+LandR 	.	LandR 
+natrs 	.	natrs 
+hhsld 	.	hhsld 
+gov   	.	gov   
+inv   	.	inv   
+depry 	.	depry 
+trdmg 	.	trdmg 
+indtx 	.	indtx 
+prdtx 	.	prdtx 
+imptx 	.	imptx 
+exptx 	.	exptx 
+dirtx 	.	dirtx 
+row   	.	row   
+Total	.	Total
+/ ;
+
+set mapi(i0,i)  Aggregation mapping for sectors ;
+mapi(i0,i)$map(i0,i) = yes ;
+set mapk(k0,k)  Aggregation mapping for sectors 
+;
+mapk(k0,k)$map(k0,k) = yes ;
+
+set mapv(v0,v)  Aggregation mapping for value added ;
+mapv(v0,v)$map(v0,v) = yes ;
+
+set mape(e0,e)  Aggregation mapping for enterprises /
+ENT         .           ENT
+/ ;
+
+set maph(h0,h)  Aggregation mapping for households /
+HHsld        .         HHsld
+/ ;
+
+set mapf(f0,f)  Aggregation mapping for other final demand accounts ;
+mapf(f0,f)$map(f0,f) = yes ;
+
+set mapr(r0,r)  Aggregation mapping for regions ;
+mapr(r0,r)$map(r0,r) = yes ;
+
+set ittt0(i0)/
+wtr   
+cns   
+trd   
+otp   
+wtp   
+atp   
+cmn   
+/ ;
+
+set ittt(i) /
+Tertiary   
+/ ;
+
+set kttt0(k0)/
+wtr   
+cns   
+trd   
+otp   
+wtp   
+atp   
+cmn   
+/ ;
+
+set kttt(k) /
+Tertiary
+/ ;
+
+set mapittt(i0,i) ;
+
+set mapkttt(k0,k) ;
+
+
+*## Define and load the Original SAM
+
+ parameter chk, chk1 ;
+ parameter nsam(s,ss) ;
+
+$onempty
+$include Proto_SAM.dat
+$offempty
+scalar tolerance for negligible entries / .001/ ;
+sam0(s0,ss0)$(sam0(s0,ss0) lt tolerance) = 0 ;
+sam0(s0,ss0) = .001*sam0(s0,ss0) ;
+
+sam0("total",s0) = 0 ;
+sam0(s0,"total") = 0 ;
+sam0("total",s0) = sum(ss0,sam0(ss0,s0)) ;
+sam0(s0,"total") = sum(ss0,sam0(s0,ss0)) ;
+
+sam0("ent","ent") = 0 ;
+
+parameter beta ;
+beta = .5 ;
+
+nsam(s,ss)= sum(s0$map(s0,s),sum(ss0$map(ss0,ss),sam0(s0,ss0))) ;
+
+nsam("total",s) = 0 ;
+nsam(s,"total") = 0 ;
+nsam("total",s) = sum(ss,nsam(ss,s)) ;
+nsam(s,"total") = sum(ss,nsam(s,ss)) ;
+display nsam ;
+
+if(1,
+
+* ------------------------------------------------------------------------------
+*
+* Write out the SAM in CSV format
+*
+* ------------------------------------------------------------------------------
+
+put samfile ;
+samfile.pc   = 5 ;
+samfile.pw = 10000 ;
+samfile.nj =   1 ;
+samfile.nw =  15 ;
+samfile.nd =   9 ;
+samfile.nz =   0 ;
+samfile.nr =   0 ;
+
+
+*loop(s,loop(ss$(sam(s,ss) ne 0),
+*   put system.title,t.tl,s.tl,ss.tl,(sam(s,ss)/scale) / ;
+*)) ;
+
+put ' '; loop (s, put s.tl ) ; put / ;
+loop(s,
+put  s.tl, loop(ss, put nsAM(s,ss)) ; put / ; 
+
+ ) ;
+
+) ;
+
+*## Correct for diagonal household to nonmarket consumption transfers
+*sam0(hs0,hr0) = 0 ;
+
+* Initialize Margins
+parameter marg00(i0) ;
+marg00(i0) = 0 ;
+
+parameter marg0(i) ;
+
+parameter marg(i) ;
+marg00(i0) = 4*marg00(i0)/(100 - marg00(i0)) ;
+marg0(i) = sum(i0$mapi(i0,i),marg00(i0)*sam0("Total",i0)/sum(j0,sam0("Total",j0))) ;
+
+
+*## Initialize border price trade valuations
+
+Parameter wtf_pe0(r0,k0) Base trade flows at pre FOB export price 
+*/
+*/ 
+;
+wtf_pe0(r0,k0)$(sum(rr0,sam0(k0,rr0)) ne 0) = sam0(k0,r0) ;
+*wtf_pe0(r0,k0)$(sum(rr0,sam0(k0,rr0)) ne 0) = sam0(k0,r0) - sam0("t06etax",k0)*sam0(k0,r0)/sum(rr0,sam0(k0,rr0)) ;
+
+Parameter wtf_wpe0(r0,k0) Base trade flows at FOB export price 
+*/
+*/
+;
+
+wtf_wpe0(r0,k0) = sam0(k0,r0) ;
+
+Parameter wtf_wpm0(r0,k0) Base trade flows at CIF import price 
+*/
+*/ 
+;
+wtf_wpm0(r0,k0) = sam0(r0,k0);
+
+Parameter wtf_pm0(r0,k0) Base trade flows at post CIF import price 
+*/
+*/ 
+;
+wtf_pm0(r0,k0)$(sum(rr0,sam0(rr0,k0)) ne 0) = sam0(r0,k0) + sam0("imptx",k0)*sam0(r0,k0)/sum(rr0,sam0(rr0,k0)) ;
+
+
+*## Initialize a variety of tax instruments
+
+Parameter patax0(k0,j0) Base taxes on intermediate consumption 
+*/
+*/ 
+;
+*patax0(k0,j0)$sam0(k0,j0) = sam0("govt",j0)*sam0(k0,j0)/sum(kk0,sam0(kk0,j0)) ;
+patax0(k0,j0) = 0 ;
+
+Parameter vatax0(v0,j0) Base taxes on factors of production 
+*/
+*/ 
+;
+
+
+vatax0(l0,j0) = sam0("gov",l0)*sam0(l0,j0)/sum(jj0,sam0(l0,jj0)) ;
+                        
+Parameter fdtax0(k0,fd0) Base taxes on final demand consumption 
+*/
+*/ 
+;
+
+*fdtax0(k0,fd0)$sum(ffd0,sam0(k0,ffd0)) = sam0("itax",k0)*sam0(k0,fd0)/sum(ffd0,sam0(k0,ffd0)) ;
+fdtax0(k0,fd0) =0 ;
+
+*## Initialized miscellaneous exogenous data
+
+Parameter tk0 Base capital stock /
+        1.00E+3
+/ ;
+
+tk0 = sum(i0,sum(k0,sam0(k0,i0))) ;
+
+Parameter tpop0 Base population in millions /
+        7.7
+/ ;
+
+Parameter popsh0(h0) Base population shares 
+*/
+*/ 
+;
+        popsh0(h0) = 100 ;
+
+
+Parameter labvol0(i0,l0) Initial labor demand volumes 
+*// 
+;
+
+labvol0(i0,l0) = sam0(l0,i0) ;
+
+
+Parameter ppp0 Base PPP exchange rate /
+    1.00
+/ ;
+
+Parameter eta0(k0,h0) Base income elasticities 
+*/
+*/ 
+;
+
+        eta0(food0,h0) = .7 ;
+        eta0(manufac0,h0) = 1.0 ;
+        eta0(services0,h0) = 1.5 ;
+
+scalar scale Scaling factor for initial data   / 1 / ;
+scalar pscale Scaling factor for labor volumes / .001 / ;
+
+sam0(s0,ss0)    = scale*sam0(s0,ss0) ;
+patax0(k0,j0)   = scale*patax0(k0,j0) ;
+vatax0(v0,j0)   = scale*vatax0(v0,j0) ;
+fdtax0(k0,fd0)  = scale*fdtax0(k0,fd0) ;
+tk0             = scale*tk0 ;
+wtf_pe0(r0,k0)  = scale*wtf_pe0(r0,k0) ;
+wtf_wpe0(r0,k0) = scale*wtf_wpe0(r0,k0) ;
+wtf_wpm0(r0,k0) = scale*wtf_wpm0(r0,k0) ;
+wtf_pm0(r0,k0)  = scale*wtf_pm0(r0,k0) ;
+labvol0(i0,l0)  = pscale*labvol0(i0,l0) ;
+
+*## Structural parameters for the new aggregation
+set ipar / sigmap,    sigmav,   sigmakl,   sigmaks,    sigmau,    sigmas,    sigmak,    sigmat / ;
+set kpar / sigmac,    sigmam,    sigmaw,    sigmax,    sigmaz,      etae / ;
+
+parameter KeySect(i,ipar) Key sectoral parameters ;
+keysect(i,ipar) = .5 ;
+keysect(i,"sigmav") = .3 ;
+*keysect(i,ipar) = .8 ;
+keysect(i,"sigmap") = .0 ;
+*keysect(i,"sigmav") = .85 ;
+*keysect("ATAir",ipar) = .7 ;
+*keysect(i,"sigmap") = 0 ;
+
+parameter KeyComm(k,kpar) Key commodity parameters ;
+keycomm(k,kpar) = 4 ;
+*keycomm(k,"etae") = 5 ;
+*keycomm(k,"etae") = 1.1 ;
+keycomm(k,"etae") = 4 ;
+keycomm(k,"sigmam") = 2 ;
+
+parameter Frisch(h) ;
+Frisch(h) = -1 ;
+
+parameter sigmaf(f) Final demand expenditure elasticities /
+        gov            0
+        inv        0
+   / ;
+
+scalar omegakt Capital mobility across types                 / 0.0 / ;
+omegakt = inf ;
+
+parameter omegak(kt) Capital mobility across sectors ;
+omegak(kt) = inf ;
+
+scalar omegatl Land mobility across type of land             / 0.0 / ;
+parameter omegat(lt) Land mobility across sectors ;
+omegat(lt) = 0 ;
+
+set gz Geographic zone / Rur, Urb, Tot / ;
+set gz2(gz) / Rur, Urb / ;
+
+set mapg(i,gz2) ;
+
+set 
+ag(i) /
+Primary
+/ 
+
+manu(i) /
+Manufact
+/
+
+srv(i) /
+Tertiary 
+/ 
+;
+
+mapg(ag,"rur") = yes ;
+
+parameter migr0(l) Base year migration ;
+
+migr0(l) = 0 ;
+migr0(l) = pscale*migr0(l) ;
+
+parameter glab0(l,gz) Base year labor supply growth rates ;
+glab0(l,gz) = 1 ;
+
+parameter omegal(l,gz)  Labor supply elasticities ;
+omegal(l,gz) = 1 ;
+
+parameter omegar(i) Sector specific factor supply elasticity ;
+omegar(i) = inf ;
+
+parameter omegam(l) Migration elasticity ;
+omegam(l) = inf ;
+*omegam("unskl") = 1 ;
+
+
+$offempty
+
+* ----- Declare some additional subsets
+
+set ip(i) Sectors with endogenous labor productivity ;
+set np(i) Sectors with exogenous labor productivity ;
+
+set mg different types of margins / d, m, x / ;
+
+*np(i) = i(i) ;
+np(i) = yes$(ag(i)) ;
+ip(i) = not np(i) ;
+display ip, np ;
+
+* ----- Create set aliases
+
+alias(s,ss) ;
+alias(i0,j0) ;
+alias(h0,hh0) ;
+alias(i,j) ;
+alias(h,hh) ;
+
+alias(k0,kk0) ;
+alias(k,kk) ;
+
+alias (ag, iag) ;

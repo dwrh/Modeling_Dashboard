@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- DW6 -->
+
+<head>
+
+<!-- Copyright 2005 Macromedia, Inc. All rights reserved. -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<title>Untitled Document</title>
+
+<link rel="stylesheet" href="emx_nav_left.css" type="text/css" />
+
+<script type="text/javascript">
+
+<!--
+
+var time = 3000;
+
+var numofitems = 7;
+
+
+
+//menu constructor
+
+function menu(allitems,thisitem,startstate){ 
+
+  callname= "gl"+thisitem;
+
+  divname="subglobal"+thisitem;  
+
+  this.numberofmenuitems = allitems;
+
+  this.caller = document.getElementById(callname);
+
+  this.thediv = document.getElementById(divname);
+
+  this.thediv.style.visibility = startstate;
+
+}
+
+
+
+//menu methods
+
+function ehandler(event,theobj){
+
+  for (var i=1; i<= theobj.numberofmenuitems; i++){
+
+    var shutdiv =eval( "menuitem"+i+".thediv");
+
+    shutdiv.style.visibility="hidden";
+
+  }
+
+  theobj.thediv.style.visibility="visible";
+
+}
+
+				
+
+function closesubnav(event){
+
+  if ((event.clientY <48)||(event.clientY > 107)){
+
+    for (var i=1; i<= numofitems; i++){
+
+      var shutdiv =eval('menuitem'+i+'.thediv');
+
+      shutdiv.style.visibility='hidden';
+
+    }
+
+  }
+
+}
+
+// -->
+
+</script>
+
+<style type="text/css">
+
+<!--
+
+body {
+
+	background-color: #FFFFFF;
+
+}
+#masthead #siteName {
+	color: #F0F;
+}
+#masthead #siteName {
+	color: #CB09D0;
+}
+
+-->
+
+</style></head>
+
+<body onmousemove="closesubnav(event);">
+<div id="masthead">
+  <p> &nbsp;&nbsp; <img src="Images/NSO.png" alt="" width="621" height="109" /><br />
+  <img src="Images/ERINA.png" alt="" width="497" height="104" />  &nbsp;<img src="Images/UCB.png" alt="" width="115" height="113" /></p>
+  <div align="center">
+    <blockquote>
+      <blockquote></blockquote>
+    </blockquote>
+  </div>
+  <blockquote>
+    <blockquote></blockquote>
+  </blockquote>
+  <blockquote>
+    <!-- end globalNav -->
+  </blockquote>
+</div>
+<h1>
+  <!-- end masthead -->
+  Workshop on a Prototype CGE Model for Mongolia</h1>
+<blockquote>
+  <blockquote>
+    <h3>9 July 2013<br />
+      National Statistical Office of Mongolia, Ulaan Baatar, Mongolia</h3>
+  </blockquote>
+</blockquote>
+<h2>Instructors: <a href="http://are.berkeley.edu/~dwrh/">David Roland-Holst</a> and <a href="http://www.erina.or.jp/en/Info/profile/ena.htm
+
+">Enkhbayar Shagdar</a></h2>
+<div id="pagecell1"><div id="breadCrumb"><blockquote><blockquote> 
+  <h3 align="left">&nbsp;</h3>
+</blockquote>
+    </blockquote>
+  </div>
+
+  <div id="pageName">
+
+    <h1><font color="#0000A0">Workshop Homepage                       </font></h1>
+
+  </div>
+
+  <div id="pageNav">
+
+    <div id="sectionLinks"> 
+
+      <h2><span class="feature"><strong><font color="#0000A0">Related Links</font></strong></span></h2>
+      <p>About: <a href="http://www.erina.or.jp/en/Info/index.htm">ERINA</a><a href="http://www.erina.or.jp/"></a><a href="http://www.cea.org.kh/"></a>, <a href="http://www.nso.mn/v3/index2.php?page=menu&m_id=270&s_id=0">NSO</a><a href="http://www.fao.org/ag/againfo/programmes/en/empres/ah1n1/Ectad.html"></a>, <a href="http://www.berkeley.edu/index.html">UCB</a><a href="http://are.berkeley.edu/~dwrh/"></a></p>
+    </div>
+  </div>
+  <div id="content">
+
+    <div class="feature">
+
+      <h2><strong><font color="#0000A0">Overview</font></strong></h2>
+
+      <p><strong> This course offers an introduction to Calibrated General Equilibrium (CGE) modeling, featuring a new dynamic forecasting model of the Mongolian economy.</strong>    </p>
+    </div>
+    <div class="story">
+
+      <h2><strong><font color="#0000A0">Project Introduction</font></strong></h2>
+      <h3><a href="Admin/Program.pdf">Workshop Agenda</a></h3>
+      <h3><a href="Admin/Participants.pdf">Participant List</a></h3>
+      <h3>&nbsp;</h3>
+      <h2><strong><font color="#0000A0">Lectures</font></strong></h2>
+      <h3>Lecture 1: Scenario Tools and Forecasting Models </h3>
+<h3><a href="Lectures/FAO_CEA_Lecture_3.1_CGE_Intro_PPT.pptx.pdf">Lecture 1.1An Introduction to General Equilibrium Policy Modeling</a></h3>
+<h3><a href="Lectures/FAO_CEA_Lecture_3.2_CGE123_PPT.pdf">Lecture 1.2:&quot;1 2 Sim?&quot;Easy CGE Modeling</a></h3>
+<h3>Lecture 2: Applied Policy Analysis &ndash; Using the Models </h3>
+<h3><a href="Lectures/FAO_CEA_Lecture_4.1_GAMS_PPT.pdf">Lecture 2.1: Introduction to GAMS</a></h3>
+<h3><a href="Lectures/FAO_CEA_Lecture_4.2_Simple_CGE_PPT.pdf">Lecture 2.2: A Simple CGE Model for GAMS</a></h3>
+<h3>&nbsp;</h3>
+<h2><a href="Web/Readings.html">Readings</a></h2>
+<h2><a href="Web/Resources.html">Resources</a></h2>
+<h3>&nbsp;</h3>
+<p><strong></strong></p>
+<h3>&nbsp;</h3>
+      <blockquote>&nbsp; </blockquote>
+    </div>
+  </div>
+</div>
+
+<!--end pagecell1-->
+
+<h5>
+  <input name="searchFor" type="text" size="10" />
+  <a href="">search</a> </h5>
+<div id="globalNav"></div>
+<br />
+
+<script type="text/javascript">
+
+    <!--
+
+      var menuitem1 = new menu(7,1,"hidden");
+
+			var menuitem2 = new menu(7,2,"hidden");
+
+			var menuitem3 = new menu(7,3,"hidden");
+
+			var menuitem4 = new menu(7,4,"hidden");
+
+			var menuitem5 = new menu(7,5,"hidden");
+
+			var menuitem6 = new menu(7,6,"hidden");
+
+			var menuitem7 = new menu(7,7,"hidden");
+
+    // -->
+
+    </script>
+
+</body>
+
+</html>
+

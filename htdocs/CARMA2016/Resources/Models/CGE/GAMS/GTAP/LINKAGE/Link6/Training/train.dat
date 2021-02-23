@@ -1,0 +1,1589 @@
+$onempty
+
+set i Sectors /
+   agrfd      "Agriculture and food"
+   enrgy      "Energy"
+   manuf      "Manufacturing"
+   srvcs      "Services"
+/ ;
+
+set cr(i) Crop sectors /
+/ ;
+
+set lv(i) Livestock sectors /
+/ ;
+
+set fd(i) Feed sectors /
+/ ;
+
+set ft(i) Fertilizer sectors /
+/ ;
+
+set e(i) Energy sectors /
+   enrgy      "enrgy"
+/ ;
+
+set agric(i) Agricultural sectors /
+/ ;
+
+set manu(i) Manufacturing sectors used in defining the MUV /
+   manuf      "manuf"
+/ ;
+
+set ik(i) Sectors with productivity growth /
+   manuf      "manuf"
+   srvcs      "srvcs"
+/ ;
+
+Alias(i,j) ;
+
+set k Household demand sectors /
+   agrfd      "Agriculture and food"
+   enrgy      "Energy"
+   manuf      "Manufacturing"
+   srvcs      "Services"
+/ ;
+
+set h Households /
+   hhsld      "Household"
+/ ;
+
+set r Regions /
+   jpn        "Japan"
+   usa        "United States"
+   eur        "European Union with EFTA"
+   rhy        "Rest of high income"
+   liy        "Low income"
+   miy        "Middle income"
+/ ;
+
+set r1 Second level Armington regions /
+   hiy        "High income countries"
+   lmy        "Low and middle income countries"
+/ ;
+
+set r2 Third level Armington regions /
+   liy        "Low income countries"
+   miy        "Middle income countries"
+   hiy        "High income countries"
+/ ;
+
+set oecd(r) High income regions for defining MUV /
+   jpn        "jpn"
+   usa        "usa"
+   eur        "eur"
+   rhy        "rhy"
+/ ;
+
+set hiy(r) High income regions /
+   jpn        "jpn"
+   usa        "usa"
+   eur        "eur"
+   rhy        "rhy"
+/ ;
+
+set liy(r) Low and middle income regions /
+   liy        "liy"
+   miy        "miy"
+/ ;
+
+set rsav(r) Residual region /
+   usa        "usa"
+/ ;
+
+alias(r,rp) ;
+
+alias(r,rpp) ;
+
+set fp Factors /
+   Labor      "Labor"
+   HSk        "High skilled labor"
+   Captl      "Capital remuneration"
+   LandR      "Land remuneration"
+   natrs      "Natural resource remuneration"
+/ ;
+
+set ll(fp) Labor types /
+   Labor      "Labor"
+   HSk        "High skilled labor"
+/ ;
+
+set l(ll) Labor types not complements with capital /
+   Labor      "Labor"
+/ ;
+
+set v1 Capital vintages /
+   Old        "Installed capital"
+   New        "New capital"
+/ ;
+
+set f Other final demand vectors /
+   gov        "Government current expenditures"
+   inv        "Investment expenditures"
+/ ;
+
+set tranche Population tranches /
+   Tot        "Population total"
+   L15        "Population level of those 15 and younger"
+   G15        "Population level of those between 15 and 65"
+   G65        "Population level of those 65 and greater"
+/ ;
+
+set gz Geographic zones /
+   Tot        "All sectors"
+   Rur        "Rural sectors"
+   Urb        "Urban sectors"
+/ ;
+
+set mapg(i,gz) Mapping of sectors to geographic zones /
+   agrfd     .Rur
+   enrgy     .Urb
+   manuf     .Urb
+   srvcs     .Urb
+/ ;
+mapg(i,"Tot") = yes ;
+
+set gs(gz) Sub regions only / rur, urb / ;
+
+set ia Aggregate sectors /
+   agrfd      "Agriculture and food"
+   enrgy      "Energy"
+   manuf      "Manufacturing"
+   srvcs      "Services"
+   Tot        "Total"
+   mrt        "Merchandise trade"
+/ ;
+
+set mapi(ia,i) Mapping of aggegate sectors /
+   agrfd     .agrfd
+   enrgy     .enrgy
+   manuf     .manuf
+   srvcs     .srvcs
+   Tot       .agrfd
+   Tot       .enrgy
+   Tot       .manuf
+   Tot       .srvcs
+   mrt       .agrfd
+   mrt       .enrgy
+   mrt       .manuf
+/ ;
+
+set mapr1(r1,r2) Mapping from level 3 regions to level 2 regions /
+   hiy       .hiy
+   lmy       .liy
+   lmy       .miy
+/ ;
+
+set mapr2(r2,r) Mapping from base regions to level 3 regions /
+   liy       .liy
+   miy       .miy
+   hiy       .jpn
+   hiy       .usa
+   hiy       .eur
+   hiy       .rhy
+/ ;
+
+set ra Aggregate regions /
+   jpn        "Japan"
+   usa        "United States"
+   eur        "European Union with EFTA"
+   rhy        "Rest of high income"
+   liy        "Low income"
+   miy        "Middle income"
+   hiy        "High income countries"
+   lmy        "Low and middle income countries"
+   wlt        "World total"
+/ ;
+
+Alias(ra,rap) ;
+
+set mapr(ra,r) Mapping of aggegate regions /
+   jpn       .jpn
+   usa       .usa
+   eur       .eur
+   rhy       .rhy
+   liy       .liy
+   miy       .miy
+   hiy       .jpn
+   hiy       .usa
+   hiy       .eur
+   hiy       .rhy
+   lmy       .liy
+   lmy       .miy
+   wlt       .jpn
+   wlt       .usa
+   wlt       .eur
+   wlt       .rhy
+   wlt       .liy
+   wlt       .miy
+/ ;
+
+Parameter xdp0(r,i,j) Domestic intermediate demand /
+jpn       .agrfd     .agrfd      1.1364549217E+5
+jpn       .agrfd     .enrgy          2.264627110
+jpn       .agrfd     .manuf       5413.487945356
+jpn       .agrfd     .srvcs      47967.019773528
+jpn       .enrgy     .agrfd       7984.525445305
+jpn       .enrgy     .enrgy      28368.350388475
+jpn       .enrgy     .manuf      74381.801698270
+jpn       .enrgy     .srvcs      60113.334401891
+jpn       .manuf     .agrfd      34764.436501357
+jpn       .manuf     .enrgy       2474.883271626
+jpn       .manuf     .manuf      8.3085062413E+5
+jpn       .manuf     .srvcs      4.1019406236E+5
+jpn       .srvcs     .agrfd      73561.694151565
+jpn       .srvcs     .enrgy      51256.343105508
+jpn       .srvcs     .manuf      4.0025171408E+5
+jpn       .srvcs     .srvcs      1.0315976713E+6
+usa       .agrfd     .agrfd      2.7163252113E+5
+usa       .agrfd     .enrgy        127.367957822
+usa       .agrfd     .manuf      18388.298877105
+usa       .agrfd     .srvcs      99768.568106083
+usa       .enrgy     .agrfd      25317.576287436
+usa       .enrgy     .enrgy      1.4282921405E+5
+usa       .enrgy     .manuf      1.0038913195E+5
+usa       .enrgy     .srvcs      1.3794309988E+5
+usa       .manuf     .agrfd      72523.018500334
+usa       .manuf     .enrgy      12399.309274744
+usa       .manuf     .manuf      1.0236804967E+6
+usa       .manuf     .srvcs      5.6882436679E+5
+usa       .srvcs     .agrfd      1.4867948772E+5
+usa       .srvcs     .enrgy      1.0574516131E+5
+usa       .srvcs     .manuf      5.9541048066E+5
+usa       .srvcs     .srvcs      2.5393999497E+6
+eur       .agrfd     .agrfd      2.9115905988E+5
+eur       .agrfd     .enrgy        380.603440908
+eur       .agrfd     .manuf      30751.992905664
+eur       .agrfd     .srvcs      1.2293183317E+5
+eur       .enrgy     .agrfd      13123.228215786
+eur       .enrgy     .enrgy      54800.486852460
+eur       .enrgy     .manuf      75656.219169814
+eur       .enrgy     .srvcs      75358.010543054
+eur       .manuf     .agrfd      76430.177785843
+eur       .manuf     .enrgy      12969.883611121
+eur       .manuf     .manuf      1.0749400254E+6
+eur       .manuf     .srvcs      5.6083388888E+5
+eur       .srvcs     .agrfd      2.0556216593E+5
+eur       .srvcs     .enrgy      43486.855878858
+eur       .srvcs     .manuf      8.0883283157E+5
+eur       .srvcs     .srvcs      2.3701184525E+6
+rhy       .agrfd     .agrfd      96565.268446874
+rhy       .agrfd     .enrgy         55.660530209
+rhy       .agrfd     .manuf      12977.395553463
+rhy       .agrfd     .srvcs      22854.777886804
+rhy       .enrgy     .agrfd       5163.674303109
+rhy       .enrgy     .enrgy      31860.950027238
+rhy       .enrgy     .manuf      43701.845243702
+rhy       .enrgy     .srvcs      36176.626083925
+rhy       .manuf     .agrfd      23725.360715766
+rhy       .manuf     .enrgy       5323.175493843
+rhy       .manuf     .manuf      3.9835620868E+5
+rhy       .manuf     .srvcs      1.7764995718E+5
+rhy       .srvcs     .agrfd      43839.671183046
+rhy       .srvcs     .enrgy      21508.131950322
+rhy       .srvcs     .manuf      1.8294583959E+5
+rhy       .srvcs     .srvcs      5.4151887853E+5
+liy       .agrfd     .agrfd      1.5494543962E+5
+liy       .agrfd     .enrgy         86.402876571
+liy       .agrfd     .manuf      22299.766101334
+liy       .agrfd     .srvcs      28744.050443970
+liy       .enrgy     .agrfd      10383.783666921
+liy       .enrgy     .enrgy      35874.434348890
+liy       .enrgy     .manuf      21363.526395485
+liy       .enrgy     .srvcs      16808.241411220
+liy       .manuf     .agrfd      27521.179916156
+liy       .manuf     .enrgy       3922.199738113
+liy       .manuf     .manuf      1.6370177665E+5
+liy       .manuf     .srvcs      1.0283975247E+5
+liy       .srvcs     .agrfd      58763.920647146
+liy       .srvcs     .enrgy      16224.622870135
+liy       .srvcs     .manuf      88419.766248875
+liy       .srvcs     .srvcs      1.7425754808E+5
+miy       .agrfd     .agrfd      5.7857105312E+5
+miy       .agrfd     .enrgy       2343.193747427
+miy       .agrfd     .manuf      95888.379436364
+miy       .agrfd     .srvcs      1.0621963810E+5
+miy       .enrgy     .agrfd      34076.440702709
+miy       .enrgy     .enrgy      2.6373330137E+5
+miy       .enrgy     .manuf      1.2200137411E+5
+miy       .enrgy     .srvcs      1.0171058677E+5
+miy       .manuf     .agrfd      1.3213725557E+5
+miy       .manuf     .enrgy      35584.473889382
+miy       .manuf     .manuf      1.1861341210E+6
+miy       .manuf     .srvcs      5.5375484319E+5
+miy       .srvcs     .agrfd      1.7213904218E+5
+miy       .srvcs     .enrgy      84478.119424881
+miy       .srvcs     .manuf      4.0494303822E+5
+miy       .srvcs     .srvcs      8.4552882987E+5
+/ ;
+
+Parameter xmp0(r,i,j) Imported intermediate demand /
+jpn       .agrfd     .agrfd      34353.086658861
+jpn       .agrfd     .enrgy          4.471945186
+jpn       .agrfd     .manuf       5400.500740591
+jpn       .agrfd     .srvcs      15253.117064662
+jpn       .enrgy     .agrfd        301.647597699
+jpn       .enrgy     .enrgy      39827.609255734
+jpn       .enrgy     .manuf       7821.696303237
+jpn       .enrgy     .srvcs       2061.983683237
+jpn       .manuf     .agrfd       1289.451419395
+jpn       .manuf     .enrgy        148.132572943
+jpn       .manuf     .manuf      93618.413550042
+jpn       .manuf     .srvcs      24213.953389289
+jpn       .srvcs     .agrfd        931.632863702
+jpn       .srvcs     .enrgy       1848.807672837
+jpn       .srvcs     .manuf       8357.007505832
+jpn       .srvcs     .srvcs      45941.513009006
+usa       .agrfd     .agrfd      16678.554312697
+usa       .agrfd     .enrgy         19.638748660
+usa       .agrfd     .manuf        999.264363452
+usa       .agrfd     .srvcs       8582.104399932
+usa       .enrgy     .agrfd        315.791928518
+usa       .enrgy     .enrgy      63595.932677332
+usa       .enrgy     .manuf       5502.665235724
+usa       .enrgy     .srvcs       5514.599712273
+usa       .manuf     .agrfd       9093.713344274
+usa       .manuf     .enrgy       2646.474346040
+usa       .manuf     .manuf      2.4210839145E+5
+usa       .manuf     .srvcs      1.2073516551E+5
+usa       .srvcs     .agrfd       3164.656906322
+usa       .srvcs     .enrgy       3248.334576915
+usa       .srvcs     .manuf      13754.013322559
+usa       .srvcs     .srvcs      68972.224559308
+eur       .agrfd     .agrfd      84899.818523137
+eur       .agrfd     .enrgy         20.751839937
+eur       .agrfd     .manuf      12401.836050680
+eur       .agrfd     .srvcs      18344.267887538
+eur       .enrgy     .agrfd       2112.343838182
+eur       .enrgy     .enrgy      92399.157250028
+eur       .enrgy     .manuf      17809.638596303
+eur       .enrgy     .srvcs      18123.346697660
+eur       .manuf     .agrfd      31466.898961102
+eur       .manuf     .enrgy       9179.814667816
+eur       .manuf     .manuf      7.4199648458E+5
+eur       .manuf     .srvcs      2.0901868464E+5
+eur       .srvcs     .agrfd      12371.696314891
+eur       .srvcs     .enrgy       5968.805961166
+eur       .srvcs     .manuf      80935.536577863
+eur       .srvcs     .srvcs      2.3002567198E+5
+rhy       .agrfd     .agrfd      17868.846154841
+rhy       .agrfd     .enrgy         16.338933182
+rhy       .agrfd     .manuf       6413.619240308
+rhy       .agrfd     .srvcs       5602.997393700
+rhy       .enrgy     .agrfd        706.971947297
+rhy       .enrgy     .enrgy      43772.001583062
+rhy       .enrgy     .manuf       5023.330459851
+rhy       .enrgy     .srvcs       8002.883271289
+rhy       .manuf     .agrfd       8091.203044124
+rhy       .manuf     .enrgy       3303.205383936
+rhy       .manuf     .manuf      3.0031711659E+5
+rhy       .manuf     .srvcs      82487.369310182
+rhy       .srvcs     .agrfd       2215.805597042
+rhy       .srvcs     .enrgy       1578.705642036
+rhy       .srvcs     .manuf      13255.169268215
+rhy       .srvcs     .srvcs      51064.267302663
+liy       .agrfd     .agrfd       7708.074152409
+liy       .agrfd     .enrgy         46.778281114
+liy       .agrfd     .manuf       1877.908410805
+liy       .agrfd     .srvcs       1239.394742035
+liy       .enrgy     .agrfd        576.568278962
+liy       .enrgy     .enrgy      11851.110191871
+liy       .enrgy     .manuf       2264.915918853
+liy       .enrgy     .srvcs       4836.603584082
+liy       .manuf     .agrfd       9500.408463324
+liy       .manuf     .enrgy       3361.014952456
+liy       .manuf     .manuf      65174.862814422
+liy       .manuf     .srvcs      25605.407293462
+liy       .srvcs     .agrfd       2942.693233766
+liy       .srvcs     .enrgy       1705.308904166
+liy       .srvcs     .manuf       4446.051106345
+liy       .srvcs     .srvcs      27250.393104391
+miy       .agrfd     .agrfd      60211.793920892
+miy       .agrfd     .enrgy       3574.326779214
+miy       .agrfd     .manuf      13297.797291306
+miy       .agrfd     .srvcs       9188.903010495
+miy       .enrgy     .agrfd       2961.077315778
+miy       .enrgy     .enrgy      57834.276966124
+miy       .enrgy     .manuf      14080.094914017
+miy       .enrgy     .srvcs      15714.527572901
+miy       .manuf     .agrfd      48688.724251288
+miy       .manuf     .enrgy      22745.589293725
+miy       .manuf     .manuf      4.7564246619E+5
+miy       .manuf     .srvcs      1.5092989640E+5
+miy       .srvcs     .agrfd       9819.060350791
+miy       .srvcs     .enrgy       7793.685408861
+miy       .srvcs     .manuf      31144.215776699
+miy       .srvcs     .srvcs      86055.845277192
+/ ;
+
+Parameter pdtax0(r,i,j) Base taxes on domestic intermediate consumption /
+jpn       .agrfd     .agrfd       -472.974837094
+jpn       .enrgy     .agrfd       2957.026449895
+jpn       .enrgy     .enrgy        799.104380727
+jpn       .enrgy     .manuf      12752.857446184
+jpn       .enrgy     .srvcs      18714.433939555
+jpn       .manuf     .agrfd       -129.278738723
+jpn       .srvcs     .agrfd       -315.229563317
+usa       .agrfd     .agrfd      -1571.504372560
+usa       .manuf     .agrfd       -649.361074897
+usa       .srvcs     .agrfd      -1416.623105863
+eur       .agrfd     .agrfd      -1437.711596822
+eur       .enrgy     .agrfd       7072.098537199
+eur       .enrgy     .enrgy        495.198297698
+eur       .enrgy     .manuf      34781.249329551
+eur       .enrgy     .srvcs      73289.134742787
+eur       .manuf     .agrfd      -1347.454135264
+eur       .srvcs     .agrfd      -1796.002516400
+rhy       .agrfd     .agrfd       -215.243332460
+rhy       .enrgy     .agrfd        659.440440829
+rhy       .enrgy     .enrgy        103.678069808
+rhy       .enrgy     .manuf       3346.917666354
+rhy       .enrgy     .srvcs       5397.859026074
+rhy       .manuf     .agrfd       -110.487562162
+rhy       .srvcs     .agrfd       -269.531855943
+liy       .enrgy     .agrfd        254.653940447
+liy       .enrgy     .enrgy       1118.077968835
+liy       .enrgy     .manuf       1352.230291375
+liy       .enrgy     .srvcs       1707.390611840
+miy       .agrfd     .agrfd      -1571.526877273
+miy       .enrgy     .agrfd       2715.831681314
+miy       .enrgy     .enrgy       9736.218816736
+miy       .enrgy     .manuf       7750.705606555
+miy       .enrgy     .srvcs      10942.846967396
+miy       .manuf     .agrfd      -1839.700066403
+miy       .srvcs     .agrfd      -1570.249150817
+/ ;
+
+Parameter pmtax0(r,i,j) Base taxes on imported intermediate consumption /
+jpn       .agrfd     .agrfd       -108.719874033
+jpn       .enrgy     .agrfd        237.626271691
+jpn       .enrgy     .enrgy        440.266978578
+jpn       .enrgy     .manuf       5119.367817107
+jpn       .enrgy     .srvcs       1308.224002772
+jpn       .manuf     .agrfd        -14.986007963
+jpn       .srvcs     .agrfd         -1.411347789
+usa       .agrfd     .agrfd        -66.274129627
+usa       .manuf     .agrfd       -111.851049943
+usa       .srvcs     .agrfd        -23.894887130
+eur       .agrfd     .agrfd       -478.879537750
+eur       .enrgy     .agrfd       2070.752613109
+eur       .enrgy     .enrgy        851.656898479
+eur       .enrgy     .manuf      18377.370850299
+eur       .enrgy     .srvcs      33961.012444189
+eur       .manuf     .agrfd       -757.214615065
+eur       .srvcs     .agrfd       -131.200537236
+rhy       .agrfd     .agrfd        -10.067444264
+rhy       .enrgy     .agrfd         80.015119140
+rhy       .enrgy     .enrgy        205.095417488
+rhy       .enrgy     .manuf        766.646046718
+rhy       .enrgy     .srvcs        876.135084866
+rhy       .manuf     .agrfd        -61.685619594
+rhy       .srvcs     .agrfd        -11.097816094
+liy       .enrgy     .agrfd         86.714238848
+liy       .enrgy     .enrgy        186.397364015
+liy       .enrgy     .manuf        523.881989049
+liy       .enrgy     .srvcs       1040.164275769
+miy       .agrfd     .agrfd        -92.629175428
+miy       .enrgy     .agrfd        368.067227839
+miy       .enrgy     .enrgy        333.868309164
+miy       .enrgy     .manuf       1530.267183529
+miy       .enrgy     .srvcs       1944.739735373
+miy       .manuf     .agrfd       -729.154054228
+miy       .srvcs     .agrfd        -90.561050978
+/ ;
+
+Parameter vaY0(r,fp,j) Value added /
+jpn       .Labor     .agrfd      74522.175006593
+jpn       .Labor     .enrgy      20892.365864521
+jpn       .Labor     .manuf      4.2108475751E+5
+jpn       .Labor     .srvcs      1.6735231044E+6
+jpn       .Captl     .agrfd      59361.126748134
+jpn       .Captl     .enrgy      66335.074377195
+jpn       .Captl     .manuf      2.6457660767E+5
+jpn       .Captl     .srvcs      1.0585569972E+6
+jpn       .LandR     .agrfd       9210.409237520
+usa       .Labor     .agrfd      1.1516344705E+5
+usa       .Labor     .enrgy      58215.032705688
+usa       .Labor     .manuf      8.7320973354E+5
+usa       .Labor     .srvcs      3.8556952848E+6
+usa       .Captl     .agrfd      1.4013124047E+5
+usa       .Captl     .enrgy      1.4093303577E+5
+usa       .Captl     .manuf      4.4349806951E+5
+usa       .Captl     .srvcs      2.2737480897E+6
+usa       .LandR     .agrfd      27431.419371540
+eur       .Labor     .agrfd      2.1329015768E+5
+eur       .Labor     .enrgy      40921.636860244
+eur       .Labor     .manuf      1.0174245154E+6
+eur       .Labor     .srvcs      2.8716911665E+6
+eur       .Captl     .agrfd      1.8346943242E+5
+eur       .Captl     .enrgy      99927.787431584
+eur       .Captl     .manuf      4.4786444391E+5
+eur       .Captl     .srvcs      2.5566327644E+6
+eur       .LandR     .agrfd      16857.727068940
+rhy       .Labor     .agrfd      52566.323961242
+rhy       .Labor     .enrgy      15188.523233607
+rhy       .Labor     .manuf      2.2851019439E+5
+rhy       .Labor     .srvcs      7.2607399837E+5
+rhy       .Captl     .agrfd      39095.267317453
+rhy       .Captl     .enrgy      58917.552750052
+rhy       .Captl     .manuf      1.6737605453E+5
+rhy       .Captl     .srvcs      5.3479427553E+5
+rhy       .LandR     .agrfd      17636.450037907
+liy       .Labor     .agrfd      1.1832005168E+5
+liy       .Labor     .enrgy      13280.528679312
+liy       .Labor     .manuf      74990.186502542
+liy       .Labor     .srvcs      2.5297242273E+5
+liy       .Captl     .agrfd      88327.787874622
+liy       .Captl     .enrgy      47054.177975214
+liy       .Captl     .manuf      93041.923080040
+liy       .Captl     .srvcs      3.0688580209E+5
+liy       .LandR     .agrfd      82475.992112881
+miy       .Labor     .agrfd      3.6025060786E+5
+miy       .Labor     .enrgy      69515.515651570
+miy       .Labor     .manuf      4.9796170515E+5
+miy       .Labor     .srvcs      1.2884020350E+6
+miy       .Captl     .agrfd      2.8855742287E+5
+miy       .Captl     .enrgy      2.7837986361E+5
+miy       .Captl     .manuf      5.3531382173E+5
+miy       .Captl     .srvcs      1.1446725164E+6
+miy       .LandR     .agrfd      1.3079756582E+5
+/ ;
+
+Parameter TaxFact0(r,fp,j) Base taxes on factors of production /
+jpn       .Captl     .agrfd       -589.026752433
+jpn       .LandR     .agrfd       -639.161789917
+usa       .Captl     .agrfd       -735.238029231
+usa       .LandR     .agrfd      -1.767033682E+4
+eur       .Captl     .agrfd      -1.734411382E+4
+eur       .LandR     .agrfd      -2.438278486E+4
+rhy       .Captl     .agrfd       -676.876864007
+rhy       .LandR     .agrfd       -996.066092377
+miy       .Captl     .agrfd      -1694.617051638
+miy       .LandR     .agrfd      -2424.751755514
+/ ;
+
+Parameter taxXP0(r,j) Output tax /
+jpn       .agrfd      42687.145929829
+jpn       .enrgy      14830.507043779
+jpn       .manuf      93609.877465055
+jpn       .srvcs      2.3435584020E+5
+usa       .agrfd      -5362.305209575
+eur       .agrfd      11956.083308621
+eur       .enrgy      16005.368724650
+eur       .manuf      -6870.165425538
+eur       .srvcs      1.6001569238E+5
+rhy       .agrfd       7878.292324682
+rhy       .enrgy       3762.997110410
+rhy       .manuf      24718.981945409
+rhy       .srvcs      68970.542293502
+liy       .agrfd       2597.903883917
+liy       .enrgy       2799.783721459
+liy       .manuf      26953.662872005
+liy       .srvcs      19404.762714696
+miy       .agrfd      28318.243810464
+miy       .enrgy      15231.640401555
+miy       .manuf      82599.906503516
+miy       .srvcs      84660.193487244
+/ ;
+
+Parameter IncDist0(r,h,fp) Income distribution /
+jpn       .hhsld     .Labor      2.1900224028E+6
+jpn       .hhsld     .Captl      1.4494188328E+6
+jpn       .hhsld     .LandR       9849.571027437
+usa       .hhsld     .Labor      4.9022834981E+6
+usa       .hhsld     .Captl      2.9990456735E+6
+usa       .hhsld     .LandR      45101.756191824
+eur       .hhsld     .Labor      4.1433274764E+6
+eur       .hhsld     .Captl      3.3052385419E+6
+eur       .hhsld     .LandR      41240.511933794
+rhy       .hhsld     .Labor      1.0223390400E+6
+rhy       .hhsld     .Captl      8.0086002699E+5
+rhy       .hhsld     .LandR      18632.516130284
+liy       .hhsld     .Labor      4.5956318959E+5
+liy       .hhsld     .Captl      5.3530969102E+5
+liy       .hhsld     .LandR      82475.992112881
+miy       .hhsld     .Labor      2.2161298637E+6
+miy       .hhsld     .Captl      2.2486182417E+6
+miy       .hhsld     .LandR      1.3322231758E+5
+/ ;
+
+Parameter acons0(r,i,k,h) Household consumption transition matrix /
+jpn       .agrfd     .agrfd     .hhsld      3.1691695369E+5
+jpn       .enrgy     .enrgy     .hhsld      96322.128326351
+jpn       .manuf     .manuf     .hhsld      3.0855313344E+5
+jpn       .srvcs     .srvcs     .hhsld      1.8102982508E+6
+usa       .agrfd     .agrfd     .hhsld      3.7987348860E+5
+usa       .enrgy     .enrgy     .hhsld      1.1476191413E+5
+usa       .manuf     .manuf     .hhsld      7.2614980265E+5
+usa       .srvcs     .srvcs     .hhsld      4.2733072241E+6
+eur       .agrfd     .agrfd     .hhsld      6.5408162195E+5
+eur       .enrgy     .enrgy     .hhsld      2.7083761052E+5
+eur       .manuf     .manuf     .hhsld      9.4098933582E+5
+eur       .srvcs     .srvcs     .hhsld      3.2501640852E+6
+rhy       .agrfd     .agrfd     .hhsld      1.7076618554E+5
+rhy       .enrgy     .enrgy     .hhsld      40267.288212836
+rhy       .manuf     .manuf     .hhsld      2.3105616391E+5
+rhy       .srvcs     .srvcs     .hhsld      7.6212426409E+5
+liy       .agrfd     .agrfd     .hhsld      3.4094864852E+5
+liy       .enrgy     .enrgy     .hhsld      30297.763127905
+liy       .manuf     .manuf     .hhsld      1.2491240934E+5
+liy       .srvcs     .srvcs     .hhsld      3.4553937765E+5
+miy       .agrfd     .agrfd     .hhsld      9.7753258584E+5
+miy       .enrgy     .enrgy     .hhsld      1.2768194431E+5
+miy       .manuf     .manuf     .hhsld      7.1504642981E+5
+miy       .srvcs     .srvcs     .hhsld      1.3683528984E+6
+/ ;
+
+Parameter xdc0(r,i,h) Household consumption of domestic goods /
+jpn       .agrfd     .hhsld      2.7909109362E+5
+jpn       .enrgy     .hhsld      55122.819079677
+jpn       .manuf     .hhsld      2.3432868795E+5
+jpn       .srvcs     .hhsld      1.7355943305E+6
+usa       .agrfd     .hhsld      3.5447166145E+5
+usa       .enrgy     .hhsld      1.1169959278E+5
+usa       .manuf     .hhsld      5.3582478886E+5
+usa       .srvcs     .hhsld      4.2216248659E+6
+eur       .agrfd     .hhsld      4.9451723563E+5
+eur       .enrgy     .hhsld      75316.189579286
+eur       .manuf     .hhsld      4.9853059916E+5
+eur       .srvcs     .hhsld      2.9827958848E+6
+rhy       .agrfd     .hhsld      1.3145897874E+5
+rhy       .enrgy     .hhsld      26158.474634935
+rhy       .manuf     .hhsld      1.1962276091E+5
+rhy       .srvcs     .hhsld      7.1237824841E+5
+liy       .agrfd     .hhsld      3.2235261058E+5
+liy       .enrgy     .hhsld      16772.728574322
+liy       .manuf     .hhsld      99463.977076125
+liy       .srvcs     .hhsld      3.2604197304E+5
+miy       .agrfd     .hhsld      8.5226092872E+5
+miy       .enrgy     .hhsld      85914.290605101
+miy       .manuf     .hhsld      5.3188637086E+5
+miy       .srvcs     .hhsld      1.2839029904E+6
+/ ;
+
+Parameter xmc0(r,i,h) Household consumption of imported goods /
+jpn       .agrfd     .hhsld      22840.182941612
+jpn       .enrgy     .hhsld        773.119558505
+jpn       .manuf     .hhsld      57939.506098979
+jpn       .srvcs     .hhsld      39367.610445464
+usa       .agrfd     .hhsld      25401.827152283
+usa       .enrgy     .hhsld       3092.194545246
+usa       .manuf     .hhsld      1.9032501379E+5
+usa       .srvcs     .hhsld      51682.358178571
+eur       .agrfd     .hhsld      1.2154997579E+5
+eur       .enrgy     .hhsld      16217.017921348
+eur       .manuf     .hhsld      3.8730152913E+5
+eur       .srvcs     .hhsld      86211.310107304
+rhy       .agrfd     .hhsld      28530.833730451
+rhy       .enrgy     .hhsld       1754.916562284
+rhy       .manuf     .hhsld      1.0024989150E+5
+rhy       .srvcs     .hhsld      26193.862775643
+liy       .agrfd     .hhsld      14771.845111388
+liy       .enrgy     .hhsld       5848.571249707
+liy       .manuf     .hhsld      23338.920929416
+liy       .srvcs     .hhsld      13618.146969133
+miy       .agrfd     .hhsld      73242.963359611
+miy       .enrgy     .hhsld      10218.267789906
+miy       .manuf     .hhsld      1.4726343867E+5
+miy       .srvcs     .hhsld      67638.630488481
+/ ;
+
+Parameter cdtax0(r,i,h) Indirect tax on household consumption of domestic goods /
+jpn       .agrfd     .hhsld      13922.442550818
+jpn       .enrgy     .hhsld      39102.806282609
+jpn       .manuf     .hhsld      13047.763211854
+jpn       .srvcs     .hhsld      35335.064048336
+usa       .enrgy     .hhsld        -28.346377899
+eur       .agrfd     .hhsld      30126.324690818
+eur       .enrgy     .hhsld      1.2990813255E+5
+eur       .manuf     .hhsld      32479.944868756
+eur       .srvcs     .hhsld      1.7725046652E+5
+rhy       .agrfd     .hhsld       9221.672255808
+rhy       .enrgy     .hhsld      11455.742454501
+rhy       .manuf     .hhsld       4860.323053934
+rhy       .srvcs     .hhsld      22684.827411804
+liy       .agrfd     .hhsld       2874.248508723
+liy       .enrgy     .hhsld       5273.980651734
+liy       .manuf     .hhsld       1396.478469683
+liy       .srvcs     .hhsld       5556.723155122
+miy       .agrfd     .hhsld      45183.174468155
+miy       .enrgy     .hhsld      27928.748468177
+miy       .manuf     .hhsld      23454.633100447
+miy       .srvcs     .hhsld      15763.432791067
+/ ;
+
+Parameter cmtax0(r,i,h) Indirect tax on household consumption of imported goods /
+jpn       .agrfd     .hhsld       1063.234576523
+jpn       .enrgy     .hhsld       1323.383405560
+jpn       .manuf     .hhsld       3237.176181235
+jpn       .srvcs     .hhsld          1.245830873
+usa       .enrgy     .hhsld         -1.526816317
+eur       .agrfd     .hhsld       7888.085842260
+eur       .enrgy     .hhsld      49396.270473223
+eur       .manuf     .hhsld      22677.262666236
+eur       .srvcs     .hhsld       3906.423751988
+rhy       .agrfd     .hhsld       1554.700810027
+rhy       .enrgy     .hhsld        898.154561116
+rhy       .manuf     .hhsld       6323.188446392
+rhy       .srvcs     .hhsld        867.325491255
+liy       .agrfd     .hhsld        949.944326115
+liy       .enrgy     .hhsld       2402.482652140
+liy       .manuf     .hhsld        713.032863298
+liy       .srvcs     .hhsld        322.534479116
+miy       .agrfd     .hhsld       6845.519292947
+miy       .enrgy     .hhsld       3620.637451220
+miy       .manuf     .hhsld      12441.987174749
+miy       .srvcs     .hhsld       1047.844805415
+/ ;
+
+Parameter xdg0(r,i) Government consumption of domestic goods /
+jpn       .agrfd       4029.628660461
+jpn       .manuf        189.902247843
+jpn       .srvcs      4.0804960806E+5
+usa       .agrfd      10694.768296015
+usa       .enrgy         46.932710579
+usa       .manuf      1.3568054702E+5
+usa       .srvcs      1.0067464283E+6
+eur       .agrfd       2142.967870612
+eur       .enrgy          5.672284276
+eur       .manuf      23528.204251532
+eur       .srvcs      1.4930888222E+6
+rhy       .agrfd       2746.268718897
+rhy       .enrgy          1.456178470
+rhy       .manuf      15824.322718854
+rhy       .srvcs      2.7725284616E+5
+liy       .agrfd       1327.793787302
+liy       .enrgy          1.078050407
+liy       .manuf       8032.149731607
+liy       .srvcs      1.0360963586E+5
+miy       .agrfd       4683.777938429
+miy       .enrgy         12.323738589
+miy       .manuf      31954.878290249
+miy       .srvcs      6.8694039716E+5
+/ ;
+
+Parameter xmg0(r,i) Government consumption of imported goods /
+jpn       .srvcs          2.122930659
+usa       .agrfd        803.453346180
+usa       .enrgy          1.194407196
+usa       .manuf      36919.902073185
+usa       .srvcs      11066.904758868
+eur       .agrfd        770.293152781
+eur       .manuf      21755.033758537
+eur       .srvcs      18369.445355044
+rhy       .agrfd        271.388131112
+rhy       .manuf      11827.219584279
+rhy       .srvcs       7366.781173636
+liy       .agrfd        166.331115607
+liy       .manuf        918.636765149
+liy       .srvcs       2514.580245406
+miy       .agrfd        205.247804195
+miy       .manuf       8321.873515749
+miy       .srvcs      15989.434840886
+/ ;
+
+Parameter gdtax0(r,i) Indirect tax on government consumption of domestic goods /
+jpn       .agrfd        116.498133858
+jpn       .manuf          6.303058286
+jpn       .srvcs         52.182909092
+rhy       .agrfd          8.495448462
+rhy       .manuf         62.141584091
+rhy       .srvcs        353.483972954
+liy       .manuf          8.278633605
+liy       .srvcs       1522.783526413
+miy       .agrfd         96.459004765
+miy       .manuf        356.431934527
+miy       .srvcs       3133.480580103
+/ ;
+
+Parameter gmtax0(r,i) Indirect tax on government consumption of imported goods /
+rhy       .agrfd          1.082072296
+rhy       .manuf         47.586372785
+rhy       .srvcs         26.867176444
+liy       .manuf          2.594889542
+liy       .srvcs          2.199240978
+miy       .agrfd          4.335261733
+miy       .manuf         81.019941066
+miy       .srvcs          4.786852194
+/ ;
+
+Parameter xdi0(r,i) Investment consumption of domestic goods /
+jpn       .agrfd       1423.448756796
+jpn       .manuf      2.9589602115E+5
+jpn       .srvcs      8.4432045410E+5
+usa       .agrfd          3.289173896
+usa       .manuf      4.0211974468E+5
+usa       .srvcs      8.3224947220E+5
+eur       .agrfd       1924.884621964
+eur       .manuf      3.2160204905E+5
+eur       .srvcs      8.4115933290E+5
+rhy       .agrfd        446.411239694
+rhy       .manuf      85368.186287463
+rhy       .srvcs      3.2484303694E+5
+liy       .agrfd        596.618881145
+liy       .manuf      61634.977706178
+liy       .srvcs      1.5515323412E+5
+miy       .agrfd      78149.965720179
+miy       .manuf      2.4405876831E+5
+miy       .srvcs      6.7685898959E+5
+/ ;
+
+Parameter xmi0(r,i) Investment consumption of imported goods /
+jpn       .agrfd         83.939764666
+jpn       .manuf      41778.479367771
+jpn       .srvcs       3157.827340673
+usa       .agrfd          6.916711440
+usa       .manuf      1.6066116405E+5
+usa       .srvcs       3103.629276921
+eur       .agrfd        371.841923909
+eur       .manuf      3.0421656980E+5
+eur       .srvcs      22776.722087781
+rhy       .agrfd         62.059199761
+rhy       .manuf      1.0481460920E+5
+rhy       .srvcs       3738.774255392
+liy       .agrfd        195.495668826
+liy       .manuf      38223.488852441
+liy       .srvcs       1848.676671869
+miy       .agrfd       2331.463809806
+miy       .manuf      2.1958075650E+5
+miy       .srvcs       9928.258575307
+/ ;
+
+Parameter idtax0(r,i) Indirect tax on investment consumption of domestic goods /
+jpn       .agrfd         40.645420977
+jpn       .manuf      11353.009029727
+jpn       .srvcs      22472.585525550
+eur       .agrfd         94.687357413
+eur       .manuf      19099.588779335
+eur       .srvcs      46589.938252923
+rhy       .agrfd          2.529733482
+rhy       .manuf       2028.601813214
+rhy       .srvcs       2565.304974876
+liy       .agrfd          1.324075589
+liy       .manuf        783.519283310
+liy       .srvcs       2393.907802547
+miy       .agrfd       7172.263171150
+miy       .manuf       8266.768902987
+miy       .srvcs       6194.890011204
+/ ;
+
+Parameter imtax0(r,i) Indirect tax on investment consumption of imported goods /
+jpn       .agrfd          1.774539655
+jpn       .manuf       1542.130789599
+eur       .agrfd         21.980462677
+eur       .manuf      14662.441656945
+eur       .srvcs        704.324093948
+rhy       .manuf       4461.432257699
+rhy       .srvcs         59.461028135
+liy       .manuf        563.943496630
+liy       .srvcs         10.501754100
+miy       .agrfd         43.635639099
+miy       .manuf      10145.860283249
+miy       .srvcs         33.789341164
+/ ;
+
+Parameter xmarg0(r,i) Demand for trade margin services /
+jpn       .srvcs      15792.902880607
+usa       .srvcs      19820.563772460
+eur       .srvcs      1.0629417331E+5
+rhy       .srvcs      27914.329425703
+liy       .srvcs       5323.519008881
+miy       .srvcs      36025.138728710
+/ ;
+
+Parameter savh0(r,h) Net private saving /
+jpn       .hhsld      1.3101581138E+6
+usa       .hhsld      1.2476934042E+6
+eur       .hhsld      1.6968280847E+6
+rhy       .hhsld      5.3393524422E+5
+liy       .hhsld      2.3326145974E+5
+miy       .hhsld      1.2241240913E+6
+/ ;
+
+Parameter savg0(r) Net public saving /
+jpn            0.000000000
+usa            0.000000000
+eur            0.000000000
+rhy            0.000000000
+liy            0.000000000
+miy            0.000000000
+/ ;
+
+Parameter deprec0(r) Depreciation allowance /
+/ ;
+
+Parameter kstock0(r) Base capital stock /
+jpn        1.5162592000E+7
+usa        1.8169864000E+7
+eur        2.4944106477E+7
+rhy        5.4155422910E+6
+liy        2.6188414019E+6
+miy        1.5856305821E+7
+/ ;
+
+Parameter hpop0(r,h) Base population in millions /
+jpn       .hhsld        127.082261000
+usa       .hhsld        279.004926000
+eur       .hhsld        389.890717000
+rhy       .hhsld        131.769857000
+liy       .hhsld       2238.735865000
+miy       .hhsld       2711.728391000
+/ ;
+
+Parameter pop0(r,tranche) Base year population tranches /
+jpn       .Tot        1.2708226100E+8
+jpn       .L15        2.0050245000E+7
+jpn       .G15        8.8536110000E+7
+jpn       .G65        1.8495906000E+7
+usa       .Tot        2.7900492600E+8
+usa       .L15        6.2255305000E+7
+usa       .G15        1.8435057400E+8
+usa       .G65        3.2399047000E+7
+eur       .Tot        3.8989071700E+8
+eur       .L15        6.8877204000E+7
+eur       .G15        2.6205763600E+8
+eur       .G65        5.8955875000E+7
+rhy       .Tot        1.3176985700E+8
+rhy       .L15        2.9262206000E+7
+rhy       .G15        9.0972762000E+7
+rhy       .G65        1.1534890000E+7
+liy       .Tot        2.2387358650E+9
+liy       .L15        8.7634480300E+8
+liy       .G15        1.2671330590E+9
+liy       .G65        9.5258003000E+7
+miy       .Tot        2.7117283910E+9
+miy       .L15        8.2218837800E+8
+miy       .G15        1.7129962390E+9
+miy       .G65        1.7654377000E+8
+/ ;
+
+Parameter popLag(r,tranche) Lagged population tranches /
+jpn       .Tot        1.2673283800E+8
+jpn       .L15        2.0341772000E+7
+jpn       .G15        8.8560070000E+7
+jpn       .G65        1.7830997000E+7
+usa       .Tot        2.7521757700E+8
+usa       .L15        6.1573290000E+7
+usa       .G15        1.8148177100E+8
+usa       .G65        3.2162516000E+7
+eur       .Tot        3.8869929100E+8
+eur       .L15        6.9307788000E+7
+eur       .G15        2.6114019800E+8
+eur       .G65        5.8251306000E+7
+rhy       .Tot        1.3023873100E+8
+rhy       .L15        2.9507604000E+7
+rhy       .G15        8.9585669000E+7
+rhy       .G65        1.1145459000E+7
+liy       .Tot        2.1919916890E+9
+liy       .L15        8.6304213900E+8
+liy       .G15        1.2373358940E+9
+liy       .G65        9.1613658000E+7
+miy       .Tot        2.6817015390E+9
+miy       .L15        8.2059702900E+8
+miy       .G15        1.6883162440E+9
+miy       .G65        1.7278826800E+8
+/ ;
+
+Parameter ppp0(r) Base PPP exchange rate /
+jpn            0.742689103
+usa            0.990689057
+eur            0.942592096
+rhy            1.207870864
+liy            3.860468691
+miy            2.438236395
+/ ;
+
+Parameter gdpgr0(r) Base GDP growth rates /
+jpn            1.800000000
+usa            4.465000000
+eur            2.539094958
+rhy            5.072205779
+liy            4.398879131
+miy            4.705062390
+/ ;
+
+Parameter eta0(r,k,h) Base income elasticities /
+jpn       .agrfd     .hhsld          0.036781763
+jpn       .enrgy     .hhsld          0.637211108
+jpn       .manuf     .hhsld          0.682876666
+jpn       .srvcs     .hhsld          1.241979067
+usa       .agrfd     .hhsld          0.008803278
+usa       .enrgy     .hhsld          0.581810064
+usa       .manuf     .hhsld          0.778340916
+usa       .srvcs     .hhsld          1.137008618
+eur       .agrfd     .hhsld          0.075771651
+eur       .enrgy     .hhsld          0.715141510
+eur       .manuf     .hhsld          0.710383822
+eur       .srvcs     .hhsld          1.293584928
+rhy       .agrfd     .hhsld          0.159148272
+rhy       .enrgy     .hhsld          0.857487243
+rhy       .manuf     .hhsld          0.802533192
+rhy       .srvcs     .hhsld          1.255802964
+liy       .agrfd     .hhsld          0.520342808
+liy       .enrgy     .hhsld          1.401156970
+liy       .manuf     .hhsld          1.083100794
+liy       .srvcs     .hhsld          1.408069548
+miy       .agrfd     .hhsld          0.489489015
+miy       .enrgy     .hhsld          1.130771727
+miy       .manuf     .hhsld          1.099649928
+miy       .srvcs     .hhsld          1.315451758
+/ ;
+
+Parameter etax0(r,rp,i) Base trade flows at pre FOB export price /
+jpn       .usa       .agrfd        503.185477489
+jpn       .usa       .enrgy         65.783109669
+jpn       .usa       .manuf      1.1503480848E+5
+jpn       .usa       .srvcs       9589.000824480
+jpn       .eur       .agrfd        376.610091120
+jpn       .eur       .enrgy        256.357120731
+jpn       .eur       .manuf      67456.129411758
+jpn       .eur       .srvcs      30680.322284109
+jpn       .rhy       .agrfd       1494.060395915
+jpn       .rhy       .enrgy        355.363520061
+jpn       .rhy       .manuf      98747.170814147
+jpn       .rhy       .srvcs       7190.357389171
+jpn       .liy       .agrfd        126.379222740
+jpn       .liy       .enrgy        202.462660183
+jpn       .liy       .manuf      18035.736671018
+jpn       .liy       .srvcs       3256.679438779
+jpn       .miy       .agrfd        692.205344894
+jpn       .miy       .enrgy        377.384059958
+jpn       .miy       .manuf      1.1526625088E+5
+jpn       .miy       .srvcs      12660.176655193
+usa       .jpn       .agrfd      15052.486849883
+usa       .jpn       .enrgy        737.463337271
+usa       .jpn       .manuf      48129.174562770
+usa       .jpn       .srvcs      22339.728266624
+usa       .eur       .agrfd      10102.799096008
+usa       .eur       .enrgy       2343.008570457
+usa       .eur       .manuf      1.3229961612E+5
+usa       .eur       .srvcs      1.0001825197E+5
+usa       .rhy       .agrfd      15103.440619281
+usa       .rhy       .enrgy       3558.555843724
+usa       .rhy       .manuf      1.9429215389E+5
+usa       .rhy       .srvcs      23689.512441374
+usa       .liy       .agrfd       2405.603915021
+usa       .liy       .enrgy        403.247969700
+usa       .liy       .manuf      11615.847033415
+usa       .liy       .srvcs       9403.895663561
+usa       .miy       .agrfd      23178.807712765
+usa       .miy       .enrgy       4491.678031334
+usa       .miy       .manuf      1.7955148217E+5
+usa       .miy       .srvcs      54055.655297239
+eur       .jpn       .agrfd       5412.537409823
+eur       .jpn       .enrgy        871.687459407
+eur       .jpn       .manuf      42101.197022049
+eur       .jpn       .srvcs      44438.266703571
+eur       .usa       .agrfd       9260.240825232
+eur       .usa       .enrgy       5090.910090459
+eur       .usa       .manuf      1.4666343406E+5
+eur       .usa       .srvcs      76937.533184683
+eur       .eur       .agrfd      1.4168129209E+5
+eur       .eur       .enrgy      58744.266608461
+eur       .eur       .manuf      1.1308195589E+6
+eur       .eur       .srvcs      1.7837717493E+5
+eur       .rhy       .agrfd       6635.095784122
+eur       .rhy       .enrgy       6180.737516191
+eur       .rhy       .manuf      97922.994916754
+eur       .rhy       .srvcs      41465.241983247
+eur       .liy       .agrfd       5336.322600280
+eur       .liy       .enrgy       2379.835785485
+eur       .liy       .manuf      49117.941096907
+eur       .liy       .srvcs      17236.799107709
+eur       .miy       .agrfd      33759.111913438
+eur       .miy       .enrgy       9880.763610270
+eur       .miy       .manuf      3.1944202475E+5
+eur       .miy       .srvcs      90550.391715527
+rhy       .jpn       .agrfd       9501.055660341
+rhy       .jpn       .enrgy       6276.286912284
+rhy       .jpn       .manuf      39276.523314489
+rhy       .jpn       .srvcs       9183.747224784
+rhy       .usa       .agrfd      11893.184462824
+rhy       .usa       .enrgy      19093.069322757
+rhy       .usa       .manuf      2.1838505232E+5
+rhy       .usa       .srvcs      25231.732351132
+rhy       .eur       .agrfd       5484.065897175
+rhy       .eur       .enrgy       2243.843695077
+rhy       .eur       .manuf      71083.737616985
+rhy       .eur       .srvcs      46257.546585042
+rhy       .rhy       .agrfd       6385.376070717
+rhy       .rhy       .enrgy       4830.546265122
+rhy       .rhy       .manuf      72935.883686563
+rhy       .rhy       .srvcs       9458.370030093
+rhy       .liy       .agrfd       3969.243691499
+rhy       .liy       .enrgy       2879.961639488
+rhy       .liy       .manuf      24591.937410543
+rhy       .liy       .srvcs      13935.745910387
+rhy       .miy       .agrfd      11076.790060042
+rhy       .miy       .enrgy       7209.281819088
+rhy       .miy       .manuf      1.3556621287E+5
+rhy       .miy       .srvcs      25202.442974775
+liy       .jpn       .agrfd       4164.919416185
+liy       .jpn       .enrgy       4931.145710773
+liy       .jpn       .manuf       9880.332884421
+liy       .jpn       .srvcs       4063.645247463
+liy       .usa       .agrfd       3193.050859683
+liy       .usa       .enrgy      11964.808976776
+liy       .usa       .manuf      20045.822358603
+liy       .usa       .srvcs       7473.595754675
+liy       .eur       .agrfd      12526.774075060
+liy       .eur       .enrgy       6497.869181186
+liy       .eur       .manuf      34239.218200701
+liy       .eur       .srvcs      12824.715895276
+liy       .rhy       .agrfd       2677.161007605
+liy       .rhy       .enrgy       7139.529071606
+liy       .rhy       .manuf      10431.506908517
+liy       .rhy       .srvcs       3229.084911274
+liy       .liy       .agrfd       2941.414877215
+liy       .liy       .enrgy       1485.393817529
+liy       .liy       .manuf       5740.680728355
+liy       .liy       .srvcs       1380.877443537
+liy       .miy       .agrfd       8549.169186934
+liy       .miy       .enrgy       4288.298667002
+liy       .miy       .manuf      18956.884008132
+liy       .miy       .srvcs       6825.794426297
+miy       .jpn       .agrfd      13982.406907101
+miy       .jpn       .enrgy      33045.721660871
+miy       .jpn       .manuf      63212.080506615
+miy       .jpn       .srvcs      19289.624589249
+miy       .usa       .agrfd      19375.809098744
+miy       .usa       .enrgy      37659.757251026
+miy       .usa       .manuf      2.0963379399E+5
+miy       .usa       .srvcs      35180.227086888
+miy       .eur       .agrfd      34037.492576709
+miy       .eur       .enrgy      65676.524955110
+miy       .eur       .manuf      1.9784572331E+5
+miy       .eur       .srvcs      87674.676061537
+miy       .rhy       .agrfd      12286.695094474
+miy       .rhy       .enrgy      31165.123955089
+miy       .rhy       .manuf      99389.495413401
+miy       .rhy       .srvcs      20169.335058610
+miy       .liy       .agrfd       6241.472209764
+miy       .liy       .enrgy      13011.303128760
+miy       .liy       .manuf      27514.602262868
+miy       .liy       .srvcs       8534.491275901
+miy       .miy       .agrfd      39677.553633470
+miy       .miy       .enrgy      63277.325430660
+miy       .miy       .manuf      1.5518148653E+5
+miy       .miy       .srvcs      38060.502182635
+/ ;
+
+Parameter wtf0(r,rp,i) Base trade flows at FOB export price /
+jpn       .usa       .agrfd        519.685908949
+jpn       .usa       .enrgy         67.246963516
+jpn       .usa       .manuf      1.1715013931E+5
+jpn       .usa       .srvcs       9544.819006442
+jpn       .eur       .agrfd        388.678318021
+jpn       .eur       .enrgy        262.433015247
+jpn       .eur       .manuf      68736.860919347
+jpn       .eur       .srvcs      30552.095056936
+jpn       .rhy       .agrfd       1542.458791769
+jpn       .rhy       .enrgy        363.384944759
+jpn       .rhy       .manuf      1.0075025228E+5
+jpn       .rhy       .srvcs       7153.177942368
+jpn       .liy       .agrfd        130.376963485
+jpn       .liy       .enrgy        207.036118921
+jpn       .liy       .manuf      18424.725063291
+jpn       .liy       .srvcs       3241.204545715
+jpn       .miy       .agrfd        714.397183582
+jpn       .miy       .enrgy        386.033445825
+jpn       .miy       .manuf      1.1764945454E+5
+jpn       .miy       .srvcs      12599.892697834
+usa       .jpn       .agrfd      15026.922115594
+usa       .jpn       .enrgy        737.463337271
+usa       .jpn       .manuf      48129.174562770
+usa       .jpn       .srvcs      22339.728266624
+usa       .eur       .agrfd      10094.593873829
+usa       .eur       .enrgy       2343.008570457
+usa       .eur       .manuf      1.3229961612E+5
+usa       .eur       .srvcs      1.0001825197E+5
+usa       .rhy       .agrfd      15075.538515303
+usa       .rhy       .enrgy       3558.555843724
+usa       .rhy       .manuf      1.9429215795E+5
+usa       .rhy       .srvcs      23689.512441374
+usa       .liy       .agrfd       2399.648434405
+usa       .liy       .enrgy        403.247969700
+usa       .liy       .manuf      11615.847033415
+usa       .liy       .srvcs       9403.895663561
+usa       .miy       .agrfd      23111.652557375
+usa       .miy       .enrgy       4491.678031334
+usa       .miy       .manuf      1.7955148217E+5
+usa       .miy       .srvcs      54055.655297239
+eur       .jpn       .agrfd       5202.944953421
+eur       .jpn       .enrgy        864.208727012
+eur       .jpn       .manuf      42103.582656917
+eur       .jpn       .srvcs      44438.448955328
+eur       .usa       .agrfd       8917.379034219
+eur       .usa       .enrgy       4965.298499769
+eur       .usa       .manuf      1.4667076698E+5
+eur       .usa       .srvcs      76937.852266634
+eur       .eur       .agrfd      1.4099444136E+5
+eur       .eur       .enrgy      58744.266608461
+eur       .eur       .manuf      1.1308195589E+6
+eur       .eur       .srvcs      1.7837717493E+5
+eur       .rhy       .agrfd       6358.947372633
+eur       .rhy       .enrgy       5988.964693265
+eur       .rhy       .manuf      97931.229807917
+eur       .rhy       .srvcs      41465.450565301
+eur       .liy       .agrfd       4876.342086165
+eur       .liy       .enrgy       2377.751015805
+eur       .liy       .manuf      49120.644505907
+eur       .liy       .srvcs      17236.901688885
+eur       .miy       .agrfd      31063.054720362
+eur       .miy       .enrgy       9856.892632320
+eur       .miy       .manuf      3.1946210257E+5
+eur       .miy       .srvcs      90550.810025527
+rhy       .jpn       .agrfd       9529.072249149
+rhy       .jpn       .enrgy       6293.043320110
+rhy       .jpn       .manuf      39295.579489467
+rhy       .jpn       .srvcs       9222.884607557
+rhy       .usa       .agrfd      11927.857832826
+rhy       .usa       .enrgy      19096.195567663
+rhy       .usa       .manuf      2.1883115389E+5
+rhy       .usa       .srvcs      25266.293217720
+rhy       .eur       .agrfd       5579.495651414
+rhy       .eur       .enrgy       2262.141356913
+rhy       .eur       .manuf      71263.219200936
+rhy       .eur       .srvcs      46374.717786190
+rhy       .rhy       .agrfd       6412.806648418
+rhy       .rhy       .enrgy       4886.209164687
+rhy       .rhy       .manuf      72999.428766820
+rhy       .rhy       .srvcs       9476.173627440
+rhy       .liy       .agrfd       4017.743257375
+rhy       .liy       .enrgy       2932.111973489
+rhy       .liy       .manuf      24603.936764086
+rhy       .liy       .srvcs      13941.190176719
+rhy       .miy       .agrfd      11153.920027963
+rhy       .miy       .enrgy       7240.840082904
+rhy       .miy       .manuf      1.3559758769E+5
+rhy       .miy       .srvcs      25246.467522908
+liy       .jpn       .agrfd       4176.240302077
+liy       .jpn       .enrgy       5207.205593915
+liy       .jpn       .manuf       9906.478153930
+liy       .jpn       .srvcs       4064.630506209
+liy       .usa       .agrfd       3201.391908512
+liy       .usa       .enrgy      11654.430239159
+liy       .usa       .manuf      21099.032394982
+liy       .usa       .srvcs       7475.474636218
+liy       .eur       .agrfd      12540.528255226
+liy       .eur       .enrgy       6371.186570121
+liy       .eur       .manuf      35478.511197706
+liy       .eur       .srvcs      12826.861372614
+liy       .rhy       .agrfd       2693.090437197
+liy       .rhy       .enrgy       7237.201316861
+liy       .rhy       .manuf      10558.905899226
+liy       .rhy       .srvcs       3229.604122635
+liy       .liy       .agrfd       2947.021460288
+liy       .liy       .enrgy       1465.149481525
+liy       .liy       .manuf       5742.737530550
+liy       .liy       .srvcs       1381.125661754
+liy       .miy       .agrfd       8561.019992731
+liy       .miy       .enrgy       4230.243400164
+liy       .miy       .manuf      18967.875658082
+liy       .miy       .srvcs       6826.977538102
+miy       .jpn       .agrfd      14193.569845869
+miy       .jpn       .enrgy      33455.331321433
+miy       .jpn       .manuf      63332.508389981
+miy       .jpn       .srvcs      19544.473441370
+miy       .usa       .agrfd      19786.050007229
+miy       .usa       .enrgy      37721.842269920
+miy       .usa       .manuf      2.1248549275E+5
+miy       .usa       .srvcs      35767.682452450
+miy       .eur       .agrfd      35125.105876219
+miy       .eur       .enrgy      67686.162920329
+miy       .eur       .manuf      1.9974083249E+5
+miy       .eur       .srvcs      88510.082239139
+miy       .rhy       .agrfd      12436.748538168
+miy       .rhy       .enrgy      31540.260515997
+miy       .rhy       .manuf      99716.161543219
+miy       .rhy       .srvcs      20348.357537891
+miy       .liy       .agrfd       6327.889913400
+miy       .liy       .enrgy      13226.408227865
+miy       .liy       .manuf      27557.945491649
+miy       .liy       .srvcs       8602.736320070
+miy       .miy       .agrfd      40461.097517595
+miy       .miy       .enrgy      65838.935633849
+miy       .miy       .manuf      1.5610734102E+5
+miy       .miy       .srvcs      38427.438094676
+/ ;
+
+Parameter tmarg0(r,rp,i) Base trade flows at CIF import price /
+jpn       .usa       .agrfd        553.396070905
+jpn       .usa       .enrgy         70.944198277
+jpn       .usa       .manuf      1.2022942764E+5
+jpn       .usa       .srvcs       9544.819006442
+jpn       .eur       .agrfd        400.057524917
+jpn       .eur       .enrgy        268.292010628
+jpn       .eur       .manuf      70527.122425922
+jpn       .eur       .srvcs      30552.095056936
+jpn       .rhy       .agrfd       1633.889287268
+jpn       .rhy       .enrgy        371.637528836
+jpn       .rhy       .manuf      1.0395829336E+5
+jpn       .rhy       .srvcs       7153.177942368
+jpn       .liy       .agrfd        138.087649789
+jpn       .liy       .enrgy        219.217974702
+jpn       .liy       .manuf      19203.595923010
+jpn       .liy       .srvcs       3241.204545715
+jpn       .miy       .agrfd        781.888109875
+jpn       .miy       .enrgy        399.883581340
+jpn       .miy       .manuf      1.2415310041E+5
+jpn       .miy       .srvcs      12599.892697834
+usa       .jpn       .agrfd      16984.991883509
+usa       .jpn       .enrgy        853.042423068
+usa       .jpn       .manuf      50016.081058709
+usa       .jpn       .srvcs      22339.728266624
+usa       .eur       .agrfd      10992.074840163
+usa       .eur       .enrgy       2719.324779947
+usa       .eur       .manuf      1.3607930807E+5
+usa       .eur       .srvcs      1.0001825197E+5
+usa       .rhy       .agrfd      16074.537634396
+usa       .rhy       .enrgy       3875.539323564
+usa       .rhy       .manuf      1.9832156867E+5
+usa       .rhy       .srvcs      23689.512441374
+usa       .liy       .agrfd       2606.786394751
+usa       .liy       .enrgy        416.393349372
+usa       .liy       .manuf      12078.319733326
+usa       .liy       .srvcs       9403.895663561
+usa       .miy       .agrfd      25049.857105317
+usa       .miy       .enrgy       4853.643826041
+usa       .miy       .manuf      1.8542291983E+5
+usa       .miy       .srvcs      54055.655297239
+eur       .jpn       .agrfd       5584.954636845
+eur       .jpn       .enrgy        874.333652498
+eur       .jpn       .manuf      43448.708313196
+eur       .jpn       .srvcs      44438.448955328
+eur       .usa       .agrfd       9589.628542113
+eur       .usa       .enrgy       5270.095543722
+eur       .usa       .manuf      1.5139442621E+5
+eur       .usa       .srvcs      76937.852266634
+eur       .eur       .agrfd      1.4570613207E+5
+eur       .eur       .enrgy      60756.907766747
+eur       .eur       .manuf      1.1488007959E+6
+eur       .eur       .srvcs      1.7837717493E+5
+eur       .rhy       .agrfd       6748.638318329
+eur       .rhy       .enrgy       6265.013440761
+eur       .rhy       .manuf      1.0113995545E+5
+eur       .rhy       .srvcs      41465.450565301
+eur       .liy       .agrfd       5202.556353208
+eur       .liy       .enrgy       2477.255400454
+eur       .liy       .manuf      50687.165373421
+eur       .liy       .srvcs      17236.901688885
+eur       .miy       .agrfd      33817.802470350
+eur       .miy       .enrgy      10120.669224730
+eur       .miy       .manuf      3.3282446893E+5
+eur       .miy       .srvcs      90550.810025527
+rhy       .jpn       .agrfd      10544.476198577
+rhy       .jpn       .enrgy       7380.249032066
+rhy       .jpn       .manuf      41651.460807422
+rhy       .jpn       .srvcs       9222.884607557
+rhy       .usa       .agrfd      12440.850202041
+rhy       .usa       .enrgy      19581.077002372
+rhy       .usa       .manuf      2.2376651838E+5
+rhy       .usa       .srvcs      25266.293217720
+rhy       .eur       .agrfd       6020.191259818
+rhy       .eur       .enrgy       2544.494558509
+rhy       .eur       .manuf      73657.313350498
+rhy       .eur       .srvcs      46374.717786190
+rhy       .rhy       .agrfd       6937.322587159
+rhy       .rhy       .enrgy       5469.282673339
+rhy       .rhy       .manuf      75113.525731267
+rhy       .rhy       .srvcs       9476.173627440
+rhy       .liy       .agrfd       4319.741045971
+rhy       .liy       .enrgy       3201.591280569
+rhy       .liy       .manuf      25674.862290896
+rhy       .liy       .srvcs      13941.190176719
+rhy       .miy       .agrfd      12124.926208465
+rhy       .miy       .enrgy       8062.064167747
+rhy       .miy       .manuf      1.4412315473E+5
+rhy       .miy       .srvcs      25246.467522908
+liy       .jpn       .agrfd       4490.014712310
+liy       .jpn       .enrgy       5850.231472488
+liy       .jpn       .manuf      10666.677228273
+liy       .jpn       .srvcs       4064.630506209
+liy       .usa       .agrfd       3377.848375090
+liy       .usa       .enrgy      12520.577151002
+liy       .usa       .manuf      22155.844903230
+liy       .usa       .srvcs       7475.474636218
+liy       .eur       .agrfd      13498.102479914
+liy       .eur       .enrgy       6843.567379027
+liy       .eur       .manuf      37179.343377820
+liy       .eur       .srvcs      12826.861372614
+liy       .rhy       .agrfd       2903.514451827
+liy       .rhy       .enrgy       7879.954282905
+liy       .rhy       .manuf      11096.201855745
+liy       .rhy       .srvcs       3229.604122635
+liy       .liy       .agrfd       3195.632018629
+liy       .liy       .enrgy       1560.214406341
+liy       .liy       .manuf       6028.596546112
+liy       .liy       .srvcs       1381.125661754
+liy       .miy       .agrfd       9308.185993866
+liy       .miy       .enrgy       4555.830498335
+liy       .miy       .manuf      20120.917269372
+liy       .miy       .srvcs       6826.977538102
+miy       .jpn       .agrfd      15484.965928735
+miy       .jpn       .enrgy      36259.543159342
+miy       .jpn       .manuf      68389.561631524
+miy       .jpn       .srvcs      19544.473441370
+miy       .usa       .agrfd      21444.857845473
+miy       .usa       .enrgy      40273.042952145
+miy       .usa       .manuf      2.2524834981E+5
+miy       .usa       .srvcs      35767.682452450
+miy       .eur       .agrfd      38753.314034626
+miy       .eur       .enrgy      72960.998996341
+miy       .eur       .manuf      2.1364894099E+5
+miy       .eur       .srvcs      88510.082239139
+miy       .rhy       .agrfd      13556.342745985
+miy       .rhy       .enrgy      33904.034010917
+miy       .rhy       .manuf      1.0520803444E+5
+miy       .rhy       .srvcs      20348.357537891
+miy       .liy       .agrfd       6900.271259783
+miy       .liy       .enrgy      14142.912238010
+miy       .liy       .manuf      29450.417915507
+miy       .liy       .srvcs       8602.736320070
+miy       .miy       .agrfd      43823.782790175
+miy       .miy       .enrgy      69632.446575970
+miy       .miy       .manuf      1.6572412873E+5
+miy       .miy       .srvcs      38427.438094676
+/ ;
+
+Parameter tar0(r,rp,i) Base trade flows at post CIF import price /
+jpn       .usa       .agrfd        608.040667846
+jpn       .usa       .enrgy         71.443536306
+jpn       .usa       .manuf      1.2313741430E+5
+jpn       .usa       .srvcs       9544.819006442
+jpn       .eur       .agrfd        533.338206557
+jpn       .eur       .enrgy        269.004330134
+jpn       .eur       .manuf      74011.472979224
+jpn       .eur       .srvcs      30552.095535172
+jpn       .rhy       .agrfd       1921.145082089
+jpn       .rhy       .enrgy        387.444595244
+jpn       .rhy       .manuf      1.0833386921E+5
+jpn       .rhy       .srvcs       7154.698694957
+jpn       .liy       .agrfd        172.098641673
+jpn       .liy       .enrgy        271.505036096
+jpn       .liy       .manuf      22231.664629641
+jpn       .liy       .srvcs       3263.856409820
+jpn       .miy       .agrfd       1020.918897603
+jpn       .miy       .enrgy        423.020955342
+jpn       .miy       .manuf      1.4054807246E+5
+jpn       .miy       .srvcs      12643.057696242
+usa       .jpn       .agrfd      24909.616181843
+usa       .jpn       .enrgy        854.541211172
+usa       .jpn       .manuf      50453.240919511
+usa       .jpn       .srvcs      22339.544188243
+usa       .eur       .agrfd      13054.665185131
+usa       .eur       .enrgy       2727.489128600
+usa       .eur       .manuf      1.4065514587E+5
+usa       .eur       .srvcs      1.0001825448E+5
+usa       .rhy       .agrfd      20523.323961138
+usa       .rhy       .enrgy       3939.946526522
+usa       .rhy       .manuf      2.0089919398E+5
+usa       .rhy       .srvcs      23698.677050118
+usa       .liy       .agrfd       2916.148697147
+usa       .liy       .enrgy        470.930939410
+usa       .liy       .manuf      13848.132723754
+usa       .liy       .srvcs       9473.251433189
+usa       .miy       .agrfd      32860.530339464
+usa       .miy       .enrgy       5005.437375948
+usa       .miy       .manuf      1.9768292277E+5
+usa       .miy       .srvcs      54221.449041164
+eur       .jpn       .agrfd       8189.001025928
+eur       .jpn       .enrgy        884.367528310
+eur       .jpn       .manuf      44332.320516438
+eur       .jpn       .srvcs      44436.079004184
+eur       .usa       .agrfd      10447.729625982
+eur       .usa       .enrgy       5304.231775580
+eur       .usa       .manuf      1.5576903340E+5
+eur       .usa       .srvcs      76937.852266634
+eur       .eur       .agrfd      1.5359310150E+5
+eur       .eur       .enrgy      60756.907766747
+eur       .eur       .manuf      1.1488007959E+6
+eur       .eur       .srvcs      1.7837717493E+5
+eur       .rhy       .agrfd       8250.973273303
+eur       .rhy       .enrgy       6412.218144110
+eur       .rhy       .manuf      1.0494590257E+5
+eur       .rhy       .srvcs      41488.929197348
+eur       .liy       .agrfd       6147.020840548
+eur       .liy       .enrgy       2720.162633586
+eur       .liy       .manuf      58431.132873515
+eur       .liy       .srvcs      17373.017668288
+eur       .miy       .agrfd      45693.999507483
+eur       .miy       .enrgy      10706.157564539
+eur       .miy       .manuf      3.6656123372E+5
+eur       .miy       .srvcs      90802.032324475
+rhy       .jpn       .agrfd      17338.364704464
+rhy       .jpn       .enrgy       7440.110567976
+rhy       .jpn       .manuf      42246.758987706
+rhy       .jpn       .srvcs       9222.485758306
+rhy       .usa       .agrfd      13400.879314322
+rhy       .usa       .enrgy      19586.951266312
+rhy       .usa       .manuf      2.2654735574E+5
+rhy       .usa       .srvcs      25266.293217720
+rhy       .eur       .agrfd       8313.770768457
+rhy       .eur       .enrgy       2574.777710472
+rhy       .eur       .manuf      76834.298950933
+rhy       .eur       .srvcs      46374.718219335
+rhy       .rhy       .agrfd       7684.451508751
+rhy       .rhy       .enrgy       5553.181335561
+rhy       .rhy       .manuf      76916.256627169
+rhy       .rhy       .srvcs       9483.249335138
+rhy       .liy       .agrfd       4818.659740558
+rhy       .liy       .enrgy       3540.869070804
+rhy       .liy       .manuf      29848.549088183
+rhy       .liy       .srvcs      14156.252128014
+rhy       .miy       .agrfd      16462.059842078
+rhy       .miy       .enrgy       8760.988153860
+rhy       .miy       .manuf      1.6174862945E+5
+rhy       .miy       .srvcs      25316.265857788
+liy       .jpn       .agrfd       5891.335462574
+liy       .jpn       .enrgy       5805.700063340
+liy       .jpn       .manuf      11117.502268540
+liy       .jpn       .srvcs       4064.398040818
+liy       .usa       .agrfd       3888.246633568
+liy       .usa       .enrgy      12574.990693073
+liy       .usa       .manuf      23858.613756359
+liy       .usa       .srvcs       7475.474636218
+liy       .eur       .agrfd      15796.428692345
+liy       .eur       .enrgy       6868.424628334
+liy       .eur       .manuf      39634.388565777
+liy       .eur       .srvcs      12826.861616024
+liy       .rhy       .agrfd       3212.661450385
+liy       .rhy       .enrgy       8092.849248483
+liy       .rhy       .manuf      11710.304308716
+liy       .rhy       .srvcs       3230.697873912
+liy       .liy       .agrfd       3719.647790518
+liy       .liy       .enrgy       1812.990409046
+liy       .liy       .manuf       6933.342617174
+liy       .liy       .srvcs       1390.847039765
+liy       .miy       .agrfd      11277.987567310
+liy       .miy       .enrgy       4676.585596630
+liy       .miy       .manuf      22312.544796953
+liy       .miy       .srvcs       6846.843385863
+miy       .jpn       .agrfd      21606.981740769
+miy       .jpn       .enrgy      35801.337027627
+miy       .jpn       .manuf      70838.113706223
+miy       .jpn       .srvcs      19544.014776622
+miy       .usa       .agrfd      24146.862792926
+miy       .usa       .enrgy      40484.761235018
+miy       .usa       .manuf      2.3317740736E+5
+miy       .usa       .srvcs      35767.682452450
+miy       .eur       .agrfd      47067.480815813
+miy       .eur       .enrgy      73464.900739235
+miy       .eur       .manuf      2.2499891327E+5
+miy       .eur       .srvcs      88510.083606726
+miy       .rhy       .agrfd      17173.527507690
+miy       .rhy       .enrgy      34874.463973864
+miy       .rhy       .manuf      1.0828508790E+5
+miy       .rhy       .srvcs      20357.113863153
+miy       .liy       .agrfd       8232.251771740
+miy       .liy       .enrgy      16561.311134529
+miy       .liy       .manuf      34829.918138402
+miy       .liy       .srvcs       8668.625555998
+miy       .miy       .agrfd      54736.999821580
+miy       .miy       .enrgy      71236.054912406
+miy       .miy       .manuf      1.8431934162E+5
+miy       .miy       .srvcs      38539.482412686
+/ ;
+
+$offempty
+

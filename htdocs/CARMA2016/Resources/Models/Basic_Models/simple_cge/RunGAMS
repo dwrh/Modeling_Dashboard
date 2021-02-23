@@ -1,0 +1,4 @@
+#! /Users/dwrh/Documents/Research/FAO/ThaiClimateRisk/Training/models/sources/CGE/GAMS/Simple_CGE
+/users/dwrh/Documents/Models/GAMS/gams SimpleCGE codex=1 pw=150 ps=9999 sd=Scratch
+ 
+bbedit SimpleCGE.lst

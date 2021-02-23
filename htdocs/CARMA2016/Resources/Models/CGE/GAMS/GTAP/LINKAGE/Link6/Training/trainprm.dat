@@ -1,0 +1,330 @@
+* ------------------------------------------------------------------------------
+*
+*     File containing key elasticities for GEP04        data set
+*
+*     Creation date: 02/02/04
+*     Creation time: 14:09:32
+*
+* ------------------------------------------------------------------------------
+
+* ------------------------------------------------------------------------------
+*
+*     Production elasticities
+*
+* ------------------------------------------------------------------------------
+
+parameter sigmap(r,i,v1) CES substitution elasticity between ND and KLEF ;
+sigmap(r,i,v1) = 0.0 ;
+
+parameter sigmav(r,i,v1) CES substitution elasticity between KE and L ;
+sigmav(r,i,'Old') = 0.12 ;
+sigmav(r,i,'New') = 1.01 ;
+
+parameter sigmal(r,i) CES substitution elasticity across different labour skills ;
+sigmal(r,i) = 0.50 ;
+
+parameter sigmae(r,i,v1) CES substitution elasticity between K and E ;
+sigmae(r,i,'Old') = 0.00 ;
+sigmae(r,i,'New') = 0.80 ;
+
+parameter sigmak(r,i,v1) CES substitution elasticity between K and fixed factor ;
+sigmak(r,i,v1)    = 0.0 ;
+sigmak(r,i,'New') = 0.0 ;
+
+parameter sigmaEp(r,i,v1) CES substitution elasticity across fuels ;
+sigmaEp(r,i,'Old') = 0.25 ;
+sigmaEp(r,i,'New') = 2.00 ;
+
+parameter sigmaf(r,i,v1) CES between fert and KT or feed and land ;
+sigmaf(r,cr,v1) = 0.50 ;
+sigmaf(r,lv,v1) = 0.50 ;
+
+parameter sigmaa(r,i) CES across fert in crops or across feed in livestock ;
+sigmaa(r,cr) = 0.50 ;
+sigmaa(r,lv) = 0.50 ;
+
+parameter sigmac(r,k,h) Transition matrix substitution elasticities ;
+sigmac(r,k,h) = 0 ;
+
+parameter sigmam(r,i) Economywide Armington elasticity ;
+sigmam(r,'agrfd       ') =     2.3;
+sigmam(r,'enrgy       ') =     2.6;
+sigmam(r,'manuf       ') =     3.0;
+sigmam(r,'srvcs       ') =     1.9;
+
+parameter sigmamp(r,i,j)    Armington elasticities in production ;
+parameter sigmamc(r,i,h)    Armington elasticities in household consumption ;
+parameter sigmamg(r,i)      Armington elasticities in government consumption ;
+parameter sigmami(r,i)      Armington elasticities in investment ;
+parameter sigmaw(r,r2,i)    Fourth level Armington elasticity ;
+parameter sigmaw1(r,i)      Second level Armington elasticity ;
+parameter sigmaw2(r,r1,i)   Second level Armington elasticity ;
+parameter sigmax(r,i)       Top level CET elasticity between domestic and export sales ;
+parameter sigmaz(r,i)       Second level CET elasticity for sales across export markets ;
+
+sigmamp(r,i,j)  = sigmam(r,i) ;
+sigmamc(r,i,h)  = sigmam(r,i) ;
+sigmamg(r,i)    = sigmam(r,i) ;
+sigmami(r,i)    = sigmam(r,i) ;
+sigmaw1(r,i)    = 2*sigmam(r,i) ;
+sigmaw(r,r2,i)  = sigmaw1(r,i) ;
+sigmaw2(r,r1,i) = sigmaw1(r,i) ;
+sigmax(r,i)     = sigmaw1(r,i) ;
+sigmaz(r,i)     = sigmax(r,i) ;
+sigmax(r,i)     = inf ;
+sigmaz(r,i)     = inf ;
+
+parameter yelasArmD(r,i) Initial domestic income elasticities for the Armington function ;
+parameter yelasArmM(r,i) Initial import income elasticities for the Armington function ;
+yelasArmD(r,i) = 1 ;
+yelasArmM(r,i) = 1 ;
+
+parameter sigmab(r,i) CES substitution elasticity between domestic goods and intraregional imports ;
+sigmab(r,i) = sigmam(r,i) ;
+
+parameter yelasAIDS0(rp,r,i) Initial income elasticities for the AIDS function ;
+yelasAIDS0(rp,r,i) = 1 ;
+
+parameter sigmaq(rp,rpp,r,i) AIDS substitution elasticities ;
+sigmaq(rp,rpp,r,i)$(ord(rp) ne ord(rpp)) = sigmam(r,i) ;
+
+parameter omegatl(r) Land CET transformation elasticity across agricultural sectors ;
+omegatl(r) = inf ;
+
+parameter leps0(r) Initial aggregate land supply elasticity /
+   jpn           0.25
+   usa           1.00
+   eur           0.25
+   rhy           1.00
+   liy           1.00
+   miy           1.00
+/ ;
+
+*  LandMax represents the maximum amount of land. To use the normal
+*  supply function, set LandMax to infinity. To use the logistical
+*  supply function, LandMax should be entered as some ratio compared
+*  to the initial land value. For example, a value of 1.1 indicates
+*  that land can expand to about 10% above its initial level.
+
+parameter LandMax(r) Maximum amount of land ;
+LandMax(r) = inf ;
+
+parameter omegam(r,ll) Migration elasticity ;
+omegam(r,ll) = inf ;
+
+parameter labd0(r,ll,i) Labor volume by skill and sector ;
+labd0(r,ll,i) = 0 ;
+labd0(r,ll,i) = bscale*labd0(r,ll,i) ;
+
+parameter migr0(r,ll) Rural to urban migration ;
+migr0(r,ll) = 0 ;
+
+parameter ue0(r,ll,gz) Unemployment rates ;
+ue0(r,ll,gz) = 0 ;
+
+*  ueFlag, set to 1 to if UE is fixed and minimum wage function is calibrated
+*                 0       with UE edogenous
+
+parameter ueFlag(r,ll) ;
+ueFlag(r,ll) = 0 ;
+
+* The minimum wage is linked to the unemployment rate
+*  If ue is positive, the minimum wage should be set to 1
+*  For full employment, set ue to 0 and wmin to 0
+*  For initial full employment but with a minimum wage
+*  set ue to 0 and wmin to a positive number less than 1
+*  This will put a floor on wages
+*
+*  Note that these rules depend on market segmentation
+
+parameter wmin0(r,ll,gz) Minimum wage ;
+wmin0(r,ll,gz) = 0 ;
+
+parameter omegaps(r,ll,gz) Elasticity of the minimum wage wrt to the price of value added ;
+omegaps(r,ll,gz) = 0 ;
+
+parameter omegap(r,ll,gz)  Elasticity of the minimum wage wrt to the price index ;
+omegap(r,ll,gz) = 1 ;
+
+parameter omegaue(r,ll,gz) Elasticity of the minimum wage wrt to the rate of unemployment ;
+omegaue(r,ll,gz) = 1 ;
+
+parameter omegak(r) Capital supply transformation elasticity for comp static simulations ;
+omegak(r) = inf ;
+
+parameter omegaf(r,i) Sector specific factor supply elasticities ;
+omegaf(r,i)  =  4.00 ;
+omegaf('jpn         ', 'agrfd       ') =    1.00 ;
+omegaf('jpn         ', 'enrgy       ') =    1.00 ;
+omegaf('jpn         ', 'manuf       ') =    1.00 ;
+omegaf('jpn         ', 'srvcs       ') =    1.00 ;
+omegaf('usa         ', 'agrfd       ') =    1.00 ;
+omegaf('usa         ', 'enrgy       ') =    1.00 ;
+omegaf('usa         ', 'manuf       ') =    1.00 ;
+omegaf('usa         ', 'srvcs       ') =    1.00 ;
+omegaf('eur         ', 'agrfd       ') =    1.00 ;
+omegaf('eur         ', 'enrgy       ') =    1.00 ;
+omegaf('eur         ', 'manuf       ') =    1.00 ;
+omegaf('eur         ', 'srvcs       ') =    1.00 ;
+omegaf('rhy         ', 'agrfd       ') =    1.00 ;
+omegaf('rhy         ', 'enrgy       ') =    1.00 ;
+omegaf('rhy         ', 'manuf       ') =    1.00 ;
+omegaf('rhy         ', 'srvcs       ') =    1.00 ;
+omegaf('liy         ', 'agrfd       ') =    1.00 ;
+omegaf('liy         ', 'enrgy       ') =    1.00 ;
+omegaf('liy         ', 'manuf       ') =    1.00 ;
+omegaf('liy         ', 'srvcs       ') =    1.00 ;
+omegaf('miy         ', 'agrfd       ') =    1.00 ;
+omegaf('miy         ', 'enrgy       ') =    1.00 ;
+omegaf('miy         ', 'manuf       ') =    1.00 ;
+omegaf('miy         ', 'srvcs       ') =    1.00 ;
+
+parameter sigmat CES elasticity for international trade and transport services across regions ;
+sigmat = 1.01 ;
+
+parameter InvElas(r,i) Disinvestment elasticity for old capital ;
+InvElas(r,i) = 0.7 ;
+InvElas(r,Agric) = 4.0 ;
+
+parameter wagetax0(r,ll,i) Initial wage tax rate in percent ;
+wagetax0(r,ll,i) = 0 ;
+
+parameter taxGDP0(r) Tax to GDP ratios ;
+taxGDP0(r) = 0 ;
+
+parameter sigmah(r,i,v1) Substitution elasticity between highly skilled workers and capital ;
+sigmah(r,i,'Old') = 0.25 ;
+sigmah(r,i,'New') = 1.01 ;
+
+parameter thetArm1(r,i) Armington adjustment elasticity top nest ;
+thetArm1(r,i) = 0.5 ;
+
+parameter thetArm2(r,i) Armington adjustment elasticity second nest ;
+thetArm2(r,i) = 0.5 ;
+
+*  Set ArmEndog to 1 to have endogenous Armington specification
+*  Set ArmAndog to 0 to have exogenous  Armington specification
+
+parameter ArmEndog Endogenous Armington specification flag ;
+ArmEndog = 0 ;
+
+parameter depr(r) Depreciation rate ;
+depr(r) = 0.04 ;
+
+*  Set ifDepr flag to 0 to use model based on gross saving
+*  Set ifDepr flag to 1 to use model based on net saving
+
+scalar ifDepr Flag determining handling of depreciation / 1 / ;
+
+parameter etap(r,i) Elasticity of productivity wrt to openness ;
+etap(r,i) = 1.0 ;
+etap(r,agric) = 0.750 ;
+
+parameter alphap(r,i) Share of productivity coming from openness in the baseline ;
+alphap(r,i) = 0.4 ;
+
+parameter phip0(r,i) Productivity shifter shift parameter ;
+phip0(r,i) = 0.1 ;
+
+parameter g(r,i) Uniform productivity shifter ;
+g(r,i) = 1 ;
+
+parameter lambdaw(r,rp,i) Trade efficiency parameter ;
+lambdaw(r,rp,i) = 1 ;
+
+parameter markup0(r,i) Price markups ;
+markup0(r,i) = NA ;
+
+parameter cdr0(r,i) Cost disadvantage ratio ;
+cdr0(r,i)    = 0.0 ;
+
+parameter profit0(r,i) Sectoral profits ;
+profit0(r,i) = NA ;
+
+parameter sssavrate(r,h) Steady state savings rate ;
+sssavrate(r,h) = 0.0 ;
+
+parameter epsI(r) Investment elasticity with respect to global real return ;
+epsI(r) = 2 ;
+
+parameter epsrr(r) Investment elasticity relative to the domestic rate of return ;
+epsrr(r) = 0.3 ;
+
+parameter epsY(r) Investment elasticity relative to GDP growth ;
+epsY(r) = 30 ;
+
+parameter lambdaInv(r) Rate of adjustment of propensity to invest wrt to GDP ;
+lambdaInv(hiy) = 0.2 ;
+
+lambdaInv(liy) = 0.4 ;
+
+parameter ggdpHist(r) Historical GDP growth rates for the calibration of the investment function ;
+ggdpHist(r) = 0 ;
+ggdpHist(r) = 0.01*ggdpHist(r) ;
+
+parameter frisch(r,h) Frisch parameter ;
+frisch(r,h) = -1 ;
+
+parameter etag(r) Elasticity of savings with respect to GDP growth ;
+parameter etay(r) Elasticity of savings with respect to the youth dependency ratio ;
+parameter etae(r) Elasticity of savings with respect to the elderly dependency ratio ;
+parameter etar(r) Elasticity of savings with respect to real return on capital ;
+etag(r) =  0.0 ;
+etay(r) =  0.0 ;
+etae(r) =  0.0 ;
+etar(r) =  0.0 ;
+
+parameter betas(r) Savings persistence ;
+parameter betag(r) Change of savings with respect to GDP growth ;
+parameter betay(r) Change of savings with respect to the youth dependency ratio ;
+parameter betae(r) Change of savings with respect to the elderly dependency ratio ;
+parameter betar(r) Change of savings with respect to real return on capital ;
+
+set sp /
+   s  Persistence parameter
+   g  GDP growth
+   y  Youth dependency rate
+   e  Elderly dependency rate
+   r  Real interest rate
+/ ;
+
+Table savparm(*,sp) Savings parameters
+
+               s         g         y         e         r
+tot        0.587     0.450    -0.299    -0.655    -0.253
+liy        0.476     0.425    -0.279    -1.370     0.002
+hiy        0.674     0.285    -0.068    -0.218     0.020
+;
+
+betas(liy) = 1*savparm('liy','s') ; betas(hiy) = 1*savparm('hiy','s') ;
+betag(liy) = 1*savparm('liy','g') ; betag(hiy) = 1*savparm('hiy','g') ;
+betay(liy) = 1*savparm('liy','y') ; betay(hiy) = 1*savparm('hiy','y') ;
+betae(liy) = 1*savparm('liy','e') ; betae(hiy) = 1*savparm('hiy','e') ;
+betar(liy) = 0*savparm('liy','r') ; betar(hiy) = 0*savparm('hiy','r') ;
+
+* ------------------------------------------------------------------------------
+*
+*  Data for TRQ module
+*
+*  DvdM--06-Jan-2003
+*
+* ------------------------------------------------------------------------------
+
+parameter trqFlag(r,rp,i) Flag signalling presence of TRQs ;
+trqFlag(r,rp,i) = 0 ;
+
+parameter inquota0(r,rp,i) Ratio of imports to quota ;
+inquota0(r,rp,i) = 0.0 ;
+
+parameter tar_in0(r,rp,i) In quota tariff ;
+tar_in0(r,rp,i) = 0 ;
+
+parameter tar_p0(r,rp,i) Tariff premium ;
+tar_p0(r,rp,i) = 0 ;
+
+parameter chitrq(r,rp,i) Share of premium income accruing to importer ;
+chitrq(r,rp,i) = 0 ;
+
+parameter tar_out0(r,rp,i) Out of quota tariff ;
+tar_out0(r,rp,i) = 0 ;
+

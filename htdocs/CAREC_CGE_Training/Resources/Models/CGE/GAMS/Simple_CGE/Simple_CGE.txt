@@ -1,0 +1,136 @@
+$title   A Simple Calibrated General Equilibrium Model Using GAMS
+$offsymlist offsymxref
+
+sets
+     i      industries    /Ag, Other/
+     f      factors       /L, K/
+     ;
+
+scalars
+     dummy          dummy parameter       /1.00/
+     ;
+
+parameters
+     lambda(f,i)   factor allocation share
+     theta(f,i)    factor income share
+     sigma(i)      elasticity of substitution
+          /Ag     0.8
+           Other  0.9/
+     t(i)          initial tariff
+     s(i)          initial subsidy
+     dt(i)         change in tariff
+     ds(i)         change in export subsidy
+     tarhat(i)     proportional change in tariff
+     subhat(i)     proportional change in export subsidy
+     cphat(i)      proportional change in price due to commercial policy
+     ;
+
+variables
+     yhat(i)       proportional change in production
+     ahat(f,i)     proportional change in input
+     what          proportional change in wage rate
+     rhat          proportional change in capital rental rate
+     phat(i)       proportional change in domestic price
+
+     lhat          proportional change in labor endowment
+     khat          proportional change in capital endowment
+     psthat(i)     proportional change in world price
+
+     omega         dummy variable
+     ;
+
+
+equations
+     fxelab        fixed employment of labor
+     fxecap        fixed employment of capital
+     acp(i)        average cost pricing
+     linp(i)       labor input equations
+     kinp(i)       capital input equations
+     domp(i)       domestic prices
+     obj           objective
+     ;
+
+* calibration
+t('Ag')  = 0.20;
+s('Other')  = 0.30;
+dt('Ag') = 0.10;
+ds('Other') = 0.15;
+
+tarhat(i) $ (t(i) gt 0) = dt(i)/(1+t(i));
+
+subhat(i) $ (s(i) gt 0) = ds(i)/(1+s(i));
+
+cphat(i) = tarhat(i) $ t(i) + subhat(i) $ s(i);
+
+
+table lambda(f,i)
+
+                       Ag                Other
+             L       0.50                 0.50
+             K       0.25                 0.75
+             ;
+
+
+table theta(f,i)
+
+                       Ag                 Other
+             L       0.60                  0.40
+             K       0.40                  0.60
+             ;
+
+display lambda, theta, sigma, t, dt;
+
+
+* equation definitions
+
+fxelab..    sum(i, lambda('L',i)*yhat(i)) =e= lhat
+                         - sum(i, lambda('L',i)*ahat('L',i));
+
+fxecap..    sum(i, lambda('k',i)*yhat(i)) =e= khat
+                         - sum(i, lambda('k',i)*ahat('k',i));
+
+acp(i)..    theta('L',i)*what + theta('k',i)*rhat =e= phat(i);
+
+linp(i)..   ahat('L',i) =e= theta('k',i)*sigma(i)*(rhat-what);
+
+kinp(i)..   ahat('k',i) =e= theta('L',i)*sigma(i)*(what-rhat);
+
+domp(i)..   phat(i) =e= psthat(i) + cphat(i);
+
+obj..       omega =e= dummy;
+
+
+* model closure (exogenous variables)
+
+lhat.fx = 0.00;
+khat.fx = 0.00;
+psthat.fx('Ag') = 0.00;
+psthat.fx('Other') = 0.00;
+
+
+* model declaration
+
+options solprint=off;
+options iterlim=100,limrow=0,limcol=0,domlim=0;
+
+model simple /all/;
+
+
+solve simple maximizing omega using nlp;
+
+
+display yhat.l, ahat.l, what.l, rhat.l, phat.l, lhat.l,
+          khat.l, psthat.l;
+
+t('Ag')  = 0.0;
+s('Other')  = 0.0;
+
+tarhat(i) = dt(i)/(1+t(i));
+subhat(i) = ds(i)/(1+s(i));
+cphat(i) = tarhat(i) + subhat(i);
+
+solve simple maximizing omega using nlp;
+
+
+display yhat.l, ahat.l, what.l, rhat.l, phat.l, lhat.l,
+          khat.l, psthat.l;

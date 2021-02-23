@@ -1,0 +1,397 @@
+GAMS Rev 233  WEX-WEI 23.3.3 x86_64/MS Windows                                                     04/04/11 10:00:40 Page 1
+EBIComp
+C o m p i l a t i o n
+
+
+   3  * --------------------------------------------------------------------
+   4  * --
+   5  * -- Trade Integrated Global Energy and Resources - TIGER Model
+   6  * -- Implemented for EBI Long Term Projections and TIGGER
+   7  * --
+   8  * --            David Roland-Holst
+   9  * --            UC Berkeley
+  10  * --
+  11  * --------------------------------------------------------------------
+  12  * --            June, 1010
+  13  * --------------------------------------------------------------------
+  14  *  Dynamic Calibration -- Baseline Scenario
+  15  *  ------------------------------------
+  16  *  Based on GTAP Version 7.1
+  17  * --------------------------------------------------------------------
+  18   
+  19  set allsim / Baseline, AProd, MProd / ;
+  20  set sim(allsim) / Baseline, AProd / ;
+  21   
+  22  * ----- Output files
+  23   
+  24  file csv           / 'EBIComp.csv' /
+  25  scalar ifCSV       / 1 / ;
+  26  scalar ifCSVhdr    / 1 / ;
+  27   
+  28  file tab           / 'EBICompTab.csv' /
+  29  scalar iftab       / 0 / ;
+  30  scalar ifTabhdr    / 1 / ;
+  31   
+  32  file wtfcsv        / 'WTFEBIComp.csv' /
+  33  scalar ifWTF       / 0 / ;
+  34  scalar ifWTFhdr    / 1 / ;
+  35   
+  36  file samcsv        / 'SAMEBIComp.csv' /
+  37  scalar ifSAM       / 0 / ;
+  38  scalar ifSAMhdr    / 1 / ;
+  39   
+  40  file gmsout           / 'EBICompout.dat' /
+  41  scalar ifgms       / 0 / ;
+  42  gmsout.ap = 0 ;
+  43   
+  44  file yelascsv      / 'YelasEBIComp.csv' /
+  45  scalar ifYelas     / 0 / ;
+  46  scalar ifYelashdr  / 1 / ;
+  47   
+  48  file savecal       / 'reftrn.gms' /
+  49   
+  50  file debug         / 'debug.csv' / ;
+  51  scalar ifDebug     / 1 / ;
+  52   
+  53  if (ifDebug,
+  54     put debug ;
+  55     put "Exporter,Importer,Sector,Variable,Year,Value" / ;
+  56   
+  57     debug.pc   = 5 ;
+  58     debug.pw = 255 ;
+  59     debug.nj =   1 ;
+  60     debug.nw =  15 ;
+  61     debug.nd =   9 ;
+  62     debug.nz =   0 ;
+  63     debug.nr =   0 ;
+  64  ) ;
+  65   
+  66  * --------------------------------------------------------------------
+  67  *
+  68  *  Define the time horizon -- 2001 is the base
+  69  *
+  70  * --------------------------------------------------------------------
+  71   
+  72   Sets
+  73     t       Time framework       / 2004*2030 /
+  74     tt(t)   Simulation periods   / 2005*2030 /
+  75     t0(t)   Base year            / 2004 /
+GAMS Rev 233  WEX-WEI 23.3.3 x86_64/MS Windows                                                     04/04/11 10:00:40 Page 2
+EBIComp
+C o m p i l a t i o n
+
+
+  76     tr(t)   Reporting years      / 2005, 2010, 2015, 2020 /
+  77     term(t)   Terminal year      / 2020 /
+  78  *  tr(t)   Reporting years      / 2004*2020 /
+  79     ;
+  80   
+  81   Parameters
+  82     year     Current year /2004/
+  83     gap      Step size /1/
+  84     iter3    Iteration counter
+  85     stp      Normalization of productivity sources
+  86     gconv    Convergent Growth Rate /.093/
+  87     csp      Speed of convergence /1/
+  88     ;
+  89  stp = 0 ;
+  90  *gconv = .05 ;
+  91   
+  92   parameter years(t) ; years(t) = 2003 + ord(t) ;
+  93   
+  94  * ----- Scale options
+  95   
+  96  scalar bscale Model scale      / 1e-06 / ;
+  97  scalar rscale Output scale     / 1e+06 / ;
+  98  scalar pscale Population scale / 1e-03 / ;
+  99   
+ 100  * ----- Input data files
+ 102   
+ 103  $include "EBI10x10.dat"
+****                        $282
+ 104  $include "EBI10x10prm.dat"
+****                           $282
+ 105  $include "EBI10x10scn.dat"
+****                           $282
+ 106   
+ 107  table niter(t, allsim) Iteration steps
+ 108   
+ 109       Baseline AProd MProd
+ 110   
+ 111  2004     1      1      1
+ 112  2005     1      1      1
+ 113   
+ 114  2006     1      1      1
+ 115  2007     1      1      1
+ 116  2008     1      1      1
+ 117  2009     1      1      1
+ 118  2010     1      1      1
+ 119   
+ 120  2011     1      1      1
+ 121  2012     1      1      1
+ 122  2013     1      1      1
+ 123  2014     1      1      1
+ 124  2015     1      1      1
+ 125   
+ 126  2016     1      1      1
+ 127  2017     1      1      1
+ 128  2018     1      1      1
+ 129  2019     1      1      1
+ 130  2020     1      1      1
+ 131  ;
+ 132   
+ 133  * ----- Specification flags
+ 134  *
+ 135  *  Set ArmFlag to 1 to have agent specific Armington decomposition
+ 136  *      ArmFlag to 0 to have aggregate Armington specification
+ 137  *
+ 138   
+ 139  scalar ArmFlag / 0 / ;
+ 140   
+ 141  *  Set CalFlag to 1 for dynamic calibration
+ 142  *      CalFlag to 0 for pre-calibrated trends
+ 143   
+ 144  scalar CalFlag  / 1 / ;
+ 145   
+ 146   
+GAMS Rev 233  WEX-WEI 23.3.3 x86_64/MS Windows                                                     04/04/11 10:00:40 Page 3
+EBIComp
+C o m p i l a t i o n
+
+
+ 147  *  Set KProdFlag to 1 to determine endogenously K productivity
+ 148  *      KProdFlag to 0 for exogenous K productivity
+ 149   
+ 150  scalar KProdFlag  / 0 / ;
+ 151   
+ 152  *  Set CompFlag to 1 to delete capital accumulation equations
+ 153  *      CompFlag to 0 to include capital accumulation equations
+ 154   
+ 155  scalar CompFlag / 0 / ;
+ 156   
+ 157  *  Set KFlowFlag to 0 for exogenous capital flows
+ 158  *      KFlowFlag to 1 for endogenous capital flows
+ 159   
+ 160  scalar KFlowFlag / 0 / ;
+ 161   
+ 162  *  Consumer demand system flag
+ 163  *  ifELES eq 1 Use the ELES system
+ 164  *  ifELES eq 2 Use the LES system
+ 165  *  ifELES eq 3 Use the AIDADS system
+ 166   
+ 167  scalar ifELES consumer demand system flag / 1 / ;
+ 168   
+ 169  * ---- Market structure flags
+ 170   
+ 171  *      0 -- CRTS and perfect competition, includes constant markup
+ 172  *      1 -- IRTS and contestable markets
+ 173   
+ 174  parameter marketFlag(r,i) Type of market structure ;
+****                       $120,120
+ 175  marketFlag(r,i) = 0 ;
+ 176   
+ 177  parameter AIDSFlag(r,i) Flag to determine import specification ;
+ 178  AIDSFlag(r,i) = 0 ;
+ 179   
+ 180  *  AIDS flag set to 1 to implement AIDS in import demand
+ 181  *  AIDS flag set to 0 for nested CES implementation
+ 182   
+ 183  parameter AIDSFlag(r,i) Flag to determine import specification ;
+ 184  AIDSFlag(r,i) = 0 ;
+ 185   
+ 186  *  Wage bargaining flag, set to 1 to have endogenous wage distribution
+ 187  *                        set to 0 to have exogenoug relative wages
+ 188   
+ 189  parameter wageBarg(r,l,i) Wage bargaining flag ;
+****                       $120
+ 190  wageBarg(r,l,i) = 0 ;
+ 191   
+ 192  sets
+ 193     v(v1)   Useful vintage       / Old, New /
+****        $120
+ 194     old(v1) Old capital vintage  / Old /
+****                                      $361
+ 195     new(v1) New capital vintage
+ 196     vc(v1)  Calibration vintage  / New /
+****                                      $361
+ 197     agfd(i)
+ 198     ;
+ 199  new(v1)  = not Old(v1) ;
+ 200   
+ 201  parameter
+ 202  a00(r,i,j,v)
+****          $120
+ 203  eta00(r,k,h)
+****          $120,120
+ 204  ;
+ 205  eta00(r,k,h) = eta0(r,k,h) ;
+****                    $140
+ 206   
+ 207  $include "decl.gms"
+****                    $282
+ 208  $include "stats.gms"
+****                     $282
+ 209   
+GAMS Rev 233  WEX-WEI 23.3.3 x86_64/MS Windows                                                     04/04/11 10:00:40 Page 4
+EBIComp
+C o m p i l a t i o n
+
+
+ 210  *agfd(i) = ag(i) + fdp(i) ;
+ 211  ik(i) = not(ag(i)) ;
+****   $140        $140
+ 212  ink(i)  = not ik(i) ;
+****    $140
+ 213   
+ 214  $include "cal.gms"
+****                   $282
+ 215  $include "init.gms"
+****                    $282
+ 216  *$goto outofhere
+ 217   
+ 218  $include "model.gms"
+****                     $282
+ 219   
+ 220  scalar ifLoad / 0 / ;
+ 221   
+ 222  options limcol=2, limrow=2 ;
+ 223  options solprint=off ;
+ 224   
+ 225  * ---- Loop over the number of separate scenarios
+ 226  loop(sim,
+ 227   
+ 228  *   g(r,i) = 1 ;
+ 229     year = 2004 ;
+ 230     gap  = 1 ;
+ 231     if(ord(sim) ne 1,
+ 232     calflag = 0 ;
+ 233     );
+ 234   
+ 235   
+ 236     if (CalFlag eq 0,
+ 237  *     Load the reference trends
+ 238  $include "cal.gms"
+****                   $282
+ 239  $include "init.gms"
+****                    $282
+ 240  $batinclude "savtrn.gms" 1 reftrn 0
+****                          $282
+ 241     ) ;
+ 242   
+ 243  *  ----- Solve dynamically
+ 244     loop(t$(years(t) le 2005),
+ 245   
+ 246  *     Load the standard looping statements here
+ 247   
+ 248        if (years(t) eq 2005,
+ 249           etap(r,i) = 0 ;
+****              $140
+ 250        ) ;
+ 251   
+ 252  *## Rising Agricultural Productivity in Low and Middle Income (LMY) Countries
+ 253          if (ord(sim) ge 2,
+ 254  *               gt(r,ag,t)$(years(t) ge 2010) = gt(r,ag,t) + .05 ;
+ 255                  gt(lmy,ag,t)$(years(t) ge 2010) = gt(lmy,ag,t) + .05 ;
+****                   $140$120,340
+ 256  *               tar.fx(lmy,r,i) = 0 ;
+ 257  *               etax.fx(lmy,r,i) = 0 ;
+ 258  *               gt(lmy,lv,t) = gt(lmy,lv,t) + .05 ;
+ 259          ) ;
+ 260   
+ 261  *## Rising Livestock Productivity in LMY
+ 262          if (ord(sim) ge 3,
+ 263  *               gt(r,"MtDairy",t)$(years(t) ge 2010) = gt(r,"MtDairy",t) + .05 ;
+ 264  *               gt(lmy,"MtDairy",t)$(years(t) ge 2010) = gt(lmy,"MtDairy",t) + .05 ;
+ 265          ) ;
+ 266   
+ 267       if (ord(t) gt 1,
+ 268  $include "iterLoop.gms"
+****                        $282
+ 269        ) ;
+ 270   
+ 271  *     Include any special shocks here...
+GAMS Rev 233  WEX-WEI 23.3.3 x86_64/MS Windows                                                     04/04/11 10:00:40 Page 5
+EBIComp
+C o m p i l a t i o n
+
+
+ 272   
+ 273        if (ord(t) gt 1,
+ 274   
+ 275           for(iter3=1 to niter(t, sim) by 1,
+ 276   
+ 277              solve comp using mcp ;
+****                       $140,241    $257
+ 278   
+ 279              put screen ;
+****                       $140
+ 280              put //, "End of solver: Sim - ", sim.tl, "  Year - ", t.tl, " Iteration - ", iter3:2:0, " of ", niter(t, 
+      sim):2:0, " iterations" // ;
+ 281              putclose ;
+ 282   
+ 283              if (comp.solvestat ne 1 or comp.modelstat gt 2,
+ 284                 Abort$(1) "Model did not solve, aborting..."
+ 285              ) ;
+ 286   
+ 287           ) ;
+ 288   
+ 289        ) ;
+ 290   
+ 291  *     ---- End of current period, calulate end of period stats and produce reports
+ 292   
+ 293  $include "postsim.gms"
+****                       $282
+ 294  if (tr(t),
+ 295  *$include "report.gms"
+ 296  $include "report2.gms"
+****                       $282
+ 297  ) ;
+ 298  if (term(t),
+ 299  *$include "wtf.gms"
+ 300  *$include "sam.gms"
+ 301  ) ;
+ 302   
+ 303     ) ;
+ 304   
+ 305  *  ----- End of current dynamic simulation
+ 306   
+ 307  *  ----- Save trends if this is a Baseline simulation
+ 308  if (calflag eq 1,
+ 309  $batinclude "savtrn.gms" 0 reftrn 0
+****                          $282
+ 310  $batinclude "gdxrw.gms" 0 Baseline
+****                         $282
+ 311  ) ;
+ 312  ) ;
+GAMS Rev 233  WEX-WEI 23.3.3 x86_64/MS Windows                                                     04/04/11 10:00:40 Page 6
+EBIComp
+Error Messages
+
+
+120  Unknown identifier entered as set
+140  Unknown symbol
+241  Model has not been defined
+257  Solve statement not checked because of previous errors
+282  Unable to open include file
+340  A label/element with the same name exist. You may have forgotten
+        to quote a label/element reference. For example,
+        set i / a,b,c /; parameter x(i); x('a') = 10;
+361  Values for domain 1 are unknown - no checking possible
+
+**** 37 ERROR(S)   0 WARNING(S)
+
+
+COMPILATION TIME     =        0.016 SECONDS      3 Mb  WEX233-233 Dec 15, 2009
+
+
+USER: David Roland-Holst                             G090609:1717AP-WIN
+      University of California, Agricultural and Resource EconomiDC7723
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\inetpub\vhosts\bearllc.net\httpdocs\TIGGER\Model\EBI_Comp.gms
+Output     C:\inetpub\vhosts\bearllc.net\httpdocs\TIGGER\Output\EBI_Comp.lst
+
+**** USER ERROR(S) ENCOUNTERED

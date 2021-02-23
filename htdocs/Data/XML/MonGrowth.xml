@@ -1,0 +1,15 @@
+<map borderColor="FFFFFF" connectorColor="000000" fillAlpha="70" hoverColor="FFFFFF" showBevel="1" showBevel="0" includeValueInLabels="0" labelSepChar=": " numberSuffix="%"
+    baseFontSize="9" fillAlpha="70" hoverColor="639ACE" borderColor="FFFFFF"legendPosition="bottom">
+	<colorRange>
+	
+<color minValue='0' maxValue='2.' displayValue='0-2' color='069F06' />
+<color minValue='2' maxValue='4.' displayValue='2-4' color='ABF456' />
+<color minValue='3' maxValue='6.' displayValue='4-6' color='FFD33A' />
+<color minValue='6' maxValue='10.' displayValue='>6' color='CC0001' />"
+
+	</colorRange>
+<data>
+<entity id = "MN.AR" value = "2" /><entity id = "MN.BH" value = "10" /><entity id = "MN.BO" value = "8" /><entity id = "MN.BU" value = "4" /><entity id = "MN.DA" value = "3" /><entity id = "MN.DD" value = "4" /><entity id = "MN.DG" value = "7" /><entity id = "MN.DU" value = "9" /><entity id = "MN.GA" value = "8" /><entity id = "MN.GS" value = "4" /><entity id = "MN.HN" value = "1" /><entity id = "MN.HD" value = "3" /><entity id = "MN.HG" value = "0" /><entity id = "MN.OG" value = "9" /><entity id = "MN.ER" value = "7" /><entity id = "MN.OH" value = "2" /><entity id = "MN.SL" value = "2" /><entity id = "MN.SB" value = "6" /><entity id = "MN.TO" value = "8" /><entity id = "MN.UB" value = "0" /><entity id = "MN.UV" value = "4" /><entity id = "MN.DZ" value = "5" />
+</data>
+
+</map>';

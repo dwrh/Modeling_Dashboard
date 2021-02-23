@@ -1,0 +1,112 @@
+@CHARSET "ISO-8859-1";
+
+		p.sansserif
+		{
+		font-family: Arial,Helvetica,sans-serif;
+		font-size: 14px; 
+		}
+		a:link 
+		{
+		color: #FFFFFF; text-decoration: none;
+		}
+		a:active
+		{
+		color:  #FFFFFF; text-decoration: none; 
+		}
+		a:visited {
+		color:  #FFFFFF; text-decoration: none; 
+		}
+		a.selected:active
+		{
+		color:  #0033CC; text-decoration: none; 
+		}
+		a.selected:visited 
+		{
+		color:  #0033CC; text-decoration: none; 
+		}
+		a.selected:link
+		{
+		color: #0033CC; text-decoration: none; 
+		}
+		a.menu:link
+		{
+		color: #FFFFFF; text-decoration: none; font-size: 14 px; font-weight: bold;
+		}
+		a.menu:visited
+		{
+		color: #FFFFFF; text-decoration: none; font-size: 14 px; font-weight: bold;
+		}
+		a.menu:hover
+		{
+		color: #FFFFFF; text-decoration: underline; font-size: 14 px; font-weight: bold;
+		}
+		a.menu:active
+		{
+		color: #FFFFFF; text-decoration: none; font-size: 14 px; font-weight: bold; 
+		}
+		table
+		{
+		background-color: transparent;
+		border-collapse:collapse;
+		border: 0px solid black;
+		}
+		td.menu
+		{
+		background-color: #0033CC;
+		font-family: Arial,Helvetica,sans-serif;
+		font-size: 18px;
+		border-style: solid;
+		border-width: 1px;
+		border-bottom-style: solid;
+		border-bottom-width: 0px;
+		border-color: #003366;
+		}
+		td.menu_selected
+		{
+		background-color: #FFCC00;
+		font-family: Arial,Helvetica,sans-serif;
+		font-size: 18px;
+		border-style: solid;			
+		border-width: 1px;
+		border-bottom-style: solid;
+		border-bottom-width: 0px;
+		border-color: #003366;
+		}
+		td.menu_right
+		{
+		background-color: transparent;
+		font-family: Arial,Helvetica,sans-serif;
+		font-color: white;
+		border-style: solid;			
+		border-width: 0px;
+		border-bottom-style: solid;
+		border-bottom-width: 0px;
+		border-color: #003366;
+		}
+		td.figs
+		{
+		background-color: white;
+		border-top-style: dotted;
+		border-top-width: 1px;			
+		border-top-color: #D0D0D0;
+		}
+		.main_table
+		{
+		background-color: white;
+		border-collapse: collapse;
+		border:1px ;
+		border-style: dotted;
+		border-color: #D0D0D0;
+		}
+		.left_table
+		{
+		background-color: white;
+		border-collapse: collapse;
+		border-right-width:1px ;
+		border-right-style: dotted;
+		border-right-color: #D0D0D0;
+		}
+		body
+		{
+		background-color:#006600;
+		}

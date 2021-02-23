@@ -1,0 +1,406 @@
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                09/25/11 10:56:41 Page 1
+A Simple Calibrated General Equilibrium Model Using GAMS
+C o m p i l a t i o n
+
+
+   3   
+   4  sets
+   5       i      industries    /Ag, Other/
+   6       f      factors       /L, K/
+   7       ;
+   8   
+   9  scalars
+  10       dummy          dummy parameter       /1.00/
+  11       ;
+  12   
+  13  parameters
+  14       lambda(f,i)   factor allocation share
+  15       theta(f,i)    factor income share
+  16       sigma(i)      elasticity of substitution
+  17            /Ag     0.8
+  18             Other  0.9/
+  19       t(i)          initial tariff
+  20       s(i)          initial subsidy
+  21       dt(i)         change in tariff
+  22       ds(i)         change in export subsidy
+  23       tarhat(i)     proportional change in tariff
+  24       subhat(i)     proportional change in export subsidy
+  25       cphat(i)      proportional change in price due to commercial policy
+  26       ;
+  27   
+  28  variables
+  29       yhat(i)       proportional change in production
+  30       ahat(f,i)     proportional change in input
+  31       what          proportional change in wage rate
+  32       rhat          proportional change in capital rental rate
+  33       phat(i)       proportional change in domestic price
+  34   
+  35       lhat          proportional change in labor endowment
+  36       khat          proportional change in capital endowment
+  37       psthat(i)     proportional change in world price
+  38   
+  39       omega         dummy variable
+  40       ;
+  41   
+  42   
+  43  equations
+  44       fxelab        fixed employment of labor
+  45       fxecap        fixed employment of capital
+  46       acp(i)        average cost pricing
+  47       linp(i)       labor input equations
+  48       kinp(i)       capital input equations
+  49       domp(i)       domestic prices
+  50       obj           objective
+  51       ;
+  52   
+  53  * calibration
+  54  t('Ag')  = 0.20;
+  55  s('Other')  = 0.30;
+  56  dt('Ag') = 0.10;
+  57  ds('Other') = 0.15;
+  58   
+  59  tarhat(i) $ (t(i) gt 0) = dt(i)/(1+t(i));
+  60   
+  61  subhat(i) $ (s(i) gt 0) = ds(i)/(1+s(i));
+  62   
+  63  cphat(i) = tarhat(i) $ t(i) + subhat(i) $ s(i);
+  64   
+  65   
+  66  table lambda(f,i)
+  67   
+  68                         Ag                Other
+  69               L       0.50                 0.50
+  70               K       0.25                 0.75
+  71               ;
+  72   
+  73   
+  74  table theta(f,i)
+  75   
+  76   
+  77                         Ag                 Other
+  78               L       0.60                  0.40
+  79               K       0.40                  0.60
+  80               ;
+  81   
+  82  display lambda, theta, sigma, t, dt;
+  83   
+  84   
+  85  * equation definitions
+  86   
+  87  fxelab..    sum(i, lambda('L',i)*yhat(i)) =e= lhat
+  88                           - sum(i, lambda('L',i)*ahat('L',i));
+  89   
+  90  fxecap..    sum(i, lambda('k',i)*yhat(i)) =e= khat
+  91                           - sum(i, lambda('k',i)*ahat('k',i));
+  92   
+  93  acp(i)..    theta('L',i)*what + theta('k',i)*rhat =e= phat(i);
+  94   
+  95  linp(i)..   ahat('L',i) =e= theta('k',i)*sigma(i)*(rhat-what);
+  96   
+  97  kinp(i)..   ahat('k',i) =e= theta('L',i)*sigma(i)*(what-rhat);
+  98   
+  99  domp(i)..   phat(i) =e= psthat(i) + cphat(i);
+ 100   
+ 101  obj..       omega =e= dummy;
+ 102   
+ 103   
+ 104  * model closure (exogenous variables)
+ 105   
+ 106  lhat.fx = 0.00;
+ 107  khat.fx = 0.00;
+ 108  psthat.fx('Ag') = 0.00;
+ 109  psthat.fx('Other') = 0.00;
+ 110   
+ 111   
+ 112  * model declaration
+ 113   
+ 114  options solprint=off;
+ 115  options iterlim=100,limrow=0,limcol=0,domlim=0;
+ 116   
+ 117  model simple /all/;
+ 118   
+ 119   
+ 120   
+ 121  solve simple using mcp;
+ 122  *solve simple maximizing omega using nlp;
+ 123   
+ 124   
+ 125  display yhat.l, ahat.l, what.l, rhat.l, phat.l, lhat.l,
+ 126            khat.l, psthat.l;
+ 127   
+ 128  t('Ag')  = 0.0;
+ 129  s('Other')  = 0.0;
+ 130   
+ 131  tarhat(i) = dt(i)/(1+t(i));
+ 132  subhat(i) = ds(i)/(1+s(i));
+ 133  cphat(i) = tarhat(i) + subhat(i);
+ 134   
+ 135  solve simple using mcp;
+ 136   
+ 137   
+ 138  display yhat.l, ahat.l, what.l, rhat.l, phat.l, lhat.l,
+ 139            khat.l, psthat.l;
+
+
+COMPILATION TIME     =        0.001 SECONDS      3 Mb  DEX237-237 Jul 21, 2011
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                09/25/11 10:56:41 Page 2
+A Simple Calibrated General Equilibrium Model Using GAMS
+E x e c u t i o n
+
+
+----     82 PARAMETER lambda  factor allocation share
+
+           Ag       Other
+
+L       0.500       0.500
+K       0.250       0.750
+
+
+----     82 PARAMETER theta  factor income share
+
+           Ag       Other
+
+L       0.600       0.400
+K       0.400       0.600
+
+
+----     82 PARAMETER sigma  elasticity of substitution
+
+Ag    0.800,    Other 0.900
+
+
+----     82 PARAMETER t  initial tariff
+
+Ag 0.200
+
+
+----     82 PARAMETER dt  change in tariff
+
+Ag 0.100
+
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                09/25/11 10:56:41 Page 3
+A Simple Calibrated General Equilibrium Model Using GAMS
+Model Statistics    SOLVE simple Using MCP From line 121
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           11
+BLOCKS OF VARIABLES           9     SINGLE VARIABLES           15
+NON ZERO ELEMENTS            33     NON LINEAR N-Z              0
+DERIVATIVE POOL               6     CONSTANT POOL              16
+CODE LENGTH                   0
+
+
+GENERATION TIME      =        0.002 SECONDS      6 Mb  DEX237-237 Jul 21, 2011
+
+
+EXECUTION TIME       =        0.002 SECONDS      6 Mb  DEX237-237 Jul 21, 2011
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                09/25/11 10:56:41 Page 4
+A Simple Calibrated General Equilibrium Model Using GAMS
+Solution Report     SOLVE simple Using MCP From line 121
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   simple              
+     TYPE    MCP                 
+     SOLVER  PATH                FROM LINE  121
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+
+ RESOURCE USAGE, LIMIT          0.004      1000.000
+ ITERATION COUNT, LIMIT         0           100
+ EVALUATION ERRORS              0             0
+11 row/cols, 29 non-zeros, 23.97% dense.
+
+Path 4.7.02 (Thu Jul 21 18:49:07 2011)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  0.0000e+00 var: (yhat(Ag))
+Maximum of F. . . . . . . . . .  1.1538e-01 eqn: (acp(Other))
+Maximum of Grad F . . . . . . .  1.0000e+00 eqn: (linp(Ag))
+                                            var: (ahat(L,Ag))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.0800e+00 eqn: (linp(Other))
+Minimum Row Norm. . . . . . . .  1.0000e+00 eqn: (acp(Ag))
+Maximum Column Norm . . . . . .  2.7000e+00 var: (what)
+Minimum Column Norm . . . . . .  7.5000e-01 var: (yhat(Ag))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.3878e-17 eqn: (fxecap)
+Inf-Norm of Normal Map. . . . .  1.3878e-17 eqn: (fxecap)
+Inf-Norm of Minimum Map . . . .  0.0000e+00 eqn: (fxelab)
+Inf-Norm of Fischer Function. .  1.3878e-17 eqn: (fxecap)
+Inf-Norm of Grad Fischer Fcn. .  1.3878e-17 eqn: (fxecap)
+Two-Norm of Grad Fischer Fcn. .  1.9626e-17
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  3.3173e-01 var: (yhat(Ag))
+Maximum of F. . . . . . . . . .  1.3878e-17 eqn: (fxecap)
+Maximum of Grad F . . . . . . .  1.0000e+00 eqn: (linp(Ag))
+                                            var: (ahat(L,Ag))
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0  REDEFINED
+                             0     ERRORS
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                09/25/11 10:56:41 Page 5
+A Simple Calibrated General Equilibrium Model Using GAMS
+E x e c u t i o n
+
+
+----    125 VARIABLE yhat.L  proportional change in production
+
+Ag    -0.332,    Other  0.194
+
+
+----    125 VARIABLE ahat.L  proportional change in input
+
+           Ag       Other
+
+L       0.051       0.087
+K      -0.077      -0.058
+
+
+----    125 VARIABLE what.L                =        0.019  proportional change in wage rate
+            VARIABLE rhat.L                =        0.179  proportional change in capital rental rate
+
+----    125 VARIABLE phat.L  proportional change in domestic price
+
+Ag    0.083,    Other 0.115
+
+
+----    125 VARIABLE lhat.L                =        0.000  proportional change in labor endowment
+            VARIABLE khat.L                =        0.000  proportional change in capital endowment
+
+----    125 VARIABLE psthat.L  proportional change in world price
+
+                      ( ALL       0.000 )
+
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                09/25/11 10:56:41 Page 6
+A Simple Calibrated General Equilibrium Model Using GAMS
+Model Statistics    SOLVE simple Using MCP From line 135
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           7     SINGLE EQUATIONS           11
+BLOCKS OF VARIABLES           9     SINGLE VARIABLES           15
+NON ZERO ELEMENTS            33     NON LINEAR N-Z              0
+DERIVATIVE POOL               6     CONSTANT POOL              16
+CODE LENGTH                   0
+
+
+GENERATION TIME      =        0.003 SECONDS      5 Mb  DEX237-237 Jul 21, 2011
+
+
+EXECUTION TIME       =        0.003 SECONDS      5 Mb  DEX237-237 Jul 21, 2011
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                09/25/11 10:56:41 Page 7
+A Simple Calibrated General Equilibrium Model Using GAMS
+Solution Report     SOLVE simple Using MCP From line 135
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   simple              
+     TYPE    MCP                 
+     SOLVER  PATH                FROM LINE  135
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+
+ RESOURCE USAGE, LIMIT          0.005      1000.000
+ ITERATION COUNT, LIMIT         0           100
+ EVALUATION ERRORS              0             0
+11 row/cols, 29 non-zeros, 23.97% dense.
+
+Path 4.7.02 (Thu Jul 21 18:49:07 2011)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  3.3173e-01 var: (yhat(Ag))
+Maximum of F. . . . . . . . . .  3.4615e-02 eqn: (acp(Other))
+Maximum of Grad F . . . . . . .  1.0000e+00 eqn: (linp(Ag))
+                                            var: (ahat(L,Ag))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.0800e+00 eqn: (linp(Other))
+Minimum Row Norm. . . . . . . .  1.0000e+00 eqn: (acp(Ag))
+Maximum Column Norm . . . . . .  2.7000e+00 var: (what)
+Minimum Column Norm . . . . . .  7.5000e-01 var: (yhat(Ag))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.7756e-17 eqn: (fxelab)
+Inf-Norm of Normal Map. . . . .  2.7756e-17 eqn: (fxelab)
+Inf-Norm of Minimum Map . . . .  0.0000e+00 eqn: (fxelab)
+Inf-Norm of Fischer Function. .  2.7756e-17 eqn: (fxelab)
+Inf-Norm of Grad Fischer Fcn. .  3.4694e-17 eqn: (fxecap)
+Two-Norm of Grad Fischer Fcn. .  5.0037e-17
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  5.1750e-01 var: (yhat(Ag))
+Maximum of F. . . . . . . . . .  2.7756e-17 eqn: (fxelab)
+Maximum of Grad F . . . . . . .  1.0000e+00 eqn: (linp(Ag))
+                                            var: (ahat(L,Ag))
+
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0  REDEFINED
+                             0     ERRORS
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                09/25/11 10:56:41 Page 8
+A Simple Calibrated General Equilibrium Model Using GAMS
+E x e c u t i o n
+
+
+----    138 VARIABLE yhat.L  proportional change in production
+
+Ag    -0.517,    Other  0.302
+
+
+----    138 VARIABLE ahat.L  proportional change in input
+
+           Ag       Other
+
+L       0.080       0.135
+K      -0.120      -0.090
+
+
+----    138 VARIABLE what.L                =        0.000  proportional change in wage rate
+            VARIABLE rhat.L                =        0.250  proportional change in capital rental rate
+
+----    138 VARIABLE phat.L  proportional change in domestic price
+
+Ag    0.100,    Other 0.150
+
+
+----    138 VARIABLE lhat.L                =        0.000  proportional change in labor endowment
+            VARIABLE khat.L                =        0.000  proportional change in capital endowment
+
+----    138 VARIABLE psthat.L  proportional change in world price
+
+                      ( ALL       0.000 )
+
+
+
+EXECUTION TIME       =        0.000 SECONDS      5 Mb  DEX237-237 Jul 21, 2011
+
+
+USER: David Roland-Holst                             G110727:0605AN-DAR
+      University of California, Agricultural and Resource EconomiDC7723
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      /Users/dwrh/Documents/Research/FAO/ThaiClimateRisk/Training/models/Sources/CGE/GAMS/Simple_CGE/SimpleCGE.gms
+Output     /Users/dwrh/Documents/Research/FAO/ThaiClimateRisk/Training/models/Sources/CGE/GAMS/Simple_CGE/SimpleCGE.lst

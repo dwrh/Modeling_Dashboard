@@ -1,0 +1,19 @@
+<html>
+  <head> 
+    <title>Basic Provincial Map</title> 
+    <script type="text/javascript" src="../FusionCharts/Maps/FusionCharts.js"></script>
+  </head> 
+  <body> 
+	<tr style="border-bottom:1px"><td><p class="title">Afghanistan: Provinces</p></td></tr>
+    <div id="mapContainer">FusionMaps XT will load here!</div> 
+    <script type="text/javascript"><!--
+         
+      FusionCharts.setCurrentRenderer('javascript');
+         
+      var myMap = new FusionCharts ("../FusionCharts/Maps/FCMap_Afghanistan.swf", "MyMapId", "610", "470", "0");
+//      myMap.setXMLUrl ("../Data/AzeGrowth.xml");
+      myMap.render("mapContainer"); 
+    // --> 
+    </script>
+  </body> 
+</html>
