@@ -8,7 +8,9 @@
 	// Number of regions - 1, used in for loops
 	$REG = 10;
 	$CTY = $_GET['cty'] ;
-	
+	if ($CTY==""){
+		$CTY='AFG';
+	}
 	$citymap=array();
 	$citymap['AFG']='afghanistan';
 	$citymap['AZE']='azerbaijan';
@@ -264,11 +266,11 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
         </div>
     </div>
     
-    <div id="transport-image" class="title-image" style="background: url('uploads/images/<?=$MAP?>-title.jpg') top center no-repeat;" >
+    <div id="transport-image" class="title-image" style="background: url('uploads/images/<?=$cty?>-title.jpg') top center no-repeat;" >
 		<div class="container">
         	<div class="image-holder">
             	<div class="title-holder">
-                	                        <span><?=$MAP?></span>
+                	                        <span><?=$cty?></span>
                     	
                 </div>
 </div>
