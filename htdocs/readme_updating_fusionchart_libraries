@@ -1,0 +1,14 @@
+NOTE ABOUT FILES IN THIS DIRECTORY:
+FusionCharts directory is a link to Modelling_Dashboard/htdocs/FusionCharts21 which 
+has the latest download from FusionCharts.com
+When there is a newer version of FusionChart files (say, FusionCharts22) all you'll have to do: 
+    Delete exisiting FusionCharts link
+    Link FusionCharts to FusionCharts22
+    Make the following softlinks
+DO NOT MAKE COPIES OF THE FILES IN MULTIPLE DIRECTORIES
+
+The js files referenced by Base2010.php etc are all downloaded into FusionCharts21/js directory. 
+We have made softlinks to FusionCharts directory (this one): avoids spurious copies of same files
+    fusioncharts.js---->js/fusioncharts.js
+    fusioncharts.charts.js----->js/fusioncharts.charts.js
+    fusioncharts.maps.js----->js/fusioncharts.maps.js

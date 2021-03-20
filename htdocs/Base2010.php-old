@@ -8,20 +8,27 @@
 	// Number of regions - 1, used in for loops
 	$REG = 10;
 	$CTY = $_GET['cty'] ;
+	//$CTY = 'KAZ' ;
+
+	// map data
+	//include('Map_Data_Asia.php');
 	
-	$citymap=array();
-	$citymap['AFG']='afghanistan';
-	$citymap['AZE']='azerbaijan';
-	$citymap['KAZ']='kazakhstan';
-	$citymap['KGZ']='kyrgyzstan';
-	$citymap['MON']='mongolia';
-	$citymap['PAK']='pakistan';
-	$citymap['TJK']='tajikistan';
-	$citymap['TKM']='turkmenistan';
-	$citymap['AZE']='uzbekistan';
-	$citymap['UZB']='xinjiang';
-$cur_cty=$citymap[$CTY];
-$cty=ucfirst($cur_cty);
+	// $mapData = array();
+
+	// for($i = 0; $i < count($mapArray); $i++) {
+	// 	array_push($mapData,array("id" => $mapDataArray[$i][0], "value" => $mapDataArray[$i][1]));
+	// }
+
+	// $arrMapConfig["data"] = $mapData;
+	
+	// // JSON Encode the data to retrieve the string containing the JSON representation of the data in the array.
+	// $jsonEncodedData = json_encode($arrMapConfig);
+
+	// Map object
+	//$Map = new FusionCharts("maps/world", "MyFirstMap" , "800", "500", "map-container", "json", $jsonEncodedData);
+
+	// Render the Map
+	//$Map->render();
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Open CSV file and read in data
@@ -199,8 +206,7 @@ $strXML_p1 .= "</chart>";
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Data for Pie B15, Value Added, 2010
 $strXML_p2 = "";
-$strXML_p2 = "<chart theme='fusion' caption='Value Added'  showBorder='0' showLegend='0' showLabels='1' showPercentValues='0' showValues='0' baseFontSize='7' palettecolors = 'f7b924, f3a42a, ee8f31, ea7a37, e6643d, 
-e24f43, dd3a4a, fb8a98, bd3838, ca6060, d58080, bd3838, d92550'>";
+$strXML_p2 = "<chart caption='Value Added' bgColor='#FFFFFFF' showBorder='0' showLabels='1' showPercentValues='0' showValues='0'baseFontSize='7'>";
 	for ($k=0; $k < $row; $k++) {
 	if (($dtarr[$k][3] == '2010') and ($dtarr[$k][0] == 'BAU')) {
 			if (($dtarr[$k][2] == 'VA_SECT') and ($dtarr[$k][1] == $CTY)) {
@@ -214,9 +220,8 @@ $strXML_p2 .= "</chart>";
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Data for Pie B16, Shares of Exports by Partner, 2010
 $strXML_p3 = "";
-$strXML_p3 = "<chart theme='fusion' caption='Exports by Partner' bgColor='#FFFFFFF' showBorder='0' showLabels='1' showPercentValues='0' showLegend='0' showValues='0' baseFontSize='7' palettecolors='d8f3dc, b7e4c7, 95d5b2, 74c69d, 52b788, 
-40916c, 2d6a4f'>";	
-for ($k=0; $k < $row; $k++) { 
+$strXML_p3 = "<chart caption='Exports by Partner' bgColor='#FFFFFFF' showBorder='0' showLabels='1' showPercentValues='0' showValues='0'baseFontSize='7'>";
+	for ($k=0; $k < $row; $k++) { 
 	if (($dtarr[$k][3] == '2010') and ($dtarr[$k][0] == 'BAU')) {
 			if (($dtarr[$k][2] == 'EXP_CTY') and ($dtarr[$k][1] == $CTY)) {
 				$strXML_p3 .= "<set label='" . $dtarr[$k][4] . "' value='" . $dtarr[$k][6] . "' />"; }
@@ -227,7 +232,7 @@ $strXML_p3 .= "</chart>";
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Data for Pie B17, Shares of Imports by Partner, 2010
 $strXML_p4 = "";
-$strXML_p4 = "<chart caption='Imports by Partner' bgColor='#FFFFFFF' showBorder='0' showLabels='1' showPercentValues='0' showValues='0' baseFontSize='7'>";
+$strXML_p4 = "<chart caption='Imports by Partner' bgColor='#FFFFFFF' showBorder='0' showLabels='1' showPercentValues='0' showValues='0'baseFontSize='7'>";
 	for ($k=0; $k < $row; $k++) {
 	if (($dtarr[$k][3] == '2010') and ($dtarr[$k][0] == 'BAU')) {
 			if (($dtarr[$k][2] == 'IMP_CTY') and ($dtarr[$k][1] == $CTY)) {
@@ -333,33 +338,7 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 		<!--## Country Map -->
 		<tr>
 			<td class="figs">
-				<div id="map-container" align="left">FusionMaps will load here 
-<script> 
-	var cur_map='maps/world';
-	var cty_name='<?php echo $cur_cty; ?>';
-	var mapstr="maps/<?php echo $cur_cty; ?>";
-
-	FusionCharts.ready(function() {
-    var countryMap = new FusionCharts({
-        type: mapstr,
-        renderAt: 'map-container',
-        width: '600',
-        height: '400',
-        dataFormat: 'json',
-        dataSource: {
-            "chart": {
-				"caption": cty_name.toUpperCase(),
-                "theme": "fusion",
-                "formatNumberScale": "0",
-                "numberSuffix": "M",
-				"entityFillHoverColor": "#FFF9C4"            
-            }
-        }
-    });
-    countryMap.render();
-});</script>
-                
-                </div>
+				<div id="map-container" align="left">FusionMaps will load here </div>
 			</td>
 		</tr>
 
@@ -367,10 +346,7 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 		<tr>
 			<td>
 				<?php
-					//echo renderChart("FusionCharts/MSBar3D.swf", "", $strXML_ch22, "B11", 600, 300, false, true);
-                    echo renderChart("MSBar3D", "", $strXML_ch22, "B11", 600, 300, 1, true);
-
-                    
+					echo renderChart("FusionCharts/MSBar3D.swf", "", $strXML_ch22, "B11", 600, 300, false, true);
 				?>
 			</td>
 		</tr>
@@ -379,10 +355,7 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 		<tr>
 			<td>
 				<?php
-					//echo renderChart("FusionCharts/StackedBar3D.swf", "", $strXML_ch2, "B12", 600, 300, false, true);
-                    echo renderChart("StackedBar3D", "", $strXML_ch2, "B12", 600, 300, false, true);
-
-
+					echo renderChart("FusionCharts/StackedBar3D.swf", "", $strXML_ch2, "B12", 600, 300, false, true);
 				?>
 			</td>
 		</tr>
@@ -391,9 +364,7 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 		<tr>
 			<td>
 				<?php
-					//echo renderChart("FusionCharts/StackedColumn3D.swf", "", $strXML_ch23, "B13", 600, 300, false, true);
-                    echo renderChart("StackedColumn3D", "", $strXML_ch23, "B13", 600, 300, false, true);
-
+					echo renderChart("FusionCharts/StackedColumn3D.swf", "", $strXML_ch23, "B13", 600, 300, false, true);
 				?>
 			</td>
 		</tr>
@@ -401,41 +372,35 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
             
     <div id="sidebar">
         <div class="widget flag-area">
-        <img src="uploads/images/<?=$cty?>-flag.jpg" alt="" width="120" /><br />
+            <!-- <img src="uploads/images/<?=$MAP?>-flag.jpg" alt="" width="295" height="191" /><br /> -->
 	
 	
 	<td valign=top>
 		<tr valign="top">
 			<td>
 				<?php
-					//echo renderChart("FusionCharts/pie2D.swf", "", $strXML_p1, "B14", 300, 300, false, true);
-                    echo renderChart("pie2D", "", $strXML_p1, "B14", 300, 300, false, true);
-
+					echo renderChart("FusionCharts/pie2D.swf", "", $strXML_p1, "B14", 300, 300, false, true);
 				?>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<?php
-					//echo renderChart("FusionCharts/pie2D.swf", "", $strXML_p2, "B15", 300, 300, false, true);
-                    echo renderChart("pie2D", "", $strXML_p2, "B15", 300, 300, false, true);
-
+					echo renderChart("FusionCharts/pie2D.swf", "", $strXML_p2, "B15", 300, 300, false, true);
 				?>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<?php
-				//echo renderChart("FusionCharts/pie2D.swf", "", $strXML_p3, "B16", 300, 300, false, true);
-                echo renderChart("pie2D", "", $strXML_p3, "B16", 300, 300, false, true);
-                                ?>
+				echo renderChart("FusionCharts/pie2D.swf", "", $strXML_p3, "B16", 300, 300, false, true);
+				?>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<?php
-					echo renderChart("pie2D", "", $strXML_p4, "B17", 300, 300, false, true);
-                    //echo renderChart("FusionCharts/pie2D.swf", "", $strXML_p4, "B17", 300, 300, false, true);
+					echo renderChart("FusionCharts/pie2D.swf", "", $strXML_p4, "B17", 300, 300, false, true);
 				?>
 		</table>
 		</td>
