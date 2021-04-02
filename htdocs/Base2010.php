@@ -4,6 +4,8 @@
 
 	// FusionChart php include statement
 	include('FusionCharts/FusionCharts.php');
+	
+
 
 	// Number of regions - 1, used in for loops
 	$REG = 10;
@@ -20,8 +22,8 @@
 	$citymap['PAK']='pakistan';
 	$citymap['TJK']='tajikistan';
 	$citymap['TKM']='turkmenistan';
-	$citymap['AZE']='uzbekistan';
-	$citymap['UZB']='xinjiang';
+	$citymap['UZB']='uzbekistan';
+	$citymap['XIN']='xinjiang';
 $cur_cty=$citymap[$CTY];
 $cty=ucfirst($cur_cty);
 
@@ -201,8 +203,10 @@ $strXML_p1 .= "</chart>";
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Data for Pie B15, Value Added, 2010
 $strXML_p2 = "";
-$strXML_p2 = "<chart theme='fusion' caption='Value Added'  showBorder='0' showLegend='0' showLabels='1' showPercentValues='0' showValues='0' baseFontSize='7' palettecolors = 'f7b924, f3a42a, ee8f31, ea7a37, e6643d, 
+$strXML_p2 = "<chart theme='fusion' caption='Value Added' bgColor='#FFFFFFF' showBorder='0' showLegend='0' showLabels='1' showPercentValues='0' showValues='0' baseFontSize='7' palettecolors = 'f7b924, f3a42a, ee8f31, ea7a37, e6643d, 
 e24f43, dd3a4a, fb8a98, bd3838, ca6060, d58080, bd3838, d92550'>";
+
+ 
 	for ($k=0; $k < $row; $k++) {
 	if (($dtarr[$k][3] == '2010') and ($dtarr[$k][0] == 'BAU')) {
 			if (($dtarr[$k][2] == 'VA_SECT') and ($dtarr[$k][1] == $CTY)) {
@@ -336,11 +340,11 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 		<tr>
 			<td class="figs">
 				<div id="map-container" align="left">FusionMaps will load here 
-<script> 
+				<script> 
 	var cur_map='maps/world';
 	var cty_name='<?php echo $cur_cty; ?>';
 	var mapstr="maps/<?php echo $cur_cty; ?>";
-
+	FusionCharts.options.creditLabel = false;
 	FusionCharts.ready(function() {
     var countryMap = new FusionCharts({
         type: mapstr,
@@ -354,9 +358,35 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
                 "theme": "fusion",
                 "formatNumberScale": "0",
                 "numberSuffix": "M",
-				"entityFillHoverColor": "#FFF9C4"            
-            }
-        }
+				"entityFillHoverColor": "#FF00FF",
+				"showBorder":"1",
+				"borderColor":"#C0C0C0",
+				"showLabels":"0",
+				"showCanvasBorder":"0",
+				"fillColor":"#D0D0D0",
+				"legendBgColor":"#FFFFFF",
+				"legendBorderColor":"#FFFFFF"
+
+            },
+			license:{key: '1nH2bqC-13D2E6E1D4H3B2C4B4D2E6D4C4sbdC8D5mmaB-8jE1G2awe1C2A3E2E3D3F3B8A4A4D4G3A2D2A33A18B14wjjB4A2H4jB2A16A7D-16buE3A3H2sudB2D3D2wikF1C10B8D5E5E3F4E2H4I3B8lffF4E2UH3vraE4D2C2pcC1DB4A2yyjD1B1G4D2B5B3A2C4E2B1D4D1B1C7p==',
+				creditLabel: false
+			},
+			"colorrange": {
+				"minvalue": "0",
+				"startlabel": "Low",
+				"endlabel": "High",
+				"code": "#FF4411",
+				"gradient": "1",
+				"color": [{
+					"maxvalue": "25",
+					"code": "#FFDD44",
+					"displayValue": "Median"
+				}, {
+					"maxvalue": "100",
+					"code": "#6baa01"
+				}]
+    		}
+		  }
     });
     countryMap.render();
 });</script>
