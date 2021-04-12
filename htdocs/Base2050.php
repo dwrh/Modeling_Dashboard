@@ -9,14 +9,32 @@ include('FusionCharts/FusionCharts.php');
 $REG = 10;
 $CTY = $_GET['cty'] ;
 //$CTY = 'KAZ' ;
-
-include('Map_Data_Asia.php') ;
-
-for ($i=0; $i < 21; $i++) {
-	if ($mapLabel[$i][1] == $CTY) {
-		$MAP = $mapLabel[$i][2] ;
- 	}
+if ($CTY==""){
+	$CTY='AFG';
 }
+if ($scn==""){
+	$SCN=TRUE;
+}
+//include('Map_Data_Asia.php') ;
+
+//for ($i=0; $i < 21; $i++) {
+//	if ($mapLabel[$i][1] == $CTY) {
+//		$MAP = $mapLabel[$i][2] ;
+ //	}
+//}
+$citymap=array();
+	$citymap['AFG']='afghanistan';
+	$citymap['AZE']='azerbaijan';
+	$citymap['KAZ']='kazakhstan';
+	$citymap['KGZ']='kyrgyzstan';
+	$citymap['MON']='mongolia';
+	$citymap['PAK']='pakistan';
+	$citymap['TJK']='tajikistan';
+	$citymap['TKM']='turkmenistan';
+	$citymap['UZB']='uzbekistan';
+	$citymap['XIN']='xinjiang';
+$cur_cty=$citymap[$CTY];
+$cty=ucfirst($cur_cty);
 
 //echo $MAP ;
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -31,7 +49,6 @@ if(($handle = fopen("Data/CAREC2.csv", "r")) !== FALSE) {
 			}
 			$row++;
 		}
-
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Data for Chart B51, GDP Components, 2010-2050
 
@@ -111,14 +128,31 @@ plotFillAlpha='0' numVDivLines='10' showAlternateVGridColor='1' AlternateVGridCo
 canvasBorderThickness='1' showPlotBorder='0' plotBorderThickness='0' zgapplot='0' zdepth='120' exeTime='1.2' dynamicShading='1' YZWallDepth='5' ZXWallDepth='5' XYWallDepth='5' canvasBgColor='FBFBFB' startAngX='0' startAngY='0' endAngX='5' endAngY='-25' divLineEffect='bevel'>";
 $strXML_ch502 .= "<categories>";
 	for ($hh=0; $hh <= $row; $hh++) {
-	if (($dtarr[$hh][0] == 'TRADE') and ($dtarr[$hh][7] == 'PERCENT')) {
-		if (($dtarr[$hh][2] == 'CPI') and ($dtarr[$hh][1] == $CTY)) {
-			$strXML_ch502 .= "<category label='" . $dtarr[$hh][3] . "' />"; 
+		if (($dtarr[$hh][0] == 'TRADE') and ($dtarr[$hh][7] == 'PERCENT')) {
+			
+			if (($dtarr[$hh][2] == 'CPI') and ($dtarr[$hh][1] == $CTY)) {
+				var_dump($dtarr[$hh]);
+				echo '<br/>';
+				$strXML_ch502 .= "<category label='" . $dtarr[$hh][3] . "' />"; 
+			}
 		}
 	}
-	}
 $strXML_ch502 .= "</categories>";
-
+echo "categories over<br/>";
+//Need to read in the data for the chart here
+$strXML_ch502 .= "<dataset seriesName='Real GDP and Population' color='005C1F' plotBorderColor='B1D1DC' renderAs='Area'>";
+	for ($jj=0; $jj < $row; $jj++) {
+		if ($dtarr[$jj][0] == 'TRADE') {
+			//this is the condition we dont uderstand
+			if (($dtarr[$jj][1] == $CTY)&&($dtarr[$jj][2]=='POP_GR')) {
+			var_dump($dtarr[$jj]);
+				echo '<br/>';
+				$strXML_ch502 .= "<set value='" . $dtarr[$jj][6] . "' />"; 
+			}
+		}
+	}
+$strXML_ch502 .= "</dataset>";
+////
 $strXML_ch502 .= "<dataset seriesName='Real GDP' color='00AD2E' plotBorderColor='B1D1DC' renderAs='line'>";
 	for ($jj=0; $jj < $row; $jj++) {
 	if ($dtarr[$jj][0] == 'TRADE') {
@@ -140,7 +174,7 @@ $strXML_ch502 .= "<dataset seriesName='Population' color='293CE9' plotBorderColo
 $strXML_ch502 .= "</dataset>";
 
 $strXML_ch502 .= "</chart>";
-
+//echo htmlspecialchars($strXML_ch502);
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Data for Chart B53, GDP Per Capita and Share of Labor Value Added, 2010-2050
 
@@ -197,7 +231,7 @@ $strXML_p1 .= "</chart>";
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Data for Pie B55, Value Added, 2010
 $strXML_p2 = "";
-$strXML_p2 = "<chart caption='Value Added' bgColor='#FFFFFFF' showBorder='0' showLabels='1' showPercentValues='0' showValues='0'baseFontSize='7'>";
+$strXML_p2 = "<chart caption='Value Added' bgColor='#FFFFFFF' showBorder='0' showLabels='1' showPercentValues='0' showValues='0' baseFontSize='7'>";
 	for ($k=0; $k < $row; $k++) {
 	if (($dtarr[$k][3] == '2010') and ($dtarr[$k][0] == 'BAU')) {
 			if (($dtarr[$k][2] == 'VA_SECT') and ($dtarr[$k][1] == $CTY)) {
@@ -211,7 +245,7 @@ $strXML_p2 .= "</chart>";
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Data for Pie B56, Shares of Exports by Partner, 2010
 $strXML_p3 = "";
-$strXML_p3 = "<chart caption='Exports by Partner' bgColor='#FFFFFFF' showBorder='0' showLabels='1' showPercentValues='0' showValues='0'baseFontSize='7'>";
+$strXML_p3 = "<chart caption='Exports by Partner' bgColor='#FFFFFFF' showBorder='0' showLabels='1' showPercentValues='0' showValues='0' baseFontSize='7'>";
 	for ($k=0; $k < $row; $k++) { 
 	if (($dtarr[$k][3] == '2010') and ($dtarr[$k][0] == 'BAU')) {
 			if (($dtarr[$k][2] == 'EXP_CTY') and ($dtarr[$k][1] == $CTY)) {
@@ -247,6 +281,11 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 <html>
 <head>
 <script language="Javascript" SRC="FusionCharts/FusionCharts.js"></script>
+<script type="text/javascript" src="FusionCharts/fusioncharts.maps.js"></script>
+<script>FusionCharts.options.license({   
+	key: '1nH2bqC-13D2E6E1D4H3B2C4B4D2E6D4C4sbdC8D5mmaB-8jE1G2awe1C2A3E2E3D3F3B8A4A4D4G3A2D2A33A18B14wjjB4A2H4jB2A16A7D-16buE3A3H2sudB2D3D2wikF1C10B8D5E5E3F4E2H4I3B8lffF4E2UH3vraE4D2C2pcC1DB4A2yyjD1B1G4D2B5B3A2C4E2B1D4D1B1C7p==',  
+	creditLabel: false}); 
+</script>
 <link rel='stylesheet' href="CAPSIM_Styles.css" />
 <style type="text/css">
 </style>
@@ -255,16 +294,16 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 <body>
     <div id="breadcrumbs">
     	<div class="container">
-        	<a href="index.html">Home</a> &gt;&gt; <a href="index-page=carec-countries.php.html">CARGO Results</a> &gt;&gt; 			<span class="lastitem"><?=$MAP?></span>
+        	<a href="index.html">Home</a> &gt;&gt; <a href="index-page=carec-countries.php.html">CARGO Results</a> &gt;&gt; 			<span class="lastitem"><?=$cty?></span>
             <div class="clear"></div>
         </div>
     </div>
     
-    <div id="transport-image" class="title-image" style="background: url('uploads/images/<?=$MAP?>-title.jpg') top center no-repeat;" >
+    <div id="transport-image" class="title-image" style="background: url('uploads/images/<?=$cty?>-title.jpg') top center no-repeat;" >
 		<div class="container">
         	<div class="image-holder">
             	<div class="title-holder">
-                	                        <span><?=$MAP?></span>
+                	                        <span><?=$cty?></span>
                     	
                 </div>
 </div>
@@ -299,9 +338,16 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 
 	<li class="menuparent"><a class="menuparent" href="Base2010.php?cty=<?=$CTY?>">Baseline 2010</a>
 	<li class="menuparent"><a class="menuparent" href="Base2050.php?cty=<?=$CTY?>">Baseline 2050</a>
-	<li class="menuparent"><a class="menuparent" href="Scenario2050.php?cty=<?=$CTY?>">Scenario 2050</a>
-
+	<!--<li class="menuparent"><a class="menuparent" href="Scenario2050.php?cty=<?=$CTY?>">Scenario 2050</a>-->
+	<li class="menuparent"><a class="menuparent">Scenarios:</a>
+	<ul>
+	<li><a href="Base2050.php?cty=<?=$CTY?>"?>Scenario 1 (2050)</a></li>
+	<li><a href="Base2050.php?cty=<?=$CTY?>"?>Scenario 2 (2050)</a></li>
+	<li><a href="Base2050.php?cty=<?=$CTY?>"?>Scenario 3< (2050) </a></li>
+	</li></ul>
+	</li>
 	</ul>
+
 </div>
 </div>
 </div>
@@ -337,7 +383,9 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 	<tr>
 	<td>
 	<?php
-	echo renderChart("FusionCharts/StackedColumn3D.swf", "", $strXML_ch501, "B51", 600, 300, false, true);
+	//echo renderChart("FusionCharts/StackedColumn3D.swf", "", $strXML_ch501, "B51", 600, 300, false, true);
+	echo renderChart("stackedcolumn3d", "", $strXML_ch501, "B51", 600, 300, false, true);
+
 	?>
 	</td>
 	</tr>
@@ -346,7 +394,8 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 	<tr>
 	<td>
 	<?php
-	echo renderChart("FusionCharts/MSCombi3D.swf", "", $strXML_ch502, "B52", 600, 300, false, true);
+		//echo renderChart("FusionCharts/MSCombi3D.swf", "", $strXML_ch502, "B52", 600, 300, false, true);
+		echo renderChart("mscolumn3dlinedy", "", $strXML_ch502, "B52", 600, 300, false, true);
 	?>
 	</td>
 	</tr>
@@ -355,7 +404,8 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 	<tr>
 	<td>
 	<?php
-	echo renderChart("FusionCharts/StackedColumn3DLineDY.swf", "", $strXML_ch503, "B53", 600, 300, false, true);
+		//echo renderChart("FusionCharts/StackedColumn3DLineDY.swf", "", $strXML_ch503, "B53", 600, 300, false, true);
+		echo renderChart("stackedcolumn3dlinedy", "", $strXML_ch503, "B53", 600, 300, false, true);
 	?>
 	</td>
 	</tr>
@@ -370,16 +420,19 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 	<td valign=top>
 	<tr valign="top"><td>
 	<?php
-	echo renderChart("FusionCharts/pie2D.swf", "", $strXML_p1, "B54", 300, 300, false, true);
+	//echo renderChart("FusionCharts/pie2D.swf", "", $strXML_p1, "B54", 300, 300, false, true);
+	echo renderChart("pie2D", "", $strXML_p1, "B54", 300, 300, false, true);
 	?>
 	</td></tr>
 	<tr><td>
 	<?php
-	echo renderChart("FusionCharts/pie2D.swf", "", $strXML_p2, "B55", 300, 300, false, true);
+	//echo renderChart("FusionCharts/pie2D.swf", "", $strXML_p2, "B55", 300, 300, false, true);
+	echo renderChart("pie2D", "", $strXML_p2, "B55", 300, 300, false, true);
 	?>
 	</td></tr>
 	<?php
-	echo renderChart("FusionCharts/pie2D.swf", "", $strXML_p3, "B56", 300, 300, false, true);
+	//echo renderChart("FusionCharts/pie2D.swf", "", $strXML_p3, "B56", 300, 300, false, true);
+	echo renderChart("pie2D", "", $strXML_p3, "B56", 300, 300, false, true);
 	?>
 	</td></tr>
 	</table>

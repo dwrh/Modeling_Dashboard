@@ -1,11 +1,10 @@
 <?php
 
+
 	include('Header.php') ;
 
 	// FusionChart php include statement
 	include('FusionCharts/FusionCharts.php');
-	
-
 
 	// Number of regions - 1, used in for loops
 	$REG = 10;
@@ -257,6 +256,9 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 	<head>
 		<script language="Javascript" SRC="FusionCharts/FusionCharts.js"></script>
 		<script type="text/javascript" src="FusionCharts/fusioncharts.maps.js"></script>
+		<script>FusionCharts.options.license({   key: '1nH2bqC-13D2E6E1D4H3B2C4B4D2E6D4C4sbdC8D5mmaB-8jE1G2awe1C2A3E2E3D3F3B8A4A4D4G3A2D2A33A18B14wjjB4A2H4jB2A16A7D-16buE3A3H2sudB2D3D2wikF1C10B8D5E5E3F4E2H4I3B8lffF4E2UH3vraE4D2C2pcC1DB4A2yyjD1B1G4D2B5B3A2C4E2B1D4D1B1C7p==',  
+		creditLabel: false}); 
+		</script>
 		<link rel='stylesheet' href="CAPSIM_Styles.css" />
 		<style type="text/css">
 		</style>
@@ -344,6 +346,7 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 	var cur_map='maps/world';
 	var cty_name='<?php echo $cur_cty; ?>';
 	var mapstr="maps/<?php echo $cur_cty; ?>";
+	var sample_data=Array();
 	FusionCharts.options.creditLabel = false;
 	FusionCharts.ready(function() {
     var countryMap = new FusionCharts({
@@ -362,21 +365,18 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 				"showBorder":"1",
 				"borderColor":"#C0C0C0",
 				"showLabels":"0",
+				"includevalueinlabels": "1",
 				"showCanvasBorder":"0",
 				"fillColor":"#D0D0D0",
 				"legendBgColor":"#FFFFFF",
 				"legendBorderColor":"#FFFFFF"
-
             },
-			license:{key: '1nH2bqC-13D2E6E1D4H3B2C4B4D2E6D4C4sbdC8D5mmaB-8jE1G2awe1C2A3E2E3D3F3B8A4A4D4G3A2D2A33A18B14wjjB4A2H4jB2A16A7D-16buE3A3H2sudB2D3D2wikF1C10B8D5E5E3F4E2H4I3B8lffF4E2UH3vraE4D2C2pcC1DB4A2yyjD1B1G4D2B5B3A2C4E2B1D4D1B1C7p==',
-				creditLabel: false
-			},
 			"colorrange": {
 				"minvalue": "0",
 				"startlabel": "Low",
 				"endlabel": "High",
 				"code": "#FF4411",
-				"gradient": "1",
+				"gradient": "100",
 				"color": [{
 					"maxvalue": "25",
 					"code": "#FFDD44",
@@ -385,7 +385,16 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 					"maxvalue": "100",
 					"code": "#6baa01"
 				}]
-    		}
+    		},
+			"data": [{
+                "id": "FRA",
+                "value": "50",
+				"label": "Icecream 50"
+            }, {
+                "id": "NIM",
+                "value": "77",
+				"label":"Juice 77"
+            }],
 		  }
     });
     countryMap.render();
