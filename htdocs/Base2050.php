@@ -66,7 +66,7 @@ $strXML_ch501 .= "<categories>";
 	}
 	}
 $strXML_ch501 .= "</categories>";
-
+//getting data for bar graph
 $strXML_ch501 .= "<dataset seriesName='Exports'>";
 	for ($jj=0; $jj < $row; $jj++) {
 	if ($dtarr[$jj][0] == 'BAU') {
@@ -131,28 +131,17 @@ $strXML_ch502 .= "<categories>";
 		if (($dtarr[$hh][0] == 'TRADE') and ($dtarr[$hh][7] == 'PERCENT')) {
 			
 			if (($dtarr[$hh][2] == 'CPI') and ($dtarr[$hh][1] == $CTY)) {
-				var_dump($dtarr[$hh]);
 				echo '<br/>';
 				$strXML_ch502 .= "<category label='" . $dtarr[$hh][3] . "' />"; 
+				var_dump($dtarr[$hh]);
+
 			}
 		}
 	}
 $strXML_ch502 .= "</categories>";
 echo "categories over<br/>";
 //Need to read in the data for the chart here
-$strXML_ch502 .= "<dataset seriesName='Real GDP and Population' color='005C1F' plotBorderColor='B1D1DC' renderAs='Area'>";
-	for ($jj=0; $jj < $row; $jj++) {
-		if ($dtarr[$jj][0] == 'TRADE') {
-			//this is the condition we dont uderstand
-			if (($dtarr[$jj][1] == $CTY)&&($dtarr[$jj][2]=='POP_GR')) {
-			var_dump($dtarr[$jj]);
-				echo '<br/>';
-				$strXML_ch502 .= "<set value='" . $dtarr[$jj][6] . "' />"; 
-			}
-		}
-	}
-$strXML_ch502 .= "</dataset>";
-////
+// need code for getting the data / y values
 $strXML_ch502 .= "<dataset seriesName='Real GDP' color='00AD2E' plotBorderColor='B1D1DC' renderAs='line'>";
 	for ($jj=0; $jj < $row; $jj++) {
 	if ($dtarr[$jj][0] == 'TRADE') {
@@ -341,9 +330,9 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 	<!--<li class="menuparent"><a class="menuparent" href="Scenario2050.php?cty=<?=$CTY?>">Scenario 2050</a>-->
 	<li class="menuparent"><a class="menuparent">Scenarios:</a>
 	<ul>
-	<li><a href="Base2050.php?cty=<?=$CTY?>"?>Scenario 1 (2050)</a></li>
-	<li><a href="Base2050.php?cty=<?=$CTY?>"?>Scenario 2 (2050)</a></li>
-	<li><a href="Base2050.php?cty=<?=$CTY?>"?>Scenario 3< (2050) </a></li>
+	<li><a href="Scenario2050.php?cty=<?=$CTY?>"?>Scenario 1 (2050)</a></li>
+	<li><a href="Scenario2050.php?cty=<?=$CTY?>"?>Scenario 2 (2050)</a></li>
+	<li><a href="Scenario2050.php?cty=<?=$CTY?>"?>Scenario 3< (2050) </a></li>
 	</li></ul>
 	</li>
 	</ul>

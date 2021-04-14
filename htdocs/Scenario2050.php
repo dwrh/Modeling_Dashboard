@@ -10,13 +10,29 @@ $REG = 10;
 $CTY = $_GET['cty'] ;
 //$CTY = 'KAZ' ;
 
-include('Map_Data_Asia.php') ;
+//include('Map_Data_Asia.php') ;
 
-for ($i=0; $i < 21; $i++) {
-	if ($mapLabel[$i][1] == $CTY) {
-		$MAP = $mapLabel[$i][2] ;
- 	}
+//for ($i=0; $i < 21; $i++) {
+//	if ($mapLabel[$i][1] == $CTY) {
+//		$MAP = $mapLabel[$i][2] ;
+ //	}
+//}
+if ($CTY==""){
+	$CTY='AFG';
 }
+$citymap=array();
+	$citymap['AFG']='afghanistan';
+	$citymap['AZE']='azerbaijan';
+	$citymap['KAZ']='kazakhstan';
+	$citymap['KGZ']='kyrgyzstan';
+	$citymap['MON']='mongolia';
+	$citymap['PAK']='pakistan';
+	$citymap['TJK']='tajikistan';
+	$citymap['TKM']='turkmenistan';
+	$citymap['UZB']='uzbekistan';
+	$citymap['XIN']='xinjiang';
+$cur_cty=$citymap[$CTY];
+$cty=ucfirst($cur_cty);
 
 //echo $MAP ;
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -128,7 +144,7 @@ $strXML_ch502 .= "</chart>";
 $strXML_ch503 = "";
 //$strXML_ch503 = "<chart palette='3' showvalues='0' caption='Real Income and Expenditure Growth, Annual Difference from Baseline' showLegend='1' yaxisname='Percent' plotgradientcolor='' baseFontSize='10' bgColor='#FFFFFFF' showBorder='0' paletteColors='FFFF00, FFCC33, 0080FF, 009900, FF4040' decimals='0'>";
 //$strXML_ch503 = "<chart caption='Real GDP Growth, Annual Difference from Baseline' yaxisname='Percent'  clustered='0' zeroPlaneMesh='0' zeroPlaneColor='68BDFF' zeroPlaneAlpha='50' palette='3' bgColor='66D6FF,FFFFFF,ffffff' bgRatio='20,60,20' bgAlpha='10,10,40' divLineEffect='none' numDivLines='3' legendBgAlpha='90' legendShadow='0' intensity='.02' startAngX='4.5' startAngY='-6.6' endAngX='4.5' endAngY='-6.6' exeTime='2'>";
-$strXML_ch503 = "<chart caption='Sectoral Output Growth 2010-50' paletteColors='CC6600, 006600' formatNumberScale='0'
+$strXML_ch503 = "<chart  palette='3' caption='Sectoral Output Growth 2010-50' paletteColors='CC6600, 006600' formatNumberScale='0'
 yAxisMinValue='0' yaxisname='Percent' plotgradientcolor='' baseFontSize='10' showLabels='1' showvalues='0' decimals='0' numberSuffix='%'>";
 
 $strXML_ch503 .= "<categories>";
@@ -146,23 +162,30 @@ $strXML_ch503 .= "<dataset seriesName='Baseline'>";
 	if (($dtarr[$jj][3] == '2050') and ($dtarr[$jj][0] == 'TRADE') and ($dtarr[$jj][7] == 'BUBBLE')) {
 		if (($dtarr[$jj][1] == $CTY)) {
 			$strXML_ch503 .= "<set value='" . $dtarr[$jj][8] . "' />"; 
+			//var_dump($dtarr[$jj]);
+			//echo 'Dataset 1 over<br/>';
 		}
 	}
 	}
 $strXML_ch503 .= "</dataset>";
+echo 'Invalid Dataset start <br/>';
 
 $strXML_ch503 .= "<dataset seriesName='Scenario'>";
 	for ($jj=0; $jj < $row; $jj++) {
 	if (($dtarr[$jj][3] == '2050') and ($dtarr[$jj][0] == 'TRADE') and ($dtarr[$jj][7] == 'BUBBLE')) {
 		if (($dtarr[$jj][1] == $CTY)) {
 			$strXML_ch503 .= "<set value='" . $dtarr[$jj][6] . "' />"; 
+			echo $dtarr[$jj][6]."<br/>";
 		}
 	}
 	}
+	echo 'Invalid Dataset  over<br/>';
+
 $strXML_ch503 .= "</dataset>";
 
 
 $strXML_ch503 .= "</chart>";
+//var_dump(htmlentities($strXML_ch503));
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Data for Chart S4, Imports and Exports, 2010
@@ -213,7 +236,8 @@ for ($jj=0; $jj <= $row; $jj++) {
 	}
 $strXML_ch504 .= "</dataset>";
 $strXML_ch504 .= "</chart>";
-
+echo "<br/><br/>";
+var_dump(htmlentities($strXML_ch504));
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Data for Chart S5, Output and Demand, 2010
 
@@ -345,6 +369,11 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 <html>
 <head>
 <script language="Javascript" SRC="FusionCharts/FusionCharts.js"></script>
+<script type="text/javascript" src="FusionCharts/fusioncharts.maps.js"></script>
+<script>FusionCharts.options.license({   
+	key: '1nH2bqC-13D2E6E1D4H3B2C4B4D2E6D4C4sbdC8D5mmaB-8jE1G2awe1C2A3E2E3D3F3B8A4A4D4G3A2D2A33A18B14wjjB4A2H4jB2A16A7D-16buE3A3H2sudB2D3D2wikF1C10B8D5E5E3F4E2H4I3B8lffF4E2UH3vraE4D2C2pcC1DB4A2yyjD1B1G4D2B5B3A2C4E2B1D4D1B1C7p==',  
+	creditLabel: false}); 
+</script>
 <link rel='stylesheet' href="CAPSIM_Styles.css" />
 <style type="text/css">
 </style>
@@ -353,16 +382,16 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 <body>
     <div id="breadcrumbs">
     	<div class="container">
-        	<a href="index.html">Home</a> &gt;&gt; <a href="index-page=carec-countries.php.html">CARGO Results</a> &gt;&gt; 			<span class="lastitem"><?=$MAP?></span>
+        	<a href="index.html">Home</a> &gt;&gt; <a href="index-page=carec-countries.php.html">CARGO Results</a> &gt;&gt; 			<span class="lastitem"><?=$cty?></span>
             <div class="clear"></div>
         </div>
     </div>
     
-    <div id="transport-image" class="title-image" style="background: url('uploads/images/<?=$MAP?>-title.jpg') top center no-repeat;" >
+    <div id="transport-image" class="title-image" style="background: url('uploads/images/<?=$cty?>-title.jpg') top center no-repeat;" >
 		<div class="container">
         	<div class="image-holder">
             	<div class="title-holder">
-                	                        <span><?=$MAP?></span>
+                	                        <span><?=$cty?></span>
                     	
                 </div>
 </div>
@@ -435,7 +464,8 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 	<tr>
 	<td>
 	<?php
-	echo renderChart("FusionCharts/MSColumn3D.swf", "", $strXML_ch501, "S1", 600, 300, false, true);
+		//echo renderChart("FusionCharts/MSColumn3D.swf", "", $strXML_ch501, "S1", 600, 300, false, true);
+		echo renderChart("mscolumn3d", "", $strXML_ch501, "S1", 600, 300, false, true);
 	?>
 	</td>
 	</tr>
@@ -444,7 +474,8 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 	<tr>
 	<td>
 	<?php
-	echo renderChart("FusionCharts/MSColumn3D.swf", "", $strXML_ch502, "S2", 600, 300, false, true);
+	echo renderChart("mscolumn3d", "", $strXML_ch502, "S2", 600, 300, false, true);
+	//echo renderChart("FusionCharts/MSColumn3D.swf", "", $strXML_ch502, "S2", 600, 300, false, true);
 	?>
 	</td>
 	</tr>
@@ -453,7 +484,8 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 	<tr>
 	<td>
 	<?php
-	echo renderChart("FusionCharts/StackedColumn3D.swf", "", $strXML_ch503, "S3", 600, 300, false, true);
+	//echo renderChart("FusionCharts/StackedColumn3D.swf", "", $strXML_ch503, "S3", 600, 300, false, true);
+	echo renderChart("stackedcolumn3d", "", $strXML_ch503, "S3", 600, 300, false, true);
 	?>
 	</td>
 	</tr>
@@ -465,17 +497,20 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 	<td valign=top>
 	<tr valign="top"><td>
 	<?php
-	echo renderChart("FusionCharts/StackedBar3D.swf", "", $strXML_ch504, "S4", 300, 300, false, true);
+	//echo renderChart("FusionCharts/StackedBar3D.swf", "", $strXML_ch504, "S4", 300, 300, false, true);
+	echo renderChart("stackedcolumn3d", "", $strXML_ch504, "S4", 300, 300, false, true);
 	?>
 	</td></tr>
 	<tr><td>
 	<?php
-	echo renderChart("FusionCharts/MSBar3D.swf", "", $strXML_ch505, "S5", 300, 300, false, true);
+	//echo renderChart("FusionCharts/MSBar3D.swf", "", $strXML_ch505, "S5", 300, 300, false, true);
+	echo renderChart("msbar3d", "", $strXML_ch505, "S5", 300, 300, false, true);
 	?>
 	</td></tr>
 	<tr><td>
 	<?php
-	echo renderChart("FusionCharts/StackedBar3D.swf", "", $strXML_ch506, "S6", 300, 300, false, true);
+	//echo renderChart("FusionCharts/StackedBar3D.swf", "", $strXML_ch506, "S6", 300, 300, false, true);
+	echo renderChart("stackedbar3d", "", $strXML_ch506, "S6", 300, 300, false, true);
 	?>
 
 	</table>
