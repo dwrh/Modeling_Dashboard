@@ -1,0 +1,84 @@
+
+<div class="navigation flotlef" style="background-color:red;">
+
+    <ul id="primary-nav">
+        <li class="menuparent"><a class="menuparent">Scenarios:</a>
+            <select id="base-scen-select" onchange="changeDropdown()">
+                <option value ="Base"> Baseline </option>
+                <option value="Scenario"> Scenario </option>
+            </select>
+        </li>
+        <li class="menuparent"><a class="menuparent">Year:</a>
+            <select id="year-select" onchange="changeDropdown()">
+                <option value="2010"> 2010 </option>
+                <option value="2050"> 2050 </option>
+                <!-- example link: "Base2010.php?cty=<?=$CTY?>"" -->
+            </select>
+        </li>
+        <li class="menuparent"><a class="menuparent">Economic Statistics by Country:</a>
+            <select id="country-select" onchange="changeDropdown()">
+                <ul>
+                    <option value="AFG"> <li id="AFG">Afghanistan </option>
+                    <option value ="AZE"> <li>Azerbaijan </option>
+                    <option value="KAZ"> Kazakhstan </option>
+                    <option value="KGZ"> Kyrgyz Republic </option>
+                    <option value="MON"> Mongolia </option>
+                    <option value="PAK"> Pakistan</option>
+                    <option value="TJK"> Tajikistan</option>
+                    <option value="TKM"> Turkmenistan</option>
+                    <option value="UZB"> Uzbekistan</option>
+                    <option value="XIN"> Xinjiang </option>
+                    <!-- example link: "Base2010.php?cty=XIN" -->
+                </ul>
+            </select>
+        </li>
+    </ul>
+    </div>
+</div>
+<script>
+    function changeDropdown() {
+         let base_scen = document.getElementById("base-scen-select").value;
+         let year = document.getElementById("year-select").value;
+         let country = document.getElementById("country-select").value;
+         if ((year=="2010")&&(base_scen=="Scenario")){
+             alert ("Scenario2010 data currently unavailable");
+             return;
+         }
+         let filename=base_scen+year+".php?cty="+country+"&year="+year+"&bas-scen="+base_scen;
+         //let filename=base_scen+year+".php?cty="+country;
+         let lhref=window.location.href;
+         let lastseg = lhref.substring(lhref.lastIndexOf('/') + 1);
+         lhref = lhref.replace(lastseg, filename);
+         //alert(lhref);
+        //let filename=".//"+base_scen+year+".php?cty="+country;
+         window.location = lhref;
+    }
+</script>
+<script>
+    const queryString = window.location.search;
+    //alert(queryString);
+    const urlParams = new URLSearchParams(queryString);
+    //alert(urlParams);
+    if (urlParams.has('bas-scen')){
+        const orig_base_scen=document.getElementById("base-scen-select").value;
+        const base_scen = urlParams.get('bas-scen');
+        document.getElementById("base-scen-select").value = base_scen;
+        //const val=        document.getElementById("base-scen-select").value;
+        //alert("Base Scen val:"+val);
+    }
+    if (urlParams.has('year')){
+        const year = urlParams.get('year');
+        document.getElementById("year-select").value = year;
+        //alert(document.getElementById("year-select").value);
+    }
+    //Since we don't have Scenario2010 now, force the reset to Base in this case.
+    
+    if (urlParams.has('cty')){
+        const country = urlParams.get('cty');
+        document.getElementById("country-select").value = country;
+        //alert(document.getElementById("country-select").value);
+    }
+
+
+
+</script>

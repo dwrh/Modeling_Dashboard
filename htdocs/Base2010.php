@@ -12,6 +12,7 @@
 	if ($CTY==""){
 		$CTY='AFG';
 	}
+
 	$citymap=array();
 	$citymap['AFG']='afghanistan';
 	$citymap['AZE']='azerbaijan';
@@ -276,66 +277,61 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 		<div class="container">
         	<div class="image-holder">
             	<div class="title-holder">
-                	                        <span><?=$cty?></span>
+                	    <span><?=$cty?></span>
                     	
                 </div>
 </div>
 
 <div class="container">
-<div id="header_nav">
-<div class="navigation flotlef"><div id="menuwrapper">
-<ul id="primary-nav">
-
-	<li class="menuparent"><a class="menuparent">Economic Statistics by Country:</a>
-	<ul>
-	<li><a href="Base2010.php?cty=AFG"	>Afghanistan</a></li>
-	<li><a href="Base2010.php?cty=AZE"	>Azerbaijan</a></li>
-	<li><a href="Base2010.php?cty=KAZ"	>Kazakhstan</a></li>
-	<li><a href="Base2010.php?cty=KGZ"  >Kyrgyz Republic</a></li>
-	<li><a href="Base2010.php?cty=MON"	>Mongolia</a></li>
-	<li><a href="Base2010.php?cty=PAK"	>Pakistan</a></li>
-	<li><a href="Base2010.php?cty=TJK"	>Tajikistan</a></li>
-	<li><a href="Base2010.php?cty=TKM"	>Turkmenistan</a></li>
-	<li><a href="Base2010.php?cty=UZB"  >Uzbekistan</a>
-	<li><a href="Base2010.php?cty=XIN"  >Xinjiang</a></li>
-	</li></ul>
-	</li>
-	</ul>
-</li></ul>
-
-<div align="right"><div id="menuwrapper">
-
-<ul id="primary-nav">
-
-	<li class="menuparent"><a class="menuparent" href="Base2010.php?cty=<?=$CTY?>">Baseline 2010</a>
-	<li class="menuparent"><a class="menuparent" href="Base2050.php?cty=<?=$CTY?>">Baseline 2050</a>
-	<li class="menuparent"><a class="menuparent" href="Scenario2050.php?cty=<?=$CTY?>">Scenario 2050</a>
-
-	</ul>
-</div>
-</div>
-</div>
-
-
+	<div id="base_header_nav" style="background-color:red;">
+		<script> 
+    		$(function(){
+      			$("#base_header_nav").load("new_nav_header.html"); 
+    		});
+   		 </script> 
+		<!--<div class="navigation flotlef"><div id="menuwrapper">
+			<ul id="primary-nav">
+				<li class="menuparent"><a class="menuparent">Economic Statistics by Country:</a>
+					<ul>
+						<li><a href="Base2010.php?cty=AFG"	>Afghanistan</a></li>
+						<li><a href="Base2010.php?cty=AZE"	>Azerbaijan</a></li>
+						<li><a href="Base2010.php?cty=KAZ"	>Kazakhstan</a></li>
+						<li><a href="Base2010.php?cty=KGZ"  >Kyrgyz Republic</a></li>
+						<li><a href="Base2010.php?cty=MON"	>Mongolia</a></li>
+						<li><a href="Base2010.php?cty=PAK"	>Pakistan</a></li>
+						<li><a href="Base2010.php?cty=TJK"	>Tajikistan</a></li>
+						<li><a href="Base2010.php?cty=TKM"	>Turkmenistan</a></li>
+						<li><a href="Base2010.php?cty=UZB"  >Uzbekistan</a>
+						<li><a href="Base2010.php?cty=XIN"  >Xinjiang</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div align="right">
+				<div id="menuwrapper">
+					<ul id="primary-nav">
+						<li class="menuparent"><a class="menuparent" href="Base2010.php?cty=<?=$CTY?>">Baseline 2010</a></li>
+						<li class="menuparent"><a class="menuparent" href="Base2050.php?cty=<?=$CTY?>">Baseline 2050</a></li>
+						<li class="menuparent"><a class="menuparent" href="Scenario2050.php?cty=<?=$CTY?>">Scenario 2050</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>-->
+	</div><!-- end #header_nav -->
 <!-- end container --></div>
 
 <!-- end footer --> 
 
-<script type="text/javascript"><!--
-
+<script type="text/javascript">
 	$(document).ready(function(){
 
 		$("#footer-menu #primary-nav .menuparent").hover(function(){
 
 			$("#footer-menu li.menuparent ul").hide();
-
 		});
-
 	});
 
-// --></script>
-    
-    </div><!-- end wrap_all -->
+</script>
+</div><!-- end wrap_all -->
 </div>
     <div id="content-area">
 		<!--## Country Map -->
