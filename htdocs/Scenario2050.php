@@ -19,18 +19,19 @@ $CTY = $_GET['cty'] ;
 //}
 if ($CTY==""){
 	$CTY='AFG';
+	$cty='AFG';
 }
 $citymap=array();
-	$citymap['AFG']='afghanistan';
-	$citymap['AZE']='azerbaijan';
-	$citymap['KAZ']='kazakhstan';
-	$citymap['KGZ']='kyrgyzstan';
-	$citymap['MON']='mongolia';
-	$citymap['PAK']='pakistan';
-	$citymap['TJK']='tajikistan';
-	$citymap['TKM']='turkmenistan';
-	$citymap['UZB']='uzbekistan';
-	$citymap['XIN']='xinjiang';
+$citymap['AFG']='afghanistan';
+$citymap['AZE']='azerbaijan';
+$citymap['KAZ']='kazakhstan';
+$citymap['KGZ']='kyrgyzstan';
+$citymap['MON']='mongolia';
+$citymap['PAK']='pakistan';
+$citymap['TJK']='tajikistan';
+$citymap['TKM']='turkmenistan';
+$citymap['UZB']='uzbekistan';
+$citymap['XIN']='xinjiang';
 $cur_cty=$citymap[$CTY];
 $cty=ucfirst($cur_cty);
 
@@ -168,18 +169,18 @@ $strXML_ch503 .= "<dataset seriesName='Baseline'>";
 	}
 	}
 $strXML_ch503 .= "</dataset>";
-echo 'Invalid Dataset start <br/>';
+//echo 'Invalid Dataset start <br/>';
 
 $strXML_ch503 .= "<dataset seriesName='Scenario'>";
 	for ($jj=0; $jj < $row; $jj++) {
 	if (($dtarr[$jj][3] == '2050') and ($dtarr[$jj][0] == 'TRADE') and ($dtarr[$jj][7] == 'BUBBLE')) {
 		if (($dtarr[$jj][1] == $CTY)) {
 			$strXML_ch503 .= "<set value='" . $dtarr[$jj][6] . "' />"; 
-			echo $dtarr[$jj][6]."<br/>";
+			//echo $dtarr[$jj][6]."<br/>";
 		}
 	}
 	}
-	echo 'Invalid Dataset  over<br/>';
+	//echo 'Invalid Dataset  over<br/>';
 
 $strXML_ch503 .= "</dataset>";
 
@@ -236,8 +237,8 @@ for ($jj=0; $jj <= $row; $jj++) {
 	}
 $strXML_ch504 .= "</dataset>";
 $strXML_ch504 .= "</chart>";
-echo "<br/><br/>";
-var_dump(htmlentities($strXML_ch504));
+//echo "<br/><br/>";
+//var_dump(htmlentities($strXML_ch504));
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Data for Chart S5, Output and Demand, 2010
 
@@ -365,20 +366,17 @@ fclose($handle);
 
 <!DOCTYPE
 td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <html>
 <head>
-<script language="Javascript" SRC="FusionCharts/FusionCharts.js"></script>
-<script type="text/javascript" src="FusionCharts/fusioncharts.maps.js"></script>
-<script>FusionCharts.options.license({   
-	key: '1nH2bqC-13D2E6E1D4H3B2C4B4D2E6D4C4sbdC8D5mmaB-8jE1G2awe1C2A3E2E3D3F3B8A4A4D4G3A2D2A33A18B14wjjB4A2H4jB2A16A7D-16buE3A3H2sudB2D3D2wikF1C10B8D5E5E3F4E2H4I3B8lffF4E2UH3vraE4D2C2pcC1DB4A2yyjD1B1G4D2B5B3A2C4E2B1D4D1B1C7p==',  
-	creditLabel: false}); 
-</script>
-<link rel='stylesheet' href="CAPSIM_Styles.css" />
-<style type="text/css">
-</style>
+	<script language="Javascript" SRC="FusionCharts/FusionCharts.js"></script>
+	<script type="text/javascript" src="FusionCharts/fusioncharts.maps.js"></script>
+	<script>FusionCharts.options.license({   
+		key: '1nH2bqC-13D2E6E1D4H3B2C4B4D2E6D4C4sbdC8D5mmaB-8jE1G2awe1C2A3E2E3D3F3B8A4A4D4G3A2D2A33A18B14wjjB4A2H4jB2A16A7D-16buE3A3H2sudB2D3D2wikF1C10B8D5E5E3F4E2H4I3B8lffF4E2UH3vraE4D2C2pcC1DB4A2yyjD1B1G4D2B5B3A2C4E2B1D4D1B1C7p==',  
+		creditLabel: false}); 
+	</script>
+	<link rel='stylesheet' href="CAPSIM_Styles.css" />
+	<style type="text/css"></style>
 </head>
-
 <body>
     <div id="breadcrumbs">
     	<div class="container">
@@ -391,147 +389,135 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 		<div class="container">
         	<div class="image-holder">
             	<div class="title-holder">
-                	                        <span><?=$cty?></span>
-                    	
+                	<span><?=$cty?></span>			
                 </div>
-</div>
-
-<div class="container">
-
-<div class="container">
-<div id="header_nav">
-<div class="navigation flotlef"><div id="menuwrapper">
-<ul id="primary-nav">
-
-	<li class="menuparent"><a class="menuparent">Economic Statistics by Country:</a>
-	<ul>
-	<li><a href="Base2010.php?cty=AFG"	>Afghanistan</a></li>
-	<li><a href="Base2010.php?cty=AZE"	>Azerbaijan</a></li>
-	<li><a href="Base2010.php?cty=KAZ"	>Kazakhstan</a></li>
-	<li><a href="Base2010.php?cty=KGZ"  >Kyrgyz Republic</a></li>
-	<li><a href="Base2010.php?cty=MON"	>Mongolia</a></li>
-	<li><a href="Base2010.php?cty=PAK"	>Pakistan</a></li>
-	<li><a href="Base2010.php?cty=TJK"	>Tajikistan</a></li>
-	<li><a href="Base2010.php?cty=TKM"	>Turkmenistan</a></li>
-	<li><a href="Base2010.php?cty=UZB"  >Uzbekistan</a>
-	<li><a href="Base2010.php?cty=XIN"  >Xinjiang</a></li>
-	</li></ul>
-	</li>
-	</ul>
-</li></ul>
-
-<div align="right"><div id="menuwrapper">
-
-<ul id="primary-nav">
-
-	<li class="menuparent"><a class="menuparent" href="Base2010.php?cty=<?=$CTY?>">Baseline 2010</a>
-	<li class="menuparent"><a class="menuparent" href="Base2050.php?cty=<?=$CTY?>">Baseline 2050</a>
-	<li class="menuparent"><a class="menuparent" href="Scenario2050.php?cty=<?=$CTY?>">Scenario 2050</a>
-
-	</ul>
-</div>
-</div>
-</div>
-
-
-<!-- end container --></div>
-
-<!-- end footer --> 
-
-<script type="text/javascript"><!--
-
-	$(document).ready(function(){
-
-		$("#footer-menu #primary-nav .menuparent").hover(function(){
-
-			$("#footer-menu li.menuparent ul").hide();
-
-		});
-
-	});
-
-// --></script>
-
-
-    
-    </div><!-- end wrap_all -->
-</div>
-
-
-            <div id="content-area">
-
-<!--## GDP Trends -->
-	<tr>
-	<td>
-	<?php
-		//echo renderChart("FusionCharts/MSColumn3D.swf", "", $strXML_ch501, "S1", 600, 300, false, true);
-		echo renderChart("mscolumn3d", "", $strXML_ch501, "S1", 600, 300, false, true);
-	?>
-	</td>
-	</tr>
-	
-<!--## Supply and Demand by Sector -->
-	<tr>
-	<td>
-	<?php
-	echo renderChart("mscolumn3d", "", $strXML_ch502, "S2", 600, 300, false, true);
-	//echo renderChart("FusionCharts/MSColumn3D.swf", "", $strXML_ch502, "S2", 600, 300, false, true);
-	?>
-	</td>
-	</tr>
-	
-<!--## Exports and Imports by Sector -->
-	<tr>
-	<td>
-	<?php
-	//echo renderChart("FusionCharts/StackedColumn3D.swf", "", $strXML_ch503, "S3", 600, 300, false, true);
-	echo renderChart("stackedcolumn3d", "", $strXML_ch503, "S3", 600, 300, false, true);
-	?>
-	</td>
-	</tr>
-
-    </div><!-- end Content Area -->
-            
-    <div id="sidebar">
-
-	<td valign=top>
-	<tr valign="top"><td>
-	<?php
-	//echo renderChart("FusionCharts/StackedBar3D.swf", "", $strXML_ch504, "S4", 300, 300, false, true);
-	echo renderChart("stackedcolumn3d", "", $strXML_ch504, "S4", 300, 300, false, true);
-	?>
-	</td></tr>
-	<tr><td>
-	<?php
-	//echo renderChart("FusionCharts/MSBar3D.swf", "", $strXML_ch505, "S5", 300, 300, false, true);
-	echo renderChart("msbar3d", "", $strXML_ch505, "S5", 300, 300, false, true);
-	?>
-	</td></tr>
-	<tr><td>
-	<?php
-	//echo renderChart("FusionCharts/StackedBar3D.swf", "", $strXML_ch506, "S6", 300, 300, false, true);
-	echo renderChart("stackedbar3d", "", $strXML_ch506, "S6", 300, 300, false, true);
-	?>
-
-	</table>
-	</td>
-	</tr>
-                 </div>
-            </div>
-
-</td>
-</tr>
-</table>
-         </div>
-        </div>
-	</div>
-    
-        </div><!-- end container -->
-			 
+			</div>
 		</div>
-		<div class="clear"></div>
 	</div>
 
+	<div class="container">
+		<div class="container">
+			<script> 
+				//pull in the nav header we use in all base and scenario files
+				$(function(){
+					$("#base_header_nav").load("new_nav_header.html"); 
+				});
+   			</script> 
+			<div id="base_header_nav">
+				<!--<div class="navigation flotlef"><div id="menuwrapper">
+					<ul id="primary-nav">
+						<li class="menuparent"><a class="menuparent">Economic Statistics by Country:</a>
+						<ul>
+						<li><a href="Base2010.php?cty=AFG"	>Afghanistan</a></li>
+						<li><a href="Base2010.php?cty=AZE"	>Azerbaijan</a></li>
+						<li><a href="Base2010.php?cty=KAZ"	>Kazakhstan</a></li>
+						<li><a href="Base2010.php?cty=KGZ"  >Kyrgyz Republic</a></li>
+						<li><a href="Base2010.php?cty=MON"	>Mongolia</a></li>
+						<li><a href="Base2010.php?cty=PAK"	>Pakistan</a></li>
+						<li><a href="Base2010.php?cty=TJK"	>Tajikistan</a></li>
+						<li><a href="Base2010.php?cty=TKM"	>Turkmenistan</a></li>
+						<li><a href="Base2010.php?cty=UZB"  >Uzbekistan</a>
+						<li><a href="Base2010.php?cty=XIN"  >Xinjiang</a></li>
+						</li></ul>
+						</li>
+						</ul>
+					</li></ul>
+					<div align="right"><div id="menuwrapper">
+						<ul id="primary-nav">
+							<li class="menuparent"><a class="menuparent" href="Base2010.php?cty=<?=$CTY?>">Baseline 2010</a>
+							<li class="menuparent"><a class="menuparent" href="Base2050.php?cty=<?=$CTY?>">Baseline 2050</a>
+							<li class="menuparent"><a class="menuparent" href="Scenario2050.php?cty=<?=$CTY?>">Scenario 2050</a>
+						</ul>
+					</div>
+				</div>-->
+			</div>
+		</div<!-- end container -->
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#footer-menu #primary-nav .menuparent").hover(function(){
+					$("#footer-menu li.menuparent ul").hide();
+				});
+			});
+		</script>
+	
+	</div><!-- end wrap_all -->
+	
+
+
+	<div id="content-area">
+
+	<!--## GDP Trends -->
+		<tr>
+		<td>
+		<?php
+			//echo renderChart("FusionCharts/MSColumn3D.swf", "", $strXML_ch501, "S1", 600, 300, false, true);
+			echo renderChart("mscolumn3d", "", $strXML_ch501, "S1", 600, 300, false, true);
+		?>
+		</td>
+		</tr>
+		
+	<!--## Supply and Demand by Sector -->
+		<tr>
+		<td>
+		<?php
+		echo renderChart("mscolumn3d", "", $strXML_ch502, "S2", 600, 300, false, true);
+		//echo renderChart("FusionCharts/MSColumn3D.swf", "", $strXML_ch502, "S2", 600, 300, false, true);
+		?>
+		</td>
+		</tr>
+		
+	<!--## Exports and Imports by Sector -->
+		<tr>
+		<td>
+		<?php
+		//echo renderChart("FusionCharts/StackedColumn3D.swf", "", $strXML_ch503, "S3", 600, 300, false, true);
+		echo renderChart("stackedcolumn3d", "", $strXML_ch503, "S3", 600, 300, false, true);
+		?>
+		</td>
+		</tr>
+
+		</div><!-- end Content Area -->
+				
+		<div id="sidebar">
+
+		<td valign=top>
+		<tr valign="top"><td>
+		<?php
+		//echo renderChart("FusionCharts/StackedBar3D.swf", "", $strXML_ch504, "S4", 300, 300, false, true);
+		echo renderChart("stackedcolumn3d", "", $strXML_ch504, "S4", 300, 300, false, true);
+		?>
+		</td></tr>
+		<tr><td>
+		<?php
+		//echo renderChart("FusionCharts/MSBar3D.swf", "", $strXML_ch505, "S5", 300, 300, false, true);
+		echo renderChart("msbar3d", "", $strXML_ch505, "S5", 300, 300, false, true);
+		?>
+		</td></tr>
+		<tr><td>
+		<?php
+		//echo renderChart("FusionCharts/StackedBar3D.swf", "", $strXML_ch506, "S6", 300, 300, false, true);
+		echo renderChart("stackedbar3d", "", $strXML_ch506, "S6", 300, 300, false, true);
+		?>
+
+		</table>
+		</td>
+		</tr>
+					</div>
+				</div>
+
+	</td>
+	</tr>
+	</table>
+			</div>
+			</div>
+		</div>
+		
+			</div><!-- end container -->
+				
+			</div>
+			<div class="clear"></div>
+		</div>
 </body>
 </html>
 <?php

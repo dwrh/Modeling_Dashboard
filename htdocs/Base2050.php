@@ -131,16 +131,27 @@ $strXML_ch502 .= "<categories>";
 		if (($dtarr[$hh][0] == 'TRADE') and ($dtarr[$hh][7] == 'PERCENT')) {
 			
 			if (($dtarr[$hh][2] == 'CPI') and ($dtarr[$hh][1] == $CTY)) {
-				echo '<br/>';
+				//echo '<br/>';
 				$strXML_ch502 .= "<category label='" . $dtarr[$hh][3] . "' />"; 
-				var_dump($dtarr[$hh]);
+				//var_dump($dtarr[$hh]);
 
 			}
 		}
 	}
 $strXML_ch502 .= "</categories>";
-echo "categories over<br/>";
-//Need to read in the data for the chart here
+//echo "categories over<br/>";
+//Searched dara for first field=TRADE, then for fields matcing GDP and CTY.
+//Is matching for TRADE correct?
+$strXML_ch502 .= "<dataset seriesName='GDP ' color='005C1F' plotBorderColor='B1D1DC' renderAs='Area'>";
+	for ($jj=0; $jj < $row; $jj++) {
+	if ($dtarr[$jj][0] == 'TRADE') {
+		if (($dtarr[$jj][2] == 'GDP') and ($dtarr[$jj][1] == $CTY)) {
+			$strXML_ch502 .= "<set value='" . $dtarr[$jj][6] . "' />"; 
+			//echo $dtarr[$jj][6]."&nbsp;&nbsp;";
+		}
+	}
+	}
+$strXML_ch502 .= "</dataset>";
 // need code for getting the data / y values
 $strXML_ch502 .= "<dataset seriesName='Real GDP' color='00AD2E' plotBorderColor='B1D1DC' renderAs='line'>";
 	for ($jj=0; $jj < $row; $jj++) {
@@ -188,6 +199,7 @@ $strXML_ch503 .= "<dataset seriesName='GDP per Capita' color='005C1F' plotBorder
 	if ($dtarr[$jj][0] == 'TRADE') {
 		if (($dtarr[$jj][2] == 'GDP_PC') and ($dtarr[$jj][1] == $CTY)) {
 			$strXML_ch503 .= "<set value='" . $dtarr[$jj][6] . "' />"; 
+
 		}
 	}
 	}
@@ -298,47 +310,51 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 </div>
 
 <div class="container">
+	<script> 
+    	$(function(){
+      		$("#base_header_nav").load("new_nav_header.html"); 
+    	});
+   	</script> 
+ 
+	<div id="base_header_nav">
+<!--	<div class="navigation flotlef"><div id="menuwrapper">
+			<ul id="primary-nav">
+				<li class="menuparent"><a class="menuparent">Economic Statistics by Country:</a>
+				<ul>
+				<li><a href="Base2010.php?cty=AFG"	>Afghanistan</a></li>
+				<li><a href="Base2010.php?cty=AZE"	>Azerbaijan</a></li>
+				<li><a href="Base2010.php?cty=KAZ"	>Kazakhstan</a></li>
+				<li><a href="Base2010.php?cty=KGZ"  >Kyrgyz Republic</a></li>
+				<li><a href="Base2010.php?cty=MON"	>Mongolia</a></li>
+				<li><a href="Base2010.php?cty=PAK"	>Pakistan</a></li>
+				<li><a href="Base2010.php?cty=TJK"	>Tajikistan</a></li>
+				<li><a href="Base2010.php?cty=TKM"	>Turkmenistan</a></li>
+				<li><a href="Base2010.php?cty=UZB"  >Uzbekistan</a>
+				<li><a href="Base2010.php?cty=XIN"  >Xinjiang</a></li>
+				</li></ul>
+				</li>
+				</ul>
+				</li>
+			</ul>
 
-<div class="container">
-<div id="header_nav">
-<div class="navigation flotlef"><div id="menuwrapper">
-<ul id="primary-nav">
+			<div align="right"><div id="menuwrapper">
+				<ul id="primary-nav">
+					<li class="menuparent"><a class="menuparent" href="Base2010.php?cty=<?=$CTY?>">Baseline 2010</a></li>
+					<li class="menuparent"><a class="menuparent" href="Base2050.php?cty=<?=$CTY?>">Baseline 2050</a></li>
+					<li class="menuparent"><a class="menuparent" href="Scenario2050.php?cty=<?=$CTY?>">Scenario 2050</a>
+					<li class="menuparent"><a class="menuparent">Scenarios:</a>
+						<ul>
+						<li><a href="Scenario2050.php?cty=<?=$CTY?>"?>Scenario 1 (2050)</a></li>
+						<li><a href="Scenario2050.php?cty=<?=$CTY?>"?>Scenario 2 (2050)</a></li>
+						<li><a href="Scenario2050.php?cty=<?=$CTY?>"?>Scenario 3< (2050) </a></li>
+					</li>
+				</ul>
+				</li>
+				</ul>
 
-	<li class="menuparent"><a class="menuparent">Economic Statistics by Country:</a>
-	<ul>
-	<li><a href="Base2010.php?cty=AFG"	>Afghanistan</a></li>
-	<li><a href="Base2010.php?cty=AZE"	>Azerbaijan</a></li>
-	<li><a href="Base2010.php?cty=KAZ"	>Kazakhstan</a></li>
-	<li><a href="Base2010.php?cty=KGZ"  >Kyrgyz Republic</a></li>
-	<li><a href="Base2010.php?cty=MON"	>Mongolia</a></li>
-	<li><a href="Base2010.php?cty=PAK"	>Pakistan</a></li>
-	<li><a href="Base2010.php?cty=TJK"	>Tajikistan</a></li>
-	<li><a href="Base2010.php?cty=TKM"	>Turkmenistan</a></li>
-	<li><a href="Base2010.php?cty=UZB"  >Uzbekistan</a>
-	<li><a href="Base2010.php?cty=XIN"  >Xinjiang</a></li>
-	</li></ul>
-	</li>
-	</ul>
-</li></ul>
-
-<div align="right"><div id="menuwrapper">
-
-<ul id="primary-nav">
-
-	<li class="menuparent"><a class="menuparent" href="Base2010.php?cty=<?=$CTY?>">Baseline 2010</a>
-	<li class="menuparent"><a class="menuparent" href="Base2050.php?cty=<?=$CTY?>">Baseline 2050</a>
-	<!--<li class="menuparent"><a class="menuparent" href="Scenario2050.php?cty=<?=$CTY?>">Scenario 2050</a>-->
-	<li class="menuparent"><a class="menuparent">Scenarios:</a>
-	<ul>
-	<li><a href="Scenario2050.php?cty=<?=$CTY?>"?>Scenario 1 (2050)</a></li>
-	<li><a href="Scenario2050.php?cty=<?=$CTY?>"?>Scenario 2 (2050)</a></li>
-	<li><a href="Scenario2050.php?cty=<?=$CTY?>"?>Scenario 3< (2050) </a></li>
-	</li></ul>
-	</li>
-	</ul>
-
-</div>
-</div>
+			</div>
+		</div>
+-->
 </div>
 
 
@@ -366,7 +382,7 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 </div>
 
 
-            <div id="content-area">
+<div id="content-area">
 
 <!--## GDP Trends -->
 	<tr>
@@ -379,17 +395,18 @@ td PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/l
 	</td>
 	</tr>
 	
-<!--## Supply and Demand by Sector -->
+<!--## GDP and Demand by Sector -->
 	<tr>
 	<td>
 	<?php
 		//echo renderChart("FusionCharts/MSCombi3D.swf", "", $strXML_ch502, "B52", 600, 300, false, true);
-		echo renderChart("mscolumn3dlinedy", "", $strXML_ch502, "B52", 600, 300, false, true);
+		//mscolumn3dlinedy
+		echo renderChart("stackedcolumn3dlinedy", "", $strXML_ch502, "B52", 600, 300, false, true);
 	?>
 	</td>
 	</tr>
 	
-<!--## Exports and Imports by Sector -->
+<!--## GDP per capita and Share of labor -->
 	<tr>
 	<td>
 	<?php
